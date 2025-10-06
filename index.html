@@ -1,30 +1,22 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elmvale Global · Sourcing & Trading B2B</title>
+<!doctype html> <!-- 声明 HTML5 文档类型；作用：让浏览器以“标准模式”渲染；显示：无直接可见效果，但避免怪异兼容问题。 -->
+<html lang="fr"> <!-- 设置页面主语言为法语；作用：有利于搜索/辅助技术；显示：无直接可见变化。 -->
+<head> <!-- 文档头部；包含元数据、样式、结构化数据等；显示：头部内容本身不直接可见。 -->
+  <meta charset="utf-8"> <!-- 指定字符集 UTF-8；作用：避免法语重音/中文乱码；显示：文本正常渲染。 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 移动端视口；作用：按设备宽度缩放；显示：手机端排版不再被缩小。参见 MDN。 -->
+  <title>Elmvale Global · Sourcing & Trading B2B</title> <!-- 页签标题；显示：浏览器标签/搜索结果标题。 -->
+  <meta name="description" content="Elmvale Global : sourcing et trading B2B. Devis 72h, prototypage, inspection qualité et suivi logistique traçable."> <!-- SEO 摘要；显示：搜索结果摘要可能采纳。 -->
+  <link rel="canonical" href="https://www.elmvaleglobal.com/fr/"> <!-- 规范链接；作用：指明此页首选 URL，避免重复内容；显示：无直接视觉效果。 -->
+  <link rel="icon" href="/favicon.ico"> <!-- 站点图标；显示：浏览器标签小图标。 -->
 
-  <!-- SEO de base (FR) -->
-  <meta name="description" content="Elmvale Global : sourcing et trading B2B. Devis sous 72h, prototypage, inspection qualité et suivi logistique avec SLA et traçabilité." />
-  <link rel="canonical" href="https://www.elmvaleglobal.com/fr/" />
+  <!-- Open Graph（社交分享预览用）；显示：在社交平台贴链接时生成标题/摘要/封面图。 -->
+  <meta property="og:type" content="website"> <!-- OG 类型；显示：无直接视觉效果。 -->
+  <meta property="og:locale" content="fr_FR"> <!-- 语言区域；显示：无直接视觉效果。 -->
+  <meta property="og:title" content="Elmvale Global · Sourcing & Trading B2B"> <!-- 分享标题。 -->
+  <meta property="og:description" content="Sourcing & trading B2B : devis 72h, prototypage, QC, suivi logistique."> <!-- 分享摘要。 -->
+  <meta property="og:url" content="https://www.elmvaleglobal.com/fr/"> <!-- 分享用 URL。 -->
+  <meta property="og:image" content="https://www.elmvaleglobal.com/og-cover.jpg"> <!-- 分享封面；显示：社交卡片图片。 -->
 
-  <!-- (Optionnel) hreflang — 当你有多语言 URL 时再启用
-  <link rel="alternate" href="https://www.elmvaleglobal.com/fr/" hreflang="fr" />
-  <link rel="alternate" href="https://www.elmvaleglobal.com/en/" hreflang="en" />
-  <link rel="alternate" href="https://www.elmvaleglobal.com/zh/" hreflang="zh-CN" />
-  <link rel="alternate" href="https://www.elmvaleglobal.com/" hreflang="x-default" />
-  -->
-
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Elmvale Global · Sourcing & Trading B2B" />
-  <meta property="og:description" content="Sourcing et trading B2B : devis 72h, prototypage, inspection qualité, suivi logistique." />
-  <meta property="og:url" content="https://www.elmvaleglobal.com/fr/" />
-  <meta property="og:image" content="https://www.elmvaleglobal.com/og-cover.jpg" />
-
-  <!-- Organization JSON-LD -->
+  <!-- 结构化数据：Organization（JSON-LD）；作用：帮助搜索引擎理解品牌信息；显示：无直接视觉效果。 -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -40,73 +32,156 @@
       "availableLanguage":["fr","en","zh-CN"]
     }]
   }
-  </script>
+  </script> <!-- 结构化数据脚本结束。 -->
 
-  <!-- (Optionnel) GA4
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-XXXXXXXXX');</script>
-  -->
-
-  <link rel="icon" href="/favicon.ico" />
   <style>
-    :root { --fg:#0f172a; --muted:#475569; --brand:#0ea5e9; --bg:#f8fafc; }
-    *{box-sizing:border-box} body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto;color:var(--fg);background:var(--bg)}
-    .wrap{max-width:980px;margin:auto;padding:48px 20px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    header h1{margin:0;font-size:22px}
-    .tag{color:#fff;background:var(--brand);padding:4px 10px;border-radius:999px;font-size:12px}
-    .hero{margin:36px 0;padding:28px;border:1px solid #e2e8f0;border-radius:16px;background:#fff}
-    .hero h2{margin:0 0 12px;font-size:28px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0}
-    .card{padding:16px;border:1px solid #e2e8f0;border-radius:12px;background:#fff}
-    .muted{color:var(--muted)}
-    .cta{display:inline-block;margin-top:10px;padding:10px 16px;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none}
-    footer{margin-top:32px;color:#64748b;font-size:14px}
-  </style>
+    /* ===== 设计系统变量；显示：统一控制配色与灰度 ===== */
+    :root{ /* 根作用域的 CSS 变量定义；显示：便于主题色统一修改。 */
+      --green:#184F3D; /* 品牌深绿；显示：按钮/标题等主色。 */
+      --amber:#FFB340; /* 琥珀高光；显示：CTA 按钮/强调色。 */
+      --bg:#F8FAFC; /* 背景灰；显示：页面浅底色。 */
+      --fg:#0F172A; /* 正文深色；显示：正文文字颜色。 */
+      --muted:#475569; /* 次级文字；显示：注释/说明文字颜色。 */
+      --line:#E2E8F0; /* 边框线；显示：卡片和分隔的细线。 */
+    }
+
+    /* ===== 全局基础排版 ===== */
+    *{box-sizing:border-box;} /* 盒模型统一为 border-box；显示：宽高好算，避免溢出。 */
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto;color:var(--fg);background:var(--bg);} /* 基础字体与背景；显示：干净、可读。 */
+    img{max-width:100%;display:block;} /* 图片自适应容器宽度；显示：不挤破布局。 */
+
+    /* ===== 布局容器与导航 ===== */
+    .wrap{max-width:1000px;margin:auto;padding:24px;} /* 居中主容器；显示：页面居中留白。 */
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0;} /* 顶部条；显示：品牌与导航左右分布。 */
+    .brand{font-weight:700;color:var(--green);} /* 品牌文字；显示：深绿加粗。 */
+    .nav a{margin-left:16px;text-decoration:none;color:var(--fg);} /* 导航链接；显示：紧凑横排无下划线。 */
+    .nav .cta{background:var(--green);color:#fff;padding:8px 12px;border-radius:10px;} /* 顶栏 CTA；显示：深绿圆角按钮。 */
+
+    /* ===== 首屏模块（Hero） ===== */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin:24px 0;padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff;} /* 双栏卡片；显示：左文右图。 */
+    .hero .muted{color:var(--muted);} /* 次要说明色。 */
+    .bullets{margin:12px 0 16px;padding-left:18px;} /* 优势点列表；显示：带缩进圆点。 */
+    .cta{display:inline-block;background:var(--amber);color:#000;padding:10px 14px;border-radius:10px;text-decoration:none;} /* 主 CTA；显示：琥珀色按钮。 */
+
+    /* ===== 信任背书胶囊 ===== */
+    .proof{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;} /* 胶囊容器；显示：多行换行。 */
+    .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px;} /* 胶囊样式；显示：圆角小标签。 */
+
+    /* ===== 服务网格卡片 ===== */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:18px 0;} /* 自适应等宽网格；显示：1~4 列。 */
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;} /* 卡片框；显示：白底+细线。 */
+    .card h3{margin:0 0 6px;color:var(--green);} /* 卡片标题；显示：深绿。 */
+    .meta{font-size:13px;color:var(--muted);} /* 交付物/时效说明；显示：灰色小字。 */
+
+    /* ===== 流程时间轴 ===== */
+    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0;} /* 等宽步骤栅格；显示：4 步横排/换行。 */
+    .timeline div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;} /* 步骤卡片；显示：白底圆角。 */
+
+    /* ===== 表单与页脚 ===== */
+    .contact .form{display:grid;gap:10px;max-width:520px;} /* 表单栅格；显示：整齐对齐。 */
+    input,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;} /* 表单控件；显示：圆角输入框。 */
+    button{background:var(--green);color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer;} /* 表单按钮；显示：深绿按钮。 */
+    .foot{margin:24px 0;color:#64748B;font-size:14px;text-align:center;} /* 页脚样式；显示：淡灰小字居中。 */
+
+    /* ===== 响应式优化（窄屏） ===== */
+    @media (max-width:840px){ /* 针对手机/平板宽度；显示：布局改为单列。 */
+      .hero{grid-template-columns:1fr;} /* 首屏改为单列：图文上下排。 */
+      .nav{display:none;} /* 隐藏顶栏导航以简化小屏。 */
+    }
+  </style> <!-- 样式结束；显示：全站视觉与布局生效。 -->
 </head>
-<body>
-<div class="wrap">
-  <header>
-    <h1>Elmvale Global</h1>
-    <span class="tag">Sourcing & Trading B2B</span>
+
+<body> <!-- 文档主体；显示：页面可见内容从此开始。 -->
+<div class="wrap"> <!-- 居中主容器；显示：页面左右留白。 -->
+
+  <header class="topbar"> <!-- 顶部栏；显示：品牌+导航。 -->
+    <div class="brand">ELMVALE GLOBAL</div> <!-- 品牌文字；显示：加粗深绿。 -->
+    <nav class="nav"> <!-- 导航；显示：若干链接横排。 -->
+      <a href="#services">Services</a> <!-- 跳到“服务”区；显示：文本链接。 -->
+      <a href="#process">Méthode</a> <!-- 跳到“流程”。 -->
+      <a href="#cases">Cas</a> <!-- 跳到“案例”。 -->
+      <a class="cta" href="#contact">Devis 72h</a> <!-- 顶栏 CTA；显示：绿色按钮。 -->
+    </nav>
   </header>
 
-  <section class="hero">
-    <h2>Approvisionnement & commerce B2B, simple et fiable</h2>
-    <p class="muted">Du brief au suivi logistique : devis sous 72h, prototypage, inspection tierce et traçabilité par jalon (SLA).</p>
-    <div class="grid">
-      <div class="card">
-        <strong>Sourcing & devis</strong>
-        <p class="muted">Liste de fournisseurs vérifiés, prix rendus (DAP/DDU/DDP) sous 72 heures.</p>
-      </div>
-      <div class="card">
-        <strong>Prototypage & qualité</strong>
-        <p class="muted">Échantillons rapides, inspections photo/vidéo, rapports normalisés.</p>
-      </div>
-      <div class="card">
-        <strong>Suivi & conformité</strong>
-        <p class="muted">SLA par jalon, traçabilité, documents requis (COO/COC/MSDS selon les cas).</p>
-      </div>
+  <section class="hero"> <!-- 首屏：价值主张区；显示：左文右图卡片。 -->
+    <div> <!-- 文案列；显示：标题、说明、要点、按钮。 -->
+      <h1>Approvisionnement & Trading B2B, simple et fiable</h1> <!-- 主标题；显示：加粗大字号。 -->
+      <p class="muted">Devis sous 72h, prototypage & inspection tierce, suivi logistique traçable (SLA à chaque jalon).</p> <!-- 说明文字；显示：次要灰色。 -->
+      <ul class="bullets"> <!-- 优势点列表；显示：圆点列表。 -->
+        <li>Devis DDP/DDU sous 72h</li> <!-- 要点1；显示：列表项。 -->
+        <li>Échantillons rapides & rapports QC</li> <!-- 要点2。 -->
+        <li>Suivi livraison + documents de conformité</li> <!-- 要点3。 -->
+      </ul>
+      <a class="cta" href="#contact">Demander un devis</a> <!-- 主 CTA；显示：琥珀色按钮，锚点到联系区。 -->
     </div>
-    <a class="cta" href="mailto:hello@elmvaleglobal.com?subject=Demande%20de%20sourcing">Nous écrire</a>
-    &nbsp;&nbsp;
-    <a class="cta" href="https://wa.me/1234567890" target="_blank" rel="noopener">WhatsApp</a>
+    <img src="hero.jpg" alt="Chaîne d'approvisionnement" loading="lazy"> <!-- 首屏配图；显示：右侧图片；lazy 延迟加载提升性能。 -->
   </section>
 
-  <section>
-    <h3>Notre manière de travailler</h3>
-    <ol>
-      <li>Brief clair : objectif prix/MOQ/délai</li>
-      <li>Devis en 72 h + plan d’échantillons</li>
-      <li>Commande pilote : validation QC & emballage</li>
-      <li>Accords → cadence récurrente et amélioration continue</li>
-    </ol>
+  <section class="proof"> <!-- 信任背书；显示：多枚“胶囊”标签。 -->
+    <div class="pill">Catégories : packaging, textile, ménager, électronique légère</div> <!-- 类别覆盖；显示：白底圆角标签。 -->
+    <div class="pill">Territoires : UE, UK, Amérique du Nord, ASEAN</div> <!-- 地理覆盖。 -->
+    <div class="pill">Conformité : COO, COC, MSDS, REACH</div> <!-- 合规文件说明。 -->
   </section>
 
-  <footer>
-    © <span id="y"></span> Elmvale Global · hello@elmvaleglobal.com
+  <section id="services" class="grid"> <!-- 服务网格；显示：1~4 列自适应卡片。 -->
+    <article class="card">
+      <h3>Sourcing & devis</h3> <!-- 卡片标题；显示：深绿。 -->
+      <p class="muted">Shortlist fournisseurs vérifiés + prix rendus (DAP/DDU/DDP).</p> <!-- 卡片内容；灰色说明。 -->
+      <div class="meta">Livrable : liste chiffrée · Délai : 72h</div> <!-- 交付物/时效。 -->
+    </article>
+    <article class="card">
+      <h3>Prototypage</h3>
+      <p class="muted">Échantillons rapides, itérations emballage & marquage.</p>
+      <div class="meta">Livrable : photos/vidéos · Délai : 7–14 j</div>
+    </article>
+    <article class="card">
+      <h3>Qualité & audit</h3>
+      <p class="muted">Inspection tierce (AQL), audit d’usine & conformité.</p>
+      <div class="meta">Livrable : rapport QC · Délai : J+1</div>
+    </article>
+    <article class="card">
+      <h3>Livraison & docs</h3>
+      <p class="muted">Suivi traçable, douane & dossiers requis selon marché.</p>
+      <div class="meta">Livrable : tracking + docs · Continu</div>
+    </article>
+  </section>
+
+  <section id="process" class="timeline"> <!-- 流程时间轴；显示：四个步骤卡片。 -->
+    <div><strong>1. Brief</strong><span> — cible prix/MOQ/délai</span></div> <!-- 步骤1；显示：粗体标题+说明。 -->
+    <div><strong>2. Devis 72h</strong><span> — shortlist + coûts rendus</span></div> <!-- 步骤2。 -->
+    <div><strong>3. Échantillon & QC</strong><span> — validation + rapport</span></div> <!-- 步骤3。 -->
+    <div><strong>4. Livraison</strong><span> — suivi & conformité</span></div> <!-- 步骤4。 -->
+  </section>
+
+  <section id="cases" class="grid"> <!-- 简短案例；显示：两张卡片。 -->
+    <article class="card">
+      <h3>Emballage cosmétique – UE</h3>
+      <p class="muted">Coût ↓18%, délai ↓9 j, conformité REACH fournie.</p>
+    </article>
+    <article class="card">
+      <h3>Home & Living – UK</h3>
+      <p class="muted">Taux défaut &lt; 0,7%, inspection AQL 2.5 à l’expédition.</p>
+    </article>
+  </section>
+
+  <section id="contact" class="contact"> <!-- 联系区；显示：联系方式+表单。 -->
+    <h2>Parlons de votre projet</h2> <!-- 区块标题。 -->
+    <p class="muted">contact@elmvaleglobal.com · WhatsApp +86 130 6260 1713</p> <!-- 联系方式行。 -->
+    <form action="https://formspree.io/f/xxxxxxxx" method="POST" class="form"> <!-- 简单第三方表单；显示：下方输入框。 -->
+      <input name="email" type="email" placeholder="Votre e-mail" required> <!-- 邮箱输入；显示：圆角输入框。 -->
+      <input name="subject" placeholder="Produit / quantité / délai" required> <!-- 主题输入。 -->
+      <textarea name="message" rows="4" placeholder="Brief (spécifications, packaging, destination)…"></textarea> <!-- 详情文本域。 -->
+      <button type="submit">Envoyer</button> <!-- 提交按钮；显示：深绿按钮。 -->
+    </form>
+  </section>
+
+  <footer class="foot"> <!-- 页脚；显示：居中小字。 -->
+    © <span id="y"></span> Elmvale Global · Sourcing & Trading <!-- 年份占位；显示：运行时写入当前年。 -->
   </footer>
-</div>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+</div> <!-- 主容器结束。 -->
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script> <!-- 小脚本：写入当前年份；显示：页脚年份自动更新。 -->
 </body>
 </html>

@@ -61,7 +61,20 @@
     /* ===== 页面容器与顶部导航 ===== */
     .wrap{max-width:1000px;margin:auto;padding:24px}      /* 居中主容器，留出左右空白。 */
     .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0} /* 顶栏：品牌与导航左右分布。 */
-    .brand{font-weight:700;color:var(--green)}            /* 品牌文字：加粗+品牌色。 */
+    .brand{
+      display:flex;           /* 让 logo 与文字横向排列 */
+      align-items:center;     /* 垂直居中 */
+      gap:10px;               /* logo 与文字的间距 */
+      font-weight:700;
+      color:var(--green);
+      text-decoration:none;   /* 作为链接时去下划线 */
+    }            /* 品牌文字：加粗+品牌色。 */
+    .brand img{
+      width:28px; height:28px;         /* 与上面 HTML 的尺寸保持一致 */
+      display:block; object-fit:contain;
+      /* 如果想要圆头像效果，打开下一行： */
+      /* border-radius:50%; */
+    }
     .nav a{margin-left:16px;text-decoration:none;color:var(--fg)} /* 导航链接：去下划线、左距。 */
     .nav .cta{background:var(--green);color:#fff;padding:8px 12px;border-radius:10px} /* 顶栏 CTA：深绿圆角按钮。 */
 
@@ -131,7 +144,7 @@
       </ul>
       <a class="cta" href="#contact">Demander un devis</a> <!-- 主 CTA：锚点滚动到联系表单。 -->
     </div>
-    <img src="hero.jpg" alt="Chaîne d'approvisionnement" loading="lazy"> <!-- 右侧配图：设置替代文本 & 延迟加载以提速。 -->
+    <!--img src="hero.jpg" alt="Chaîne d'approvisionnement" loading="lazy"> <!-- 右侧配图：设置替代文本 & 延迟加载以提速。 -->
   </section>
 
   <section class="proof"> <!-- 社会证明/信任背书：以“胶囊标签”简洁展示覆盖范围与合规能力。 -->

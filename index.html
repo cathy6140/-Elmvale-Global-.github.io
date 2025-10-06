@@ -102,13 +102,21 @@
 <body> <!-- 页面主体开始：用户可见内容。 -->
 <div class="wrap"> <!-- 居中容器：限制最大宽度并居中。 -->
 
-  <header class="topbar"> <!-- 顶部栏：品牌与导航。 -->
-    <div class="brand">ELMVALE GLOBAL</div> <!-- 品牌名称。 -->
-    <nav class="nav"> <!-- 顶部导航（锚点链接快速跳转到对应区块）。 -->
-      <a href="#services">Services</a> <!-- 跳到“服务”。 -->
-      <a href="#process">Méthode</a>  <!-- 跳到“流程”。 -->
-      <a href="#cases">Cas</a>        <!-- 跳到“案例”。 -->
-      <a class="cta" href="#contact">Devis 72h</a> <!-- 顶栏 CTA 按钮：引导联系与询价。 -->
+  <header class="topbar">
+  <!-- 点击品牌回到首页；用 picture 优先加载 SVG，旧浏览器回退到 PNG -->
+    <a class="brand" href="./">
+      <picture>
+        <source srcset="favicon-hq.svg?v=6" type="image/svg+xml">
+        <img src="favicon-32.png?v=6" width="28" height="28" alt="Elmvale Global logo" loading="eager">
+      </picture>
+      <span>ELMVALE GLOBAL</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#process">Méthode</a>
+      <a href="#cases">Cas</a>
+      <a class="cta" href="#contact">Devis 72h</a>
     </nav>
   </header>
 

@@ -1,28 +1,28 @@
-<!doctype html> <!-- 声明 HTML5 文档类型；作用：让浏览器以“标准模式”渲染；显示：无直接可见效果，但避免怪异兼容问题。 -->
-<html lang="fr"> <!-- 设置页面主语言为法语；作用：有利于搜索/辅助技术；显示：无直接可见变化。 -->
-<head> <!-- 文档头部；包含元数据、样式、结构化数据等；显示：头部内容本身不直接可见。 -->
-  <meta charset="utf-8"> <!-- 指定字符集 UTF-8；作用：避免法语重音/中文乱码；显示：文本正常渲染。 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 移动端视口；作用：按设备宽度缩放；显示：手机端排版不再被缩小。参见 MDN。 -->
-  <title>Elmvale Global · Sourcing & Trading B2B</title> <!-- 页签标题；显示：浏览器标签/搜索结果标题。 -->
-  <meta name="description" content="Elmvale Global : sourcing et trading B2B. Devis 72h, prototypage, inspection qualité et suivi logistique traçable."> <!-- SEO 摘要；显示：搜索结果摘要可能采纳。 -->
-  <link rel="canonical" href="https://www.elmvaleglobal.com/fr/"> <!-- 规范链接
- 
-    <!-- Site Icons -->
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elmvale Global · Sourcing & Trading B2B</title>
+  <meta name="description" content="Elmvale Global : sourcing et trading B2B. Devis 72h, prototypage, inspection qualité, suivi logistique traçable.">
+  <link rel="canonical" href="https://www.elmvaleglobal.com/">
+
+  <!-- Site Icons -->
   <link rel="icon" href="/favicon-hq.svg" type="image/svg+xml" sizes="any">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Open Graph（社交分享预览用）；显示：在社交平台贴链接时生成标题/摘要/封面图。 -->
-  <meta property="og:type" content="website"> <!-- OG 类型；显示：无直接视觉效果。 -->
-  <meta property="og:locale" content="fr_FR"> <!-- 语言区域；显示：无直接视觉效果。 -->
-  <meta property="og:title" content="Elmvale Global · Sourcing & Trading B2B"> <!-- 分享标题。 -->
-  <meta property="og:description" content="Sourcing & trading B2B : devis 72h, prototypage, QC, suivi logistique."> <!-- 分享摘要。 -->
-  <meta property="og:url" content="https://www.elmvaleglobal.com/fr/"> <!-- 分享用 URL。 -->
-  <meta property="og:image" content="https://www.elmvaleglobal.com/og-cover.jpg"> <!-- 分享封面；显示：社交卡片图片。 -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Elmvale Global · Sourcing & Trading B2B">
+  <meta property="og:description" content="Devis 72h, prototypage, QC, logistique traçable.">
+  <meta property="og:url" content="https://www.elmvaleglobal.com/">
+  <meta property="og:image" content="https://www.elmvaleglobal.com/og-cover.jpg">
 
-  <!-- 结构化数据：Organization（JSON-LD）；作用：帮助搜索引擎理解品牌信息；显示：无直接视觉效果。 -->
+  <!-- Organization JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -38,103 +38,76 @@
       "availableLanguage":["fr","en","zh-CN"]
     }]
   }
-  </script> <!-- 结构化数据脚本结束。 -->
+  </script>
 
   <style>
-    /* ===== 设计系统变量；显示：统一控制配色与灰度 ===== */
-    :root{ /* 根作用域的 CSS 变量定义；显示：便于主题色统一修改。 */
-      --green:#184F3D; /* 品牌深绿；显示：按钮/标题等主色。 */
-      --amber:#FFB340; /* 琥珀高光；显示：CTA 按钮/强调色。 */
-      --bg:#F8FAFC; /* 背景灰；显示：页面浅底色。 */
-      --fg:#0F172A; /* 正文深色；显示：正文文字颜色。 */
-      --muted:#475569; /* 次级文字；显示：注释/说明文字颜色。 */
-      --line:#E2E8F0; /* 边框线；显示：卡片和分隔的细线。 */
+    :root{
+      --green:#184F3D; --green-2:#0F3D2E; --amber:#FFB340;
+      --bg:#F8FAFC; --fg:#0F172A; --muted:#475569; --line:#E2E8F0;
     }
-
-    /* ===== 全局基础排版 ===== */
-    *{box-sizing:border-box;} /* 盒模型统一为 border-box；显示：宽高好算，避免溢出。 */
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto;color:var(--fg);background:var(--bg);} /* 基础字体与背景；显示：干净、可读。 */
-    img{max-width:100%;display:block;} /* 图片自适应容器宽度；显示：不挤破布局。 */
-
-    /* ===== 布局容器与导航 ===== */
-    .wrap{max-width:1000px;margin:auto;padding:24px;} /* 居中主容器；显示：页面居中留白。 */
-    .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0;} /* 顶部条；显示：品牌与导航左右分布。 */
-    .brand{font-weight:700;color:var(--green);} /* 品牌文字；显示：深绿加粗。 */
-    .nav a{margin-left:16px;text-decoration:none;color:var(--fg);} /* 导航链接；显示：紧凑横排无下划线。 */
-    .nav .cta{background:var(--green);color:#fff;padding:8px 12px;border-radius:10px;} /* 顶栏 CTA；显示：深绿圆角按钮。 */
-
-    /* ===== 首屏模块（Hero） ===== */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin:24px 0;padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff;} /* 双栏卡片；显示：左文右图。 */
-    .hero .muted{color:var(--muted);} /* 次要说明色。 */
-    .bullets{margin:12px 0 16px;padding-left:18px;} /* 优势点列表；显示：带缩进圆点。 */
-    .cta{display:inline-block;background:var(--amber);color:#000;padding:10px 14px;border-radius:10px;text-decoration:none;} /* 主 CTA；显示：琥珀色按钮。 */
-
-    /* ===== 信任背书胶囊 ===== */
-    .proof{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;} /* 胶囊容器；显示：多行换行。 */
-    .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px;} /* 胶囊样式；显示：圆角小标签。 */
-
-    /* ===== 服务网格卡片 ===== */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:18px 0;} /* 自适应等宽网格；显示：1~4 列。 */
-    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;} /* 卡片框；显示：白底+细线。 */
-    .card h3{margin:0 0 6px;color:var(--green);} /* 卡片标题；显示：深绿。 */
-    .meta{font-size:13px;color:var(--muted);} /* 交付物/时效说明；显示：灰色小字。 */
-
-    /* ===== 流程时间轴 ===== */
-    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0;} /* 等宽步骤栅格；显示：4 步横排/换行。 */
-    .timeline div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;} /* 步骤卡片；显示：白底圆角。 */
-
-    /* ===== 表单与页脚 ===== */
-    .contact .form{display:grid;gap:10px;max-width:520px;} /* 表单栅格；显示：整齐对齐。 */
-    input,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;} /* 表单控件；显示：圆角输入框。 */
-    button{background:var(--green);color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer;} /* 表单按钮；显示：深绿按钮。 */
-    .foot{margin:24px 0;color:#64748B;font-size:14px;text-align:center;} /* 页脚样式；显示：淡灰小字居中。 */
-
-    /* ===== 响应式优化（窄屏） ===== */
-    @media (max-width:840px){ /* 针对手机/平板宽度；显示：布局改为单列。 */
-      .hero{grid-template-columns:1fr;} /* 首屏改为单列：图文上下排。 */
-      .nav{display:none;} /* 隐藏顶栏导航以简化小屏。 */
-    }
-  </style> <!-- 样式结束；显示：全站视觉与布局生效。 -->
+    *{box-sizing:border-box} body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto;color:var(--fg);background:var(--bg)}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1000px;margin:auto;padding:24px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .brand{font-weight:700;color:var(--green)}
+    .nav a{margin-left:16px;text-decoration:none;color:var(--fg)}
+    .nav .cta{background:var(--green);color:#fff;padding:8px 12px;border-radius:10px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin:24px 0;padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .hero .muted{color:var(--muted)}
+    .bullets{margin:12px 0 16px;padding-left:18px}
+    .cta{display:inline-block;background:var(--amber);color:#000;padding:10px 14px;border-radius:10px;text-decoration:none}
+    .proof{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+    .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:18px 0}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+    .card h3{margin:0 0 6px;color:var(--green)}
+    .meta{font-size:13px;color:var(--muted)}
+    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0}
+    .timeline div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+    .contact .form{display:grid;gap:10px;max-width:520px}
+    input,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px}
+    button{background:var(--green-2);color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer}
+    .foot{margin:24px 0;color:#64748B;font-size:14px;text-align:center}
+    @media (max-width:840px){ .hero{grid-template-columns:1fr} .nav{display:none} }
+  </style>
 </head>
-
-<body> <!-- 文档主体；显示：页面可见内容从此开始。 -->
-<div class="wrap"> <!-- 居中主容器；显示：页面左右留白。 -->
-
-  <header class="topbar"> <!-- 顶部栏；显示：品牌+导航。 -->
-    <div class="brand">ELMVALE GLOBAL</div> <!-- 品牌文字；显示：加粗深绿。 -->
-    <nav class="nav"> <!-- 导航；显示：若干链接横排。 -->
-      <a href="#services">Services</a> <!-- 跳到“服务”区；显示：文本链接。 -->
-      <a href="#process">Méthode</a> <!-- 跳到“流程”。 -->
-      <a href="#cases">Cas</a> <!-- 跳到“案例”。 -->
-      <a class="cta" href="#contact">Devis 72h</a> <!-- 顶栏 CTA；显示：绿色按钮。 -->
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">ELMVALE GLOBAL</div>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#process">Méthode</a>
+      <a href="#cases">Cas</a>
+      <a class="cta" href="#contact">Devis 72h</a>
     </nav>
   </header>
 
-  <section class="hero"> <!-- 首屏：价值主张区；显示：左文右图卡片。 -->
-    <div> <!-- 文案列；显示：标题、说明、要点、按钮。 -->
-      <h1>Approvisionnement & Trading B2B, simple et fiable</h1> <!-- 主标题；显示：加粗大字号。 -->
-      <p class="muted">Devis sous 72h, prototypage & inspection tierce, suivi logistique traçable (SLA à chaque jalon).</p> <!-- 说明文字；显示：次要灰色。 -->
-      <ul class="bullets"> <!-- 优势点列表；显示：圆点列表。 -->
-        <li>Devis DDP/DDU sous 72h</li> <!-- 要点1；显示：列表项。 -->
-        <li>Échantillons rapides & rapports QC</li> <!-- 要点2。 -->
-        <li>Suivi livraison + documents de conformité</li> <!-- 要点3。 -->
+  <section class="hero">
+    <div>
+      <h1>Approvisionnement & Trading B2B, simple et fiable</h1>
+      <p class="muted">Devis sous 72h, prototypage & inspection tierce, suivi logistique traçable (SLA à chaque jalon).</p>
+      <ul class="bullets">
+        <li>Devis DDP/DDU sous 72h</li>
+        <li>Échantillons rapides & rapports QC</li>
+        <li>Suivi livraison + documents de conformité</li>
       </ul>
-      <a class="cta" href="#contact">Demander un devis</a> <!-- 主 CTA；显示：琥珀色按钮，锚点到联系区。 -->
+      <a class="cta" href="#contact">Demander un devis</a>
     </div>
-    <img src="hero.jpg" alt="Chaîne d'approvisionnement" loading="lazy"> <!-- 首屏配图；显示：右侧图片；lazy 延迟加载提升性能。 -->
+    <img src="hero.jpg" alt="Chaîne d'approvisionnement" loading="lazy">
   </section>
 
-  <section class="proof"> <!-- 信任背书；显示：多枚“胶囊”标签。 -->
-    <div class="pill">Catégories : packaging, textile, ménager, électronique légère</div> <!-- 类别覆盖；显示：白底圆角标签。 -->
-    <div class="pill">Territoires : UE, UK, Amérique du Nord, ASEAN</div> <!-- 地理覆盖。 -->
-    <div class="pill">Conformité : COO, COC, MSDS, REACH</div> <!-- 合规文件说明。 -->
+  <section class="proof">
+    <div class="pill">Catégories : packaging, textile, ménager, électronique légère</div>
+    <div class="pill">Territoires : UE, UK, Amérique du Nord, ASEAN</div>
+    <div class="pill">Conformité : COO, COC, MSDS, REACH</div>
   </section>
 
-  <section id="services" class="grid"> <!-- 服务网格；显示：1~4 列自适应卡片。 -->
+  <section id="services" class="grid">
     <article class="card">
-      <h3>Sourcing & devis</h3> <!-- 卡片标题；显示：深绿。 -->
-      <p class="muted">Shortlist fournisseurs vérifiés + prix rendus (DAP/DDU/DDP).</p> <!-- 卡片内容；灰色说明。 -->
-      <div class="meta">Livrable : liste chiffrée · Délai : 72h</div> <!-- 交付物/时效。 -->
+      <h3>Sourcing & devis</h3>
+      <p class="muted">Shortlist fournisseurs vérifiés + prix rendus (DAP/DDU/DDP).</p>
+      <div class="meta">Livrable : liste chiffrée · Délai : 72h</div>
     </article>
     <article class="card">
       <h3>Prototypage</h3>
@@ -153,14 +126,14 @@
     </article>
   </section>
 
-  <section id="process" class="timeline"> <!-- 流程时间轴；显示：四个步骤卡片。 -->
-    <div><strong>1. Brief</strong><span> — cible prix/MOQ/délai</span></div> <!-- 步骤1；显示：粗体标题+说明。 -->
-    <div><strong>2. Devis 72h</strong><span> — shortlist + coûts rendus</span></div> <!-- 步骤2。 -->
-    <div><strong>3. Échantillon & QC</strong><span> — validation + rapport</span></div> <!-- 步骤3。 -->
-    <div><strong>4. Livraison</strong><span> — suivi & conformité</span></div> <!-- 步骤4。 -->
+  <section id="process" class="timeline">
+    <div><strong>1. Brief</strong><span> — cible prix/MOQ/délai</span></div>
+    <div><strong>2. Devis 72h</strong><span> — shortlist + coûts rendus</span></div>
+    <div><strong>3. Échantillon & QC</strong><span> — validation + rapport</span></div>
+    <div><strong>4. Livraison</strong><span> — suivi & conformité</span></div>
   </section>
 
-  <section id="cases" class="grid"> <!-- 简短案例；显示：两张卡片。 -->
+  <section id="cases" class="grid">
     <article class="card">
       <h3>Emballage cosmétique – UE</h3>
       <p class="muted">Coût ↓18%, délai ↓9 j, conformité REACH fournie.</p>
@@ -171,23 +144,21 @@
     </article>
   </section>
 
-  <section id="contact" class="contact"> <!-- 联系区；显示：联系方式+表单。 -->
-    <h2>Parlons de votre projet</h2> <!-- 区块标题。 -->
-    <p class="muted">contact@elmvaleglobal.com · WhatsApp +86 130 6260 1713</p> <!-- 联系方式行。 -->
-    <form action="https://formspree.io/f/xxxxxxxx" method="POST" class="form"> <!-- 简单第三方表单；显示：下方输入框。 -->
-      <input name="email" type="email" placeholder="Votre e-mail" required> <!-- 邮箱输入；显示：圆角输入框。 -->
-      <input name="subject" placeholder="Produit / quantité / délai" required> <!-- 主题输入。 -->
-      <textarea name="message" rows="4" placeholder="Brief (spécifications, packaging, destination)…"></textarea> <!-- 详情文本域。 -->
-      <button type="submit">Envoyer</button> <!-- 提交按钮；显示：深绿按钮。 -->
+  <section id="contact" class="contact">
+    <h2>Parlons de votre projet</h2>
+    <p class="muted">hello@elmvaleglobal.com · WhatsApp +xx xxxxxxxxx</p>
+    <!-- 将下面的 action 换为你的 Formspree/Netlify Forms 端点 -->
+    <form action="https://formspree.io/f/xxxxxxxx" method="POST" class="form">
+      <input name="email" type="email" placeholder="Votre e-mail" required>
+      <input name="subject" placeholder="Produit / quantité / délai" required>
+      <textarea name="message" rows="4" placeholder="Brief (spécifications, packaging, destination)…"></textarea>
+      <button type="submit">Envoyer</button>
     </form>
   </section>
 
-  <footer class="foot"> <!-- 页脚；显示：居中小字。 -->
-    © <span id="y"></span> Elmvale Global · Sourcing & Trading <!-- 年份占位；显示：运行时写入当前年。 -->
-  </footer>
+  <footer class="foot">© <span id="y"></span> Elmvale Global · Sourcing & Trading</footer>
+</div>
 
-</div> <!-- 主容器结束。 -->
-
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script> <!-- 小脚本：写入当前年份；显示：页脚年份自动更新。 -->
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>

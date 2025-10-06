@@ -8,11 +8,12 @@
   <link rel="canonical" href="https://www.elmvaleglobal.com/"> <!-- 规范链接：告诉搜索引擎该页面的首选 URL，收敛重复页面信号。 -->
 
   <!-- 站点图标（favicon / 应用图标）：现代浏览器优先用 SVG，其次 PNG 回退，iOS 需 apple-touch-icon，PWA 用 manifest。 -->
-  <link rel="icon" href="/favicon-hq.svg" type="image/svg+xml" sizes="any"> <!-- 页签图标（优先）：高清且可缩放的 SVG。 -->
-  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32"> <!-- 回退：常见 32×32 PNG。 -->
-  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16"> <!-- 回退：常见 16×16 PNG（旧环境）。 -->
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"> <!-- iOS 主屏图标：用户“添加到主屏幕”时使用，建议 180×180 PNG。 -->
-  <link rel="manifest" href="/site.webmanifest"> <!-- Web App Manifest：PWA 安装时提供名称/图标/主题色等信息。 -->
+  <link rel="shortcut icon" href="/favicon.ico?v=4"> <!-- 强制浏览器/CDN 认为这是一个“新地址”，从而重新下载最新文件，不再用之前的缓存。 -->
+  <link rel="icon" href="/favicon-32.png?v=4" type="image/png" sizes="32x32"> <!-- 回退：常见 32×32 PNG。 -->
+  <link rel="icon" href="/favicon-16.png?v=4" type="image/png" sizes="16x16"> <!-- 回退：常见 16×16 PNG（旧环境）。 -->
+  <link rel="icon" href="/favicon-hq.svg?v=4" type="image/svg+xml" sizes="any"> <!-- 页签图标（优先）：高清且可缩放的 SVG。 -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" sizes="180x180"> <!-- iOS 主屏图标：用户“添加到主屏幕”时使用，建议 180×180 PNG。 -->
+  <link rel="manifest" href="/site.webmanifest?v=4"> <!-- Web App Manifest：PWA 安装时提供名称/图标/主题色等信息。 -->
 
   <!-- Open Graph（社交分享卡片）：控制链接在社交平台的标题/描述/封面图。 -->
   <meta property="og:type" content="website"> <!-- OG 类型：网站。 -->

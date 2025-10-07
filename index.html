@@ -45,7 +45,7 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text)} /* 清除默认边距，设背景与文字色 */
     body{font:16px/1.65 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif} /* 设置正文字体与行高 */
     h1,h2,h3{font-family:"Playfair Display",serif;letter-spacing:.2px;margin:0 0 .5rem} /* 标题字体与下边距 */
-    h1{font-weight:700;font-size:clamp(28px,4.2vw,44px)} /* 响应式标题1字号 */
+    h1{font-weight:700;font-size:clamp(26px,4.2vw,44px)} /* 响应式标题1字号 */
     h2{font-weight:700;font-size:clamp(22px,3vw,30px)}  /* 响应式标题2字号 */
     h3{font-weight:600;font-size:18px}                  /* 标题3字号 */
     p{margin:.25rem 0 1rem}                             /* 段落间距 */
@@ -263,8 +263,8 @@
           <option>Pump/Spray</option><option>Pot</option><option>Étui/Notice FSC</option>
         </select>
 
-        <label for="subject">Spécifications clés</label> <!-- 规格标签 -->
-        <input id="subject" name="subject" placeholder="Capacité, matériau, décor, MOQ, incoterm (DAP/DDP)…" required> <!-- 规格输入，必填 -->
+        <label for="subject">MOQ (quantité minimale de commande)</label> <!-- 规格标签 -->
+        <input id="subject" name="subject" placeholder="MOQ (quantité minimale de commande)" required> <!-- 规格输入，必填 -->
 
         <label for="message">Brief</label> <!-- 详细需求标签 -->
         <textarea id="message" name="message" rows="4" placeholder="Contexte formule, contraintes, délai cible…"></textarea> <!-- 需求文本域 -->

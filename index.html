@@ -65,7 +65,7 @@
       font-size:18px;
       letter-spacing:.2px;
     }
-    h1{font-weight:700;font-size:clamp(22px,3vw,30px);line-height: 1.65;} /* 响应式标题1字号 */
+    h1{font-weight:700;font-size:clamp(22px,3vw,30px);line-height: 1.25;} /* 响应式标题1字号 */
     h2{font-weight:700;font-size:clamp(22px,3vw,30px)}  /* 响应式标题2字号 */
     /*h3{font-weight:600;font-size:18px}                  /* 标题3字号 */
     p{margin:.25rem 0 1rem}                             /* 段落间距 */
@@ -177,25 +177,32 @@
 
     /* 统一卡片 CTA：品牌色描边的幽灵按钮（默认干净，悬停转为实心） */
     .card .btn-ghost{
-      background: transparent;                          /* 关键：清空背景 */
-      border: 1.5px solid var(--brand);                 /* 用你的品牌色 #2E2A2A */
-      color: var(--brand);
+      background: var(--brand);            /* 默认黑底（#2E2A2A） */
+      color: #fff;                         /* 默认白字 */
+      border: 1.5px solid var(--brand);    /* 边框始终黑 */
       padding: 10px 14px;
       border-radius: 999px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       transition: color .18s ease, background .18s ease,
-                  border-color .18s ease, box-shadow .18s ease;
-      box-shadow: 0 1px 2px rgba(17,24,39,.04);
+                  border-color .18s ease, box-shadow .18s ease,
+                  transform .12s ease;
+      box-shadow: 0 1px 2px rgba(17,24,39,.06);
     }
+    
     .card .btn-ghost:hover{
-      background: var(--brand);                         /* 悬停：实心主色 */
-      color: #fff;
+      background: #fff;                    /* 悬停 → 白底黑字 */
+      color: var(--brand);
       border-color: var(--brand);
-      box-shadow: 0 6px 16px rgba(46,42,42,.18);
+      box-shadow: 0 6px 16px rgba(17,24,39,.12);
     }
+    
+    .card .btn-ghost:active{
+      transform: translateY(1px);          /* 轻微按压感 */
+    }
+    
     .card .btn-ghost:focus-visible{
-      outline: 3px solid rgba(201,169,110,.45);         /* 与 --accent（香槟金）呼应的可达性描边 */
+      outline: 3px solid rgba(201,169,110,.45); /* 与 --accent 呼应的可达性高亮 */
       outline-offset: 2px;
     }
     

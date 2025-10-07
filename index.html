@@ -3,7 +3,7 @@
 <head> <!-- 文档头部（元数据、样式、字体、图标等） -->
   <meta charset="utf-8"> <!-- 使用 UTF-8 编码，支持多语言字符 -->
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 移动端视口设置，防止缩放异常 -->
-  <title>Elmvale – Packaging cosmétique fiable, prêt pour l’échelle</title> <!-- 浏览器标签标题/SEO -->
+  <title>Elmvale Global – Le packaging cosmétique qui tient ses promesses</title> <!-- 浏览器标签标题/SEO -->
   <meta name="description" content="Sourcing & trading d’emballages pour cosmétiques/soins : compatibilité formule, conformité (REACH/ISO 22716, Règlement (CE) 1223/2009), traçabilité, options DAP/DDP."> <!-- 搜索摘要 -->
 
   <meta name="color-scheme" content="light"> <!-- 指示浅色配色（系统可用此信息） -->
@@ -94,10 +94,76 @@
     }
     
     /* ===== Grids / Cards（网格卡片） ===== */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:18px 0} /* 响应式卡片网格 */
-    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)} /* 卡片外观 */
-    .card h3{color:var(--brand)} /* 卡片标题颜色 */
-    .meta{font-size:13px;color:var(--muted)} /* 次级说明文字 */
+    /*.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:18px 0} /* 响应式卡片网格 */
+    /*.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)} /* 卡片外观 */
+    /*.card h3{color:var(--brand)} /* 卡片标题颜色 */
+    /*.meta{font-size:13px;color:var(--muted)} /* 次级说明文字 */
+
+    /* =========================
+   START: styles for new categories grid
+   说明：留白、说明文字、栅格与卡片交互
+   ========================= */
+    .section-categories.pro{
+      margin: clamp(28px, 6vw, 64px) 0 32px; /* 上更大，下适中，自适应 */
+    }
+    .section-categories.pro .subnote{
+      margin: 6px 0 16px;
+      font-size: 14px;
+      color:#657289;
+      letter-spacing:.15px;
+    }
+    
+    /* 自适应栅格：最小 260px，自动换行铺满 */
+    .grid-cards{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: clamp(12px, 2.5vw, 20px);
+    }
+    
+    /* 卡片：轻投影、统一层级、hover 浮起 */
+    .card{
+      background:#fff;
+      border:1px solid rgba(2,6,23,.06);
+      border-radius:16px;
+      padding:16px 16px 14px;
+      box-shadow: 0 1px 2px rgba(2,6,23,.04);
+      display:flex; flex-direction:column; gap:8px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .card:hover, .card:focus-within{
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(2,6,23,.10);
+      border-color: rgba(2,6,23,.12);
+    }
+    .card h3{
+      font-weight:700;
+      font-size: clamp(16px, 2.1vw, 18px);
+      color:#1f2937;
+      margin:0;
+    }
+    .card .meta{
+      font-size:13px;
+      color:#6b7280;
+      margin:0;
+    }
+    .card .specs{
+      margin:0;
+      padding-left:18px;   /* 列表圆点缩进 */
+    }
+    .card .specs li{ margin:.25rem 0; line-height:1.4; }
+    
+    /* “更多”卡（灰底虚线边）+ 小按钮 */
+    .card.more{ background:#f8fafc; border-style:dashed; }
+    .card .btn.ghost{
+      align-self:flex-start; margin-top:6px;
+      border:1px solid #0f766e; color:#0f766e;
+      padding:6px 10px; border-radius:999px;
+      text-decoration:none; font-weight:600;
+    }
+    .card .btn.ghost:hover{ background:#0f766e; color:#fff; }
+    /* =======================
+       END: styles for new categories grid
+       ======================= */
 
     /* ===== Table (Comparison)（对比表） ===== */
     table{width:100%;border-collapse:collapse} /* 表格占满行宽，合并边框 */
@@ -151,7 +217,7 @@
         <source srcset="favicon-hq.svg?v=9" type="image/svg+xml"> <!-- 高分矢量 logo 源 -->
         <img src="favicon-32.png?v=9" alt="Elmvale logo" loading="eager"> <!-- 回退位图 + alt 文本（满足 WCAG 非文本内容要求） -->
       </picture>
-      <span>ELMVALE</span> <!-- 品牌文字 -->
+      <span>ELMVALE GLOBAL</span> <!-- 品牌文字 -->
     </a>
     <nav class="nav" aria-label="Navigation principale"> <!-- 主导航 -->
       <a href="#expertise">Expertise</a> <!-- 跳转到服务栈 -->
@@ -165,7 +231,7 @@
   <main id="main" tabindex="-1"> <!-- 主内容容器；tabindex=-1 便于“跳转链接”聚焦 -->
     <section class="hero" aria-label="Proposition de valeur"> <!-- 首屏价值主张 -->
       <div> <!-- 文案列 -->
-        <h1>Le packaging qui tient ses promesses — du brief à la livraison.</h1> <!-- 标题 -->
+        <h1>Le packaging cosmétique qui tient ses promesses — du brief à la livraison.</h1> <!-- 标题 -->
         <p class="muted"> <!-- 副标题/卖点 -->
           Chaque détail compte : <strong>compatibilité</strong>, <strong>conformité</strong>, <strong>gestes de marque</strong>.
         </p>
@@ -181,37 +247,101 @@
            onerror="this.src='logo-1024.png';this.style.objectFit='contain';this.style.background='#fff';"> <!-- 右侧示意图；加载失败回退到 logo -->
     </section>
 
-    <section aria-label="Catégories">
-      <h2>Gamme packaging beauté</h2>
+    <!-- =========================================
+     START: Updated categories block (UI/UX)
+     说明：全新信息结构 + 可访问语义 + 自适应栅格
+     ========================================= -->
+    <section class="section-categories pro" aria-labelledby="packs-title">
+      <h2 id="packs-title">Gamme packaging beauté</h2>
+    
+      <!-- 可选说明：如不需要删除此 <p> -->
+      <p class="subnote">
+        Compatibilité formule & étanchéité validées sur échantillon maître ; contrôle final AQL (ISO&nbsp;2859-1).
+      </p>
+    
+      <div class="grid-cards" role="list">
+        <article class="card" role="listitem">
+          <h3>Airless</h3>
+          <p class="meta">15–100&nbsp;ml · dosage 0,15–0,50&nbsp;ml</p>
+          <ul class="specs">
+            <li>PP/PETG double paroi, faible résidu</li>
+            <li>Étanchéité validée ; sérigraphie/laquage</li>
+          </ul>
+        </article>
+    
+        <article class="card" role="listitem">
+          <h3>Flacons & compte-gouttes</h3>
+          <p class="meta">15–60&nbsp;ml · verre/PETG · cols 18/410–20/410</p>
+          <ul class="specs">
+            <li>Pipettes & poires au choix, anti-UV possible</li>
+            <li>Ambré/givré/laqué, marquage à chaud</li>
+          </ul>
+        </article>
+    
+        <article class="card" role="listitem">
+          <h3>Tubes</h3>
+          <p class="meta">10–250&nbsp;ml · PE mono/Coex ou aluminium</p>
+          <ul class="specs">
+            <li>Scellage droit/contour, embouts variés</li>
+            <li>Sérigraphie/offset ; PCR 20–50&nbsp;% en option</li>
+          </ul>
+        </article>
+    
+        <article class="card" role="listitem">
+          <h3>Pompes & sprays</h3>
+          <p class="meta">Lotion, crème, fine-mist · cols 18/410–24/410</p>
+          <ul class="specs">
+            <li>Capots transparents/alu anodisé</li>
+            <li>Tests de dose & compatibilité</li>
+          </ul>
+        </article>
+    
+        <article class="card" role="listitem">
+          <h3>Pots</h3>
+          <p class="meta">15–100&nbsp;ml · PP/PETG/PMMA/verre/alu</p>
+          <ul class="specs">
+            <li>Simple ou double paroi ; opercule/insert</li>
+            <li>Soft-touch/galvano, décor coordonné</li>
+          </ul>
+        </article>
+    
+        <article class="card" role="listitem">
+          <h3>Bouchons & capsules</h3>
+          <p class="meta">À vis · disc-top · flip-top</p>
+          <ul class="specs">
+            <li>Filetages standard ; étanchéité & couple</li>
+            <li>Couvercles intérieurs disponibles</li>
+          </ul>
+        </article>
+    
+        <article class="card" role="listitem">
+          <h3>Étuis & notices FSC</h3>
+          <p class="meta">Carton FSC · Pantone/CMJN</p>
+          <ul class="specs">
+            <li>Vernis mat/soft-touch, marquage à chaud</li>
+            <li>Mentions Info-tri/Triman selon cahier</li>
+          </ul>
+        </article>
+    
+        <article class="card" role="listitem">
+          <h3>Accessoires & sets</h3>
+          <p class="meta">Spatules, entonnoirs, plateaux intérieurs</p>
+          <ul class="specs">
+            <li>Kits d’échantillons & colorways pour tests</li>
+          </ul>
+        </article>
+    
+        <!-- “更多”卡：引导沟通 -->
+        <article class="card more" role="listitem">
+          <h3>… et plus encore</h3>
+          <p>Autres formats, recharges, solutions barrière, décors spéciaux.</p>
+          <a class="btn ghost" href="#contact">Parlons de votre besoin</a>
+        </article>
+      </div>
     </section>
-
-    <section id="expertise" class="grid" aria-label="Ce que nous faisons"> <!-- 我们做什么（服务栈） -->
-      <article class="card"> <!-- 服务卡片1 -->
-        <h3>Ingénierie packaging beauté</h3> <!-- 标题 -->
-        <p class="muted">Airless / flacons goutte / pompes / tubes / pots / étuis FSC : choix matériaux, compatibilité formule, décor & finitions.</p> <!-- 描述 -->
-      </article>
-      <article class="card"> <!-- 服务卡片2 -->
-        <h3>Vetting & audits d’usine</h3>
-        <p class="muted">30–50 初筛 → 3–5 样品；验厂（capacité/process/communication），报价与交期对比。</p>
-      </article>
-      <article class="card"> <!-- 服务卡片3 -->
-        <h3>Qualité & conformité</h3>
-        <p class="muted">AQL（ISO 2859-1）抽检；GMP ISO 22716；Règlement (CE) 1223/2009 协同（供应链侧文档与测试对接）。</p>
-      </article>
-      <article class="card"> <!-- 服务卡片4 -->
-        <h3>Supply & logistique</h3>
-        <p class="muted">节拍/物料跟踪；Incoterms DAP/DDP；HS/HTS 初判与清关单证包。</p>
-      </article>
-    </section>
-
-    <section id="catalogue" class="grid" aria-label="Catégories d’emballage"> <!-- 产品品类导航 -->
-      <article class="card"><h3>Airless（真空泵）</h3><p class="muted">PP/PETG/外套玻璃；出量 0.2–1.5 ml；低残留、抗氧化。</p></article> <!-- Airless -->
-      <article class="card"><h3>Flacons & gouttes</h3><p class="muted">抗挥发 & 抗 UV；滴管/泵头流量可选。</p></article> <!-- 滴管/精华瓶 -->
-      <article class="card"><h3>Tubes</h3><p class="muted">单层/复合/铝塑；封尾/易撕；丝印/烫金/局部 UV。</p></article> <!-- 软管 -->
-      <article class="card"><h3>Pompes & sprays</h3><p class="muted">螺牙/卡口通配；阳极氧化铝饰件。</p></article> <!-- 泵/喷头 -->
-      <article class="card"><h3>Pots</h3><p class="muted">玻璃/PP/PMMA/铝；内胆防渗；雾面/防刮手感。</p></article> <!-- 罐类 -->
-      <article class="card"><h3>Étuis & notices FSC</h3><p class="muted">FSC 纸张、环保油墨、Info-tri/Triman 指示。</p></article> <!-- 纸盒/说明书 -->
-    </section>
+    <!-- =======================================
+         END: Updated categories block (UI/UX)
+         ======================================= -->
 
     <section class="card" aria-label="Pourquoi Elmvale ?"> <!-- 差异化对比区 -->
       <h2>Pourquoi Elmvale ?</h2> <!-- 区块标题 -->

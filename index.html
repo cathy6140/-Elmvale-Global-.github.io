@@ -1,213 +1,322 @@
-<!doctype html> <!-- 声明 HTML5 文档类型；让浏览器用标准模式渲染，避免兼容怪异模式。 -->
-<html lang="fr"> <!-- 页面主语言设为法语；利于搜索与辅助技术正确理解内容。 -->
-<head> <!-- 文档头部：放元数据、图标、SEO 标签、样式等；不会直接显示在页面上。 -->
-  <meta charset="utf-8"> <!-- 字符集 UTF-8；避免法语重音/中文乱码。 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 移动端视口：按设备宽度布局，初始缩放 1；让手机端排版正确。 -->
-  <title>Elmvale Global · Sourcing & Trading B2B</title> <!-- 浏览器标签标题与分享默认标题来源之一。 -->
-  <meta name="description" content="Elmvale Global : sourcing et trading B2B. Devis 72h, prototypage, inspection qualité, suivi logistique traçable."> <!-- SEO 摘要：搜索结果摘要的主要候选。 -->
-  <link rel="canonical" href="https://www.elmvaleglobal.com/"> <!-- 规范链接：告诉搜索引擎该页面的首选 URL，收敛重复页面信号。 -->
+<!doctype html> <!-- 文档类型声明，启用标准模式 -->
+<html lang="fr"> <!-- 指定页面主语言为法语，便于辅助技术与SEO -->
+<head> <!-- 文档头部（元数据、样式、字体、图标等） -->
+  <meta charset="utf-8"> <!-- 使用 UTF-8 编码，支持多语言字符 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 移动端视口设置，防止缩放异常 -->
+  <title>Elmvale – Packaging cosmétique fiable, prêt pour l’échelle</title> <!-- 浏览器标签标题/SEO -->
+  <meta name="description" content="Sourcing & trading d’emballages pour cosmétiques/soins : compatibilité formule, conformité (REACH/ISO 22716, Règlement (CE) 1223/2009), traçabilité, options DAP/DDP."> <!-- 搜索摘要 -->
 
-  <!-- 站点图标（favicon / 应用图标）：现代浏览器优先用 SVG，其次 PNG 回退，iOS 需 apple-touch-icon，PWA 用 manifest。 -->
-  <link rel="shortcut icon" href="/favicon.ico?v=6"> <!-- 强制浏览器/CDN 认为这是一个“新地址”，从而重新下载最新文件，不再用之前的缓存。 -->
-  <link rel="icon" href="favicon-32.png?v=6" type="image/png" sizes="32x32"> <!-- 回退：常见 32×32 PNG。 -->
-  <link rel="icon" href="favicon-16.png?v=6" type="image/png" sizes="16x16"> <!-- 回退：常见 16×16 PNG（旧环境）。 -->
-  <link rel="icon" href="favicon-hq.svg?v=6" type="image/svg+xml" sizes="any"> <!-- 页签图标（优先）：高清且可缩放的 SVG。 -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=6" sizes="180x180"> <!-- iOS 主屏图标：用户“添加到主屏幕”时使用，建议 180×180 PNG。 -->
-  <!--link rel="manifest" href="/site.webmanifest"> <!-- Web App Manifest：PWA 安装时提供名称/图标/主题色等信息。 -->
+  <meta name="color-scheme" content="light"> <!-- 指示浅色配色（系统可用此信息） -->
+  <meta name="theme-color" content="#FAF9F7"> <!-- 移动浏览器地址栏主题色 -->
 
-  <!-- Open Graph（社交分享卡片）：控制链接在社交平台的标题/描述/封面图。 -->
-  <meta property="og:type" content="website"> <!-- OG 类型：网站。 -->
-  <meta property="og:locale" content="fr_FR"> <!-- OG 语言区域：法语（法国）。 -->
-  <meta property="og:title" content="Elmvale Global · Sourcing & Trading B2B"> <!-- OG 标题。 -->
-  <meta property="og:description" content="Devis 72h, prototypage, QC, logistique traçable."> <!-- OG 摘要。 -->
-  <meta property="og:url" content="https://www.elmvaleglobal.com/"> <!-- OG URL：标识该页面的永久地址。 -->
-  <meta property="og:image" content="https://www.elmvaleglobal.com/og-cover.jpg"> <!-- OG 封面图：分享卡片的缩略图。 -->
+  <!-- Favicons（站点图标：带版本号强制刷新缓存） -->
+  <link rel="icon" href="favicon-hq.svg?v=9" type="image/svg+xml" sizes="any"> <!-- SVG 图标，缩放清晰 -->
+  <link rel="icon" href="favicon-32.png?v=9" type="image/png" sizes="32x32"> <!-- 32px PNG 图标 -->
+  <link rel="icon" href="favicon-16.png?v=9" type="image/png" sizes="16x16"> <!-- 16px PNG 图标 -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=9" sizes="180x180"> <!-- iOS 主屏图标 -->
+  <link rel="shortcut icon" href="favicon.ico?v=9"> <!-- 兼容旧浏览器的 ICO -->
+  <link rel="manifest" href="site.webmanifest?v=9"> <!-- PWA manifest（声明图标等） -->
 
-  <!-- 结构化数据（JSON-LD）：向搜索引擎声明“组织”信息（名称/网址/Logo/可用语种等）。 -->
-  <script type="application/ld+json"> /* JSON-LD 脚本：机器可读，页面上不显示。 */
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Elmvale Global",
-    "url":"https://www.elmvaleglobal.com/",
-    "logo":"https://www.elmvaleglobal.com/logo.png",
-    "contactPoint":[{
-      "@type":"ContactPoint",
-      "contactType":"sales",
-      "email":"contact@elmvaleglobal.com",
-      "areaServed":"Worldwide",
-      "availableLanguage":["fr","en","zh-CN"]
-    }]
-  }
-  </script> <!-- JSON-LD 结束。 -->
+  <!-- Web fonts：标题衬线 + 正文字体；预连接与 display=swap 优化首屏渲染 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <!-- 提前连接 Google Fonts 域名 -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- 预连接字体静态资源域名 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> <!-- 引入 Inter 与 Playfair Display 字体 -->
 
-  <style>
-    /* ===== 设计系统变量：统一配色与文本色，便于全站维护 ===== */
+  <style> /* 站内样式（小型站点直接内联，减少请求） */
+    /* ===== Design Tokens（法式“静奢”中性配色） ===== */
     :root{
-      --green:#184F3D;       /* 品牌深绿（主色） */
-      --green-2:#0F3D2E;     /* 品牌深绿的深一点版本（按钮） */
-      --amber:#FFB340;       /* 强调色（CTA 背景） */
-      --bg:#F8FAFC;          /* 页面浅灰背景 */
-      --fg:#0F172A;          /* 正文深色 */
-      --muted:#475569;       /* 次要文字灰 */
-      --line:#E2E8F0;        /* 分隔线/边框色 */
+      --bg:#FAF9F7;         /* 页面背景：象牙米白 */
+      --surface:#FFFFFF;    /* 卡片/导航表面色 */
+      --text:#1F2937;       /* 正文深石墨（确保 AA 对比） */
+      --muted:#6B7280;      /* 次级文字颜色 */
+      --line:#E5E7EB;       /* 分隔线/描边颜色 */
+
+      --brand:#2E2A2A;      /* 主按钮/标题点缀深咖 */
+      --accent:#C9A96E;     /* 香槟金：小范围强调/hover 线 */
+      --blush:#F3ECE7;      /* 首屏柔光底色（腮红粉） */
+
+      --r:16px;             /* 统一圆角 */
+      --shadow:0 1px 2px rgba(17,24,39,.06), 0 8px 24px rgba(17,24,39,.06); /* 柔和阴影 */
+      --wrap:1120px;        /* 内容最大宽度容器 */
     }
 
-    /* ===== 全局基础：重置边框模型 & 基础排版 ===== */
-    *{box-sizing:border-box}                              /* 统一盒模型，宽高计算更直观。 */
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto;color:var(--fg);background:var(--bg)} /* 默认字体/行高/文本色/背景色。 */
-    img{max-width:100%;display:block}                     /* 图片自适应容器宽度，避免撑破布局。 */
+    /* ===== Base / A11y（基础排版与可访问性） ===== */
+    *{box-sizing:border-box} /* 边框盒模型，易于计算尺寸 */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text)} /* 清除默认边距，设背景与文字色 */
+    body{font:16px/1.65 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif} /* 设置正文字体与行高 */
+    h1,h2,h3{font-family:"Playfair Display",serif;letter-spacing:.2px;margin:0 0 .5rem} /* 标题字体与下边距 */
+    h1{font-weight:700;font-size:clamp(28px,4.2vw,44px)} /* 响应式标题1字号 */
+    h2{font-weight:700;font-size:clamp(22px,3vw,30px)}  /* 响应式标题2字号 */
+    h3{font-weight:600;font-size:18px}                  /* 标题3字号 */
+    p{margin:.25rem 0 1rem}                             /* 段落间距 */
+    a{color:inherit}                                     /* 链接继承文本色，保持低调风格 */
+    .wrap{max-width:var(--wrap);margin:auto;padding:22px} /* 居中包裹容器，左右留白 */
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden} /* 跳到主内容的“跳转链接”初始隐藏（a11y） */
+    .skip:focus{position:static;width:auto;height:auto;background:#fff;border:2px solid var(--accent);padding:6px;border-radius:8px} /* 键盘聚焦时可见 */
 
-    /* ===== 页面容器与顶部导航 ===== */
-    .wrap{max-width:1000px;margin:auto;padding:24px}      /* 居中主容器，留出左右空白。 */
-    .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0} /* 顶栏：品牌与导航左右分布。 */
-    .brand{
-      display:flex;           /* 让 logo 与文字横向排列 */
-      align-items:center;     /* 垂直居中 */
-      gap:10px;               /* logo 与文字的间距 */
-      font-weight:700;
-      color:var(--green);
-      text-decoration:none;   /* 作为链接时去下划线 */
-    }            /* 品牌文字：加粗+品牌色。 */
-    .brand img{
-      width:28px; height:28px;         /* 与上面 HTML 的尺寸保持一致 */
-      display:block; object-fit:contain;
-      /* 如果想要圆头像效果，打开下一行： */
-      /* border-radius:50%; */
+    /* ===== Topbar（顶部导航） ===== */
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 0} /* 水平布局，左右分散 */
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-weight:700} /* 品牌区：logo+文字 */
+    .brand img{width:28px;height:28px;display:block} /* 顶部小 logo 尺寸 */
+    .nav a{margin-left:18px;text-decoration:none;color:var(--text)} /* 导航链接间距与颜色 */
+    .nav .cta-link{padding:8px 12px;border:1px solid var(--line);border-radius:999px} /* 顶部右侧轻量按钮 */
+    .nav .cta-link:hover{border-color:var(--accent)} /* 悬停细节：香槟金描边 */
+
+    /* ===== Buttons（按钮样式） ===== */
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:var(--shadow)} /* 实心主按钮 */
+    .btn:hover{background:#23201F} /* 主按钮 hover 加深 */
+    .btn-ghost{display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid var(--line);text-decoration:none} /* 线框次按钮 */
+    .btn-ghost:hover{border-color:var(--accent)} /* 次按钮 hover 边框变金色 */
+
+    /* ===== Hero（首屏区） ===== */
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center; /* 文案/图片两列栅格布局 */
+      background:linear-gradient(180deg, var(--blush), #fff 60%); /* 柔和渐变背景 */
+      border:1px solid var(--line);border-radius:calc(var(--r) + 4px);padding:28px;box-shadow:var(--shadow); /* 卡片化样式 */
+      margin:18px 0 12px; /* 上下外边距 */
     }
-    .nav a{margin-left:16px;text-decoration:none;color:var(--fg)} /* 导航链接：去下划线、左距。 */
-    .nav .cta{background:var(--green);color:#fff;padding:8px 12px;border-radius:10px} /* 顶栏 CTA：深绿圆角按钮。 */
-
-    /* ===== 首屏（Hero）模块：左文右图卡片 ===== */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin:24px 0;padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff} /* 双栏网格+卡片化。 */
-    .hero .muted{color:var(--muted)}                      /* 首屏说明文字变浅色。 */
-    .bullets{margin:12px 0 16px;padding-left:18px}        /* 要点列表：外边距与缩进。 */
-    .cta{display:inline-block;background:var(--amber);color:#000;padding:10px 14px;border-radius:10px;text-decoration:none} /* 主 CTA：琥珀色醒目按钮。 */
-
-    /* ===== 信任背书（胶囊标签） ===== */
-    .proof{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0} /* 胶囊容器：可换行。 */
-    .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px} /* 单个胶囊：白底、细边、极大圆角。 */
-
-    /* ===== 服务网格卡片 ===== */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:18px 0} /* 自适应网格：根据宽度自动列数。 */
-    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px} /* 卡片基础样式。 */
-    .card h3{margin:0 0 6px;color:var(--green)}          /* 卡片标题置顶、品牌色。 */
-    .meta{font-size:13px;color:var(--muted)}             /* 交付物/时效的小字说明。 */
-
-    /* ===== 四步流程时间轴 ===== */
-    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0} /* 等宽四步，窄屏自动换行。 */
-    .timeline div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px} /* 流程步骤卡片。 */
-
-    /* ===== 联系表单与页脚 ===== */
-    .contact .form{display:grid;gap:10px;max-width:520px} /* 表单布局：单列栅格，限定宽度。 */
-    input,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px} /* 输入控件：圆角+边框。 */
-    button{background:var(--green-2);color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer} /* 按钮：深绿、圆角、可点击指针。 */
-    .foot{margin:24px 0;color:#64748B;font-size:14px;text-align:center} /* 页脚：淡灰小字、居中。 */
-
-    /* ===== 响应式适配（≤840px） ===== */
-    @media (max-width:840px){           /* 针对手机/平板的断点。 */
-      .hero{grid-template-columns:1fr}  /* 首屏从双列改成单列（图文竖排）。 */
-      .nav{display:none}                /* 隐藏顶部导航（保持简洁）。 */
+    .hero p.muted{color:var(--muted)} /* 首屏副文案颜色 */
+    .bullets{margin:.5rem 0 1rem;padding-left:1.2rem} /* 要点列表间距与缩进 */
+    .bullets li{margin:.3rem 0} /* 列表项间距 */
+    .hero img{
+      border-radius:var(--r);background:#fff;border:1px solid var(--line); /* 图片外观：圆角+描边 */
+      width:100%;height:auto;object-fit:cover; /* 图片自适应容器 */
     }
-  </style> <!-- 样式结束。 -->
+
+    /* ===== Chips / Metrics（小胶囊/指标条） ===== */
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 22px} /* 胶囊容器：可换行 */
+    .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:#374151} /* 胶囊样式 */
+
+    /* ===== Grids / Cards（网格卡片） ===== */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:18px 0} /* 响应式卡片网格 */
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)} /* 卡片外观 */
+    .card h3{color:var(--brand)} /* 卡片标题颜色 */
+    .meta{font-size:13px;color:var(--muted)} /* 次级说明文字 */
+
+    /* ===== Table (Comparison)（对比表） ===== */
+    table{width:100%;border-collapse:collapse} /* 表格占满行宽，合并边框 */
+    th,td{border-top:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top} /* 单元格边线与内边距 */
+    thead th{border-top:0;color:#374151} /* 表头样式 */
+    tbody tr:hover{background:#F7F7F6} /* 行 hover 轻微底色 */
+
+    /* ===== Timeline（流程时间轴） ===== */
+    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0} /* 流程卡片栅格 */
+    .timeline .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px} /* 单步卡片外观 */
+    .step strong{color:var(--brand)} /* 步骤标题着色 */
+
+    /* ===== Contact（联系/表单） ===== */
+    .contact .form{display:grid;gap:10px;max-width:540px} /* 表单宽度与行距 */
+    label{font-weight:600} /* 标签加粗更易读 */
+    input,textarea,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff} /* 表单控件统一外观 */
+    button{background:var(--brand);color:#fff;border:0;border-radius:999px;padding:12px 18px;cursor:pointer} /* 提交按钮 */
+    button:hover{background:#23201F} /* 按钮 hover */
+
+    /* ===== Footer（页脚） ===== */
+    .foot{margin:28px 0;color:#6B7280;font-size:14px;text-align:center} /* 页脚文字样式 */
+    .foot a{color:#374151;text-decoration:underline} /* 页脚链接高可见 */
+
+    /* ===== Cookie banner（CNIL：拒绝与接受同等容易） ===== */
+    .cookie-banner{
+      position:fixed;left:16px;right:16px;bottom:16px;z-index:9999; /* 固定底部，覆盖性强 */
+      background:var(--surface);border:1px solid var(--line);border-radius:14px; /* 卡片外观 */
+      padding:14px;box-shadow:var(--shadow);display:none /* 默认隐藏，未选择时显示 */
+    }
+    .cookie-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px} /* 按钮容器排版 */
+    .cookie-actions button{flex:1 1 180px;padding:10px 14px;border-radius:999px;border:1px solid var(--line);cursor:pointer} /* 统一按钮基样式 */
+    .cookie-accept{background:var(--brand);color:#fff;border-color:var(--brand)} /* 接受：实心主按钮 */
+    .cookie-reject{background:#fff;color:#111;border-color:var(--line)} /* 拒绝：与接受并列且同等显著 */
+    .cookie-pref{background:#fff;color:#111} /* 偏好设置按钮（占位） */
+
+    /* ===== Responsive（响应式） ===== */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr} /* 小屏首屏改一列 */
+      .nav{display:none}              /* 小屏隐藏顶栏右侧导航（简化） */
+    }
+  </style>
 </head>
+<body> <!-- 页面主体开始 -->
+<a href="#main" class="skip">Aller au contenu principal</a> <!-- 跳转到主内容的可访问性链接 -->
 
-<body> <!-- 页面主体开始：用户可见内容。 -->
-<div class="wrap"> <!-- 居中容器：限制最大宽度并居中。 -->
-
-  <header class="topbar">
-  <!-- 点击品牌回到首页；用 picture 优先加载 SVG，旧浏览器回退到 PNG -->
-    <a class="brand" href="./">
-      <picture>
-        <source srcset="favicon-hq.svg?v=6" type="image/svg+xml">
-        <img src="favicon-32.png?v=6" width="28" height="28" alt="Elmvale Global logo" loading="eager">
+<div class="wrap"> <!-- 页面居中容器 -->
+  <!-- 顶部：ARIA banner（header 语义自带地标，role 在需要时可补充） -->
+  <header class="topbar" role="banner"> <!-- 站点全局头部（ARIA 地标：banner） -->
+    <a class="brand" href="./" aria-label="Elmvale – Accueil"> <!-- 点击回首页的品牌区 -->
+      <picture> <!-- 自适应图像容器：优先用 SVG -->
+        <source srcset="favicon-hq.svg?v=9" type="image/svg+xml"> <!-- 高分矢量 logo 源 -->
+        <img src="favicon-32.png?v=9" alt="Elmvale logo" loading="eager"> <!-- 回退位图 + alt 文本（满足 WCAG 非文本内容要求） -->
       </picture>
-      <span>ELMVALE GLOBAL</span>
+      <span>ELMVALE</span> <!-- 品牌文字 -->
     </a>
-
-    <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#process">Méthode</a>
-      <a href="#cases">Cas</a>
-      <a class="cta" href="#contact">Devis 72h</a>
+    <nav class="nav" aria-label="Navigation principale"> <!-- 主导航 -->
+      <a href="#expertise">Expertise</a> <!-- 跳转到服务栈 -->
+      <a href="#catalogue">Catégories</a> <!-- 跳转到品类 -->
+      <a href="#process">Méthode</a> <!-- 跳转到流程 -->
+      <a class="cta-link" href="#contact">Contact</a> <!-- 呼叫动作：联系 -->
     </nav>
   </header>
 
-  <section class="hero"> <!-- 首屏（价值主张区）：左文字右配图的卡片。 -->
-    <div> <!-- 左侧文案列。 -->
-      <h1>Elmvale Global — Racines fiables, croissance à l’échelle</h1> <!-- 主标题：用一句话说明价值主张。 -->
-      <p class="muted">Réponse 24h,devis indicatif sous 72h, prototypage & inspection tierce, suivi logistique traçable (SLA à chaque jalon).</p> <!-- 补充说明：强调时效与可追溯。 -->
-      <ul class="bullets"> <!-- 三个关键利益点（项目符号）。 -->
-        <li>Devis DDP/DDU sous 72h</li> <!-- 要点 1：72 小时报价。 -->
-        <li>Échantillons rapides & rapports QC</li> <!-- 要点 2：打样与质检报告。 -->
-        <li>Suivi livraison + documents de conformité</li> <!-- 要点 3：交付跟踪与合规文件。 -->
-      </ul>
-      <a class="cta" href="#contact">Demander un devis</a> <!-- 主 CTA：锚点滚动到联系表单。 -->
-    </div>
-    <!--img src="hero.jpg" alt="Chaîne d'approvisionnement" loading="lazy"> <!-- 右侧配图：设置替代文本 & 延迟加载以提速。 -->
-  </section>
+  <!-- 主内容区域：ARIA main（main 元素自带地标） -->
+  <main id="main" tabindex="-1"> <!-- 主内容容器；tabindex=-1 便于“跳转链接”聚焦 -->
+    <section class="hero" aria-label="Proposition de valeur"> <!-- 首屏价值主张 -->
+      <div> <!-- 文案列 -->
+        <h1>Packaging cosmétique fiable, prêt pour l’échelle.</h1> <!-- 标题 -->
+        <p class="muted"> <!-- 副标题/卖点 -->
+          Sourcing & trading d’emballages pour cosmétiques/soins : <strong>compatibilité formule</strong>,
+          <strong>conformité</strong> (REACH / ISO 22716, Règlement (CE) 1223/2009), <strong>traçabilité</strong>, options <strong>DAP/DDP</strong>.
+        </p>
+        <ul class="bullets"> <!-- 三个要点列表 -->
+          <li><strong>Compatibilité & tests</strong> : stabilité/étanchéité, transport (ISTA 3A) coordonnables</li> <!-- 兼容性/测试 -->
+          <li><strong>Qualité & conformité</strong> : AQL（ISO 2859-1），GMP ISO 22716；étiquetage/arts en pré-contrôle</li> <!-- 质量/合规 -->
+          <li><strong>Durable</strong> : PCR/GRS traçable, FSC 纸品, Info-tri/Triman（selon applicable）</li> <!-- 可持续/回收提示 -->
+        </ul>
+        <a class="btn" href="#contact">Demander un brief call</a> <!-- 主按钮：预约交流 -->
+        <a class="btn-ghost" href="#catalogue" style="margin-left:8px">Voir les catégories</a> <!-- 次按钮：看品类 -->
+      </div>
+      <img src="hero.jpg" alt="Visuels packaging beauté (airless, flacons, tubes)"
+           onerror="this.src='logo-1024.png';this.style.objectFit='contain';this.style.background='#fff';"> <!-- 右侧示意图；加载失败回退到 logo -->
+    </section>
 
-  <section class="proof"> <!-- 社会证明/信任背书：以“胶囊标签”简洁展示覆盖范围与合规能力。 -->
-    <div class="pill">Catégories : packaging, textile, ménager, électronique légère</div> <!-- 覆盖品类。 -->
-    <div class="pill">Territoires : UE, UK, Amérique du Nord, ASEAN</div> <!-- 覆盖区域。 -->
-    <div class="pill">Conformité : COO, COC, MSDS, REACH</div> <!-- 合规文件。 -->
-  </section>
+    <section class="chips" aria-label="Indicateurs"> <!-- 立即可扫读的能力/合规标签 -->
+      <span class="chip"><strong>Audits & due diligence</strong> usine</span> <!-- 审厂/尽调 -->
+      <span class="chip"><strong>AQL / ISO 2859-1</strong> (QC tiers sur demande)</span> <!-- 抽检标准，第三方 QC 可选 -->
+      <span class="chip"><strong>DAP / DDP</strong> – responsabilités claires</span> <!-- 贸易术语清晰划分 -->
+      <span class="chip"><strong>FSC / PCR / GRS</strong> – traçabilité</span> <!-- 可持续/链路可追溯 -->
+    </section>
 
-  <section id="services" class="grid"> <!-- 服务模块：自适应网格卡片。 -->
-    <article class="card">
-      <h3>Sourcing & devis</h3> <!-- 服务项标题。 -->
-      <p class="muted">Shortlist fournisseurs vérifiés + prix rendus (DAP/DDU/DDP).</p> <!-- 服务描述。 -->
-      <div class="meta">Livrable : liste chiffrée · Délai : 72h</div> <!-- 交付物与时效。 -->
-    </article>
-    <article class="card">
-      <h3>Prototypage</h3>
-      <p class="muted">Échantillons rapides, itérations emballage & marquage.</p>
-      <div class="meta">Livrable : photos/vidéos · Délai : 7–14 j</div>
-    </article>
-    <article class="card">
-      <h3>Qualité & audit</h3>
-      <p class="muted">Inspection tierce (AQL), audit d’usine & conformité.</p>
-      <div class="meta">Livrable : rapport QC · Délai : J+1</div>
-    </article>
-    <article class="card">
-      <h3>Livraison & docs</h3>
-      <p class="muted">Suivi traçable, douane & dossiers requis selon marché.</p>
-      <div class="meta">Livrable : tracking + docs · Continu</div>
-    </article>
-  </section>
+    <section id="expertise" class="grid" aria-label="Ce que nous faisons"> <!-- 我们做什么（服务栈） -->
+      <article class="card"> <!-- 服务卡片1 -->
+        <h3>Ingénierie packaging beauté</h3> <!-- 标题 -->
+        <p class="muted">Airless / flacons goutte / pompes / tubes / pots / étuis FSC : choix matériaux, compatibilité formule, décor & finitions.</p> <!-- 描述 -->
+      </article>
+      <article class="card"> <!-- 服务卡片2 -->
+        <h3>Vetting & audits d’usine</h3>
+        <p class="muted">30–50 初筛 → 3–5 样品；验厂（capacité/process/communication），报价与交期对比。</p>
+      </article>
+      <article class="card"> <!-- 服务卡片3 -->
+        <h3>Qualité & conformité</h3>
+        <p class="muted">AQL（ISO 2859-1）抽检；GMP ISO 22716；Règlement (CE) 1223/2009 协同（供应链侧文档与测试对接）。</p>
+      </article>
+      <article class="card"> <!-- 服务卡片4 -->
+        <h3>Supply & logistique</h3>
+        <p class="muted">节拍/物料跟踪；Incoterms DAP/DDP；HS/HTS 初判与清关单证包。</p>
+      </article>
+    </section>
 
-  <section id="process" class="timeline"> <!-- 四步流程：简短、好理解。 -->
-    <div><strong>1. Brief</strong><span> — cible prix/MOQ/délai</span></div> <!-- 定义目标价格/MOQ/交期。 -->
-    <div><strong>2. Devis 72h</strong><span> — shortlist + coûts rendus</span></div> <!-- 72 小时报价与候选清单。 -->
-    <div><strong>3. Échantillon & QC</strong><span> — validation + rapport</span></div> <!-- 打样与质检报告。 -->
-    <div><strong>4. Livraison</strong><span> — suivi & conformité</span></div> <!-- 交付跟踪与合规。 -->
-  </section>
+    <section id="catalogue" class="grid" aria-label="Catégories d’emballage"> <!-- 产品品类导航 -->
+      <article class="card"><h3>Airless（真空泵）</h3><p class="muted">PP/PETG/外套玻璃；出量 0.2–1.5 ml；低残留、抗氧化。</p></article> <!-- Airless -->
+      <article class="card"><h3>Flacons & gouttes</h3><p class="muted">抗挥发 & 抗 UV；滴管/泵头流量可选。</p></article> <!-- 滴管/精华瓶 -->
+      <article class="card"><h3>Tubes</h3><p class="muted">单层/复合/铝塑；封尾/易撕；丝印/烫金/局部 UV。</p></article> <!-- 软管 -->
+      <article class="card"><h3>Pompes & sprays</h3><p class="muted">螺牙/卡口通配；阳极氧化铝饰件。</p></article> <!-- 泵/喷头 -->
+      <article class="card"><h3>Pots</h3><p class="muted">玻璃/PP/PMMA/铝；内胆防渗；雾面/防刮手感。</p></article> <!-- 罐类 -->
+      <article class="card"><h3>Étuis & notices FSC</h3><p class="muted">FSC 纸张、环保油墨、Info-tri/Triman 指示。</p></article> <!-- 纸盒/说明书 -->
+    </section>
 
-  <section id="cases" class="grid"> <!-- 简短成果/案例：量化指标更可信。 -->
-    <article class="card">
-      <h3>Emballage cosmétique – UE</h3>
-      <p class="muted">Coût ↓18%, délai ↓9 j, conformité REACH fournie.</p>
-    </article>
-    <article class="card">
-      <h3>Home & Living – UK</h3>
-      <p class="muted">Taux défaut &lt; 0,7%, inspection AQL 2.5 à l’expédition.</p>
-    </article>
-  </section>
+    <section class="card" aria-label="Pourquoi Elmvale ?"> <!-- 差异化对比区 -->
+      <h2>Pourquoi Elmvale ?</h2> <!-- 区块标题 -->
+      <div style="overflow:auto"> <!-- 让表格在小屏可横向滚动 -->
+        <table aria-label="Comparatif"> <!-- 对比表：我们 vs 平台/传统贸易 -->
+          <thead>
+            <tr><th></th><th>Elmvale</th><th>Plateformes RFQ</th><th>Trade company générique</th></tr> <!-- 表头 -->
+          </thead>
+          <tbody>
+            <tr><td>Accès direct usine</td><td><strong>Oui</strong></td><td>Non（中间商）</td><td>Souvent non</td></tr> <!-- 直连工厂 -->
+            <tr><td>Vetting & due diligence</td><td><strong>30–50 初筛 / 3–5 样品 / 验厂</strong></td><td>Minimal</td><td>Variable</td></tr> <!-- 尽调深度 -->
+            <tr><td>Personnalisation packaging</td><td><strong>De bout en bout</strong></td><td>Limité</td><td>Dépend MOQ</td></tr> <!-- 定制能力 -->
+            <tr><td>Qualité & QC (AQL)</td><td><strong>Standardisé</strong>（可选第三方）</td><td>Minimal</td><td>Variable</td></tr> <!-- 质量体系 -->
+            <tr><td>Conformité marché</td><td><strong>REACH / ISO 22716 / 1223/2009</strong></td><td>Non</td><td>Variable</td></tr> <!-- 合规协同 -->
+            <tr><td>Scalabilité & délais</td><td><strong>节拍化</strong>（可复制）</td><td>Faible</td><td>Inconstant</td></tr> <!-- 可扩张/交期稳定性 -->
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <section id="contact" class="contact"> <!-- 联系区：邮箱/WhatsApp + 表单三合一。 -->
-    <h2>Parlons de votre projet</h2> <!-- 分区标题。 -->
-    <p class="muted">contact@elmvaleglobal.com · WhatsApp +86 130 6260 1713</p> <!-- 快速联系方式。 -->
-    <form action="https://formspree.io/f/xjkaopok" method="POST" class="form"> <!-- 表单提交地址（把 xxxxxx 换成你的端点）。 -->
-      <input name="email" type="email" placeholder="Votre e-mail" required> <!-- 邮件输入（HTML5 校验）。 -->
-      <input name="subject" placeholder="Produit / quantité / délai" required> <!-- 主题/需求概述。 -->
-      <textarea name="message" rows="4" placeholder="Brief (spécifications, packaging, destination)…"></textarea> <!-- 详细需求。 -->
-      <button type="submit">Envoyer</button> <!-- 提交按钮。 -->
-    </form>
-  </section>
+    <section id="process" class="timeline" aria-label="Méthode"> <!-- 方法/流程 -->
+      <div class="step"><strong>1. Brief & specs</strong><br><span class="meta">功效/配方敏感点 · 容量/螺牙 · 工艺/色号 · 市场/认证</span></div> <!-- 明确规格与限制 -->
+      <div class="step"><strong>2. Sourcing & échantillons</strong><br><span class="meta">30–50 初筛 → 3–5 样品；打样与改进</span></div> <!-- 供应商筛选与打样 -->
+      <div class="step"><strong>3. Audit & QC</strong><br><span class="meta">验厂/能力核验 · AQL（ISO 2859-1）；第三方检验按需（客户承担）</span></div> <!-- 验厂与抽检 -->
+      <div class="step"><strong>4. Production & livraison</strong><br><span class="meta">里程碑跟踪 · DAP / DDP · 单证打包 · 物流可追踪</span></div> <!-- 量产与交付 -->
+    </section>
 
-  <footer class="foot">© <span id="y"></span> Elmvale Global · Sourcing & Trading</footer> <!-- 页脚：版权年份自动填充。 -->
-</div> <!-- 主容器结束。 -->
+    <section class="card" aria-label="FAQ"> <!-- 常见问题 -->
+      <h2>FAQ</h2> <!-- FAQ 标题 -->
+      <details><summary>Quelles obligations de conformité pour l’UE ?</summary>
+        <p>我们协同供应链侧文件与测试：GMP ISO 22716、原材料与接触材料合规、必要时第三方实验室；品牌/实验室作为“责任主体”，应确保符合 <em>Règlement (CE) 1223/2009</em> 的产品合规与标签。具体口径在项目立项时确认。</p>
+      </details>
+      <details><summary>Faites-vous une inspection tierce ?</summary>
+        <p>可按需对接 SGS/BV/Intertek 按 <strong>ISO 2859-1（AQL）</strong> 抽检；<strong>费用由客户承担</strong>。报告一般 24–48h 出具（以机构为准）。</p>
+      </details>
+      <details><summary>Différence entre DAP et DDP ?</summary>
+        <p><strong>DAP</strong> ：卖方负责送达指定地点但进口清关与税费由买方承担；<strong>DDP</strong> ：卖方到门含税（清关与税费由卖方承担）。我们可同时提供两种方案供比较。</p>
+      </details>
+    </section>
 
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script> <!-- 小脚本：把当前年份写入页脚，免去每年手改。 -->
+    <section id="contact" class="contact" aria-label="Contact"> <!-- 联系/询盘表单 -->
+      <h2>Parlons de votre projet</h2> <!-- 联系标题 -->
+      <p class="meta">hello@elmvaleglobal.com · WhatsApp +xx xxxxxxxxx</p> <!-- 联系方式 -->
+      <form class="form" action="https://formspree.io/f/xxxxxxxx" method="POST"> <!-- 使用 Formspree 处理简易表单提交 -->
+        <label for="email">E-mail</label> <!-- 邮箱标签（无障碍） -->
+        <input id="email" name="email" type="email" placeholder="Votre e-mail" required> <!-- 邮箱输入，必填并校验格式 -->
+
+        <label for="categorie">Catégorie d’emballage</label> <!-- 类别选择标签 -->
+        <select id="categorie" name="categorie" required> <!-- 类别下拉框，必选 -->
+          <option value="">Sélectionnez…</option> <!-- 占位项 -->
+          <option>Airless</option><option>Flacon & Goutte</option><option>Tube</option> <!-- 选项：常见品类 -->
+          <option>Pump/Spray</option><option>Pot</option><option>Étui/Notice FSC</option>
+        </select>
+
+        <label for="subject">Spécifications clés</label> <!-- 规格标签 -->
+        <input id="subject" name="subject" placeholder="Capacité, matériau, décor, MOQ, incoterm (DAP/DDP)…" required> <!-- 规格输入，必填 -->
+
+        <label for="message">Brief</label> <!-- 详细需求标签 -->
+        <textarea id="message" name="message" rows="4" placeholder="Contexte formule, contraintes, délai cible…"></textarea> <!-- 需求文本域 -->
+
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"> <!-- 反垃圾蜜罐：隐藏字段 -->
+        <button type="submit">Envoyer</button> <!-- 提交按钮 -->
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot" role="contentinfo"> <!-- 页脚（ARIA contentinfo 地标） -->
+    © <span id="y"></span> Elmvale · Packaging beauté · <!-- 动态年份容器 -->
+    <a href="mentions-legales.html">Mentions légales</a> · <!-- 法国法律信息页链接（占位） -->
+    <a href="privacy.html">Politique de confidentialité</a> · <!-- 隐私政策页链接（占位） -->
+    <a href="cookies.html">Gestion des cookies</a> <!-- Cookies 政策页链接（占位） -->
+  </footer>
+</div>
+
+<!-- Cookie 横幅（CNIL：拒绝=接受同等容易；此处仅记录选择，不注入追踪脚本） -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Bannière cookies">
+  <div><strong>Cookies</strong> : nous utilisons uniquement des cookies essentiels au fonctionnement du site.
+    Si nous ajoutons des mesures d’audience, vous pourrez <em>accepter</em> ou <em>refuser</em> ici en un clic.
+    Consultez la <a href="cookies.html">politique cookies</a>. <!-- 横幅说明与政策链接 -->
+  </div>
+  <div class="cookie-actions"> <!-- 三个操作按钮：接受/拒绝/偏好 -->
+    <button class="cookie-reject" id="cookie-reject">Tout refuser</button> <!-- 拒绝全部（与接受并列，满足 CNIL 导向） -->
+    <button class="cookie-accept" id="cookie-accept">Tout accepter</button> <!-- 接受全部 -->
+    <button class="cookie-pref" id="cookie-pref">Préférences</button> <!-- 偏好设置（示例占位） -->
+  </div>
+</div>
+
+<script> /* 页面脚本：年份与 Cookie 选择逻辑 */
+  document.getElementById('y').textContent = new Date().getFullYear(); // 将当前年份写入页脚
+
+  const B = document.getElementById('cookie-banner'); // 获取 Cookie 横幅元素
+  const S = localStorage.getItem('cookieConsent'); // 读取用户之前的 Cookie 选择（本地存储）
+  if(!S) B.style.display = 'block'; // 若无选择记录，则显示横幅
+
+  document.getElementById('cookie-accept').onclick = () => { // 点击“接受全部”
+    localStorage.setItem('cookieConsent','accepted'); // 将选择存储为 accepted
+    B.style.display='none'; // 隐藏横幅
+  };
+  document.getElementById('cookie-reject').onclick = () => { // 点击“拒绝全部”
+    localStorage.setItem('cookieConsent','rejected'); // 将选择存储为 rejected
+    B.style.display='none'; // 隐藏横幅
+  };
+  document.getElementById('cookie-pref').onclick = () => // 点击“偏好设置”
+    alert('Aucune mesure d’audience activée pour le moment. Quand elle le sera, vous pourrez gérer les catégories ici.'); // 占位提示：当前未启用统计
+
+  const main = document.getElementById('main'); // 主内容元素
+  if (window.location.hash === '#main') main.focus(); // 若通过“跳转链接”访问，聚焦主内容（可访问性）
+</script>
 </body>
 </html>

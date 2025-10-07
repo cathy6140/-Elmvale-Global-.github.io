@@ -90,13 +90,7 @@
     /* ===== section-categories（产品分类标题） ===== */
     
     .section-categories{
-      margin: 12px 0 24px;      /* 上 12px，下 24px 的空隙 */
-    }
-
-    @media (min-width: 768px){
-      .section-categories{ 
-        margin: 14px 0 28px;    /* 桌面端稍微多一点空间 */
-      }
+      margin: clamp(28px, 6vw, 64px) 0 32px; /* 上更大、随屏自适应；下 32px */
     }
     
     /* ===== Grids / Cards（网格卡片） ===== */

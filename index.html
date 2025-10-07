@@ -84,9 +84,19 @@
     }
 
     /* ===== Chips / Metrics（小胶囊/指标条） ===== */
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 22px} /* 胶囊容器：可换行 */
-    .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:#374151} /* 胶囊样式 */
+    /*.chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 22px} /* 胶囊容器：可换行 */
+    /*.chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:#374151} /* 胶囊样式 */
+     
+    /* ===== section-ticker（产品分类标题） ===== */
 
+    .section-kicker{
+      margin: 8px 0 18px;
+      font-size: 14px;
+      color: #475569;
+      letter-spacing: .2px;
+    }
+    @media (min-width:768px){ .section-kicker{ font-size: 15px; } }
+    
     /* ===== Grids / Cards（网格卡片） ===== */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:18px 0} /* 响应式卡片网格 */
     .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)} /* 卡片外观 */
@@ -175,11 +185,8 @@
            onerror="this.src='logo-1024.png';this.style.objectFit='contain';this.style.background='#fff';"> <!-- 右侧示意图；加载失败回退到 logo -->
     </section>
 
-    <section class="chips" aria-label="Indicateurs"> <!-- 立即可扫读的能力/合规标签 -->
-      <span class="chip"><strong>Audits & due diligence</strong> usine</span> <!-- 审厂/尽调 -->
-      <span class="chip"><strong>AQL / ISO 2859-1</strong> (QC tiers sur demande)</span> <!-- 抽检标准，第三方 QC 可选 -->
-      <span class="chip"><strong>DAP / DDP</strong> – responsabilités claires</span> <!-- 贸易术语清晰划分 -->
-      <span class="chip"><strong>FSC / PCR / GRS</strong> – traçabilité</span> <!-- 可持续/链路可追溯 -->
+    <section class="section-kicker" aria-label="Catégories">
+      Gamme packaging beauté : airless, flacons & compte-gouttes, tubes, pompes/sprays, pots, étuis FSC — matériaux, volumes et décors au choix.
     </section>
 
     <section id="expertise" class="grid" aria-label="Ce que nous faisons"> <!-- 我们做什么（服务栈） -->

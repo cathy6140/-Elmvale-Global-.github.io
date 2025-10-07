@@ -20,7 +20,7 @@
   <!-- Web fonts：标题衬线 + 正文字体；预连接与 display=swap 优化首屏渲染 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <!-- 提前连接 Google Fonts 域名 -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- 预连接字体静态资源域名 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> <!-- 引入 Inter 与 Playfair Display 字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:wght@600;700&display=swap" rel="stylesheet"> <!-- 引入 Inter 与 Newsreader字体 -->
 
   <style> /* 站内样式（小型站点直接内联，减少请求） */
     /* ===== Design Tokens（法式“静奢”中性配色） ===== */
@@ -38,16 +38,36 @@
       --r:16px;             /* 统一圆角 */
       --shadow:0 1px 2px rgba(17,24,39,.06), 0 8px 24px rgba(17,24,39,.06); /* 柔和阴影 */
       --wrap:1120px;        /* 内容最大宽度容器 */
-    }
+
+      --ff-sans: "Inter","Noto Sans SC",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      --ff-serif: "Newsreader","Times New Roman",Times,serif;
+      }
 
     /* ===== Base / A11y（基础排版与可访问性） ===== */
     *{box-sizing:border-box} /* 边框盒模型，易于计算尺寸 */
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text)} /* 清除默认边距，设背景与文字色 */
-    body{font:16px/1.65 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif} /* 设置正文字体与行高 */
-    h1,h2,h3{font-family:"Playfair Display",serif;letter-spacing:.2px;margin:0 0 .5rem} /* 标题字体与下边距 */
+    /*body{font:16px/1.65 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif} /* 设置正文字体与行高 */
+    body{
+      font:16px/1.65 var(--ff-sans);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    
+    /*h1,h2,h3{font-family:"Playfair Display",serif;letter-spacing:.2px;margin:0 0 .5rem} /* 标题字体与下边距 */
+    h1,h2{
+      font-family: var(--ff-serif);
+      font-weight:700;
+      letter-spacing:.1px;
+      margin:0 0 .5rem;
+    }
+    h3{
+      font-family: var(--ff-sans);
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
     h1{font-weight:700;font-size:clamp(22px,3vw,30px);line-height: 1.65;} /* 响应式标题1字号 */
     h2{font-weight:700;font-size:clamp(22px,3vw,30px)}  /* 响应式标题2字号 */
-    h3{font-weight:600;font-size:18px}                  /* 标题3字号 */
+    /*h3{font-weight:600;font-size:18px}                  /* 标题3字号 */
     p{margin:.25rem 0 1rem}                             /* 段落间距 */
     a{color:inherit}                                     /* 链接继承文本色，保持低调风格 */
     .wrap{max-width:var(--wrap);margin:auto;padding:22px} /* 居中包裹容器，左右留白 */

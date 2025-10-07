@@ -174,13 +174,31 @@
     
     /* “更多”卡（灰底虚线边）+ 小按钮 */
     .card.more{ background:#f8fafc; border-style:dashed; }
-    .card .btn.ghost{
-      align-self:flex-start; margin-top:6px;
-      border:1px solid #0f766e; color:#0f766e;
-      padding:6px 10px; border-radius:999px;
-      text-decoration:none; font-weight:600;
+
+    /* 统一卡片 CTA：品牌色描边的幽灵按钮（默认干净，悬停转为实心） */
+    .card .btn-ghost{
+      background: transparent;                          /* 关键：清空背景 */
+      border: 1.5px solid var(--brand);                 /* 用你的品牌色 #2E2A2A */
+      color: var(--brand);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .18s ease, background .18s ease,
+                  border-color .18s ease, box-shadow .18s ease;
+      box-shadow: 0 1px 2px rgba(17,24,39,.04);
     }
-    .card .btn.ghost:hover{ background:#0f766e; color:#fff; }
+    .card .btn-ghost:hover{
+      background: var(--brand);                         /* 悬停：实心主色 */
+      color: #fff;
+      border-color: var(--brand);
+      box-shadow: 0 6px 16px rgba(46,42,42,.18);
+    }
+    .card .btn-ghost:focus-visible{
+      outline: 3px solid rgba(201,169,110,.45);         /* 与 --accent（香槟金）呼应的可达性描边 */
+      outline-offset: 2px;
+    }
+    
     /* =======================
        END: styles for new categories grid
        ======================= */
@@ -355,7 +373,7 @@
         <article class="card more" role="listitem">
           <h3>… et plus encore</h3>
           <p>Autres formats, recharges, solutions barrière, décors spéciaux.</p>
-          <a class="btn ghost" href="#contact">Parlons de votre besoin</a>
+          <a class="btn-ghost" href="#contact">Parlons de votre besoin</a>
         </article>
       </div>
     </section>

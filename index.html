@@ -45,7 +45,7 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text)} /* 清除默认边距，设背景与文字色 */
     body{font:16px/1.65 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif} /* 设置正文字体与行高 */
     h1,h2,h3{font-family:"Playfair Display",serif;letter-spacing:.2px;margin:0 0 .5rem} /* 标题字体与下边距 */
-    h1{font-weight:700;font-size:clamp(22px,3vw,30px);line-height: 1.15;} /* 响应式标题1字号 */
+    h1{font-weight:700;font-size:clamp(22px,3vw,30px);line-height: 1.65;} /* 响应式标题1字号 */
     h2{font-weight:700;font-size:clamp(22px,3vw,30px)}  /* 响应式标题2字号 */
     h3{font-weight:600;font-size:18px}                  /* 标题3字号 */
     p{margin:.25rem 0 1rem}                             /* 段落间距 */
@@ -86,16 +86,18 @@
     /* ===== Chips / Metrics（小胶囊/指标条） ===== */
     /*.chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 22px} /* 胶囊容器：可换行 */
     /*.chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:#374151} /* 胶囊样式 */
-     
-    /* ===== section-ticker（产品分类标题） ===== */
-
-    .section-kicker{
-      margin: 8px 0 18px;
-      font-size: 14px;
-      color: #475569;
-      letter-spacing: .2px;
+    
+    /* ===== section-categories（产品分类标题） ===== */
+    
+    .section-categories{
+      margin: 12px 0 24px;      /* 上 12px，下 24px 的空隙 */
     }
-    @media (min-width:768px){ .section-kicker{ font-size: 15px; } }
+
+    @media (min-width: 768px){
+      .section-categories{ 
+        margin: 14px 0 28px;    /* 桌面端稍微多一点空间 */
+      }
+    }
     
     /* ===== Grids / Cards（网格卡片） ===== */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:18px 0} /* 响应式卡片网格 */
@@ -185,8 +187,8 @@
            onerror="this.src='logo-1024.png';this.style.objectFit='contain';this.style.background='#fff';"> <!-- 右侧示意图；加载失败回退到 logo -->
     </section>
 
-    <section class="section-kicker" aria-label="Catégories">
-      Gamme packaging beauté : airless, flacons & compte-gouttes, tubes, pompes/sprays, pots, étuis FSC — matériaux, volumes et décors au choix.
+    <section aria-label="Catégories">
+      <h2>Gamme packaging beauté</h2>
     </section>
 
     <section id="expertise" class="grid" aria-label="Ce que nous faisons"> <!-- 我们做什么（服务栈） -->

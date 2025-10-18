@@ -1,0 +1,181 @@
+<!doctype html> <!-- HTML5 声明：让浏览器进入标准模式，避免兼容怪异渲染 -->
+<html lang="fr"> <!-- 页面主语言为法语：利于可访问性与搜索引擎对语种的判断 -->
+<head>
+  <meta charset="utf-8" /> <!-- 统一用 UTF-8，支持重音符号等法语字符 -->
+  <title>Consentement & abonnement | Elmvale Global</title> <!-- 浏览器标签标题与搜索结果标题 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- 移动端视口：防止缩放错位 -->
+
+  <style>
+    /* ===== 基础外观：与站点风格对齐，清晰、易读 ===== */
+    body{ /* 页面全局文字、行高、背景与文字色、去除默认外边距 */
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      background:#FAF9F7; /* 与站点主背景一致的象牙白 */
+      color:#1F2937;      /* 深石墨色确保可读性 */
+      margin:0;           /* 清空默认外边距 */
+    }
+    .wrap{ /* 内容容器：中等宽度白卡片，利于聚焦表单 */
+      max-width:620px;             /* 版心宽度 */
+      margin:6vh auto;             /* 上下留白+水平居中 */
+      padding:24px;                /* 内边距 */
+      background:#fff;             /* 白底卡片 */
+      border:1px solid #E5E7EB;    /* 轻描边提升分层 */
+      border-radius:12px;          /* 柔和圆角 */
+    }
+    h1{ font-size:22px; margin:0 0 8px }     /* 主标题 */
+    p{  margin:0 0 14px; color:#475569 }      /* 段落说明：次级颜色 */
+
+    label{ font-weight:600 } /* 表单标签加粗，提升识别度 */
+
+    .row{ margin:12px 0 } /* 每一行控件的垂直间距 */
+
+    input[type=email],
+    input[type=text]{ /* 输入框统一样式：满宽、舒适触控区、可见边框与圆角 */
+      width:100%;
+      padding:12px;
+      border:1px solid #E5E7EB;
+      border-radius:10px;
+    }
+
+    .chk{ /* 复选项容器：label 与 checkbox 对齐美观 */
+      display:flex;
+      gap:10px;               /* 复选框与文字之间的间距 */
+      align-items:flex-start; /* 多行文本时顶部对齐 */
+      margin:8px 0;
+    }
+
+    .btn{ /* 提交按钮：深色主按钮，明显可点 */
+      margin-top:10px;
+      padding:12px 16px;
+      border-radius:999px;        /* 胶囊形状 */
+      border:1px solid #2E2A2A;   /* 与站点品牌深咖一致 */
+      background:#2E2A2A;
+      color:#fff;
+      cursor:pointer;
+    }
+    .btn:hover{ background:#1f1c1c } /* 悬停加深：强化交互反馈 */
+
+    .ok{ /* 成功提示条：默认隐藏，提交成功后显示 */
+      display:none;
+      margin-top:12px;
+      padding:10px 12px;
+      border-radius:10px;
+      background:#F0FDF4; /* 绿色成功语义色 */
+      color:#065F46;
+    }
+
+    small{ color:#64748b } /* 细则与提示文本 */
+  </style>
+</head>
+
+<body> <!-- 页面主体开始 -->
+  <div class="wrap"> <!-- 居中卡片容器，承载说明与表单 -->
+    <h1>Consentement & abonnement</h1> <!-- 标题：同意与订阅 -->
+    <p>
+      Avec votre accord, nous pouvons vous envoyer des informations ciblées
+      (1–2 emails/trimestre) sur des solutions de packaging (airless, tubes,
+      flacons, pots), exclusivement liées à votre activité professionnelle.
+      <!-- 说明：明确“同意”的用途与频率（知情原则），限定为 B2B 相关内容 -->
+    </p>
+
+    <!-- 表单开始：id 用于脚本选择；method=POST；action 替换为你的 Formspree 端点 -->
+    <form id="consent" action="https://formspree.io/f/xjkaopok" method="POST">
+      <div class="row">
+        <label for="email">Votre e-mail</label> <!-- 邮箱标签，与输入框建立 for/id 关联，提升可达性 -->
+        <input id="email" name="email" type="email" required placeholder="votre@email.com" />
+        <!-- 邮箱输入框：type=email 自带基础校验；required 强制必填（主动、明确的提交） -->
+      </div>
+
+      <div class="row">
+        <label for="company">Société (facultatif)</label> <!-- 公司名（可选），便于后续定位 B2B 身份 -->
+        <input id="company" name="company" type="text" placeholder="Nom de la société" />
+      </div>
+
+      <!-- 同意复选框：必须主动勾选（未勾选默认不同意），符合“主动明确”要求 -->
+      <div class="chk">
+        <input id="optin" name="optin" type="checkbox" required />
+        <label for="optin">
+          Je consens à recevoir des informations relatives au packaging cosmétique
+          (emails commerciaux ponctuels). Je pourrai me désinscrire à tout moment.
+          <!-- 文案包含：同意的内容范围 + 商业性质 + 可随时撤回（撤回应与给予同样容易） -->
+        </label>
+      </div>
+
+      <!-- 偏好选项：非必选，用于细分发送内容（可选的“特定目的”细化） -->
+      <div class="chk">
+        <input id="pref_sourcing" name="pref_sourcing" type="checkbox" />
+        <label for="pref_sourcing">Sourcing & alternatives fournisseurs</label>
+      </div>
+      <div class="chk">
+        <input id="pref_samples" name="pref_samples" type="checkbox" />
+        <label for="pref_samples">Échantillons, MOQ & lead-times indicatifs</label>
+      </div>
+      <div class="chk">
+        <input id="pref_news" name="pref_news" type="checkbox" />
+        <label for="pref_news">Matières, décor & actualités (faible fréquence)</label>
+      </div>
+
+      <!-- 隐私政策：建议强制勾选，确保“知情”并留存同意依据 -->
+      <div class="chk">
+        <input id="privacy" name="privacy" type="checkbox" required />
+        <label for="privacy">
+          J’ai lu et j’accepte la <a href="/privacy" target="_blank">Politique de confidentialité</a>.
+          <!-- 链接到站内隐私政策，另开标签页，不打断当前提交 -->
+        </label>
+      </div>
+
+      <!-- 隐藏字段：记录“同意证据”元数据，便于日后证明已获同意（时间/来源/UA/地区） -->
+      <input type="hidden" name="type" value="optin" />     <!-- 标识这是“同意”表单 -->
+      <input type="hidden" name="region" value="CH" />      <!-- 区域：瑞士（可根据站点切换） -->
+      <input type="hidden" id="ts"  name="timestamp" value="" />  <!-- 提交的 ISO 时间戳 -->
+      <input type="hidden" id="ref" name="referrer"  value="" />  <!-- 来源页面（Referer） -->
+      <input type="hidden" id="ua"  name="user_agent" value="" /> <!-- 浏览器 UA，辅助取证 -->
+
+      <button class="btn" type="submit">Je confirme mon accord</button> <!-- 提交按钮：确认同意 -->
+      <div id="ok" class="ok">
+        Merci. Un email de confirmation vous a été envoyé. Veuillez cliquer sur le lien pour valider votre abonnement.
+      </div>
+      <!-- 成功提示：若你在 ESP/自动化里启用“双重确认（Double Opt-in）”，这里提示检查邮箱 -->
+      <small>
+        Vous pourrez vous désinscrire gratuitement à tout moment via le lien en bas de chaque email.
+        <!-- 告知撤回权与退订的便捷性（撤回与给予同样容易） -->
+      </small>
+    </form>
+  </div>
+
+  <script>
+    /* ===== 前端辅助：自动填充 & 采集元数据 & Ajax 提交 ===== */
+
+    // 1) 自动填充邮箱：若从邮件页脚链接带来 ?email=xxx，则填入输入框，降低操作成本
+    const qp = new URLSearchParams(location.search);      // 解析地址栏查询参数
+    const pre = qp.get('email');                          // 获取 email 参数
+    if (pre) document.getElementById('email').value = pre;/* 如果存在则写入邮箱输入框 */
+
+    // 2) 提交前写入“同意证据”元数据（ISO 时间、来源页面、浏览器 UA）
+    document.getElementById('ts').value  = new Date().toISOString(); // ISO 时间戳：便于存档检索
+    document.getElementById('ref').value = document.referrer || '';   // 来源页面：为空则记录空串
+    document.getElementById('ua').value  = navigator.userAgent;       // UA 字符串
+
+    // 3) Ajax 提交：不跳走，原地提示成功；后台使用 Formspree 接收
+    document.getElementById('consent').addEventListener('submit', async (ev)=>{
+      ev.preventDefault();                                           // 阻止原生提交跳转
+      const form = ev.target;                                        // 当前表单节点
+      const data = new FormData(form);                               // 序列化为 FormData
+      try{
+        const res = await fetch(form.action, {                       // POST 到你的 Formspree 端点
+          method:'POST',
+          body:data,
+          headers:{ 'Accept':'application/json' }                    // 要求 JSON 响应（Formspree 推荐）
+        });
+        if(res.ok){                                                  // 2xx 视作成功
+          document.getElementById('ok').style.display = 'block';     // 显示“检查邮箱并确认”的提示
+          form.querySelector('button').disabled = true;              // 禁用按钮，避免重复提交
+        }else{
+          alert("Merci. Si le message persiste, réessayez plus tard."); // 429/异常：友好提示
+        }
+      }catch(err){
+        alert("Réseau indisponible. Merci de réessayer.");           // 网络错误：提示重试
+      }
+    });
+  </script>
+</body>
+</html>

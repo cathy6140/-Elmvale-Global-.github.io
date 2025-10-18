@@ -258,6 +258,13 @@
       .hero{grid-template-columns:1fr} /* 小屏首屏改一列 */
       .nav{display:none}              /* 小屏隐藏顶栏右侧导航（简化） */
     }
+        /* 蜜罐字段隐藏（给所有提交到 Formspree 的表单用） */
+    .hp{
+      position:absolute;     /* 让元素定位 */
+      left:-9999px;          /* 移到可视区域外，比 display:none 更不易被简单脚本跳过 */
+      width:1px;height:1px;
+      overflow:hidden;
+    }
   </style>
 </head>
 <body> <!-- 页面主体开始 -->
@@ -457,6 +464,14 @@
         <textarea id="message" name="message" rows="4" placeholder="Contexte formule, contraintes, délai cible…"></textarea> <!-- 需求文本域 -->
 
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"> <!-- 反垃圾蜜罐：隐藏字段 -->
+
+                <!-- 蜜罐字段：机器人常会误填，人类看不见 -->
+        <div class="hp" aria-hidden="true">
+          <label>Leave this field empty
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+        
         <button type="submit">Envoyer</button> <!-- 提交按钮 -->
       </form>
     </section>

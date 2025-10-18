@@ -1,0 +1,96 @@
+<!doctype html> <!-- HTML5 文档声明：触发标准渲染模式，避免怪异模式 -->
+<html lang="fr"> <!-- 页面主语言为法语，利于可访问性与搜索引擎 -->
+<head>
+  <meta charset="utf-8" /> <!-- 使用 UTF-8 编码，支持重音符与多语言 -->
+  <title>Se désinscrire | Elmvale Global</title> <!-- 浏览器标签标题 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- 移动端视口，避免缩放错位 -->
+
+  <style>
+    /* ====== 基础排版与配色（与站点风格一致） ====== */
+    body{ /* 页面全局字体、行高、背景与文字颜色、清空默认边距 */
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      background:#FAF9F7;color:#1F2937;margin:0;padding:0;
+    }
+    .wrap{ /* 内容容器：定宽、居中、留白、白底卡片风格 */
+      max-width:560px;margin:6vh auto;padding:24px;background:#fff;
+      border:1px solid #E5E7EB;border-radius:12px;
+    }
+    h1{ font-size:22px;margin:0 0 8px } /* 标题字号与下边距 */
+    p{ margin:0 0 14px;color:#475569 }  /* 段落样式（次级色） */
+
+    label{ font-weight:600 } /* 表单标签加粗，提升可读性 */
+    input[type=email]{ /* 邮箱输入框样式：100% 宽、内边距、描边与圆角 */
+      width:100%;padding:12px;border:1px solid #E5E7EB;border-radius:10px;
+    }
+
+    button{ /* 提交按钮：主色实心、圆角胶囊、可点击光标 */
+      margin-top:10px;padding:12px 16px;border-radius:999px;
+      border:1px solid #2E2A2A;background:#2E2A2A;color:#fff;cursor:pointer;
+    }
+    button:hover{ background:#1f1c1c } /* 悬停态更深，强调可点性 */
+
+    .note{ font-size:14px;color:#6B7280;margin-top:8px } /* 小字说明：免费退订等 */
+    .ok{ /* 成功提示条：默认隐藏，提交后显示 */
+      padding:10px 12px;margin-top:12px;border-radius:10px;
+      background:#F0FDF4;color:#065F46;display:none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap"> <!-- 居中卡片容器 -->
+    <h1>Se désinscrire</h1> <!-- 标题：退订 -->
+    <p>Entrez votre adresse pour ne plus recevoir nos emails. Vous pouvez aussi répondre « STOP » au message reçu.</p>
+    <!-- 说明：填写邮箱即可退订；也支持直接回复“STOP”（法国 B2B 便民做法） -->
+
+    <!-- 退订表单（Ajax 提交到 Formspree；把 xxxxxx 换成你的表单 ID） -->
+    <form action="https://formspree.io/f/xjkaopok" method="POST" id="unsub">
+      <label for="email">Votre e-mail</label> <!-- 邮箱标签 -->
+      <input id="email" name="email" type="email" required placeholder="votre@email.com" />
+      <!-- 必填邮箱输入框；type=email 会做基础格式校验 -->
+
+      <input type="hidden" name="type" value="unsubscribe" />
+      <!-- 隐藏字段：标记此次提交为“退订”，便于后台区分 -->
+
+      <button type="submit">Se désinscrire</button> <!-- 提交按钮：退订 -->
+      <div class="note">Cette désinscription est gratuite et immédiate.</div>
+      <!-- 退订免费且即时的提示，满足易退订告知 -->
+
+      <div id="ok" class="ok">Merci, votre demande est prise en compte.</div>
+      <!-- 成功提示：Ajax 返回成功后展示 -->
+    </form>
+  </div>
+
+  <script>
+    /* ====== 功能脚本：自动填充 + Ajax 提交 + 成功提示 ====== */
+
+    // 1) 读取 URL 查询参数 ?email=...，用于自动填充邮箱输入框
+    const params = new URLSearchParams(location.search);          // 解析地址栏查询参数
+    const prefill = params.get('email');                          // 取出 email 参数
+    if (prefill) document.getElementById('email').value = prefill;// 若存在则写入输入框
+
+    // 2) 拦截表单默认提交，改为 fetch Ajax 提交（避免跳走，原地提示成功）
+    document.getElementById('unsub').addEventListener('submit', async (e) => {
+      e.preventDefault();                                         // 阻止浏览器默认跳转
+      const form = e.target;                                      // 获取当前表单
+      const data = new FormData(form);                            // 将表单序列化为 FormData
+      try{
+        const res = await fetch(form.action, {                    // 用 fetch POST 到 Formspree 端点
+          method:'POST',
+          body: data,                                             // 直接发送 FormData，多字段支持
+          headers:{ 'Accept':'application/json' }                 // 告诉服务端期望 JSON 响应（Formspree 推荐）
+        });
+        // 3) 成功：展示“已退订”提示，并禁用按钮避免重复提交
+        if (res.ok){                                              // HTTP 200~299 视为成功
+          document.getElementById('ok').style.display = 'block';  // 显示成功条
+          form.querySelector('button').disabled = true;           // 禁用按钮
+        }else{
+          // 429/其他：达到频率或配额等，友好提示（可按需细化）
+          alert('Votre demande a été envoyée. Si le message persiste, réessayez plus tard.');
+        }
+      }catch(err){
+        alert('Réseau indisponible. Merci de réessayer.');
+      }
+    });
+  </script>
+</body>
+</html>

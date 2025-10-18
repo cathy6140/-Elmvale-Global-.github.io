@@ -51,6 +51,12 @@
       <input type="hidden" name="type" value="unsubscribe" />
       <!-- 隐藏字段：标记此次提交为“退订”，便于后台区分 -->
 
+      <div class="hp" aria-hidden="true">
+        <label>Leave this field empty
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+      
       <button type="submit">Se désinscrire</button> <!-- 提交按钮：退订 -->
       <div class="note">Cette désinscription est gratuite et immédiate.</div>
       <!-- 退订免费且即时的提示，满足易退订告知 -->

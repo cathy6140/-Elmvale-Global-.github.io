@@ -147,7 +147,7 @@ export const content = {
       },
       details: {
         title: "Contact Information",
-        email: "info@elmvaleglobal.com",
+        email: "contact@elmvaleglobal.com",
         phone: "WhatsApp +86 130 6260 1713“,
         address: "Global service · EU/US/KR markets",
         hours: "We operate across time zones and typically respond within 1–2 business days.",
@@ -317,7 +317,7 @@ export const content = {
       },
       details: {
         title: "Informations de contact",
-        email: "info@elmvaleglobal.com",
+        email: "contact@elmvaleglobal.com",
         phone: "WhatsApp +86 130 6260 1713",
         address: "Service international · marchés UE/US/Corée",
         hours: "Nous couvrons plusieurs fuseaux horaires et répondons généralement sous 1 à 2 jours ouvrés.",

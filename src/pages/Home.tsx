@@ -29,61 +29,104 @@ const Home: React.FC = () => {
   return (
     <div className="bg-brand-cream">
       {/* Hero */}
-      <section className="relative h-screen min-h-[620px] w-full overflow-hidden">
+      <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
+        {/* Background image */}
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2574&auto=format&fit=crop"
-            alt="Sustainable minimalist packaging"
+            alt="Sustainable minimalist cosmetic packaging"
             className="w-full h-full object-cover"
             loading="eager"
+            decoding="async"
+            referrerPolicy="no-referrer"
+            onError={(e) => {
+              const img = e.currentTarget;
+              img.onerror = null;
+              img.src = "/elmvale-logo-1024.png"; // fallback
+              img.style.objectFit = "contain";
+              img.style.background = "#0b1f1a";
+            }}
           />
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+      
+          {/* Darken + editorial gradients for readability */}
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-transparent" />
         </div>
-
-        <div className="relative z-10 h-full flex items-end pb-24 md:pb-32 max-w-screen-2xl mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl">
-            {/* small brand mark */}
-            <div className="mb-6 inline-flex items-center gap-3 text-white/90">
-              <span className="w-9 h-9 rounded-full bg-white/90 border border-white/20 flex items-center justify-center">
-                <img src="/elmvale-logo-512.png" alt="Elmvale" className="w-6 h-6 object-contain" />
-              </span>
-              <span className="text-xs uppercase tracking-[0.25em] font-medium">Elmvale Global</span>
-            </div>
-
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[0.92] mb-8">
-              {t.hero.tagline}
-            </h1>
-
-            <p className="text-lg md:text-xl text-stone-200 font-light max-w-xl leading-relaxed mb-10 border-l-2 border-brand-primary pl-6">
-              {t.hero.subtext}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-              <Link
-                to={withLang('/products')}
-                className="inline-flex items-center justify-center px-10 py-4 bg-white text-brand-dark uppercase tracking-[0.2em] text-xs font-semibold hover:bg-white/90 transition"
+      
+        {/* Content */}
+        <div className="relative z-10 h-full max-w-screen-2xl mx-auto px-6 lg:px-12">
+          <div className="h-full flex items-end pb-20 md:pb-28">
+            <div className="max-w-3xl animate-fade-in-up">
+              {/* Eyebrow (optional but premium) */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-[1px] w-10 bg-brand-primary/80" />
+                <span className="text-xs uppercase tracking-[0.35em] text-white/80 font-medium">
+                  Elmvale Global
+                </span>
+              </div>
+      
+              {/* Headline */}
+              <h1
+                className="
+                  font-serif text-white
+                  text-5xl md:text-7xl lg:text-8xl
+                  leading-[1.02] md:leading-[1.03]
+                  tracking-[-0.02em]
+                  max-w-[14ch]
+                "
+                style={{ textShadow: "0 8px 30px rgba(0,0,0,0.35)" }}
               >
-                {nav.products}
-              </Link>
-
-              <Link
-                to={contactWithCategory(language === 'fr' ? 'Demande générale' : 'General inquiry')}
-                className="inline-flex items-center justify-center px-10 py-4 border border-white/40 text-white uppercase tracking-[0.2em] text-xs font-semibold hover:bg-white hover:text-brand-dark transition"
-              >
-                {language === 'fr' ? 'Demander un devis' : 'Request a quote'}
-              </Link>
-
-              <Link
-                to={withLang('/products')}
-                className="group hidden md:inline-flex items-center gap-3 text-white uppercase tracking-[0.2em] text-sm hover:text-brand-light transition-colors ml-2"
-              >
-                {language === 'fr' ? 'Explorer' : 'Explore'}
-                <span className="w-10 h-[1px] bg-white/90 group-hover:w-16 transition-all duration-300" />
-              </Link>
+                {t.hero.tagline}
+              </h1>
+      
+              {/* Subtext */}
+              <p className="mt-8 text-base md:text-xl text-stone-200/95 font-light max-w-xl leading-relaxed border-l-2 border-brand-primary/90 pl-6">
+                {t.hero.subtext}
+              </p>
+      
+              {/* CTAs */}
+              <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+                <Link
+                  to="/products"
+                  className="
+                    inline-flex items-center justify-center
+                    bg-white text-brand-dark
+                    px-7 py-4
+                    uppercase tracking-[0.2em] text-xs font-semibold
+                    hover:bg-brand-light transition duration-500
+                  "
+                >
+                  {content[language].nav.products}
+                </Link>
+      
+                <Link
+                  to="/contact"
+                  className="
+                    inline-flex items-center justify-center
+                    border border-white/35 text-white
+                    px-7 py-4
+                    uppercase tracking-[0.2em] text-xs font-semibold
+                    hover:bg-white hover:text-brand-dark transition duration-500
+                  "
+                >
+                  {language === "en" ? "Request a Quote" : "Demander un devis"}
+                </Link>
+      
+                <a
+                  href="#explore"
+                  className="hidden md:inline-flex items-center gap-3 text-white/90 uppercase tracking-[0.25em] text-xs font-semibold hover:text-white transition"
+                >
+                  {language === "en" ? "Explore" : "Explorer"}
+                  <span className="w-12 h-[1px] bg-white/80" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
+      
+        {/* Anchor for explore */}
+        <div id="explore" className="absolute bottom-0 left-0 right-0 h-1" />
       </section>
 
       {/* Value Proposition */}

@@ -146,12 +146,18 @@ export const content = {
         desc: "Whether you have a question about our products, need a compliance consultation, or want to discuss a custom project, the Elmvale Global team is here to help. Reach out to us and let’s start a conversation about your packaging needs."
       },
       details: {
+        labels: {
+          email: "Email",
+          phone: "Phone",
+          address: "Address",
+          hours: "Hours",
+        },
         title: "Contact Information",
         email: "contact@elmvaleglobal.com",
         phone: "WhatsApp +86 130 6260 1713",
         address: "Global service · EU/US/KR markets",
         hours: "We operate across time zones and typically respond within 1–2 business days.",
-        privacy: "We value your privacy. Your contact details will be used only to respond to your inquiry."
+        privacy: "We value your privacy. Your contact details will be used only to respond to your inquiry.",
       },
       form: {
         title: "Contact Form",
@@ -316,12 +322,18 @@ export const content = {
         desc: "Que vous ayez une question sur nos produits, besoin d’un conseil en conformité, ou l’envie de discuter d’un projet sur mesure, l’équipe Elmvale Global est à votre disposition. Contactez-nous et entamons la conversation autour de vos besoins en emballage."
       },
       details: {
+        labels: {
+          email: "E-mail",
+          phone: "Téléphone",
+          address: "Adresse",
+          hours: "Horaires",
+        },
         title: "Informations de contact",
         email: "contact@elmvaleglobal.com",
         phone: "WhatsApp +86 130 6260 1713",
         address: "Service international · marchés UE/US/Corée",
         hours: "Nous couvrons plusieurs fuseaux horaires et répondons généralement sous 1 à 2 jours ouvrés.",
-        privacy: "Nous accordons de l’importance à votre vie privée. Vos coordonnées ne seront utilisées que pour donner suite à votre demande."
+        privacy: "Nous respectons votre vie privée. Vos coordonnées seront utilisées uniquement pour répondre à votre demande.",
       },
       form: {
         title: "Formulaire de contact",

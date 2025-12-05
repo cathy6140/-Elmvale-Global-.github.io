@@ -1,0 +1,152 @@
+import React, { useContext } from 'react';
+import { LanguageContext } from '../App';
+import { content } from '../content';
+import { Check } from 'lucide-react';
+
+const Compliance: React.FC = () => {
+  const { language } = useContext(LanguageContext);
+  const t = content[language].compliance;
+
+  const supportTitle = language === 'fr' ? 'Ce que nous fournissons' : 'What we provide';
+  const needTitle = language === 'fr' ? 'Ce dont nous avons besoin' : 'What we need from you';
+
+  const provide = language === 'fr'
+    ? [
+        'Fiches techniques matières / specs composants (sur demande)',
+        'Traçabilité lot & certificats disponibles (selon usine / matière)',
+        'Coordination tests tiers (SGS/BV/Intertek) si requis',
+        'Revue “design for recycling” (mono-matériau, démontabilité, marquage)'
+      ]
+    : [
+        'Material specs / component drawings (on request)',
+        'Batch traceability + available certificates (per factory/material)',
+        'Third-party testing coordination (SGS/BV/Intertek) when needed',
+        'Design-for-recycling review (mono-material, disassembly, markings)'
+      ];
+
+  const need = language === 'fr'
+    ? [
+        'Marché cible (UE/US/KR) + exigences internes',
+        'Type de formule (sensibilités, alcool, huiles essentielles, etc.)',
+        'Format, col/standard, décor, MOQ & délai',
+        'Niveau PCR souhaité & contraintes esthétiques'
+      ]
+    : [
+        'Target market (EU/US/KR) + any internal requirements',
+        'Formula type (sensitivities, alcohol, essential oils, etc.)',
+        'Format, neck finish/standard, decoration, MOQ & timeline',
+        'Target PCR % and appearance constraints'
+      ];
+
+  return (
+    <div className="bg-brand-cream min-h-screen">
+      {/* Intro */}
+      <section className="bg-brand-dark text-white pt-40 pb-20 px-6 lg:px-12">
+        <div className="max-w-screen-2xl mx-auto">
+          <h1 className="font-serif text-5xl md:text-7xl mb-8">{t.intro.title}</h1>
+          <p className="text-xl text-stone-300 font-light leading-relaxed max-w-3xl">
+            {t.intro.desc}
+          </p>
+        </div>
+      </section>
+
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-32">
+        {/* Regulations */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40">
+          <div className="lg:col-span-4">
+            <h2 className="font-serif text-4xl text-brand-dark sticky top-32">
+              {t.regulations.title}
+            </h2>
+          </div>
+
+          <div className="lg:col-span-8 space-y-16">
+            {t.regulations.items.map((item, idx) => (
+              <div key={idx} className="flex gap-6 group">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 rounded-full border border-brand-dark/30 flex items-center justify-center text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-colors">
+                    <Check size={14} strokeWidth={3} />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-serif text-2xl text-brand-dark mb-4">{item.title}</h3>
+                  <p className="text-stone-600 leading-relaxed font-light">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <hr className="border-stone-200 mb-40" />
+
+        {/* Sustainability */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+          <div className="lg:col-span-4">
+            <h2 className="font-serif text-4xl text-brand-dark sticky top-32 flex items-center gap-3">
+              {/* 用你的品牌 logo 替换 Leaf */}
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white border border-black/5">
+                <img
+                  src="/elmvale-logo-512.png"
+                  alt="Elmvale"
+                  className="w-6 h-6 object-contain"
+                  loading="lazy"
+                />
+              </span>
+              {t.sustainability.title}
+            </h2>
+          </div>
+
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+            {t.sustainability.items.map((item, idx) => (
+              <div key={idx}>
+                <h3 className="font-sans text-sm font-bold uppercase tracking-widest text-brand-dark mb-4 border-b border-stone-200 pb-2 inline-block">
+                  {item.title}
+                </h3>
+                <p className="text-stone-600 leading-relaxed font-light">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Practical block: Provide / Need */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
+          <div className="bg-white p-10 md:p-12 border border-black/5 shadow-sm">
+            <h3 className="font-serif text-2xl text-brand-dark mb-6">{supportTitle}</h3>
+            <ul className="space-y-3 text-stone-600 font-light leading-relaxed">
+              {provide.map((x, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="mt-1 w-5 h-5 rounded-full border border-brand-dark/25 flex items-center justify-center text-brand-dark">
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+                  <span>{x}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-white p-10 md:p-12 border border-black/5 shadow-sm">
+            <h3 className="font-serif text-2xl text-brand-dark mb-6">{needTitle}</h3>
+            <ul className="space-y-3 text-stone-600 font-light leading-relaxed">
+              {need.map((x, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="mt-1 w-5 h-5 rounded-full border border-brand-dark/25 flex items-center justify-center text-brand-dark">
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+                  <span>{x}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Closing */}
+        <div className="bg-white p-12 md:p-20 text-center shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+          <p className="font-serif text-2xl md:text-3xl text-brand-dark leading-relaxed max-w-4xl mx-auto">
+            “{t.closing}”
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Compliance;

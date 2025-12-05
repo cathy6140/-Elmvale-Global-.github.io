@@ -58,14 +58,7 @@ const Home: React.FC = () => {
         <div className="relative z-10 h-full max-w-screen-2xl mx-auto px-6 lg:px-12">
           <div className="h-full flex items-end pb-20 md:pb-28">
             <div className="max-w-3xl animate-fade-in-up">
-              {/* Eyebrow (optional but premium) */}
-              <div className="flex items-center gap-3 mb-6">
-                <span className="h-[1px] w-10 bg-brand-primary/80" />
-                <span className="text-xs uppercase tracking-[0.35em] text-white/80 font-medium">
-                  Elmvale Global
-                </span>
-              </div>
-      
+
               {/* Headline */}
               <h1
                 className="
@@ -99,7 +92,7 @@ const Home: React.FC = () => {
                 >
                   {content[language].nav.products}
                 </Link>
-      
+              
                 <Link
                   to="/contact"
                   className="
@@ -112,21 +105,12 @@ const Home: React.FC = () => {
                 >
                   {language === "en" ? "Request a Quote" : "Demander un devis"}
                 </Link>
-      
-                <a
-                  href="#explore"
-                  className="hidden md:inline-flex items-center gap-3 text-white/90 uppercase tracking-[0.25em] text-xs font-semibold hover:text-white transition"
-                >
-                  {language === "en" ? "Explore" : "Explorer"}
-                  <span className="w-12 h-[1px] bg-white/80" />
-                </a>
               </div>
             </div>
           </div>
         </div>
-      
-        {/* Anchor for explore */}
-        <div id="explore" className="absolute bottom-0 left-0 right-0 h-1" />
+
+        
       </section>
 
       {/* Value Proposition */}

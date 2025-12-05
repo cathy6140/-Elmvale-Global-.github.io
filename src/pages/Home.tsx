@@ -131,7 +131,9 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {t.solutions.items.map((item, idx) => (
               <Link
-                to={contactWithCategory(item.title)}
+                to={`/contact?category=${encodeURIComponent(
+                  ['bottles-jars','tubes-sachets','pumps-dispensers','caps-closures'][idx] || 'other'
+                )}`}
                 key={idx}
                 className="group relative block overflow-hidden aspect-[4/5] bg-white"
               >

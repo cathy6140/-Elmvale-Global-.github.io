@@ -148,7 +148,7 @@ export const content = {
       details: {
         title: "Contact Information",
         email: "contact@elmvaleglobal.com",
-        phone: "WhatsApp +86 130 6260 1713“,
+        phone: "WhatsApp +86 130 6260 1713",
         address: "Global service · EU/US/KR markets",
         hours: "We operate across time zones and typically respond within 1–2 business days.",
         privacy: "We value your privacy. Your contact details will be used only to respond to your inquiry."

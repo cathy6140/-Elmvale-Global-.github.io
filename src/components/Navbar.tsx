@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
               />
             </div>
             <span className="font-serif text-2xl tracking-wide font-medium text-brand-dark">
-              ELMVALE
+              ELMVALE GLOBAL
             </span>
           </Link>
 

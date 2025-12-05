@@ -45,24 +45,20 @@ const Products: React.FC = () => {
               ].join(" ")}
             >
               {/* ✅ 水印数字：absolute，不参与排版 → 不会跑偏 */}
-              {/* ✅ 水印数字：固定在上方 + 在内容后面 */}
               <div
                 aria-hidden="true"
-                className="
-                  pointer-events-none
-                  absolute top-8 left-8 md:top-10 md:left-12
-                  font-serif
-                  text-[clamp(64px,10vw,140px)]
-                  leading-none
-                  text-brand-dark/10
-                  select-none
-                  -z-10
-                "
+                className={[
+                  "pointer-events-none select-none",
+                  "absolute top-8 left-8 md:top-10 md:left-12",
+                  "font-serif leading-none",
+                  "text-[92px] md:text-[132px] lg:text-[160px]",
+                  "text-brand-dark/10",
+                  "z-0",
+                ].join(" ")}
               >
                 {String(idx + 1).padStart(2, "0")}
               </div>
-              
-              {/* ✅ 正文层级在上面 */}
+
               <div className="relative z-10">
                 <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-8">
                   {cat.title}

@@ -6,13 +6,11 @@ const Products: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language].products;
 
-  // ✅ 建议：长期稳定 = 用本地图片（public 里放好即可）
-  // 如果你暂时还没放本地图片，可以先用 unsplash；但一定要有 onError 回退
   const images = [
-    "https://images.unsplash.com/photo-1615396659714-f446d51c416e?q=80&w=1800&auto=format&fit=crop", // Bottles
-    "https://images.unsplash.com/photo-1556228720-1987df6a5e1a?q=80&w=1800&auto=format&fit=crop", // Tubes
-    "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1800&auto=format&fit=crop", // Pumps
-    "https://images.unsplash.com/photo-1605309608249-166e4a2e5532?q=80&w=1800&auto=format&fit=crop", // Caps
+    "https://images.unsplash.com/photo-1615396659714-f446d51c416e?q=80&w=1800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1556228720-1987df6a5e1a?q=80&w=1800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1605309608249-166e4a2e5532?q=80&w=1800&auto=format&fit=crop",
   ];
 
   return (
@@ -29,77 +27,78 @@ const Products: React.FC = () => {
 
       {/* Categories */}
       <div className="space-y-0">
-        {t.categories.map((cat, idx) => (
-          <section
-            key={idx}
-            className="group flex flex-col md:flex-row w-full border-t border-stone-200 last:border-b"
-          >
-            {/* Text Section */}
-            <div
-              className={[
-                "relative w-full md:w-1/2",          // ✅ 必须：relative
-                "p-10 md:p-16 lg:p-20",
-                "flex flex-col justify-center",
-                "min-h-[520px] md:min-h-[680px]",
-                idx % 2 === 1 ? "md:order-2 bg-white" : "bg-brand-cream",
-              ].join(" ")}
+        {t.categories.map((cat, idx) => {
+          const no = String(idx + 1).padStart(2, "0");
+
+          return (
+            <section
+              key={idx}
+              className="group flex flex-col md:flex-row w-full border-t border-stone-200 last:border-b"
             >
-              {/* ✅ 水印数字：absolute + z-0，不占位、不推开内容 */}
+              {/* Text Section */}
               <div
-                aria-hidden="true"
                 className={[
-                  "pointer-events-none select-none",
-                  "absolute top-8 left-8 md:top-10 md:left-12", // 位置在上方
-                  "font-serif leading-none",
-                  "text-[96px] md:text-[140px] lg:text-[170px]",
-                  "text-brand-dark/10",
-                  "z-0",
+                  "w-full md:w-1/2",
+                  "p-10 md:p-16 lg:p-20",
+                  "flex flex-col justify-center",
+                  "min-h-[520px] md:min-h-[680px]",
+                  idx % 2 === 1 ? "md:order-2 bg-white" : "bg-brand-cream",
                 ].join(" ")}
               >
-                {String(idx + 1).padStart(2, "0")}
-              </div>
-            
-              {/* ✅ 正文内容：z-10 抬上来 → 会覆盖在水印上 */}
-              <div className="relative z-10">
-                <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-8">
-                  {cat.title}
-                </h2>
-                <p className="text-stone-600 text-lg font-light leading-loose max-w-xl">
-                  {cat.desc}
-                </p>
-              </div>
-            </div>
+                {/* ✅ 数字：正常排版（不重合），并且在上方 */}
+                <div className="flex-none mb-8 md:mb-10">
+                  <div
+                    aria-hidden="true"
+                    className={[
+                      "font-serif leading-none select-none",
+                      "text-brand-dark/10",
+                      "text-[110px] sm:text-[140px] md:text-[180px] lg:text-[220px]",
+                    ].join(" ")}
+                  >
+                    {no}
+                  </div>
+                </div>
 
-            {/* Image Section */}
-            <div
-              className={[
-                "w-full md:w-1/2",
-                "overflow-hidden relative",
-                "min-h-[380px] md:min-h-[680px]",
-                idx % 2 === 1 ? "md:order-1" : "",
-                "bg-stone-100", // ✅ 图片没出来也不会“空白一片”
-              ].join(" ")}
-            >
-              <img
-                src={images[idx]}
-                alt={cat.title}
-                className="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-                loading="lazy"
-                decoding="async"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  const img = e.currentTarget;
-                  img.onerror = null;
-                  // ✅ 回退到你仓库 public 根目录的 logo（你已经有 elmvale-logo-1024.png）
-                  img.src = "/elmvale-logo-1024.png";
-                  img.style.objectFit = "contain";
-                  img.style.background = "#ffffff";
-                }}
-              />
-              <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition duration-700"></div>
-            </div>
-          </section>
-        ))}
+                <div className="max-w-xl">
+                  <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-8">
+                    {cat.title}
+                  </h2>
+                  <p className="text-stone-600 text-lg font-light leading-loose">
+                    {cat.desc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Image Section */}
+              <div
+                className={[
+                  "w-full md:w-1/2",
+                  "overflow-hidden relative",
+                  "min-h-[380px] md:min-h-[680px]",
+                  idx % 2 === 1 ? "md:order-1" : "",
+                  "bg-stone-100",
+                ].join(" ")}
+              >
+                <img
+                  src={images[idx]}
+                  alt={cat.title}
+                  className="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    img.onerror = null;
+                    img.src = "/elmvale-logo-1024.png";
+                    img.style.objectFit = "contain";
+                    img.style.background = "#ffffff";
+                  }}
+                />
+                <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition duration-700"></div>
+              </div>
+            </section>
+          );
+        })}
       </div>
 
       {/* Quality & Customization */}

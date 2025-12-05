@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
                 <div className="flex items-start gap-6 group">
                   <Mail className="w-6 h-6 text-stone-300 group-hover:text-brand-primary transition" strokeWidth={1.5} />
                   <div>
-                    <span className="block font-serif text-xl text-brand-dark mb-1">Email</span>
+                    <span className="block font-serif text-xl text-brand-dark mb-1">{t.details.labels.email}</span>
                     <a href={`mailto:${t.details.email}`} className="text-stone-500 font-light hover:text-brand-dark transition">
                       {t.details.email}
                     </a>
@@ -85,21 +85,21 @@ const Contact: React.FC = () => {
                 <div className="flex items-start gap-6 group">
                   <Phone className="w-6 h-6 text-stone-300 group-hover:text-brand-primary transition" strokeWidth={1.5} />
                   <div>
-                    <span className="block font-serif text-xl text-brand-dark mb-1">Phone</span>
+                    <span className="block font-serif text-xl text-brand-dark mb-1">{t.details.labels.phone}</span>
                     <span className="text-stone-500 font-light">{t.details.phone}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-6 group">
                   <MapPin className="w-6 h-6 text-stone-300 group-hover:text-brand-primary transition" strokeWidth={1.5} />
                   <div>
-                    <span className="block font-serif text-xl text-brand-dark mb-1">Address</span>
+                    <span className="block font-serif text-xl text-brand-dark mb-1">{t.details.labels.address}</span>
                     <span className="text-stone-500 font-light">{t.details.address}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-6 group">
                   <Clock className="w-6 h-6 text-stone-300 group-hover:text-brand-primary transition" strokeWidth={1.5} />
                   <div>
-                    <span className="block font-serif text-xl text-brand-dark mb-1">Hours</span>
+                    <span className="block font-serif text-xl text-brand-dark mb-1">{t.details.labels.hours}</span>
                     <span className="text-stone-500 font-light">{t.details.hours}</span>
                   </div>
                 </div>

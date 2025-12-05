@@ -37,28 +37,29 @@ const Products: React.FC = () => {
             {/* Text Section */}
             <div
               className={[
-                "relative w-full md:w-1/2",
+                "relative w-full md:w-1/2",          // ✅ 必须：relative
                 "p-10 md:p-16 lg:p-20",
                 "flex flex-col justify-center",
-                "min-h-[520px] md:min-h-[680px]", // ✅ 更稳，不用 80vh 固定高度
+                "min-h-[520px] md:min-h-[680px]",
                 idx % 2 === 1 ? "md:order-2 bg-white" : "bg-brand-cream",
               ].join(" ")}
             >
-              {/* ✅ 水印数字：absolute，不参与排版 → 不会跑偏 */}
+              {/* ✅ 水印数字：absolute + z-0，不占位、不推开内容 */}
               <div
                 aria-hidden="true"
                 className={[
                   "pointer-events-none select-none",
-                  "absolute top-8 left-8 md:top-10 md:left-12",
+                  "absolute top-8 left-8 md:top-10 md:left-12", // 位置在上方
                   "font-serif leading-none",
-                  "text-[92px] md:text-[132px] lg:text-[160px]",
+                  "text-[96px] md:text-[140px] lg:text-[170px]",
                   "text-brand-dark/10",
                   "z-0",
                 ].join(" ")}
               >
                 {String(idx + 1).padStart(2, "0")}
               </div>
-
+            
+              {/* ✅ 正文内容：z-10 抬上来 → 会覆盖在水印上 */}
               <div className="relative z-10">
                 <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-8">
                   {cat.title}

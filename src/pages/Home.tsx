@@ -71,7 +71,7 @@ const Home: React.FC = () => {
                 className="
                   font-serif text-white
                   text-4xl md:text-6xl lg:text-7xl
-                  leading-[1.02] md:leading-[1.03]
+                  leading-[1.14] sm:leading-[1.12] md:leading-[1.08] lg:leading-[1.06]
                   tracking-[-0.02em]
                   max-w-[14ch]
                 "

@@ -70,7 +70,7 @@ const Home: React.FC = () => {
               <h1
                 className="
                   font-serif text-white
-                  text-5xl md:text-7xl lg:text-8xl
+                  text-4xl md:text-6xl lg:text-7xl
                   leading-[1.02] md:leading-[1.03]
                   tracking-[-0.02em]
                   max-w-[14ch]

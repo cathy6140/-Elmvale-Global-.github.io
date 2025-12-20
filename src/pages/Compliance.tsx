@@ -81,7 +81,7 @@ const Compliance: React.FC = () => {
         {/* Sustainability */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           <div className="lg:col-span-4">
-            <h2 className="font-serif text-4xl text-brand-dark sticky top-32 flex items-center gap-3">
+            <h2 className="font-serif text-4xl text-brand-dark sticky top-32">
               {t.sustainability.title}
             </h2>
           </div>

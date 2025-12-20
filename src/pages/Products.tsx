@@ -7,10 +7,10 @@ const Products: React.FC = () => {
   const t = content[language].products;
 
   const images = [
-    "https://images.unsplash.com/photo-1615396659714-f446d51c416e?q=80&w=1800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1556228720-1987df6a5e1a?q=80&w=1800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1605309608249-166e4a2e5532?q=80&w=1800&auto=format&fit=crop",
+    "/flacons-pots-product.png",           // 01 Flacons & Pots / Bottles & Jars
+    "/tubes-sachets-product.png",          // 02 Tubes & Sachets
+    "/pompes-distributeurs-product.png",   // 03 Pompes & Distributeurs
+    "/bouchons-fermetures-product.png",    // 04 Bouchons & Fermetures
   ];
 
   return (

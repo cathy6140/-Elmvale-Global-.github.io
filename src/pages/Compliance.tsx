@@ -26,13 +26,13 @@ const Compliance: React.FC = () => {
 
   const need = language === 'fr'
     ? [
-        'Marché cible (UE/US/KR) + exigences internes',
+        'Marché cible + exigences internes',
         'Type de formule (sensibilités, alcool, huiles essentielles, etc.)',
         'Format, col/standard, décor, MOQ & délai',
         'Niveau PCR souhaité & contraintes esthétiques'
       ]
     : [
-        'Target market (EU/US/KR) + any internal requirements',
+        'Target market + any internal requirements',
         'Formula type (sensitivities, alcohol, essential oils, etc.)',
         'Format, neck finish/standard, decoration, MOQ & timeline',
         'Target PCR % and appearance constraints'
@@ -40,13 +40,35 @@ const Compliance: React.FC = () => {
 
   return (
     <div className="bg-brand-cream min-h-screen">
-      {/* Intro */}
-      <section className="bg-brand-dark text-white pt-40 pb-20 px-6 lg:px-12">
-        <div className="max-w-screen-2xl mx-auto">
-          <h1 className="font-serif text-5xl md:text-7xl mb-8">{t.intro.title}</h1>
-          <p className="text-xl text-stone-300 font-light leading-relaxed max-w-3xl">
-            {t.intro.desc}
-          </p>
+      {/* Hero with background image */}
+      <section className="relative w-full min-h-[520px] md:min-h-[580px] overflow-hidden">
+        {/* 背景图：放在 public/compliance-hero.jpg */}
+        <img
+          src="/compliance-hero.png"
+          alt={
+            language === "fr"
+              ? "Documents de conformité et packagings cosmétiques durables"
+              : "Compliance documents and sustainable cosmetic packaging"
+          }
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+
+        {/* 暗色渐变遮罩，保证文字可读 */}
+        <div className="absolute inset-0 bg-black/45 md:bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
+
+        {/* 文案层 */}
+        <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 pt-40 pb-20 md:pb-28">
+          <div className="max-w-3xl">
+            <h1 className="font-serif text-white text-4xl md:text-6xl lg:text-7xl leading-[1.12] md:leading-[1.08] mb-8 max-w-[16ch] tracking-[-0.02em]">
+              {t.intro.title}
+            </h1>
+            <p className="text-base md:text-xl text-stone-100/95 font-light leading-relaxed max-w-2xl border-l-2 border-brand-primary/90 pl-6">
+              {t.intro.desc}
+            </p>
+          </div>
         </div>
       </section>
 

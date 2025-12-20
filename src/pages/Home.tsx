@@ -128,9 +128,9 @@ const Home: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="px-6 py-12 md:px-12 text-center md:text-left hover:bg-stone-50 transition duration-500"
+                  className="px-6 py-12 md:px-12 text-center md:text-center hover:bg-stone-50 transition duration-500"
                 >
-                  <div className="w-10 h-10 mb-6 mx-auto md:mx-0 rounded-full border border-black/10 flex items-center justify-center">
+                  <div className="w-10 h-10 mb-6 mx-auto rounded-full border border-black/10 flex items-center justify-center">
                     {Icon && (
                       <Icon
                         strokeWidth={1.4}

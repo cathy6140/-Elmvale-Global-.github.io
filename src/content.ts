@@ -74,7 +74,7 @@ export const content = {
       },
       expertise: {
         title: "Global expertise, market-focused service",
-        desc: "Elmvale Global may be new, but our experience runs deep. We work with carefully selected manufacturing partners across Asia, vetted for product capability, quality systems and documentation readiness. We coordinate projects in a structured way—from sampling and specification alignment to production milestones and delivery—so brands can launch confidently across EU/US/KR markets. We do not claim a local entity in every region; instead, we operate globally across time zones and prioritize clear communication, traceability and practical compliance support."
+        desc: "Elmvale Global may be new, but our experience runs deep. We work with carefully selected manufacturing partners across Asia, vetted for product capability, quality systems and documentation readiness. We coordinate projects in a structured way—from sampling and specification alignment to production milestones and delivery. We do not claim a local entity in every region; instead, we operate globally across time zones and prioritize clear communication, traceability and practical compliance support."
       },
       compliance: {
         title: "Committed to Compliance",
@@ -250,7 +250,7 @@ export const content = {
       },
       expertise: {
         title: "Expertise globale, service orienté marché",
-        desc: "Elmvale Global est peut-être nouveau, mais notre expérience est solide. Nous travaillons avec des partenaires industriels soigneusement sélectionnés en Asie, évalués sur leur capacité produit, leurs systèmes qualité et leur aptitude à fournir les documents nécessaires. Nous pilotons les projets de façon structurée — échantillons, alignement des spécifications, jalons de production et livraison — afin d’accompagner les marques sur les marchés UE/US/Corée. Nous ne revendiquons pas une entité locale dans chaque région ; nous opérons à l’international et privilégions une communication claire, la traçabilité et un support conformité pragmatique."
+        desc: "Elmvale Global est peut-être nouveau, mais notre expérience est solide. Nous travaillons avec des partenaires industriels soigneusement sélectionnés en Asie, évalués sur leur capacité produit, leurs systèmes qualité et leur aptitude à fournir les documents nécessaires. Nous pilotons les projets de façon structurée — échantillons, alignement des spécifications, jalons de production et livraison — afin d’accompagner les marques sur les marchés. Nous ne revendiquons pas une entité locale dans chaque région ; nous opérons à l’international et privilégions une communication claire, la traçabilité et un support conformité pragmatique."
       },
       compliance: {
         title: "Engagés pour la conformité",

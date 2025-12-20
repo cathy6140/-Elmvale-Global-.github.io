@@ -94,7 +94,7 @@ export const content = {
         },
         {
           title: "Tubes & Sachets",
-          desc: "The finishing touch to any package – our caps and closures combine safety, style, and sustainability. We provide flip-top caps, screw caps, and jar lids made from recyclable polypropylene or other eco-friendly materials. Features like liner-less seals and single-material construction ensure that after protecting your product, the closure itself can be recycled or reused. Secure your products with closures that care for the planet."
+          desc: "For products that call for flexible packaging, our tubes and sachets deliver convenience with a clear sustainability focus. We work with a range of options: squeezable tubes for creams, gels or cleansers in recyclable plastics with PCR content, and, where it truly makes sense, mono-material structures to simplify sorting and recycling. Our single-use sachets favour reduced-plastic designs that minimise material while maintaining barrier performance. On selected references, bio-based or compostable films can be explored on request. Lightweight and efficient, our tubes and sachets are designed to lower material impact without compromising your brand experience."
         },
         {
           title: "Pumps & Dispensers",

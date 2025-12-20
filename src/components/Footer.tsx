@@ -61,16 +61,6 @@ const Footer: React.FC = () => {
 
             <div className="space-y-5">
               <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
-                {t.footer?.marketsTitle ?? 'Markets'}
-              </h4>
-              <ul className="space-y-3 text-sm font-light text-stone-200/90">
-                <li>{t.footer?.marketsLine ?? (language === 'fr' ? 'Service marchés UE · US · Corée' : 'Serving EU · US · Korea')}</li>
-                <li>{t.footer?.leadTime ?? (language === 'fr' ? 'De l’échantillon à la production' : 'From sampling to production')}</li>
-              </ul>
-            </div>
-
-            <div className="space-y-5">
-              <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
                 {t.footer?.legal ?? (language === 'fr' ? 'Légal' : 'Legal')}
               </h4>
               <ul className="space-y-3 text-sm font-light">

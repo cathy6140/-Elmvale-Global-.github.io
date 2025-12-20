@@ -49,7 +49,7 @@ const Home: React.FC = () => {
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2574&auto=format&fit=crop"
+            src="/hero-home.png"
             alt="Sustainable minimalist cosmetic packaging"
             className="w-full h-full object-cover"
             loading="eager"

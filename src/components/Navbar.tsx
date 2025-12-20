@@ -32,7 +32,9 @@ const Navbar: React.FC = () => {
     if (!isOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = prev; };
+    return () => {
+      document.body.style.overflow = prev;
+    };
   }, [isOpen]);
 
   const isActive = (path: string) => location.pathname === path;
@@ -64,13 +66,12 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center">
-
-          {/* Logo (use your brand mark) */}
+          {/* Logo */}
           <Link to={withLang('/')} className="flex items-center gap-3 group">
             <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-black/5 shadow-sm transition-transform duration-500 group-hover:rotate-6">
               <img
@@ -80,25 +81,29 @@ const Navbar: React.FC = () => {
                 loading="eager"
               />
             </div>
-            <span className="font-serif text-lg md:text-xl uppercase tracking-[0.35em] font-normal text-brand-dark">
+            <span className="font-serif text-base md:text-lg uppercase tracking-[0.28em] font-normal text-brand-dark">
               ELMVALE GLOBAL
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={withLang(link.path)}
-                className={`text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 relative group ${
-                  isActive(link.path) ? 'text-brand-dark' : 'text-stone-500 hover:text-brand-dark'
+                className={`whitespace-nowrap text-[10px] lg:text-[11px] uppercase tracking-[0.18em] font-medium transition-all duration-300 relative group ${
+                  isActive(link.path)
+                    ? 'text-brand-dark'
+                    : 'text-stone-500 hover:text-brand-dark'
                 }`}
               >
                 {link.label}
                 <span
                   className={`absolute -bottom-2 left-0 w-full h-[1px] bg-brand-dark transform origin-left transition-transform duration-300 ${
-                    isActive(link.path) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'
+                    isActive(link.path)
+                      ? 'scale-x-100'
+                      : 'scale-x-0 group-hover:scale-x-50'
                   }`}
                 />
               </Link>
@@ -107,7 +112,7 @@ const Navbar: React.FC = () => {
             {/* Language Switcher */}
             <button
               onClick={toggleLang}
-              className="text-xs font-semibold tracking-widest text-brand-dark border-l border-stone-300 pl-6 ml-2 hover:opacity-70 transition-opacity"
+              className="text-[11px] font-semibold tracking-[0.18em] text-brand-dark border-l border-stone-300 pl-5 ml-1 hover:opacity-70 transition-opacity whitespace-nowrap"
               aria-label={language === 'en' ? 'Switch to French' : 'Switch to English'}
             >
               {language === 'en' ? 'FR' : 'EN'}

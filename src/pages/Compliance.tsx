@@ -82,15 +82,6 @@ const Compliance: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           <div className="lg:col-span-4">
             <h2 className="font-serif text-4xl text-brand-dark sticky top-32 flex items-center gap-3">
-              {/* 用你的品牌 logo 替换 Leaf */}
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white border border-black/5">
-                <img
-                  src="/elmvale-logo-512.png"
-                  alt="Elmvale"
-                  className="w-6 h-6 object-contain"
-                  loading="lazy"
-                />
-              </span>
               {t.sustainability.title}
             </h2>
           </div>

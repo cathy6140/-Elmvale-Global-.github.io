@@ -34,7 +34,7 @@ const About: React.FC = () => {
       <section className="w-full h-[60vh] overflow-hidden">
         {/* ✅ 建议后续换成 public/about-hero.jpg:  src="/about-hero.jpg" */}
         <img
-          src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=2560&auto=format&fit=crop"
+          src="/about-hero.png"
           alt="Nature and sustainable packaging"
           className="w-full h-full object-cover object-center"
           loading="lazy"

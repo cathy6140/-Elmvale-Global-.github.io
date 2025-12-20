@@ -15,7 +15,7 @@ export const content = {
       valueProp: {
         recyclable: {
           title: "Recyclable & Eco-Friendly Materials",
-          desc: "We specialize in recyclable materials and eco-conscious designs. From biodegradable containers to mono-material packaging, every solution is crafted to minimize environmental impact."
+          desc: "We work with a palette of solutions – recyclable plastics, PCR options, glass, aluminium and certified paperboard – and, where it makes sense, mono-material designs. Rather than pushing a single “green” answer, we help you find the right balance between aesthetics, formula compatibility and environmental impact for each project."
         },
         compliance: {
           title: "Regulatory Compliance Expertise",
@@ -94,7 +94,7 @@ export const content = {
         },
         {
           title: "Tubes & Sachets",
-          desc: "For products that call for flexible packaging, our tubes and sachets deliver convenience with a green conscience. We supply squeezable tubes (ideal for creams, gels, cleansers) made from mono-material plastics for straightforward recycling. Our single-use sachets use reduced plastic designs, minimizing material without compromising barrier properties. All options can incorporate biodegradable or compostable films upon request. Lightweight, efficient, and eco-friendly – tubes and sachets reimagined."
+          desc: "Flexible tubes and sachet packets ideal for creams, gels, or single-use samples. Designed for minimal material usage and full recyclability – including mono-material PE or PP tubes for easier recycling."
         },
         {
           title: "Pumps & Dispensers",
@@ -191,7 +191,7 @@ export const content = {
       valueProp: {
         recyclable: {
           title: "Matériaux recyclables & éco-conçus",
-          desc: "Nous sommes spécialisés dans les matériaux recyclables et les designs écoresponsables. Des contenants biodégradables aux emballages mono-matériaux, chaque solution est conçue pour minimiser son impact environnemental."
+          desc: "Nous travaillons une palette de solutions – plastiques recyclables, options PCR, verre, aluminium, papiers/cartons certifiés – et, lorsque c’est pertinent, des emballages mono-matériau. L’idée n’est pas de forcer une seule voie, mais de trouver pour chaque projet le meilleur compromis entre esthétique, compatibilité formule et impact environnemental."
         },
         compliance: {
           title: "Expertise en conformité réglementaire",
@@ -220,7 +220,7 @@ export const content = {
           },
           {
             title: "Bouchons & Fermetures",
-            desc: "Un large éventail de bouchons, couvercles et fermetures pour sceller vos produits en toute sécurité. Nous proposons des designs innovants, tels que des capuchons sans charnière et des fermetures recyclables en mono-matériau, qui garantissent l’intégrité du produit tout en facilitant le recyclage."
+            desc: "Un large éventail de bouchons, couvercles et fermetures pour sceller vos produits en toute sécurité. Nous développons des designs innovants – capuchons sans charnière, systèmes allégés, options en mono-matériau lorsque cela fait sens – afin de préserver l’intégrité du produit tout en facilitant, autant que possible, le tri et le recyclage."
           }
         ]
       },
@@ -270,7 +270,7 @@ export const content = {
         },
         {
           title: "Tubes & Sachets",
-          desc: "Pour les produits qui nécessitent un emballage souple, nos tubes et sachets offrent une praticité à conscience verte. Nous proposons des tubes souples (idéals pour crèmes, gels, nettoyants) fabriqués en plastiques mono-matériau pour un recyclage simplifié. Nos sachets unidoses utilisent des designs à plastique allégé, réduisant la quantité de matière sans compromettre les propriétés barrières. Toutes ces options peuvent intégrer des films biodégradables ou compostables sur demande. Légers, efficaces et écologiques : des tubes et sachets repensés."
+          desc: "Pour les produits qui nécessitent un emballage souple, nos tubes et sachets offrent une praticité à conscience verte. Nous travaillons plusieurs voies : tubes souples pour crèmes, gels ou nettoyants, en plastiques recyclables avec options PCR, et, lorsque c’est pertinent, en mono-matériau pour simplifier le recyclage. Nos sachets unidoses privilégient des designs allégés en plastique, réduisant la quantité de matière sans compromettre les propriétés barrières. Sur demande, certaines références peuvent intégrer des films à base biosourcée ou compostables. Légers, efficaces et pensés pour limiter l’empreinte matière : des tubes et sachets repensés."
         },
         {
           title: "Pompes & Distributeurs",
@@ -278,7 +278,7 @@ export const content = {
         },
         {
           title: "Bouchons & Fermetures",
-          desc: "La touche finale de tout packaging – nos bouchons et fermetures offrent sécurité, style et durabilité. Nous proposons des capuchons à charnière, des bouchons à vis et des couvercles pour pots fabriqués en polypropylène recyclable ou d’autres matériaux écologiques. Des caractéristiques telles que les systèmes de fermeture sans doublure et une construction mono-matériau garantissent qu’après avoir protégé votre produit, la fermeture elle-même peut être recyclée ou réutilisée. Protégez vos produits avec des fermetures qui prennent soin de la planète."
+          desc: "La touche finale de tout packaging – nos bouchons et fermetures offrent sécurité, style et durabilité. Nous proposons des capuchons à charnière, des bouchons à vis et des couvercles pour pots, majoritairement en polypropylène recyclable, avec options PCR ou autres matériaux à impact réduit. Selon les projets, nous privilégions soit des systèmes sans doublure et des conceptions mono-matériau, soit des solutions plus classiques mais allégées, afin de faciliter le tri et le recyclage sans compromettre la sécurité du produit. Protégez vos formules avec des fermetures qui prennent aussi soin de la planète."
         }
       ],
       quality: {

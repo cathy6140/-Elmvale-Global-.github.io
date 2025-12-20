@@ -10,6 +10,14 @@ const Home: React.FC = () => {
   const nav = content[language].nav;
   const [searchParams] = useSearchParams();
 
+    // Home「Solutions」四个分类对应的本地图片
+  const solutionImages = [
+    "/flacons-pots.png",          // 0 → Bottles & Jars / Flacons & Pots
+    "/tubes-sachets.png",         // 1 → Tubes & Sachets
+    "/pompes-distributeurs.png",  // 2 → Pumps & Dispensers
+    "/bouchons-fermetures.png",   // 3 → Caps & Closures
+  ];
+
   // keep lang param for all routes
   const withLang = useMemo(() => {
     const current = new URLSearchParams(searchParams);
@@ -187,14 +195,7 @@ const Home: React.FC = () => {
                 className="group relative block overflow-hidden aspect-[4/5] bg-white"
               >
                 <img
-                  src={`https://images.unsplash.com/photo-${
-                    [
-                      "1615396659714-f446d51c416e",
-                      "1629198688000-71f23e745b6e",
-                      "1608248597279-f99d160bfbc8",
-                      "1516975080664-ed2fc6a32937",
-                    ][idx] || "1620916566398-39f1143ab7be"
-                  }?q=80&w=800&auto=format&fit=crop`}
+                  src={solutionImages[idx] || "/flacons-pots.png"}
                   alt={item.title}
                   className="w-full h-full object-cover transition duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
                   loading="lazy"

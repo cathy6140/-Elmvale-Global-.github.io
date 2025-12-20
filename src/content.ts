@@ -186,7 +186,7 @@ export const content = {
     home: {
       hero: {
         tagline: "Emballages durables, portée mondiale.",
-        subtext: "Des solutions d’emballages recyclables et innovantes pour les marques de soins du visage et du corps du monde entier.",
+        subtext: "Des solutions d’emballages recyclables et innovantes pour les marques de soins du monde entier.",
       },
       valueProp: {
         recyclable: {

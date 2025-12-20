@@ -80,12 +80,7 @@ const Navbar: React.FC = () => {
                 loading="eager"
               />
             </div>
-            <span className="    font-serif
-                                 text-lg md:text-xl
-                                 uppercase
-                                 tracking-[0.35em]
-                                 font-normal
-                                 text-brand-dark">
+            <span className="font-serif text-lg md:text-xl uppercase tracking-[0.35em] font-normal text-brand-dark">
               ELMVALE GLOBAL
             </span>
           </Link>

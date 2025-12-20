@@ -94,7 +94,7 @@ export const content = {
         },
         {
           title: "Tubes & Sachets",
-          desc: "Flexible tubes and sachet packets ideal for creams, gels, or single-use samples. Designed for minimal material usage and full recyclability – including mono-material PE or PP tubes for easier recycling."
+          desc: "The finishing touch to any package – our caps and closures combine safety, style, and sustainability. We provide flip-top caps, screw caps, and jar lids made from recyclable polypropylene or other eco-friendly materials. Features like liner-less seals and single-material construction ensure that after protecting your product, the closure itself can be recycled or reused. Secure your products with closures that care for the planet."
         },
         {
           title: "Pumps & Dispensers",

@@ -19,7 +19,7 @@ export const content = {
         },
         compliance: {
           title: "Regulatory Compliance Expertise",
-          desc: "Compliance made easy. Our packaging solutions meet strict EU and global standards, helping you navigate regulations with confidence. (All packaging is on track to be recyclable by 2030 – we ensure you’re ready.)"
+          desc: "Compliance made easy. Our packaging solutions meet strict EU and global standards, helping you navigate regulations with confidence."
         },
         trust: {
           title: "Trust & Global Partnership",
@@ -195,7 +195,7 @@ export const content = {
         },
         compliance: {
           title: "Expertise en conformité réglementaire",
-          desc: "La conformité facilitée. Nos solutions d’emballage respectent les normes strictes de l’UE et internationales, vous aidant à naviguer les réglementations en toute confiance. (Tous les emballages devront être recyclables d’ici 2030 – nous veillons à ce que vous soyez prêts.)"
+          desc: "La conformité facilitée. Nos solutions d’emballage respectent les normes strictes de l’UE et internationales, vous aidant à naviguer les réglementations en toute confiance."
         },
         trust: {
           title: "Confiance & partenariat global",

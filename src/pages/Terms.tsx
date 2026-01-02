@@ -13,7 +13,7 @@ const Terms: React.FC = () => {
           {isFr ? "Conditions d’utilisation" : "Terms of Service"}
         </h1>
         <p className="text-xs md:text-sm text-stone-500 mb-10">
-          {isFr ? "Dernière mise à jour : 1 janvier 2026" : "Last updated: 1 January 2026"}
+          {isFr ? "Dernière mise à jour : 2 janvier 2026" : "Last updated: 2 January 2026"}
         </p>
 
         <div className="space-y-8 text-sm md:text-base text-stone-700 leading-relaxed">

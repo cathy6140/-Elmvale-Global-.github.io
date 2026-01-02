@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Compliance from './pages/Compliance';
 import Contact from './pages/Contact';
 import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
@@ -78,6 +79,7 @@ const App: React.FC = () => {
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </main>
         <Footer />

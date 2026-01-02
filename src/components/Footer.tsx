@@ -58,17 +58,48 @@ const Footer: React.FC = () => {
                 <li><Link to={withLang('/contact')} className="hover:text-white transition">{t.nav.contact}</Link></li>
               </ul>
             </div>
-
+            {/* Legal */}
             <div className="space-y-5">
               <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
                 {t.footer?.legal ?? (language === 'fr' ? 'Légal' : 'Legal')}
               </h4>
               <ul className="space-y-3 text-sm font-light">
-                <li><a className="hover:text-white transition" href="privacy.html">{t.footer?.privacy ?? 'Privacy Policy'}</a></li>
-                <li><a className="hover:text-white transition" href="terms.html">{t.footer?.terms ?? 'Terms of Service'}</a></li>
-                <li><a className="hover:text-white transition" href="cookies.html">{t.footer?.cookies ?? 'Cookies'}</a></li>
+                <li>
+                  <Link
+                    to={withLang('/privacy')}
+                    className="hover:text-white transition"
+                  >
+                    {t.footer?.privacy ?? 'Privacy Policy'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={withLang('/terms')}
+                    className="hover:text-white transition"
+                  >
+                    {t.footer?.terms ?? 'Terms of Service'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={withLang('/cookies')}
+                    className="hover:text-white transition"
+                  >
+                    {t.footer?.cookies ?? 'Cookies'}
+                  </Link>
+                </li>
               </ul>
             </div>
+
+            {/* Markets / extra block（可选第三列，后面可以补充内容） */}
+            {/* <div className="space-y-5">
+              <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
+                {t.footer?.marketsTitle ?? (language === 'fr' ? 'Marchés' : 'Markets')}
+              </h4>
+              <p className="text-sm font-light">
+                {t.footer?.marketsLine ?? 'Serving EU · US · Korea'}
+              </p>
+            </div> */}
           </div>
         </div>
 

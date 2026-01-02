@@ -8,11 +8,40 @@
         <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRRFY9DWWK"></script>
     <script>
+      // GA4 + Consent Mode 基础配置
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag(){ dataLayer.push(arguments); }
     
-      gtag('config', 'G-BRRFY9DWWK');
+      // 1) 初始：先假设用户“不同意”广告/分析类 cookie
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted', // 必要 cookie（例如语言设置）可以保留
+        'security_storage': 'granted'
+      });
+    
+      // 2) 正常初始化 GA4
+      gtag('js', new Date());
+      gtag('config', 'G-BRRFY9DWWK', {
+        anonymize_ip: true // 对欧盟访客更友好
+      });
+    
+      // 3) 预留：当用户在 Cookie Banner 中“接受”时调用的函数
+      // 以后你在 React 里可以通过 window.acceptAnalytics() 来切换为同意
+      window.acceptAnalytics = function() {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+      };
+    
+      // 4) 如需“仅接受必要 cookie”按钮，以后可以做一个类似的函数：
+      window.declineAnalytics = function() {
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied'
+        });
+      };
     </script>
     <meta
       name="description"

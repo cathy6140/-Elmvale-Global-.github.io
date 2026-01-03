@@ -3,12 +3,28 @@ import { Link, useSearchParams } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { content } from "../content";
 import { ArrowRight, Recycle, ShieldCheck, Globe } from "lucide-react";
+import React, { useContext, useMemo, useEffect } from "react";
+import { setSeoMeta } from "../seo";
 
 const Home: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language].home;
   const nav = content[language].nav;
   const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (language === "fr") {
+      setSeoMeta(
+        "Elmvale Global – Emballages cosmétiques durables, à l’international",
+        "Elmvale Global accompagne les marques dans le sourcing d’emballages cosmétiques durables : compatibilité formule, conformité, traçabilité et options plus responsables."
+      );
+    } else {
+      setSeoMeta(
+        "Elmvale Global – Sustainable cosmetic packaging for international brands",
+        "Elmvale Global helps beauty brands source cosmetic packaging with formula-safe compatibility, regulatory compliance, traceability and more sustainable material choices."
+      );
+    }
+  }, [language]);
 
     // Home「Solutions」四个分类对应的本地图片
   const solutionImages = [

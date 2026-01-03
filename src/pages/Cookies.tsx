@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { LanguageContext } from "../App";
 
 const Cookies: React.FC = () => {
+
+  const { language } = useContext(LanguageContext);
+  const isFr = language === "fr";
+
+  useEffect(() => {
+    document.title = isFr
+      ? "Elmvale Global – Cookies"
+      : "Elmvale Global – Cookies";
+
+    const desc = isFr
+      ? "Politique cookies d’Elmvale Global : cookies strictement nécessaires et mesure d’audience Google Analytics 4 avec consentement."
+      : "Elmvale Global Cookies Policy: strictly necessary cookies and Google Analytics 4 used with consent.";
+
+    const meta =
+      document.querySelector('meta[name="description"]') ||
+      (() => {
+        const m = document.createElement("meta");
+        m.name = "description";
+        document.head.appendChild(m);
+        return m;
+      })();
+    meta.setAttribute("content", desc);
+  }, [isFr]);
+  
   return (
     <div className="bg-white">
       <section className="pt-32 pb-16 px-6 lg:px-12 max-w-screen-2xl mx-auto">

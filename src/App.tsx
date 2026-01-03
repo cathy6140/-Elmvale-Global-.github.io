@@ -25,6 +25,61 @@ const ScrollToTop = () => {
   return null;
 };
 
+// 加一个 TitleManager：
+const TitleManager: React.FC = () => {
+  const { pathname } = useLocation();
+  const { language } = React.useContext(LanguageContext);
+
+  useEffect(() => {
+    // 网站基础标题（可以按语言稍微不一样）
+    const baseTitle =
+      language === 'fr'
+        ? 'Elmvale Global – Emballages cosmétiques responsables'
+        : 'Elmvale Global – Sustainable cosmetic packaging';
+
+    let pageTitle = '';
+
+    switch (pathname) {
+      case '/':
+        pageTitle = language === 'fr' ? 'Accueil' : 'Home';
+        break;
+      case '/products':
+        pageTitle = language === 'fr' ? 'Produits' : 'Products';
+        break;
+      case '/about':
+        pageTitle = language === 'fr' ? 'À propos de nous' : 'About us';
+        break;
+      case '/compliance':
+        pageTitle =
+          language === 'fr'
+            ? 'Conformité & durabilité'
+            : 'Compliance & Sustainability';
+        break;
+      case '/contact':
+        pageTitle = language === 'fr' ? 'Contactez-nous' : 'Contact us';
+        break;
+      case '/privacy':
+        pageTitle =
+          language === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy';
+        break;
+      case '/terms':
+        pageTitle =
+          language === 'fr' ? 'Conditions d’utilisation' : 'Terms of Service';
+        break;
+      case '/cookies':
+        pageTitle = language === 'fr' ? 'Cookies' : 'Cookies';
+        break;
+      default:
+        pageTitle = '';
+    }
+
+    // 最终标题：有具体页面就“页面名 | base”，否则就 base
+    document.title = pageTitle ? `${pageTitle} | ${baseTitle}` : baseTitle;
+  }, [pathname, language]);
+
+  return null;
+};
+
 const LANG_KEY = 'elmvale_lang';
 
 const App: React.FC = () => {
@@ -73,6 +128,7 @@ const App: React.FC = () => {
     <LanguageContext.Provider value={ctx}>
       <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
         <ScrollToTop />
+        <TitleManager />
         <Navbar />
         <main className="flex-grow">
           <Routes>

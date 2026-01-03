@@ -36,11 +36,12 @@ const CookieBanner: React.FC<Props> = () => {
   const handleChoice = (choice: ConsentValue) => {
     localStorage.setItem(STORAGE_KEY, choice);
 
-    if (choice === "accepted" && typeof window !== "undefined") {
-      (window as any).acceptAnalytics?.();
-    }
-    if (choice === "rejected" && typeof window !== "undefined") {
-      (window as any).declineAnalytics?.();
+    if (typeof window !== "undefined") {
+    const anyWindow = window as any;
+    if (choice === "accepted") {
+      anyWindow.acceptAnalytics?.();
+    } else {
+      anyWindow.declineAnalytics?.();
     }
 
     setVisible(false);
@@ -96,7 +97,7 @@ const CookieBanner: React.FC<Props> = () => {
               </span>{" "}
               below. You can change your choice at any time from the{" "}
               <a
-                href="/cookies"
+                href="/cookies.html"
                 className="underline underline-offset-2 hover:text-brand-dark"
               >
                 Cookies

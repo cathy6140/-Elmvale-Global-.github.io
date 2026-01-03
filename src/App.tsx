@@ -11,6 +11,8 @@ import Contact from './pages/Contact';
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import CookieBanner from "./components/CookieBanner";
+import Cookies from "./pages/Cookies";
+
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
@@ -81,6 +83,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
           </Routes>
         </main>
         <Footer />

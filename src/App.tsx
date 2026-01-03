@@ -10,6 +10,7 @@ import Compliance from './pages/Compliance';
 import Contact from './pages/Contact';
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import CookieBanner from "./components/CookieBanner";
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: 'en',

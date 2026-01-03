@@ -1,4 +1,4 @@
-// src/pages/Privacy.tsx
+// src/pages/Privacy.tsx 
 import React, { useContext, useEffect } from "react";
 import { LanguageContext } from "../App";
 import { setSeoMeta } from "../seo";

@@ -1,10 +1,25 @@
 // src/pages/Privacy.tsx
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { LanguageContext } from "../App";
+import { setSeoMeta } from "../seo";
 
 const Privacy: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const isFR = language === "fr";
+  
+  useEffect(() => {
+    if (isFr) {
+      setSeoMeta(
+        "Elmvale Global – Politique de confidentialité",
+        "Politique de confidentialité d’Elmvale Global expliquant comment nous traitons les données personnelles sur ce site."
+      );
+    } else {
+      setSeoMeta(
+        "Elmvale Global – Privacy Policy",
+        "Elmvale Global privacy policy explaining how we handle personal data on this website."
+      );
+    }
+  }, [isFr]);
 
   return (
     <div className="bg-brand-cream min-h-screen pt-32 pb-24">

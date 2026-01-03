@@ -2,10 +2,26 @@ import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
 import { content } from '../content';
 import { Check } from 'lucide-react';
+import React, { useContext, useEffect } from "react";
+import { setSeoMeta } from "../seo";
 
 const Compliance: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language].compliance;
+
+  useEffect(() => {
+    if (language === "fr") {
+      setSeoMeta(
+        "Elmvale Global – Conformité & durabilité des emballages cosmétiques",
+        "Informations sur la conformité des emballages cosmétiques (règlement UE, REACH, ISO 22716) et les initiatives de durabilité proposées par Elmvale Global."
+      );
+    } else {
+      setSeoMeta(
+        "Elmvale Global – Cosmetic packaging compliance & sustainability",
+        "Overview of cosmetic packaging compliance (EU regulation, REACH, ISO 22716) and sustainability initiatives supported by Elmvale Global."
+      );
+    }
+  }, [language]);
 
   const supportTitle = language === 'fr' ? 'Ce que nous fournissons' : 'What we provide';
   const needTitle = language === 'fr' ? 'Ce dont nous avons besoin' : 'What we need from you';

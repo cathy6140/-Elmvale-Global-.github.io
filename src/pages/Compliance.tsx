@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from "react";
 import { LanguageContext } from '../App';
 import { content } from '../content';
 import { Check } from 'lucide-react';
-import React, { useContext, useEffect } from "react";
 import { setSeoMeta } from "../seo";
 
 const Compliance: React.FC = () => {

@@ -9,7 +9,7 @@ export const content = {
     },
     home: {
       hero: {
-        tagline: "Sustainable Packaging, Made Global.",
+        tagline: "Sustainable Packaging for Global Brands",
         subtext: "Innovative, recyclable packaging solutions for skincare brands worldwide.",
       },
       valueProp: {
@@ -185,7 +185,7 @@ export const content = {
     },
     home: {
       hero: {
-        tagline: "Emballages durables, portée mondiale.",
+        tagline: "Emballages cosmétiques durables pour des marques internationales",
         subtext: "Des solutions d’emballages recyclables et innovantes pour les marques de soins du monde entier.",
       },
       valueProp: {

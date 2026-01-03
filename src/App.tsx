@@ -34,8 +34,8 @@ const TitleManager: React.FC = () => {
     // 网站基础标题（可以按语言稍微不一样）
     const baseTitle =
       language === 'fr'
-        ? 'Elmvale Global – Emballages cosmétiques responsables'
-        : 'Elmvale Global – Sustainable cosmetic packaging';
+        ? 'Elmvale Global – Packaging cosmétique fiable'
+        : 'Elmvale Global – Cosmetic packaging that delivers';
 
     let pageTitle = '';
 

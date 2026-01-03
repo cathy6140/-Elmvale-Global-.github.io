@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { LanguageContext } from '../App';
 import { content } from '../content';
 import { ArrowRight } from 'lucide-react';
-import React, { useContext, useEffect } from "react";
 import { setSeoMeta } from "../seo";
 
 const About: React.FC = () => {

@@ -3,11 +3,27 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { LanguageContext } from '../App';
 import { content } from '../content';
 import { ArrowRight } from 'lucide-react';
+import React, { useContext, useEffect } from "react";
+import { setSeoMeta } from "../seo";
 
 const About: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language].about;
   const nav = content[language].nav;
+
+  useEffect(() => {
+    if (language === "fr") {
+      setSeoMeta(
+        "Elmvale Global – Qui nous sommes",
+        "Elmvale Global est un partenaire de sourcing d’emballages cosmétiques, basé en Europe et en Asie, qui relie les marques de beauté à des usines fiables et conformes."
+      );
+    } else {
+      setSeoMeta(
+        "Elmvale Global – Who we are",
+        "Elmvale Global is a sourcing and trading partner for cosmetic packaging, connecting beauty brands with vetted factories and reliable supply in Europe and Asia."
+      );
+    }
+  }, [language]);
 
   const [searchParams] = useSearchParams();
   const withLang = (path: string) => {

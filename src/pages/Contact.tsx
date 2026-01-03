@@ -1,9 +1,8 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { content } from "../content";
 import { Mail, Phone, Clock } from "lucide-react";
-import React, { useContext, useEffect } from "react";
 import { setSeoMeta } from "../seo";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjkaopok";

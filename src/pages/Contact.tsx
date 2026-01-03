@@ -3,12 +3,28 @@ import { useSearchParams } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { content } from "../content";
 import { Mail, Phone, Clock } from "lucide-react";
+import React, { useContext, useEffect } from "react";
+import { setSeoMeta } from "../seo";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjkaopok";
 
 const Contact: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language].contact;
+
+  useEffect(() => {
+    if (language === "fr") {
+      setSeoMeta(
+        "Elmvale Global – Contactez-nous",
+        "Parlez-nous de vos projets d’emballages cosmétiques : demandes de devis, sourcing de nouveaux packs ou questions de conformité."
+      );
+    } else {
+      setSeoMeta(
+        "Elmvale Global – Contact us",
+        "Get in touch about cosmetic packaging projects: quotations, new pack sourcing, or compliance questions for your beauty brand."
+      );
+    }
+  }, [language]);
 
   const [searchParams] = useSearchParams();
   const presetCategory = searchParams.get("category") || "";

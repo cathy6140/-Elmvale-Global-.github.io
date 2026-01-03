@@ -10,13 +10,13 @@ const Products: React.FC = () => {
   useEffect(() => {
     if (language === "fr") {
       setSeoMeta(
-        "Elmvale Global – Flacons, pots, tubes et pompes pour cosmétiques",
-        "Sélection de flacons, pots, tubes, sachets, pompes et bouchons pour soins et maquillage, avec des options recyclables et adaptées aux formules sensibles."
+        "Gamme d’emballages cosmétiques – Flacons, pots, tubes, pompes | Elmvale Global",
+        "Découvrez flacons & pots, tubes & sachets, pompes & distributeurs, bouchons & fermetures avec options recyclables, mono-matériau et PCR."
       );
     } else {
       setSeoMeta(
-        "Elmvale Global – Bottles, jars, tubes and pumps for cosmetics",
-        "Range of cosmetic bottles, jars, tubes, sachets, pumps and closures with options for recyclable materials and formula-sensitive applications."
+        "Cosmetic packaging range – Bottles, jars, tubes, pumps | Elmvale Global",
+        "Discover bottles & jars, tubes & sachets, pumps & dispensers, and caps & closures with recyclable, mono-material and PCR options."
       );
     }
   }, [language]);

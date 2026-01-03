@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react'; 
 import { Link, useSearchParams } from 'react-router-dom';
 import { LanguageContext } from '../App';
 import { content } from '../content';

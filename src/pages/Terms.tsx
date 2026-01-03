@@ -1,10 +1,29 @@
-// src/pages/Terms.tsx
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { LanguageContext } from "../App";
 
 const Terms: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const isFr = language === "fr";
+
+  useEffect(() => {
+    document.title = isFr
+      ? "Elmvale Global – Conditions d’utilisation"
+      : "Elmvale Global – Terms of Service";
+
+    const desc = isFr
+      ? "Conditions d’utilisation du site Elmvale Global : accès, utilisation B2B uniquement, absence de garantie, limitation de responsabilité et droit applicable."
+      : "Elmvale Global Website Terms of Service: access, B2B-only use, no warranty, limitation of liability and governing law.";
+
+    const meta =
+      document.querySelector('meta[name="description"]') ||
+      (() => {
+        const m = document.createElement("meta");
+        m.name = "description";
+        document.head.appendChild(m);
+        return m;
+      })();
+    meta.setAttribute("content", desc);
+  }, [isFr]);
 
   return (
     <div className="bg-white pt-32 pb-24">

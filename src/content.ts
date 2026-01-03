@@ -185,7 +185,7 @@ export const content = {
     },
     home: {
       hero: {
-        tagline: "Emballages cosmétiques durables pour des marques internationales",
+        tagline: "Emballages cosmétiques durables, à l’international",
         subtext: "Des solutions d’emballages recyclables et innovantes pour les marques de soins du monde entier.",
       },
       valueProp: {

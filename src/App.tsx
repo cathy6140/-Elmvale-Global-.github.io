@@ -86,6 +86,9 @@ const App: React.FC = () => {
             <Route path="/cookies" element={<Cookies />} />
           </Routes>
         </main>
+        {/* 这里插入 CookieBanner，让它出现在所有页面 */}
+        <CookieBanner />
+        
         <Footer />
       </div>
     </LanguageContext.Provider>

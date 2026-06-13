@@ -60,8 +60,8 @@ const TitleManager: React.FC = () => {
       case "/skincare-mask-packaging":
         pageTitle =
           language === "fr"
-            ? "Solutions skincare & masques"
-            : "Skincare & Mask Packaging";
+            ? "Packaging skincare & masques"
+            : "Hydrogel Mask & K-Beauty Packaging";
         break;
       case "/about":
         pageTitle = language === "fr" ? "À propos de nous" : "About us";

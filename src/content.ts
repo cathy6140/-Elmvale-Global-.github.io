@@ -3,7 +3,7 @@ export const content = {
     nav: {
       home: "Home",
       about: "About Us",
-      products: "Solutions",
+      solutions: "Solutions",
       compliance: "Compliance & Sustainability",
       contact: "Contact Us",
     },

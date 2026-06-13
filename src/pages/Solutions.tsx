@@ -3,27 +3,40 @@ import { LanguageContext } from "../App";
 import { content } from "../content";
 import { setSeoMeta } from "../seo";
 
-// ✅ 修复拼写错误（非常重要）
 const Solutions: React.FC = () => {
   const { language } = useContext(LanguageContext);
-  const t = content?.[language]?.solutions;
-  if (!t) {
-    return <div style={{ padding: 40 }}>Loading content...</div>;
-  }
 
+  // ✅ 关键：清洗 language，防止 "fr " / undefined
+  const lang = (language || "en").trim();
+
+  // ✅ 安全读取 content（防 crash 核心）
+  const pageContent =
+    content?.[lang]?.solutions ||
+    content?.en?.solutions;
+
+  // ✅ SEO
   useEffect(() => {
-    if (language === "fr") {
+    if (lang === "fr") {
       setSeoMeta(
-        "Packaging cosmétique – systèmes bouteilles, tubes, pompes | Elmvale Global",
-        "Solutions packaging skincare et K-beauty : systèmes flacons, tubes, pompes et packaging durable pour marques globales."
+        "Packaging cosmétique – systèmes skincare & K-beauty | Elmvale Global",
+        "Solutions packaging pour marques skincare : flacons, tubes, pompes et packaging durable."
       );
     } else {
       setSeoMeta(
-        "Cosmetic packaging systems – bottles, tubes, pumps | Elmvale Global",
-        "Skincare and K-beauty packaging systems: bottles, jars, tubes, pumps and sustainable packaging solutions."
+        "Cosmetic packaging systems – skincare & K-beauty | Elmvale Global",
+        "Skincare packaging systems: bottles, tubes, pumps and sustainable packaging solutions."
       );
     }
-  }, [language]);
+  }, [lang]);
+
+  // ❗ 防止白屏（关键）
+  if (!pageContent) {
+    return (
+      <div style={{ padding: 40, fontSize: 16 }}>
+        ⚠️ Content loading error: solutions data not found.
+      </div>
+    );
+  }
 
   const images = [
     "/flacons-pots-product.png",
@@ -34,21 +47,21 @@ const Solutions: React.FC = () => {
 
   return (
     <div className="bg-brand-cream pb-0">
-
-      {/* ================= HEADER ================= */}
+      
+      {/* Header */}
       <section className="pt-32 pb-20 px-6 lg:px-12 max-w-screen-2xl mx-auto">
         <h1 className="font-serif text-5xl md:text-7xl text-brand-dark mb-10">
-          {t.intro.title}
+          {pageContent.intro.title}
         </h1>
 
         <p className="text-lg md:text-xl text-stone-600 leading-relaxed max-w-3xl font-light">
-          {t.intro.desc}
+          {pageContent.intro.desc}
         </p>
       </section>
 
-      {/* ================= SYSTEMS ================= */}
+      {/* Categories */}
       <div className="space-y-0">
-        {t.categories.map((cat, idx) => {
+        {pageContent.categories?.map((cat: any, idx: number) => {
           const no = String(idx + 1).padStart(2, "0");
 
           return (
@@ -56,7 +69,6 @@ const Solutions: React.FC = () => {
               key={idx}
               className="group flex flex-col md:flex-row w-full border-t border-stone-200 last:border-b"
             >
-
               {/* TEXT */}
               <div
                 className={[
@@ -68,13 +80,7 @@ const Solutions: React.FC = () => {
                 ].join(" ")}
               >
                 <div className="mb-8 md:mb-10">
-                  <div
-                    className="
-                      font-serif leading-none select-none
-                      text-brand-dark/10
-                      text-[110px] sm:text-[140px] md:text-[180px] lg:text-[220px]
-                    "
-                  >
+                  <div className="font-serif text-[140px] text-brand-dark/10 leading-none">
                     {no}
                   </div>
                 </div>
@@ -105,50 +111,35 @@ const Solutions: React.FC = () => {
                   alt={cat.title}
                   className="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
                   loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const img = e.currentTarget;
-                    img.onerror = null;
-                    img.src = "/elmvale-logo-1024.png";
-                    img.style.objectFit = "contain";
-                    img.style.background = "#ffffff";
-                  }}
                 />
-                <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition duration-700"></div>
               </div>
-
             </section>
           );
         })}
       </div>
 
-      {/* ================= QUALITY ================= */}
+      {/* Quality */}
       <div className="bg-white py-24 border-t border-stone-200">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-
             <div>
               <h3 className="font-serif text-3xl text-brand-dark mb-6">
-                {t.quality.title}
+                {pageContent.quality.title}
               </h3>
-              <p className="text-stone-500 leading-relaxed font-light text-lg max-w-xl">
-                {t.quality.desc}
+              <p className="text-stone-500 text-lg font-light">
+                {pageContent.quality.desc}
               </p>
             </div>
 
             <div>
               <h3 className="font-serif text-3xl text-brand-dark mb-6">
-                {t.customization.title}
+                {pageContent.customization.title}
               </h3>
-              <p className="text-stone-500 leading-relaxed font-light text-lg max-w-xl">
-                {t.customization.desc}
+              <p className="text-stone-500 text-lg font-light">
+                {pageContent.customization.desc}
               </p>
             </div>
-
           </div>
-
         </div>
       </div>
 

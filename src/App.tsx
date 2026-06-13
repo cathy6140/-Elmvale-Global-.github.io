@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Products from "./pages/Products";
+import Solutions from "./pages/Solutions";
 import SkincareMaskPackaging from "./pages/SkincareMaskPackaging";
 import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
@@ -158,7 +158,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/solutions" element={<Solutions />} />
               <Route path="/skincare-mask-packaging" element={<SkincareMaskPackaging />} />
               <Route path="/compliance" element={<Compliance />} />
               <Route path="/contact" element={<Contact />} />

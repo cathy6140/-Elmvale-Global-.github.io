@@ -3,9 +3,9 @@ import { LanguageContext } from "../App";
 import { content } from "../content";
 import { setSeoMeta } from "../seo";
 
-const Products: React.FC = () => {
+const Solultions: React.FC = () => {
   const { language } = useContext(LanguageContext);
-  const t = content[language].products;
+  const t = content[language].solutions;
 
   useEffect(() => {
     if (language === "fr") {
@@ -143,4 +143,4 @@ const Products: React.FC = () => {
   );
 };
 
-export default Products;
+export default Solutions;

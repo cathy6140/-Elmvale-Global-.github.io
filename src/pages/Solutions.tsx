@@ -3,44 +3,47 @@ import { LanguageContext } from "../App";
 import { content } from "../content";
 import { setSeoMeta } from "../seo";
 
-const Solultions: React.FC = () => {
+// ✅ 修复拼写错误（非常重要）
+const Solutions: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language].solutions;
 
   useEffect(() => {
     if (language === "fr") {
       setSeoMeta(
-        "Gamme d’emballages cosmétiques – Flacons, pots, tubes, pompes | Elmvale Global",
-        "Découvrez flacons & pots, tubes & sachets, pompes & distributeurs, bouchons & fermetures avec options recyclables, mono-matériau et PCR."
+        "Packaging cosmétique – systèmes bouteilles, tubes, pompes | Elmvale Global",
+        "Solutions packaging skincare et K-beauty : systèmes flacons, tubes, pompes et packaging durable pour marques globales."
       );
     } else {
       setSeoMeta(
-        "Cosmetic packaging range – Bottles, jars, tubes, pumps | Elmvale Global",
-        "Discover bottles & jars, tubes & sachets, pumps & dispensers, and caps & closures with recyclable, mono-material and PCR options."
+        "Cosmetic packaging systems – bottles, tubes, pumps | Elmvale Global",
+        "Skincare and K-beauty packaging systems: bottles, jars, tubes, pumps and sustainable packaging solutions."
       );
     }
   }, [language]);
 
   const images = [
-    "/flacons-pots-product.png",           // 01 Flacons & Pots / Bottles & Jars
-    "/tubes-sachets-product.png",          // 02 Tubes & Sachets
-    "/pompes-distributeurs-product.png",   // 03 Pompes & Distributeurs
-    "/bouchons-fermetures-product.png",    // 04 Bouchons & Fermetures
+    "/flacons-pots-product.png",
+    "/tubes-sachets-product.png",
+    "/pompes-distributeurs-product.png",
+    "/bouchons-fermetures-product.png",
   ];
 
   return (
     <div className="bg-brand-cream pb-0">
-      {/* Header */}
+
+      {/* ================= HEADER ================= */}
       <section className="pt-32 pb-20 px-6 lg:px-12 max-w-screen-2xl mx-auto">
         <h1 className="font-serif text-5xl md:text-7xl text-brand-dark mb-10">
           {t.intro.title}
         </h1>
+
         <p className="text-lg md:text-xl text-stone-600 leading-relaxed max-w-3xl font-light">
           {t.intro.desc}
         </p>
       </section>
 
-      {/* Categories */}
+      {/* ================= SYSTEMS ================= */}
       <div className="space-y-0">
         {t.categories.map((cat, idx) => {
           const no = String(idx + 1).padStart(2, "0");
@@ -50,7 +53,8 @@ const Solultions: React.FC = () => {
               key={idx}
               className="group flex flex-col md:flex-row w-full border-t border-stone-200 last:border-b"
             >
-              {/* Text Section */}
+
+              {/* TEXT */}
               <div
                 className={[
                   "w-full md:w-1/2",
@@ -60,15 +64,13 @@ const Solultions: React.FC = () => {
                   idx % 2 === 1 ? "md:order-2 bg-white" : "bg-brand-cream",
                 ].join(" ")}
               >
-                {/* ✅ 数字：正常排版（不重合），并且在上方 */}
-                <div className="flex-none mb-8 md:mb-10">
+                <div className="mb-8 md:mb-10">
                   <div
-                    aria-hidden="true"
-                    className={[
-                      "font-serif leading-none select-none",
-                      "text-brand-dark/10",
-                      "text-[110px] sm:text-[140px] md:text-[180px] lg:text-[220px]",
-                    ].join(" ")}
+                    className="
+                      font-serif leading-none select-none
+                      text-brand-dark/10
+                      text-[110px] sm:text-[140px] md:text-[180px] lg:text-[220px]
+                    "
                   >
                     {no}
                   </div>
@@ -78,13 +80,14 @@ const Solultions: React.FC = () => {
                   <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-8">
                     {cat.title}
                   </h2>
+
                   <p className="text-stone-600 text-lg font-light leading-loose">
                     {cat.desc}
                   </p>
                 </div>
               </div>
 
-              {/* Image Section */}
+              {/* IMAGE */}
               <div
                 className={[
                   "w-full md:w-1/2",
@@ -111,15 +114,18 @@ const Solultions: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition duration-700"></div>
               </div>
+
             </section>
           );
         })}
       </div>
 
-      {/* Quality & Customization */}
+      {/* ================= QUALITY ================= */}
       <div className="bg-white py-24 border-t border-stone-200">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+
             <div>
               <h3 className="font-serif text-3xl text-brand-dark mb-6">
                 {t.quality.title}
@@ -128,6 +134,7 @@ const Solultions: React.FC = () => {
                 {t.quality.desc}
               </p>
             </div>
+
             <div>
               <h3 className="font-serif text-3xl text-brand-dark mb-6">
                 {t.customization.title}
@@ -136,9 +143,12 @@ const Solultions: React.FC = () => {
                 {t.customization.desc}
               </p>
             </div>
+
           </div>
+
         </div>
       </div>
+
     </div>
   );
 };

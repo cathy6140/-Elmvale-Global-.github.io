@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import SkincareMaskPackaging from "./pages/SkincareMaskPackaging";
 import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
@@ -55,6 +56,12 @@ const TitleManager: React.FC = () => {
         break;
       case "/products":
         pageTitle = language === "fr" ? "Produits" : "Products";
+        break;
+      case "/skincare-mask-packaging":
+        pageTitle =
+          language === "fr"
+            ? "Solutions skincare & masques"
+            : "Skincare & Mask Packaging";
         break;
       case "/about":
         pageTitle = language === "fr" ? "À propos de nous" : "About us";
@@ -150,6 +157,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/skincare-mask-packaging" element={<SkincareMaskPackaging />} />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />

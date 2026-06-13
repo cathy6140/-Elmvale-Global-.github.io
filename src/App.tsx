@@ -7,7 +7,6 @@ import React, {
 import {
   Routes,
   Route,
-  HashRouter,
   useLocation,
   useSearchParams,
 } from "react-router-dom";
@@ -26,7 +25,7 @@ import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import CookieBanner from "./components/CookieBanner";
 
-// ================= LANGUAGE CONTEXT =================
+// ===== Context =====
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: "en",
@@ -35,72 +34,62 @@ export const LanguageContext = createContext<LanguageContextType>({
 
 const LANG_KEY = "elmvale_lang";
 
-// ================= SCROLL =================
+// ===== Scroll =====
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 };
 
-// ================= TITLE =================
+// ===== Title =====
 
 const TitleManager: React.FC = () => {
   const { pathname } = useLocation();
   const { language } = React.useContext(LanguageContext);
 
   useEffect(() => {
-    const baseTitle =
+    const base =
       language === "fr"
-        ? "Elmvale Global – Packaging cosmétique"
-        : "Elmvale Global – Cosmetic Packaging";
+        ? "Elmvale Global"
+        : "Elmvale Global";
 
-    let pageTitle = "";
+    let title = "";
 
     switch (pathname) {
       case "/":
-        pageTitle = language === "fr" ? "Accueil" : "Home";
+        title = "Home";
         break;
       case "/solutions":
-        pageTitle = language === "fr" ? "Solutions" : "Solutions";
+        title = "Solutions";
         break;
       case "/skincare-mask-packaging":
-        pageTitle =
-          language === "fr"
-            ? "Packaging masques"
-            : "Hydrogel Mask Packaging";
+        title = "Mask Packaging";
         break;
       case "/about":
-        pageTitle = language === "fr" ? "À propos" : "About";
+        title = "About";
         break;
       case "/compliance":
-        pageTitle =
-          language === "fr"
-            ? "Conformité"
-            : "Compliance & Sustainability";
+        title = "Compliance";
         break;
       case "/contact":
-        pageTitle = language === "fr" ? "Contact" : "Contact";
+        title = "Contact";
         break;
       default:
-        pageTitle = "";
+        title = "";
     }
 
-    document.title = pageTitle
-      ? `${pageTitle} | ${baseTitle}`
-      : baseTitle;
+    document.title = title ? `${title} | ${base}` : base;
   }, [pathname, language]);
 
   return null;
 };
 
-// ================= INNER APP =================
+// ===== App =====
 
-const AppInner: React.FC = () => {
+const App: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const urlLang = searchParams.get("lang") as Language | null;
@@ -128,7 +117,6 @@ const AppInner: React.FC = () => {
   useEffect(() => {
     if (urlLang === "en" || urlLang === "fr") {
       setLanguageState(urlLang);
-      localStorage.setItem(LANG_KEY, urlLang);
     }
   }, [urlLang]);
 
@@ -153,10 +141,7 @@ const AppInner: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/solutions" element={<Solutions />} />
-            <Route
-              path="/skincare-mask-packaging"
-              element={<SkincareMaskPackaging />}
-            />
+            <Route path="/skincare-mask-packaging" element={<SkincareMaskPackaging />} />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
@@ -169,16 +154,6 @@ const AppInner: React.FC = () => {
         <Footer />
       </div>
     </LanguageContext.Provider>
-  );
-};
-
-// ================= ROOT =================
-
-const App: React.FC = () => {
-  return (
-    <HashRouter>
-      <AppInner />
-    </HashRouter>
   );
 };
 

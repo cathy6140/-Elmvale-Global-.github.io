@@ -36,7 +36,7 @@ const Home: React.FC = () => {
             </Link>
 
             <Link
-              to="/products"
+              to="/solutions"
               className="border border-stone-400 px-8 py-3 rounded-full hover:bg-stone-100 transition"
             >
               {language === "fr" ? "Solutions" : "View All Systems"}

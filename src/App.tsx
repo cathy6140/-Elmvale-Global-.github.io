@@ -8,7 +8,6 @@ import {
   Routes,
   Route,
   useLocation,
-  useSearchParams,
 } from "react-router-dom";
 
 import { Language, LanguageContextType } from "./types";
@@ -25,7 +24,7 @@ import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import CookieBanner from "./components/CookieBanner";
 
-// ===== Context =====
+// ================= CONTEXT =================
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: "en",
@@ -34,48 +33,62 @@ export const LanguageContext = createContext<LanguageContextType>({
 
 const LANG_KEY = "elmvale_lang";
 
-// ===== Scroll =====
+// ================= HELPERS =================
+
+// ✅ 统一语言清洗（核心修复）
+const normalizeLang = (lang: any): Language => {
+  if (!lang) return "fr";
+
+  const clean = String(lang).trim();
+
+  if (clean === "en" || clean === "fr") {
+    return clean;
+  }
+
+  return "fr";
+};
+
+// ================= SCROLL =================
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
   return null;
 };
 
-// ===== Title =====
+// ================= TITLE =================
 
 const TitleManager: React.FC = () => {
   const { pathname } = useLocation();
   const { language } = React.useContext(LanguageContext);
 
   useEffect(() => {
-    const base =
-      language === "fr"
-        ? "Elmvale Global"
-        : "Elmvale Global";
+    const base = "Elmvale Global";
 
     let title = "";
 
     switch (pathname) {
       case "/":
-        title = "Home";
+        title = language === "fr" ? "Accueil" : "Home";
         break;
       case "/solutions":
         title = "Solutions";
         break;
       case "/skincare-mask-packaging":
-        title = "Mask Packaging";
+        title = language === "fr" ? "Packaging masques" : "Mask Packaging";
         break;
       case "/about":
-        title = "About";
+        title = language === "fr" ? "À propos" : "About";
         break;
       case "/compliance":
-        title = "Compliance";
+        title = language === "fr" ? "Conformité" : "Compliance";
         break;
       case "/contact":
-        title = "Contact";
+        title = language === "fr" ? "Contact" : "Contact";
         break;
       default:
         title = "";
@@ -87,42 +100,32 @@ const TitleManager: React.FC = () => {
   return null;
 };
 
-// ===== App =====
+// ================= APP =================
 
 const App: React.FC = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const storedLang = localStorage.getItem(LANG_KEY);
 
-  const urlLang = searchParams.get("lang") as Language | null;
-  const storedLang = localStorage.getItem(LANG_KEY) as Language | null;
+  // ✅ 初始化语言（100%安全）
+  const [language, setLanguageState] = useState<Language>(
+    normalizeLang(storedLang)
+  );
 
-  const initialLang: Language =
-    urlLang === "en" || urlLang === "fr"
-      ? urlLang
-      : storedLang === "en" || storedLang === "fr"
-      ? storedLang
-      : "fr";
-
-  const [language, setLanguageState] =
-    useState<Language>(initialLang);
+  // ================= SET LANGUAGE =================
 
   const setLanguage = (l: Language) => {
-    setLanguageState(l);
-    localStorage.setItem(LANG_KEY, l);
+    const clean = normalizeLang(l);
 
-    const next = new URLSearchParams(searchParams);
-    next.set("lang", l);
-    setSearchParams(next, { replace: true });
+    setLanguageState(clean);
+    localStorage.setItem(LANG_KEY, clean);
   };
 
-  useEffect(() => {
-    if (urlLang === "en" || urlLang === "fr") {
-      setLanguageState(urlLang);
-    }
-  }, [urlLang]);
+  // ================= SYNC HTML LANG =================
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+
+  // ================= CONTEXT =================
 
   const ctx = useMemo(
     () => ({ language, setLanguage }),
@@ -132,6 +135,7 @@ const App: React.FC = () => {
   return (
     <LanguageContext.Provider value={ctx}>
       <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
+
         <ScrollToTop />
         <TitleManager />
         <Navbar />
@@ -152,6 +156,7 @@ const App: React.FC = () => {
 
         <CookieBanner />
         <Footer />
+
       </div>
     </LanguageContext.Provider>
   );

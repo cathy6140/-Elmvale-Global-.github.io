@@ -6,7 +6,10 @@ import { setSeoMeta } from "../seo";
 // ✅ 修复拼写错误（非常重要）
 const Solutions: React.FC = () => {
   const { language } = useContext(LanguageContext);
-  const t = content[language].solutions;
+  const t = content?.[language]?.solutions;
+  if (!t) {
+    return <div style={{ padding: 40 }}>Loading content...</div>;
+  }
 
   useEffect(() => {
     if (language === "fr") {

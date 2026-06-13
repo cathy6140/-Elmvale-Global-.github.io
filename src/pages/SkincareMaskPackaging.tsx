@@ -1,165 +1,95 @@
 import React, { useContext, useEffect, useMemo } from "react";
-
 import { Link, useSearchParams } from "react-router-dom";
-
 import { ArrowRight, Clock, Layers, PackageCheck, Globe2 } from "lucide-react";
-
 import { LanguageContext } from "../App";
-
 import { setSeoMeta } from "../seo";
 
 const SkincareMaskPackaging: React.FC = () => {
-
   const { language } = useContext(LanguageContext);
-
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-
     if (language === "fr") {
-
       setSeoMeta(
-
         "Solutions d’emballage skincare & masques | Elmvale Global",
-
         "Sourcing d’emballages pour skincare, masques, patchs hydrogel, pochettes, tubes, flacons, pots, étuis et options plus durables."
-
       );
-
     } else {
-
       setSeoMeta(
-
         "Skincare & Mask Packaging Solutions | Elmvale Global",
-
         "Custom sourcing support for skincare bottles, tubes, jars, sheet mask pouches, hydrogel mask packaging, folding cartons and sustainable packaging options."
-
       );
-
     }
-
   }, [language]);
 
   const withLang = useMemo(() => {
-
     const current = new URLSearchParams(searchParams);
-
     current.set("lang", language);
-
     return (pathname: string) => ({
-
       pathname,
-
       search: `?${current.toString()}`,
-
     });
-
   }, [language, searchParams]);
 
   const contactLink = useMemo(() => {
-
     const p = new URLSearchParams(searchParams);
-
     p.set("lang", language);
-
     p.set("category", "Skincare & Mask Packaging");
-
     p.set("source", "skincare-mask-packaging");
-
     return { pathname: "/contact", search: `?${p.toString()}` };
-
   }, [language, searchParams]);
 
   const copy =
-
     language === "fr"
-
       ? {
-
           label: "Solutions skincare & masques",
-
           title: "Solutions d’emballage pour skincare, masques et lancements beauté rapides.",
-
           subtitle:
-
             "Sourcing sur mesure pour flacons, tubes, pots, pochettes de masques, emballages hydrogel, étuis pliants et options plus durables.",
 
           cta: "Envoyer un brief packaging",
-
           secondary: "Voir les produits",
-
           introTitle: "Pour les marques beauté, OEM/ODM et partenaires packaging",
-
           intro:
-
             "Nous accompagnons les projets skincare et masques avec un sourcing flexible, des échantillons rapides et une coordination de production en Chine pour les lancements internationaux.",
-
           kbeautyTitle: "Adapté aux projets K-beauty et mask-led skincare",
 
           kbeauty:
-
             "Des pochettes sheet mask aux emballages hydrogel, en passant par les étuis, coffrets et options plus durables, nous aidons les équipes à comparer rapidement les solutions adaptées au développement produit.",
-
           categoriesTitle: "Catégories d’emballages",
-
           whyTitle: "Pourquoi travailler avec Elmvale Global",
-
           processTitle: "Processus simple",
-
         }
-
+    
       : {
-
-          label: "Skincare & Mask Packaging",
-
-          title: "Packaging solutions for skincare, mask and fast-moving beauty launches.",
-
+          label: "Hydrogel Mask & K-Beauty Packaging",
+          title: "Hydrogel Mask & K-Beauty Skincare Packaging Solutions.",
           subtitle:
-
-            "Custom sourcing support for skincare bottles, tubes, jars, sheet mask pouches, hydrogel mask packaging, folding cartons and sustainable packaging options.",
-
+            "China-side sourcing support for hydrogel mask pouches, sheet mask packaging, eye patch pouches, skincare bottles, tubes, jars, cartons and sustainable packaging options.",
           cta: "Send us your packaging brief",
-
-          secondary: "View products",
-
-          introTitle: "For beauty brands, OEM/ODM manufacturers and packaging partners",
-
+          secondary: "View packaging categories",
+          introTitle: "Built for mask-led skincare launches",
           intro:
-
-            "We support skincare and mask packaging projects with flexible sourcing, fast sampling and China-side production coordination for global beauty launches.",
-
-          kbeautyTitle: "Suitable for K-beauty inspired and mask-led skincare projects",
-
+            "Hydrogel masks, sheet masks and eye patches are often used by K-beauty brands and OEM/ODM teams to test new ingredients, launch fast-moving concepts and create overseas market versions. Packaging needs to support barrier performance, liquid resistance, sealing quality, shelf appeal and speed.",
+          kbeautyTitle: "From hydrogel masks to full K-beauty skincare packaging",
           kbeauty:
-
-            "From sheet mask pouches and hydrogel mask packaging to skincare sets, cartons and sustainable options, we help teams compare packaging solutions for fast product development and overseas market versions.",
-
+            "We use hydrogel mask packaging as a focused entry point, while also supporting related K-beauty skincare packaging such as bottles, tubes, jars, folding cartons, gift boxes and sustainable material options.",
           categoriesTitle: "Packaging categories",
-
           whyTitle: "Why work with Elmvale Global",
-
           processTitle: "Simple project process",
-
         };
 
   const categories =
-
     language === "fr"
 
       ? [
-
           ["Pochettes masques & hydrogel", ["Sheet mask pouches", "Hydrogel mask pouches", "Eye patch pouches", "Foil pouches", "Roll film", "Pochettes recyclables"]],
-
           ["Packaging skincare primaire", ["Flacons sérum", "Pots crème", "Tubes cosmétiques", "Airless bottles", "PET / PP / verre", "Caps & closures"]],
-
           ["Étuis & coffrets", ["Étuis pliants", "Coffrets rigides", "Calages intérieurs", "Travel sets", "Sample kits", "Retail display boxes"]],
-
           ["Options plus durables", ["PCR options", "Mono-material", "Paper-based packaging", "FSC paper boxes", "Refill pouches", "Lightweighting"]],
-
         ]
 
       : [
-
           ["Mask & hydrogel packaging", ["Sheet mask pouches", "Hydrogel mask pouches", "Eye patch pouches", "Foil pouches", "Roll film", "Recyclable pouch concepts"]],
 
           ["Skincare primary packaging", ["Serum bottles", "Cream jars", "Cosmetic tubes", "Airless bottles", "PET / PP / glass containers", "Caps & closures"]],

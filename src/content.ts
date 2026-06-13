@@ -3,7 +3,7 @@ export const content = {
     nav: {
       home: "Home",
       about: "About Us",
-      products: "Products",
+      products: "Solutions",
       compliance: "Compliance & Sustainability",
       contact: "Contact Us",
     },
@@ -12,79 +12,79 @@ export const content = {
       hero: {
         tagline: "Sustainable Packaging for Global Brands",
         subtext:
-          "Innovative, recyclable packaging solutions for skincare brands worldwide.",
+          "Innovative, recyclable packaging systems for skincare and K-beauty brands worldwide.",
       },
 
       valueProp: {
         recyclable: {
           title: "Recyclable & Eco-Friendly Materials",
           desc:
-            "We offer recyclable plastics, PCR materials, glass, aluminium and certified paperboard. We help you balance aesthetics, functionality and sustainability for each packaging project.",
+            "We work with recyclable plastics, PCR materials, glass, aluminium and FSC-certified paper. We help brands balance aesthetics, functionality and sustainability across different packaging systems.",
         },
         compliance: {
           title: "Regulatory Compliance Expertise",
           desc:
-            "Our packaging solutions meet EU and global cosmetic packaging standards, helping you navigate compliance with confidence.",
+            "Our packaging solutions meet EU and global cosmetic packaging standards, ensuring safe and compliant global distribution.",
         },
         trust: {
-          title: "Trust & Global Partnership",
+          title: "Global Manufacturing Network",
           desc:
-            "We bridge Asian manufacturing capability with global brand expectations, ensuring consistent quality, transparency and reliable delivery.",
+            "We connect brands with reliable manufacturing partners across Asia with strict quality control and transparent coordination.",
         },
       },
 
       solutions: {
-        title: "Our Packaging Solutions",
+        title: "Packaging Systems",
         intro:
-          "We support skincare, mask and beauty packaging projects with a focused range of categories, starting from hydrogel mask pouches and extending to full K-beauty skincare packaging systems.",
+          "We provide 5 core packaging systems for skincare and K-beauty brands, covering mask launches, skincare packaging and sustainable solutions.",
         items: [
           {
-            title: "Hydrogel Mask & Sheet Mask Packaging",
+            title: "Mask Packaging System",
             desc:
-              "High-barrier pouch and film solutions for hydrogel masks, sheet masks, eye patches and skincare patch products. Designed for moisture protection, stability and premium shelf presentation.",
+              "Hydrogel mask, sheet mask, eye patch and sachet packaging designed for high-barrier protection and premium K-beauty launches.",
           },
           {
-            title: "K-Beauty Skincare Bottles & Jars",
+            title: "Skincare Packaging System",
             desc:
-              "Serum bottles, toner bottles, cream jars and treatment containers in PET, PP, glass and airless systems.",
+              "Bottles, jars, airless and dropper systems for skincare formulations, balancing design, function and recyclability.",
           },
           {
-            title: "Cosmetic Tubes & Sachets",
+            title: "Tube & Dispensing System",
             desc:
-              "Flexible packaging for sunscreen, cleansers, creams and travel-size skincare products, including mono-material and PCR options.",
+              "Tubes, pumps, sprays and dispensers designed for creams, gels and sunscreen applications.",
           },
           {
-            title: "Cartons, Gift Boxes & Beauty Sets",
+            title: "Secondary Packaging System",
             desc:
-              "Folding cartons, rigid boxes and skincare sets designed for retail, gifting and promotional launches.",
+              "Folding cartons, rigid boxes and beauty sets for retail, gifting and promotional packaging.",
           },
           {
-            title: "Sustainable Packaging Options",
+            title: "Sustainable Packaging System",
             desc:
-              "PCR plastics, mono-material designs, FSC paper and recyclable packaging systems aligned with global sustainability trends.",
+              "PCR plastics, mono-material structures, FSC paper and recyclable packaging systems aligned with global regulations.",
           },
         ],
       },
 
       cta: {
-        title: "Ready to Elevate Your Packaging?",
+        title: "Start Your Packaging Project",
         desc:
-          "Contact us to explore sustainable and high-quality packaging solutions tailored to your brand.",
+          "Contact us to develop tailored packaging systems for your skincare or K-beauty brand.",
         button: "Contact Us",
       },
     },
 
     about: {
       hero: {
-        title: "Elmvale Global – Who We Are",
+        title: "Elmvale Global – Packaging Partner",
         desc:
-          "We are a packaging partner focused on sustainable cosmetic packaging solutions, connecting global brands with reliable manufacturing networks in Asia.",
+          "We are a packaging solution provider focused on skincare and K-beauty brands, connecting global clients with reliable manufacturing networks in Asia.",
       },
 
       mission: {
         title: "Our Mission",
         desc:
-          "To deliver sustainable, functional and high-quality packaging solutions for global skincare and cosmetic brands.",
+          "To deliver scalable, sustainable and high-quality packaging systems for global beauty brands.",
       },
 
       values: {
@@ -93,22 +93,22 @@ export const content = {
           {
             title: "Sustainability",
             desc:
-              "We prioritize eco-friendly materials and responsible packaging design.",
+              "We prioritize recyclable materials and responsible design.",
           },
           {
             title: "Quality",
             desc:
-              "Strict quality control ensures consistent performance across all packaging.",
+              "Strict quality control ensures reliable packaging performance.",
           },
           {
             title: "Transparency",
             desc:
-              "We believe in clear communication and reliable supply chain coordination.",
+              "Clear communication and structured project management.",
           },
           {
             title: "Innovation",
             desc:
-              "We continuously explore new materials and packaging technologies.",
+              "Continuous development of new packaging systems and materials.",
           },
         ],
       },
@@ -116,13 +116,13 @@ export const content = {
       expertise: {
         title: "Global Expertise",
         desc:
-          "We manage sourcing and production coordination across Asia with a structured, transparent and quality-driven approach.",
+          "We coordinate sourcing and production across Asia with structured quality and compliance management.",
       },
 
       compliance: {
         title: "Compliance Commitment",
         desc:
-          "We ensure packaging meets international safety and regulatory requirements including EU and US standards.",
+          "We ensure packaging meets international regulatory requirements including EU and US standards.",
       },
 
       conclusion:
@@ -131,49 +131,49 @@ export const content = {
 
     products: {
       intro: {
-        title: "Skincare, Mask & Beauty Packaging Solutions",
+        title: "Packaging Systems",
         desc:
-          "Explore packaging solutions for hydrogel masks, skincare products and K-beauty inspired launches, including bottles, tubes, cartons and sustainable materials.",
+          "Explore our 5 core packaging systems for skincare, mask and K-beauty product launches.",
       },
 
       categories: [
         {
-          title: "Hydrogel Mask & Sheet Mask Packaging",
+          title: "Mask Packaging System",
           desc:
-            "High-barrier pouch and film packaging for hydrogel masks, sheet masks, eye patches and skincare patch products.",
+            "Hydrogel mask, sheet mask, eye patch and sachet packaging for K-beauty brands and OEM/ODM launches.",
         },
         {
-          title: "K-Beauty Skincare Bottles & Jars",
+          title: "Skincare Packaging System",
           desc:
-            "Serum bottles, toner bottles, cream jars and airless packaging systems in PET, PP and glass.",
+            "Bottles, jars, airless and dropper packaging for skincare formulations.",
         },
         {
-          title: "Cosmetic Tubes & Sachets",
+          title: "Tube & Dispensing System",
           desc:
-            "Flexible tubes and sachets for creams, gels, sunscreen and travel-size products.",
+            "Tubes, pumps, sprays and dispensing solutions for cosmetic products.",
         },
         {
-          title: "Cartons, Gift Boxes & Beauty Sets",
+          title: "Secondary Packaging System",
           desc:
-            "Folding cartons, rigid boxes and beauty sets for retail and promotional packaging.",
+            "Cartons, boxes and gift sets for retail and promotional use.",
         },
         {
-          title: "Sustainable Packaging Options",
+          title: "Sustainable Packaging System",
           desc:
-            "PCR, mono-material, FSC paper and recyclable packaging solutions for global brands.",
+            "PCR, FSC paper and recyclable packaging solutions for global compliance.",
         },
       ],
 
       quality: {
         title: "Quality Assurance",
         desc:
-          "All packaging undergoes strict quality control and can be supported with documentation upon request.",
+          "All packaging systems are supported with strict QC and documentation upon request.",
       },
 
       customization: {
         title: "Customization",
         desc:
-          "We support custom colors, printing, molds and structural packaging development.",
+          "We support full customization including materials, printing, structure and branding.",
       },
     },
 
@@ -181,7 +181,7 @@ export const content = {
       intro: {
         title: "Compliance & Sustainability",
         desc:
-          "We design packaging that meets global regulatory requirements and sustainability expectations.",
+          "We design packaging systems aligned with global regulatory and sustainability requirements.",
       },
 
       regulations: {
@@ -195,17 +195,17 @@ export const content = {
           {
             title: "PPWR Readiness",
             desc:
-              "Packaging designed for recyclability and recycled content requirements.",
+              "Designs aligned with recyclability and recycled content requirements.",
           },
           {
-            title: "Quality Control",
+            title: "Quality Systems",
             desc:
-              "Manufacturing partners follow ISO quality management systems.",
+              "Manufacturing partners follow ISO quality standards.",
           },
           {
             title: "Documentation",
             desc:
-              "We provide material specs and compliance documentation when required.",
+              "Technical and compliance documents available upon request.",
           },
         ],
       },
@@ -216,35 +216,35 @@ export const content = {
           {
             title: "Eco Design",
             desc:
-              "We reduce material usage and improve recyclability in packaging design.",
+              "We reduce material usage and improve recyclability across systems.",
           },
           {
             title: "PCR Materials",
             desc:
-              "We support post-consumer recycled plastic integration.",
+              "Integration of post-consumer recycled plastics.",
           },
           {
-            title: "FSC & Paper Solutions",
+            title: "FSC Paper",
             desc:
-              "We offer FSC-certified and paper-based packaging options.",
+              "Certified sustainable paper packaging solutions.",
           },
           {
             title: "Continuous Improvement",
             desc:
-              "We continuously develop more sustainable packaging alternatives.",
+              "Ongoing development of more sustainable packaging systems.",
           },
         ],
       },
 
       closing:
-        "We help brands move toward more responsible packaging systems.",
+        "We help brands transition toward more sustainable packaging systems.",
     },
 
     contact: {
       intro: {
         title: "Contact Us",
         desc:
-          "Tell us about your packaging project and we will respond with tailored solutions.",
+          "Tell us about your packaging project and we will propose the right system solution.",
       },
 
       details: {
@@ -254,7 +254,7 @@ export const content = {
         address: "Global Service",
         hours: "Response within 1–2 business days",
         privacy:
-          "Your information will only be used to respond to your inquiry.",
+          "Your information is only used to respond to your inquiry.",
         labels: {
           email: "Email",
           phone: "Phone",
@@ -264,17 +264,17 @@ export const content = {
       },
 
       form: {
-        title: "Send Message",
-        desc: "We will get back to you shortly.",
+        title: "Send Inquiry",
+        desc: "We will respond with tailored packaging system solutions.",
         name: "Name",
         company: "Company",
         email: "Email",
         message: "Message",
-        submit: "Send",
+        submit: "Send Message",
       },
 
       final:
-        "Thank you for contacting Elmvale Global. We look forward to working with you.",
+        "Thank you for your inquiry. We look forward to working with you.",
     },
 
     footer: {
@@ -286,7 +286,7 @@ export const content = {
     nav: {
       home: "Accueil",
       about: "À propos",
-      products: "Produits",
+      products: "Solutions",
       compliance: "Conformité",
       contact: "Contact",
     },
@@ -295,234 +295,151 @@ export const content = {
       hero: {
         tagline: "Emballages durables pour marques globales",
         subtext:
-          "Solutions innovantes et recyclables pour les marques skincare.",
+          "Solutions packaging pour skincare et marques beauté.",
       },
 
       valueProp: {
         recyclable: {
           title: "Matériaux recyclables",
           desc:
-            "Plastiques recyclables, PCR, verre et papier certifié.",
+            "Plastiques recyclables, PCR, verre et papier FSC.",
         },
         compliance: {
-          title: "Conformité réglementaire",
+          title: "Conformité",
           desc:
-            "Respect des normes européennes et internationales.",
+            "Respect des normes internationales.",
         },
         trust: {
           title: "Partenaire global",
           desc:
-            "Coordination fiable entre marques et production asiatique.",
+            "Coordination fiable avec les fabricants.",
         },
       },
 
       solutions: {
-        title: "Nos solutions",
+        title: "Packaging Systems",
         intro:
-          "Une gamme structurée allant des masques hydrogel aux packagings skincare complets.",
+          "Cinq systèmes d’emballage pour les marques skincare et K-beauty.",
         items: [
           {
-            title: "Packaging masques hydrogel",
-            desc:
-              "Pochettes haute barrière pour masques et soins.",
+            title: "Système masques",
+            desc: "Packaging pour masques hydrogel et sheet masks.",
           },
           {
-            title: "Flacons & pots",
-            desc:
-              "Solutions skincare en PET, PP et verre.",
+            title: "Système skincare",
+            desc: "Flacons, pots et airless.",
           },
           {
-            title: "Tubes & sachets",
-            desc:
-              "Formats flexibles pour soins et échantillons.",
+            title: "Système tubes",
+            desc: "Tubes et pompes.",
           },
           {
-            title: "Étuis & coffrets",
-            desc:
-              "Packaging retail et gift sets.",
+            title: "Système secondaire",
+            desc: "Étuis et coffrets.",
           },
           {
-            title: "Options durables",
-            desc:
-              "PCR, papier FSC et mono-matériaux.",
+            title: "Système durable",
+            desc: "Solutions recyclables et FSC.",
           },
         ],
       },
 
       cta: {
-        title: "Parlons de votre projet",
-        desc: "Contactez-nous pour des solutions sur mesure.",
+        title: "Votre projet packaging",
+        desc: "Contactez-nous pour une solution adaptée.",
         button: "Contact",
       },
     },
 
     about: {
       hero: {
-        title: "Qui sommes-nous",
-        desc:
-          "Un partenaire packaging spécialisé skincare et durabilité.",
+        title: "À propos",
+        desc: "Partenaire packaging skincare global.",
       },
-
       mission: {
         title: "Mission",
-        desc:
-          "Fournir des solutions packaging durables et performantes.",
+        desc: "Solutions durables et évolutives.",
       },
-
       values: {
         title: "Valeurs",
         items: [
-          {
-            title: "Durabilité",
-            desc: "Approche responsable.",
-          },
-          {
-            title: "Qualité",
-            desc: "Contrôle strict.",
-          },
-          {
-            title: "Transparence",
-            desc: "Communication claire.",
-          },
-          {
-            title: "Innovation",
-            desc: "Nouveaux matériaux.",
-          },
+          { title: "Durabilité", desc: "Approche responsable." },
+          { title: "Qualité", desc: "Contrôle strict." },
+          { title: "Transparence", desc: "Communication claire." },
+          { title: "Innovation", desc: "Développement continu." },
         ],
       },
-
       expertise: {
         title: "Expertise",
-        desc:
-          "Coordination de production en Asie avec standards internationaux.",
+        desc: "Coordination globale des projets.",
       },
-
       compliance: {
         title: "Conformité",
-        desc:
-          "Respect des normes internationales.",
+        desc: "Respect des normes.",
       },
-
-      conclusion:
-        "Un partenaire packaging fiable et durable.",
+      conclusion: "Partenaire packaging fiable.",
     },
 
     products: {
       intro: {
-        title: "Solutions packaging skincare",
-        desc:
-          "Explorez nos catégories de packaging beauté et skincare.",
+        title: "Packaging Systems",
+        desc: "Découvrez nos 5 systèmes d’emballage.",
       },
-
       categories: [
-        {
-          title: "Packaging masques hydrogel",
-          desc:
-            "Solutions pour masques et soins.",
-        },
-        {
-          title: "Flacons & pots",
-          desc:
-            "Packaging skincare.",
-        },
-        {
-          title: "Tubes & sachets",
-          desc:
-            "Formats flexibles.",
-        },
-        {
-          title: "Étuis & coffrets",
-          desc:
-            "Packaging retail.",
-        },
-        {
-          title: "Options durables",
-          desc:
-            "Solutions écologiques.",
-        },
+        { title: "Système masques", desc: "Masques hydrogel." },
+        { title: "Système skincare", desc: "Flacons et pots." },
+        { title: "Système tubes", desc: "Tubes et pompes." },
+        { title: "Système secondaire", desc: "Étuis." },
+        { title: "Système durable", desc: "Solutions écologiques." },
       ],
-
       quality: {
         title: "Qualité",
-        desc:
-          "Contrôle qualité strict.",
+        desc: "Contrôle qualité.",
       },
-
       customization: {
         title: "Personnalisation",
-        desc:
-          "Solutions sur mesure.",
+        desc: "Solutions sur mesure.",
       },
     },
 
     compliance: {
       intro: {
         title: "Conformité & durabilité",
-        desc:
-          "Packaging conforme aux normes internationales.",
+        desc: "Packaging conforme aux normes.",
       },
-
       regulations: {
         title: "Réglementation",
         items: [
-          {
-            title: "Normes globales",
-            desc: "EU et FDA.",
-          },
-          {
-            title: "PPWR",
-            desc: "Conception recyclable.",
-          },
-          {
-            title: "Qualité",
-            desc: "ISO standards.",
-          },
-          {
-            title: "Documentation",
-            desc: "Certificats disponibles.",
-          },
+          { title: "Normes", desc: "EU / FDA." },
+          { title: "PPWR", desc: "Recyclabilité." },
+          { title: "Qualité", desc: "ISO." },
+          { title: "Docs", desc: "Certificats." },
         ],
       },
-
       sustainability: {
         title: "Durabilité",
         items: [
-          {
-            title: "Éco-design",
-            desc: "Réduction des déchets.",
-          },
-          {
-            title: "PCR",
-            desc: "Plastique recyclé.",
-          },
-          {
-            title: "Papier FSC",
-            desc: "Solutions papier.",
-          },
-          {
-            title: "Amélioration continue",
-            desc: "Innovation durable.",
-          },
+          { title: "Eco design", desc: "Réduction matière." },
+          { title: "PCR", desc: "Recyclé." },
+          { title: "FSC", desc: "Papier certifié." },
+          { title: "Amélioration", desc: "Innovation." },
         ],
       },
-
-      closing:
-        "Packaging responsable et durable.",
+      closing: "Packaging durable.",
     },
 
     contact: {
       intro: {
         title: "Contact",
-        desc: "Nous répondons sous 1–2 jours.",
+        desc: "Réponse sous 1–2 jours.",
       },
-
       details: {
-        title: "Informations",
+        title: "Infos",
         email: "contact@elmvaleglobal.com",
         phone: "WhatsApp +33 07 82 15 23 65",
-        address: "Service global",
-        hours: "1–2 jours ouvrés",
-        privacy: "Vos données sont protégées.",
+        address: "Global",
+        hours: "1–2 jours",
+        privacy: "Confidentiel.",
         labels: {
           email: "Email",
           phone: "Téléphone",
@@ -530,7 +447,6 @@ export const content = {
           hours: "Horaires",
         },
       },
-
       form: {
         title: "Formulaire",
         desc: "Envoyez votre demande.",
@@ -540,7 +456,6 @@ export const content = {
         message: "Message",
         submit: "Envoyer",
       },
-
       final: "Merci.",
     },
 

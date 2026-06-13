@@ -2,6 +2,7 @@ import React, { useState, createContext, useEffect, useMemo } from "react";
 import {
   Routes,
   Route,
+  HashRouter,
   useLocation,
   useSearchParams,
 } from "react-router-dom";
@@ -147,31 +148,33 @@ const App: React.FC = () => {
   const ctx = useMemo(() => ({ language, setLanguage }), [language]);
 
   return (
-    <LanguageContext.Provider value={ctx}>
-      <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
-        <ScrollToTop />
-        <TitleManager />
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/skincare-mask-packaging" element={<SkincareMaskPackaging />} />
-            <Route path="/compliance" element={<Compliance />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/cookies" element={<Cookies />} />
-          </Routes>
-        </main>
-
-        {/* Cookie Banner 出现在所有页面上 */}
-        <CookieBanner />
-
-        <Footer />
-      </div>
-    </LanguageContext.Provider>
+    <HashRouter>
+      <LanguageContext.Provider value={ctx}>
+        <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
+          <ScrollToTop />
+          <TitleManager />
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/skincare-mask-packaging" element={<SkincareMaskPackaging />} />
+              <Route path="/compliance" element={<Compliance />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/cookies" element={<Cookies />} />
+            </Routes>
+          </main>
+  
+          {/* Cookie Banner 出现在所有页面上 */}
+          <CookieBanner />
+  
+          <Footer />
+        </div>
+      </LanguageContext.Provider>
+    </HashRouter>
   );
 };
 

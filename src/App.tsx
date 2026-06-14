@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  createContext,
-  useEffect,
-  useMemo,
-} from "react";
+import React, { useState, createContext, useEffect, useMemo } from "react";
 import {
   Routes,
   Route,
@@ -33,71 +28,16 @@ export const LanguageContext = createContext<LanguageContextType>({
 
 const LANG_KEY = "elmvale_lang";
 
-// ================= HELPERS =================
+// ================= LANGUAGE CLEAN =================
 
-// ✅ 统一语言清洗（核心修复）
-const normalizeLang = (lang: any): Language => {
+const normalizeLang = (lang: any): "en" | "fr" => {
   if (!lang) return "fr";
 
-  const clean = String(lang).trim();
+  const clean = String(lang)
+    .replace("#/", "")
+    .trim();
 
-  if (clean === "en" || clean === "fr") {
-    return clean;
-  }
-
-  return "fr";
-};
-
-// ================= SCROLL =================
-
-const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
-
-// ================= TITLE =================
-
-const TitleManager: React.FC = () => {
-  const { pathname } = useLocation();
-  const { language } = React.useContext(LanguageContext);
-
-  useEffect(() => {
-    const base = "Elmvale Global";
-
-    let title = "";
-
-    switch (pathname) {
-      case "/":
-        title = language === "fr" ? "Accueil" : "Home";
-        break;
-      case "/solutions":
-        title = "Solutions";
-        break;
-      case "/skincare-mask-packaging":
-        title = language === "fr" ? "Packaging masques" : "Mask Packaging";
-        break;
-      case "/about":
-        title = language === "fr" ? "À propos" : "About";
-        break;
-      case "/compliance":
-        title = language === "fr" ? "Conformité" : "Compliance";
-        break;
-      case "/contact":
-        title = language === "fr" ? "Contact" : "Contact";
-        break;
-      default:
-        title = "";
-    }
-
-    document.title = title ? `${title} | ${base}` : base;
-  }, [pathname, language]);
-
-  return null;
+  return clean === "en" ? "en" : "fr";
 };
 
 // ================= APP =================
@@ -105,27 +45,19 @@ const TitleManager: React.FC = () => {
 const App: React.FC = () => {
   const storedLang = localStorage.getItem(LANG_KEY);
 
-  // ✅ 初始化语言（100%安全）
-  const [language, setLanguageState] = useState<Language>(
+  const [language, setLanguageState] = useState<"en" | "fr">(
     normalizeLang(storedLang)
   );
 
-  // ================= SET LANGUAGE =================
-
-  const setLanguage = (l: Language) => {
+  const setLanguage = (l: "en" | "fr") => {
     const clean = normalizeLang(l);
-
     setLanguageState(clean);
     localStorage.setItem(LANG_KEY, clean);
   };
 
-  // ================= SYNC HTML LANG =================
-
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
-
-  // ================= CONTEXT =================
 
   const ctx = useMemo(
     () => ({ language, setLanguage }),
@@ -136,8 +68,6 @@ const App: React.FC = () => {
     <LanguageContext.Provider value={ctx}>
       <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
 
-        <ScrollToTop />
-        <TitleManager />
         <Navbar />
 
         <main className="flex-grow">

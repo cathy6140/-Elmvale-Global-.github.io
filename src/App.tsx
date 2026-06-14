@@ -1,8 +1,14 @@
-import React, { useState, createContext, useEffect, useMemo } from "react";
+import React, {
+  useState,
+  createContext,
+  useEffect,
+  useMemo,
+} from "react";
 import {
   Routes,
   Route,
   useLocation,
+  useSearchParams,
 } from "react-router-dom";
 
 import { Language, LanguageContextType } from "./types";
@@ -28,7 +34,7 @@ export const LanguageContext = createContext<LanguageContextType>({
 
 const LANG_KEY = "elmvale_lang";
 
-// ================= LANGUAGE CLEAN =================
+// ================= SAFE LANGUAGE =================
 
 const normalizeLang = (lang: any): "en" | "fr" => {
   if (!lang) return "fr";
@@ -40,24 +46,101 @@ const normalizeLang = (lang: any): "en" | "fr" => {
   return clean === "en" ? "en" : "fr";
 };
 
+// ================= SCROLL =================
+
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+// ================= TITLE =================
+
+const TitleManager: React.FC = () => {
+  const { pathname } = useLocation();
+  const { language } = React.useContext(LanguageContext);
+
+  useEffect(() => {
+    const base = "Elmvale Global";
+
+    let page = "";
+
+    switch (pathname) {
+      case "/":
+        page = language === "fr" ? "Accueil" : "Home";
+        break;
+      case "/solutions":
+        page = "Solutions";
+        break;
+      case "/skincare-mask-packaging":
+        page = language === "fr" ? "Packaging masques" : "Mask Packaging";
+        break;
+      case "/about":
+        page = language === "fr" ? "À propos" : "About";
+        break;
+      case "/compliance":
+        page = language === "fr" ? "Conformité" : "Compliance";
+        break;
+      case "/contact":
+        page = language === "fr" ? "Contact" : "Contact";
+        break;
+      default:
+        page = "";
+    }
+
+    document.title = page ? `${page} | ${base}` : base;
+  }, [pathname, language]);
+
+  return null;
+};
+
 // ================= APP =================
 
 const App: React.FC = () => {
-  const storedLang = localStorage.getItem(LANG_KEY);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const [language, setLanguageState] = useState<"en" | "fr">(
-    normalizeLang(storedLang)
+  const urlLang = searchParams.get("lang") as Language | null;
+  const storedLang = localStorage.getItem(LANG_KEY) as Language | null;
+
+  // ✅ 初始化语言（安全）
+  const initialLang: Language = normalizeLang(
+    urlLang || storedLang || "fr"
   );
 
-  const setLanguage = (l: "en" | "fr") => {
+  const [language, setLanguageState] = useState<Language>(initialLang);
+
+  // ================= SET LANGUAGE =================
+
+  const setLanguage = (l: Language) => {
     const clean = normalizeLang(l);
+
     setLanguageState(clean);
     localStorage.setItem(LANG_KEY, clean);
+
+    const next = new URLSearchParams(searchParams);
+    next.set("lang", clean);
+    setSearchParams(next, { replace: true });
   };
+
+  // ================= SYNC URL =================
+
+  useEffect(() => {
+    if (urlLang) {
+      setLanguageState(normalizeLang(urlLang));
+    }
+  }, [urlLang]);
+
+  // ================= HTML LANG =================
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+
+  // ================= CONTEXT =================
 
   const ctx = useMemo(
     () => ({ language, setLanguage }),
@@ -68,6 +151,8 @@ const App: React.FC = () => {
     <LanguageContext.Provider value={ctx}>
       <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
 
+        <ScrollToTop />
+        <TitleManager />
         <Navbar />
 
         <main className="flex-grow">

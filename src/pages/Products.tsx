@@ -1,5 +1,6 @@
 import React from "react";
 import { content } from "../content";
+import { Link } from "react-router-dom";
 
 type Props = {
   lang: string;
@@ -39,14 +40,21 @@ const Products: React.FC<Props> = ({ lang }) => {
           {pageContent.intro?.desc}
         </p>
 
-        {/* 🔥 导流：去 Solutions */}
-        <div className="mt-6">
-          <a
-            href="/solutions"
+        {/* 🔥 CTA */}
+        <div className="mt-6 flex flex-col md:flex-row justify-center gap-4">
+          <Link
+            to="/solutions"
             className="text-sm text-blue-600 hover:underline"
           >
-            ← Explore our packaging system solutions
-          </a>
+            ← View packaging systems
+          </Link>
+
+          <Link
+            to="/contact"
+            className="bg-black text-white px-6 py-3 rounded-full hover:opacity-90 transition"
+          >
+            Request Quote
+          </Link>
         </div>
       </section>
 
@@ -68,18 +76,21 @@ const Products: React.FC<Props> = ({ lang }) => {
               </p>
 
               {/* CTA */}
-              <button className="text-sm px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition">
+              <Link
+                to="/contact"
+                className="text-sm px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition inline-block"
+              >
                 Request Quote
-              </button>
+              </Link>
 
-              {/* 🔥 导流：去对应 Solutions */}
+              {/* 🔥 FIXED NAVIGATION */}
               <div className="mt-4 text-xs text-gray-500">
-                <a
-                  href="/solutions"
+                <Link
+                  to="/solutions"
                   className="hover:underline"
                 >
                   View related system →
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -87,7 +98,7 @@ const Products: React.FC<Props> = ({ lang }) => {
         </div>
       </section>
 
-      {/* QUALITY SECTION */}
+      {/* QUALITY */}
       <section className="py-14 px-6 bg-white">
         <div className="max-w-5xl mx-auto text-center">
 
@@ -110,32 +121,35 @@ const Products: React.FC<Props> = ({ lang }) => {
         </div>
       </section>
 
-      {/* 🔥 FINAL CTA + RETURN TO SOLUTIONS */}
+      {/* FINAL CTA */}
       <section className="py-16 px-6 bg-black text-white text-center">
+
         <h2 className="text-3xl font-bold mb-4">
           Start Your Packaging Project
         </h2>
 
         <p className="text-gray-300 mb-6">
-          Need help choosing the right system? Explore our solutions first.
+          Explore systems or contact us for a tailored solution.
         </p>
 
         <div className="flex flex-col md:flex-row justify-center gap-4">
-          <a
-            href="/contact"
-            className="px-6 py-3 bg-white text-black rounded font-semibold hover:bg-gray-200 transition"
-          >
-            Get Quote
-          </a>
 
-          {/* 🔥 Solutions 导流 */}
-          <a
-            href="/solutions"
-            className="px-6 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition"
+          <Link
+            to="/solutions"
+            className="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition"
           >
             View Solutions
-          </a>
+          </Link>
+
+          <Link
+            to="/contact"
+            className="px-6 py-3 bg-white text-black rounded hover:bg-gray-200 transition"
+          >
+            Get Quote
+          </Link>
+
         </div>
+
       </section>
 
     </div>

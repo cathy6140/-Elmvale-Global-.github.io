@@ -39,7 +39,6 @@ const Navbar: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  // Keep ?lang= in links
   const withLang = useMemo(() => {
     const current = new URLSearchParams(searchParams);
     current.set('lang', language);
@@ -55,12 +54,14 @@ const Navbar: React.FC = () => {
     setSearchParams(p, { replace: true });
   };
 
+  // 🔥 UPDATED NAV STRUCTURE (关键升级)
   const navLinks = [
     { path: '/', label: t.home },
+    { path: '/products', label: 'Products' }, // ⭐ NEW
     { path: '/solutions', label: 'Solutions' },
     { path: '/skincare-mask-packaging', label: 'Mask Focus' },
-    { path: '/about', label: t.about },
     { path: '/compliance', label: t.compliance },
+    { path: '/about', label: t.about },
     { path: '/contact', label: t.contact },
   ];
 
@@ -72,6 +73,7 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center">
+
           {/* Logo */}
           <Link to={withLang('/')} className="flex items-center gap-3 group">
             <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-black/5 shadow-sm transition-transform duration-500 group-hover:rotate-6">
@@ -100,6 +102,7 @@ const Navbar: React.FC = () => {
                 }`}
               >
                 {link.label}
+
                 <span
                   className={`absolute -bottom-2 left-0 w-full h-[1px] bg-brand-dark transform origin-left transition-transform duration-300 ${
                     isActive(link.path)
@@ -110,11 +113,10 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
 
-            {/* Language Switcher */}
+            {/* Language */}
             <button
               onClick={toggleLang}
               className="text-[11px] font-semibold tracking-[0.18em] text-brand-dark border-l border-stone-300 pl-5 ml-1 hover:opacity-70 transition-opacity whitespace-nowrap"
-              aria-label={language === 'en' ? 'Switch to French' : 'Switch to English'}
             >
               {language === 'en' ? 'FR' : 'EN'}
             </button>
@@ -125,7 +127,6 @@ const Navbar: React.FC = () => {
             <button
               onClick={toggleLang}
               className="text-xs font-bold text-brand-dark tracking-wider"
-              aria-label={language === 'en' ? 'Switch to French' : 'Switch to English'}
             >
               {language === 'en' ? 'FR' : 'EN'}
             </button>
@@ -142,7 +143,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <div
         className={`fixed inset-0 bg-brand-cream z-40 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
@@ -151,7 +152,6 @@ const Navbar: React.FC = () => {
         <button
           onClick={() => setIsOpen(false)}
           className="absolute top-8 right-8 text-brand-dark"
-          aria-label="Close menu"
         >
           <X size={32} strokeWidth={1} />
         </button>

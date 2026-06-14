@@ -11,35 +11,45 @@ const Home: React.FC = () => {
       {/* ================= HERO ================= */}
       <section className="bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-24 text-center">
-          
+
           <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-6">
             {language === "fr"
               ? "Emballages durables pour marques beauté"
-              : "Sustainable Packaging Systems for Skincare Brands"}
+              : "Sustainable Packaging Systems for Skincare & K-Beauty Brands"}
           </h1>
 
           <p className="text-stone-600 max-w-2xl mx-auto mb-10 leading-relaxed">
             {language === "fr"
               ? "Solutions packaging pour skincare, masques hydrogel et marques K-beauty."
-              : "From hydrogel mask packaging to full skincare systems for global K-beauty brands."}
+              : "From hydrogel mask packaging to full skincare systems and sustainable packaging solutions for global brands."}
           </p>
 
+          {/* 🔥 PRIMARY CTA STRUCTURE（升级重点） */}
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            
+
             <Link
-              to="/skincare-mask-packaging"
+              to="/products"
               className="bg-brand-dark text-white px-8 py-3 rounded-full hover:opacity-90 transition"
             >
               {language === "fr"
-                ? "Packaging masques hydrogel"
-                : "Explore Hydrogel Mask Packaging"}
+                ? "Explorer les produits"
+                : "Explore Products"}
             </Link>
 
             <Link
               to="/solutions"
               className="border border-stone-400 px-8 py-3 rounded-full hover:bg-stone-100 transition"
             >
-              {language === "fr" ? "Solutions" : "View All Systems"}
+              {language === "fr" ? "Solutions" : "View Systems"}
+            </Link>
+
+            <Link
+              to="/skincare-mask-packaging"
+              className="text-brand-dark underline underline-offset-4 hover:opacity-70 transition"
+            >
+              {language === "fr"
+                ? "Focus masques hydrogel"
+                : "Mask Packaging Focus"}
             </Link>
 
           </div>
@@ -59,20 +69,18 @@ const Home: React.FC = () => {
             <p className="text-stone-600">
               {language === "fr"
                 ? "Structures complètes pour skincare et K-beauty."
-                : "Complete systems for skincare, mask and beauty launches."}
+                : "Complete packaging systems for skincare and beauty brands."}
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-3">
               {language === "fr"
-                ? "Focus masques hydrogel"
-                : "Hydrogel Mask Entry Point"}
+                ? "Spécialiste K-beauty"
+                : "K-Beauty Expertise"}
             </h3>
             <p className="text-stone-600">
-              {language === "fr"
-                ? "Point d’entrée pour les marques K-beauty."
-                : "Key entry category for K-beauty brand development."}
+              Hydrogel masks, sheet masks and OEM/ODM packaging solutions.
             </p>
           </div>
 
@@ -83,14 +91,14 @@ const Home: React.FC = () => {
                 : "Sustainable Materials"}
             </h3>
             <p className="text-stone-600">
-              PCR, FSC paper, mono-material structures for global compliance.
+              PCR plastics, FSC paper, mono-material structures for EU compliance.
             </p>
           </div>
 
         </div>
       </section>
 
-      {/* ================= MASK ENTRY CTA (VERY IMPORTANT) ================= */}
+      {/* ================= STRATEGIC ENTRY BLOCK ================= */}
       <section className="bg-stone-50 border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
 
@@ -105,8 +113,8 @@ const Home: React.FC = () => {
 
             <p className="text-stone-600 max-w-2xl">
               {language === "fr"
-                ? "Découvrez notre solution d’emballage pour masques hydrogel et sheet masks."
-                : "Dedicated packaging system for hydrogel masks, sheet masks and eye patch products."}
+                ? "Solution dédiée pour masques hydrogel et sheet masks."
+                : "Dedicated packaging system for hydrogel masks, sheet masks and K-beauty launches."}
             </p>
           </div>
 
@@ -126,7 +134,7 @@ const Home: React.FC = () => {
 
           <h2 className="font-serif text-3xl text-center mb-12">
             {language === "fr"
-              ? "Nos systèmes d’emballage"
+              ? "Nos systèmes"
               : "Our Packaging Systems"}
           </h2>
 
@@ -171,6 +179,18 @@ const Home: React.FC = () => {
 
           </div>
 
+          {/* 🔥 NEW CTA LINK */}
+          <div className="text-center mt-10">
+            <Link
+              to="/products"
+              className="text-brand-dark underline underline-offset-4 hover:opacity-70"
+            >
+              {language === "fr"
+                ? "Voir tous les produits"
+                : "View all products →"}
+            </Link>
+          </div>
+
         </div>
       </section>
 
@@ -186,16 +206,27 @@ const Home: React.FC = () => {
 
           <p className="text-stone-300 mb-8 max-w-2xl mx-auto">
             {language === "fr"
-              ? "Contactez-nous pour développer votre packaging skincare."
-              : "Contact us to develop your skincare packaging system."}
+              ? "Contactez-nous pour votre projet packaging."
+              : "Contact us to develop your skincare packaging solution."}
           </p>
 
-          <Link
-            to="/contact"
-            className="bg-white text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-stone-200 transition"
-          >
-            {language === "fr" ? "Contact" : "Get in Touch"}
-          </Link>
+          <div className="flex flex-col md:flex-row justify-center gap-4">
+
+            <Link
+              to="/products"
+              className="bg-white text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-stone-200 transition"
+            >
+              {language === "fr" ? "Produits" : "Products"}
+            </Link>
+
+            <Link
+              to="/contact"
+              className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-stone-900 transition"
+            >
+              {language === "fr" ? "Contact" : "Get in Touch"}
+            </Link>
+
+          </div>
 
         </div>
       </section>

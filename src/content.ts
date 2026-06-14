@@ -274,7 +274,7 @@ export const content = {
       },
 
       final:
-        "Thank you for your inquiry. We look forward to working with you.",
+        "Thank you for considering Elmvale Global. We look forward to the possibility of working together to create sustainable, impactful packaging.",
     },
 
     footer: {
@@ -456,7 +456,7 @@ export const content = {
         message: "Message",
         submit: "Envoyer",
       },
-      final: "Merci.",
+      final: "Merci de l’attention que vous portez à Elmvale Global. Nous espérons avoir bientôt l’opportunité de collaborer avec vous afin de créer des packagings durables et percutants..",
     },
 
     footer: {

@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Solutions from "./pages/Solutions";
+import Products from "./pages/Products"; // ✅ NEW
 import SkincareMaskPackaging from "./pages/SkincareMaskPackaging";
 import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
@@ -43,7 +44,7 @@ const normalizeLang = (lang: any): "en" | "fr" => {
     .replace("#/", "")
     .trim();
 
-  return clean === "en" ? "en" : "fr";
+  return clean.startsWith("en") ? "en" : "fr";
 };
 
 // ================= SCROLL =================
@@ -73,21 +74,31 @@ const TitleManager: React.FC = () => {
       case "/":
         page = language === "fr" ? "Accueil" : "Home";
         break;
+
       case "/solutions":
         page = "Solutions";
         break;
+
+      case "/products": // ✅ NEW
+        page = language === "fr" ? "Produits" : "Products";
+        break;
+
       case "/skincare-mask-packaging":
         page = language === "fr" ? "Packaging masques" : "Mask Packaging";
         break;
+
       case "/about":
         page = language === "fr" ? "À propos" : "About";
         break;
+
       case "/compliance":
         page = language === "fr" ? "Conformité" : "Compliance";
         break;
+
       case "/contact":
         page = language === "fr" ? "Contact" : "Contact";
         break;
+
       default:
         page = "";
     }
@@ -106,7 +117,6 @@ const App: React.FC = () => {
   const urlLang = searchParams.get("lang") as Language | null;
   const storedLang = localStorage.getItem(LANG_KEY) as Language | null;
 
-  // ✅ 初始化语言（安全）
   const initialLang: Language = normalizeLang(
     urlLang || storedLang || "fr"
   );
@@ -160,6 +170,10 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/solutions" element={<Solutions />} />
+
+            {/* ✅ NEW ROUTE */}
+            <Route path="/products" element={<Products />} />
+
             <Route path="/skincare-mask-packaging" element={<SkincareMaskPackaging />} />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/contact" element={<Contact />} />

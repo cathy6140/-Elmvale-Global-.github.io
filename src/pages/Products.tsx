@@ -288,39 +288,39 @@ const Products: React.FC = () => {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-16 px-6 bg-black text-white text-center">
+      <section className="py-16 px-6 bg-stone-50 border-t border-stone-200 text-center">
         <div className="max-w-4xl mx-auto">
-
-          <h2 className="text-3xl font-serif mb-4">
+      
+          <h2 className="text-3xl font-serif mb-4 text-brand-dark">
             {language === "fr"
               ? "Vous développez un nouveau projet packaging ?"
               : "Developing a New Packaging Project?"}
           </h2>
-
-          <p className="text-gray-300 mb-8">
+      
+          <p className="text-stone-600 mb-8">
             {language === "fr"
               ? "Envoyez-nous votre brief produit, vos besoins matériaux ou vos objectifs de lancement."
               : "Send us your product brief, material requirements or launch goals. We will help you identify the right packaging direction."}
           </p>
-
+      
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Link
               to="/contact"
-              className="px-6 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition"
+              className="px-6 py-3 bg-brand-dark text-white rounded-full hover:opacity-90 transition"
             >
               {language === "fr" ? "Contact" : "Contact Us"}
             </Link>
-
+      
             <Link
               to="/compliance"
-              className="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition"
+              className="px-6 py-3 border border-stone-400 text-brand-dark rounded-full hover:bg-white transition"
             >
               {language === "fr"
                 ? "Voir conformité"
                 : "View Compliance"}
             </Link>
           </div>
-
+      
         </div>
       </section>
 

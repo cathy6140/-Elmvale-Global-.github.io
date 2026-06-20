@@ -15,16 +15,15 @@ const Home: React.FC = () => {
           <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-6">
             {language === "fr"
               ? "Emballages durables pour marques beauté"
-              : "Sustainable Packaging Systems for Skincare & K-Beauty Brands"}
+              : "Sustainable Packaging for Skincare & K-Beauty Brands"}
           </h1>
 
           <p className="text-stone-600 max-w-2xl mx-auto mb-10 leading-relaxed">
             {language === "fr"
-              ? "Solutions packaging pour skincare, masques hydrogel et marques K-beauty."
-              : "From hydrogel mask packaging to full skincare systems and sustainable packaging solutions for global brands."}
+              ? "Solutions d’emballage pour skincare, masques, packaging primaire, packaging secondaire et matériaux durables."
+              : "Packaging solutions for skincare, mask packaging, primary packaging, secondary packaging and sustainable materials."}
           </p>
 
-          {/* 🔥 PRIMARY CTA STRUCTURE（升级重点） */}
           <div className="flex flex-col md:flex-row gap-4 justify-center">
 
             <Link
@@ -37,19 +36,10 @@ const Home: React.FC = () => {
             </Link>
 
             <Link
-              to="/solutions"
+              to="/contact"
               className="border border-stone-400 px-8 py-3 rounded-full hover:bg-stone-100 transition"
             >
-              {language === "fr" ? "Solutions" : "View Systems"}
-            </Link>
-
-            <Link
-              to="/skincare-mask-packaging"
-              className="text-brand-dark underline underline-offset-4 hover:opacity-70 transition"
-            >
-              {language === "fr"
-                ? "Focus masques hydrogel"
-                : "Mask Packaging Focus"}
+              {language === "fr" ? "Demander un devis" : "Request Quote"}
             </Link>
 
           </div>
@@ -63,24 +53,26 @@ const Home: React.FC = () => {
           <div>
             <h3 className="font-semibold text-lg mb-3">
               {language === "fr"
-                ? "Systèmes packaging"
-                : "Packaging Systems"}
+                ? "Produits packaging skincare"
+                : "Skincare Packaging Products"}
             </h3>
             <p className="text-stone-600">
               {language === "fr"
-                ? "Structures complètes pour skincare et K-beauty."
-                : "Complete packaging systems for skincare and beauty brands."}
+                ? "Flacons, pots, airless, droppers, tubes et systèmes de distribution pour marques skincare."
+                : "Bottles, jars, airless systems, droppers, tubes and dispensing systems for skincare brands."}
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-3">
               {language === "fr"
-                ? "Spécialiste K-beauty"
-                : "K-Beauty Expertise"}
+                ? "Focus masques & K-beauty"
+                : "Mask & K-Beauty Focus"}
             </h3>
             <p className="text-stone-600">
-              Hydrogel masks, sheet masks and OEM/ODM packaging solutions.
+              {language === "fr"
+                ? "Pochettes sheet mask, packaging eye patch et sachets échantillons pour lancements K-beauty."
+                : "Sheet mask pouches, eye patch packaging and sachet samples for K-beauty launches."}
             </p>
           </div>
 
@@ -91,81 +83,119 @@ const Home: React.FC = () => {
                 : "Sustainable Materials"}
             </h3>
             <p className="text-stone-600">
-              PCR plastics, FSC paper, mono-material structures for EU compliance.
+              {language === "fr"
+                ? "PCR, papier FSC, mono-matériaux et conception recyclable pour les exigences internationales."
+                : "PCR plastics, FSC paper, mono-material structures and recyclable design for global requirements."}
             </p>
           </div>
 
         </div>
       </section>
 
-      {/* ================= STRATEGIC ENTRY BLOCK ================= */}
+      {/* ================= PRODUCT CATEGORY ENTRY ================= */}
       <section className="bg-stone-50 border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
 
           <div>
             <p className="uppercase text-xs tracking-[0.3em] text-stone-500 mb-3">
-              K-BEAUTY ENTRY POINT
+              {language === "fr" ? "CATÉGORIES PRODUITS" : "PRODUCT CATEGORIES"}
             </p>
 
             <h2 className="font-serif text-3xl md:text-4xl text-brand-dark mb-3">
-              Hydrogel Mask Packaging Solutions
+              {language === "fr"
+                ? "Cinq catégories pour vos projets skincare"
+                : "Five Packaging Categories for Skincare Projects"}
             </h2>
 
             <p className="text-stone-600 max-w-2xl">
               {language === "fr"
-                ? "Solution dédiée pour masques hydrogel et sheet masks."
-                : "Dedicated packaging system for hydrogel masks, sheet masks and K-beauty launches."}
+                ? "Découvrez nos systèmes de packaging pour masques, packaging primaire, tubes, packaging secondaire et solutions durables."
+                : "Explore mask packaging, primary skincare packaging, tubes and dispensing, secondary packaging and sustainable solutions."}
             </p>
           </div>
 
           <Link
-            to="/skincare-mask-packaging"
+            to="/products"
             className="bg-brand-dark text-white px-8 py-3 rounded-full whitespace-nowrap hover:opacity-90 transition"
           >
-            {language === "fr" ? "Explorer" : "Explore Now"}
+            {language === "fr" ? "Voir les produits" : "View Products"}
           </Link>
 
         </div>
       </section>
 
-      {/* ================= SYSTEM OVERVIEW ================= */}
+      {/* ================= PRODUCT OVERVIEW ================= */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 py-20">
 
           <h2 className="font-serif text-3xl text-center mb-12">
             {language === "fr"
-              ? "Nos systèmes"
-              : "Our Packaging Systems"}
+              ? "Nos catégories packaging"
+              : "Our Packaging Categories"}
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             {[
               {
-                title: language === "fr" ? "Système masques" : "Mask System",
-                desc: language === "fr"
-                  ? "Masques hydrogel et sheet masks."
-                  : "Hydrogel mask & sheet mask packaging.",
+                title:
+                  language === "fr"
+                    ? "Mask Packaging Systems"
+                    : "Mask Packaging Systems",
+                desc:
+                  language === "fr"
+                    ? "Pochettes sheet mask, eye patch packaging et sachets échantillons."
+                    : "Sheet mask pouches, eye patch packaging and sachet samples.",
               },
               {
-                title: language === "fr" ? "Système skincare" : "Skincare System",
-                desc: "Bottles, jars, airless packaging.",
+                title:
+                  language === "fr"
+                    ? "Packaging primaire skincare"
+                    : "Skincare Primary Packaging",
+                desc:
+                  language === "fr"
+                    ? "Flacons, pots, airless et droppers."
+                    : "Bottles, jars, airless systems and droppers.",
               },
               {
-                title: language === "fr" ? "Système tubes" : "Tube System",
-                desc: "Tubes, pumps, dispensers.",
+                title:
+                  language === "fr"
+                    ? "Tubes & systèmes de distribution"
+                    : "Tubes & Dispensing Systems",
+                desc:
+                  language === "fr"
+                    ? "Tubes, pompes et sprays pour crèmes, gels et soins."
+                    : "Tubes, pumps and sprayers for creams, gels and skincare products.",
               },
               {
-                title: language === "fr" ? "Système secondaire" : "Secondary System",
-                desc: "Cartons and beauty boxes.",
+                title:
+                  language === "fr"
+                    ? "Packaging secondaire"
+                    : "Secondary Packaging",
+                desc:
+                  language === "fr"
+                    ? "Cartons, gift boxes, beauty sets et retail packaging."
+                    : "Cartons, gift boxes, beauty sets and retail packaging.",
               },
               {
-                title: language === "fr" ? "Système durable" : "Sustainable System",
-                desc: "PCR, FSC paper, recyclable packaging.",
+                title:
+                  language === "fr"
+                    ? "Solutions packaging durables"
+                    : "Sustainable Packaging Solutions",
+                desc:
+                  language === "fr"
+                    ? "PCR, mono-matériaux, papier FSC et design recyclable."
+                    : "PCR plastics, mono-material, FSC paper and recyclable design.",
               },
               {
-                title: language === "fr" ? "Solutions sur mesure" : "Custom Solutions",
-                desc: "Tailored packaging development.",
+                title:
+                  language === "fr"
+                    ? "Développement sur mesure"
+                    : "Custom Packaging Development",
+                desc:
+                  language === "fr"
+                    ? "Sélection matériaux, impression, finition et développement adapté à votre marque."
+                    : "Material selection, printing, finishing and brand-specific packaging development.",
               },
             ].map((item, index) => (
               <div
@@ -179,15 +209,14 @@ const Home: React.FC = () => {
 
           </div>
 
-          {/* 🔥 NEW CTA LINK */}
           <div className="text-center mt-10">
             <Link
               to="/products"
               className="text-brand-dark underline underline-offset-4 hover:opacity-70"
             >
               {language === "fr"
-                ? "Voir tous les produits"
-                : "View all products →"}
+                ? "Voir toutes les catégories produits →"
+                : "View all product categories →"}
             </Link>
           </div>
 
@@ -200,14 +229,14 @@ const Home: React.FC = () => {
 
           <h2 className="font-serif text-3xl mb-4">
             {language === "fr"
-              ? "Prêt à lancer votre projet ?"
+              ? "Prêt à développer votre projet packaging ?"
               : "Ready to Start Your Packaging Project?"}
           </h2>
 
           <p className="text-stone-300 mb-8 max-w-2xl mx-auto">
             {language === "fr"
-              ? "Contactez-nous pour votre projet packaging."
-              : "Contact us to develop your skincare packaging solution."}
+              ? "Contactez-nous pour développer une solution adaptée à vos produits skincare ou K-beauty."
+              : "Contact us to develop a tailored packaging solution for your skincare or K-beauty brand."}
           </p>
 
           <div className="flex flex-col md:flex-row justify-center gap-4">
@@ -216,7 +245,7 @@ const Home: React.FC = () => {
               to="/products"
               className="bg-white text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-stone-200 transition"
             >
-              {language === "fr" ? "Produits" : "Products"}
+              {language === "fr" ? "Voir les produits" : "View Products"}
             </Link>
 
             <Link

@@ -10,44 +10,52 @@ const Home: React.FC = () => {
 
       {/* ================= HERO ================= */}
       <section
-        className="relative bg-stone-50 border-b border-stone-200 overflow-hidden"
+        className="relative min-h-[520px] md:min-h-[620px] bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: "url('/hero-home.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-white/75" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/55" />
       
-        <div className="relative max-w-7xl mx-auto px-6 py-24 text-center">
-          <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-6">
-            {language === "fr"
-              ? "Emballages durables pour marques beauté"
-              : "Sustainable Packaging for Skincare"}
-          </h1>
+        {/* Optional left gradient for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10" />
       
-          <p className="text-stone-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            {language === "fr"
-              ? "Nous accompagnons les marques de beauté, les entreprises K-beauty et les fabricants OEM/ODM dans le sourcing de packagings cosmétiques, avec des délais fiables et une documentation claire."
-              : "We help beauty brands, K-beauty companies, and OEM/ODM manufacturers source cosmetic packaging with reliable lead times and clear documentation."}
-          </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 md:py-36">
+          <div className="max-w-3xl text-left">
       
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Link
-              to="/products"
-              className="bg-brand-dark text-white px-8 py-3 rounded-full hover:opacity-90 transition"
-            >
+            <h1 className="font-serif text-5xl md:text-7xl text-white mb-8 leading-tight">
               {language === "fr"
-                ? "Explorer les produits"
-                : "Explore Products"}
-            </Link>
+                ? "Emballages durables pour marques beauté"
+                : "Sustainable Packaging for Skincare"}
+            </h1>
       
-            <Link
-              to="/contact"
-              className="border border-stone-400 px-8 py-3 rounded-full hover:bg-white transition"
-            >
-              {language === "fr" ? "Demander un devis" : "Request Quote"}
-            </Link>
+            <div className="border-l-4 border-emerald-500 pl-6">
+              <p className="text-white/90 max-w-2xl text-lg md:text-xl leading-relaxed">
+                {language === "fr"
+                  ? "Nous accompagnons les marques de beauté, les entreprises K-beauty et les fabricants OEM/ODM dans le sourcing de packagings cosmétiques, avec des délais fiables et une documentation claire."
+                  : "We help beauty brands, K-beauty companies, and OEM/ODM manufacturers source cosmetic packaging with reliable lead times and clear documentation."}
+              </p>
+            </div>
+      
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              <Link
+                to="/products"
+                className="bg-white text-brand-dark px-8 py-3 rounded-full font-medium hover:bg-stone-100 transition text-center"
+              >
+                {language === "fr"
+                  ? "Explorer les produits"
+                  : "Explore Products"}
+              </Link>
+      
+              <Link
+                to="/contact"
+                className="border border-white/70 text-white px-8 py-3 rounded-full hover:bg-white hover:text-brand-dark transition text-center"
+              >
+                {language === "fr" ? "Demander un devis" : "Request Quote"}
+              </Link>
+            </div>
+      
           </div>
         </div>
       </section>

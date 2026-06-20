@@ -15,13 +15,13 @@ const Home: React.FC = () => {
           <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-6">
             {language === "fr"
               ? "Emballages durables pour marques beauté"
-              : "Sustainable Packaging for Skincare & K-Beauty Brands"}
+              : "Sustainable Packaging for Skincare Brands"}
           </h1>
 
           <p className="text-stone-600 max-w-2xl mx-auto mb-10 leading-relaxed">
             {language === "fr"
-              ? "Solutions d’emballage pour skincare, masques, packaging primaire, packaging secondaire et matériaux durables."
-              : "Packaging solutions for skincare, mask packaging, primary packaging, secondary packaging and sustainable materials."}
+              ? "Nous accompagnons les marques de beauté, les entreprises K-beauty et les fabricants OEM/ODM dans le sourcing de packagings cosmétiques, avec des délais fiables et une documentation claire."
+              : "We help beauty brands, K-beauty companies, and OEM/ODM manufacturers source cosmetic packaging with reliable lead times and clear documentation."}
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center">

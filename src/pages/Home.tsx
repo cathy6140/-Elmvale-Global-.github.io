@@ -9,23 +9,30 @@ const Home: React.FC = () => {
     <div className="w-full">
 
       {/* ================= HERO ================= */}
-      <section className="bg-stone-50 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-6 py-24 text-center">
-
+      <section
+        className="relative bg-stone-50 border-b border-stone-200 overflow-hidden"
+        style={{
+          backgroundImage: "url('/hero-home.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-white/75" />
+      
+        <div className="relative max-w-7xl mx-auto px-6 py-24 text-center">
           <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-6">
             {language === "fr"
               ? "Emballages durables pour marques beauté"
-              : "Sustainable Packaging for Skincare Brands"}
+              : "Sustainable Packaging for Skincare & K-Beauty Brands"}
           </h1>
-
+      
           <p className="text-stone-600 max-w-2xl mx-auto mb-10 leading-relaxed">
             {language === "fr"
               ? "Nous accompagnons les marques de beauté, les entreprises K-beauty et les fabricants OEM/ODM dans le sourcing de packagings cosmétiques, avec des délais fiables et une documentation claire."
               : "We help beauty brands, K-beauty companies, and OEM/ODM manufacturers source cosmetic packaging with reliable lead times and clear documentation."}
           </p>
-
+      
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-
             <Link
               to="/products"
               className="bg-brand-dark text-white px-8 py-3 rounded-full hover:opacity-90 transition"
@@ -34,14 +41,13 @@ const Home: React.FC = () => {
                 ? "Explorer les produits"
                 : "Explore Products"}
             </Link>
-
+      
             <Link
               to="/contact"
-              className="border border-stone-400 px-8 py-3 rounded-full hover:bg-stone-100 transition"
+              className="border border-stone-400 px-8 py-3 rounded-full hover:bg-white transition"
             >
               {language === "fr" ? "Demander un devis" : "Request Quote"}
             </Link>
-
           </div>
         </div>
       </section>

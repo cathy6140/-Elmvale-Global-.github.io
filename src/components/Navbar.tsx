@@ -18,7 +18,9 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     handleScroll();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -30,8 +32,10 @@ const Navbar: React.FC = () => {
   // lock body scroll when mobile menu open
   useEffect(() => {
     if (!isOpen) return;
+
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+
     return () => {
       document.body.style.overflow = prev;
     };
@@ -39,27 +43,32 @@ const Navbar: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Keep ?lang= in links
   const withLang = useMemo(() => {
     const current = new URLSearchParams(searchParams);
     current.set('lang', language);
+
     const search = `?${current.toString()}`;
+
     return (pathname: string) => ({ pathname, search });
   }, [language, searchParams]);
 
   const toggleLang = () => {
     const next = language === 'en' ? 'fr' : 'en';
+
     setLanguage(next);
+
     const p = new URLSearchParams(searchParams);
     p.set('lang', next);
     setSearchParams(p, { replace: true });
   };
 
-  // 🔥 UPDATED NAV STRUCTURE (关键升级)
+  // ================= NAV LINKS =================
+  // Updated structure:
+  // Home / Products / Compliance / About / Contact
   const navLinks = [
     { path: '/', label: t.home },
-    { path: '/products', label: 'Products' }, // ⭐ NEW
-    { path: '/solutions', label: 'Solutions' },
-    { path: '/skincare-mask-packaging', label: 'Mask Focus' },
+    { path: '/products', label: language === 'fr' ? 'Produits' : 'Products' },
     { path: '/compliance', label: t.compliance },
     { path: '/about', label: t.about },
     { path: '/contact', label: t.contact },
@@ -68,7 +77,9 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-5'
+        scrolled
+          ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
@@ -84,6 +95,7 @@ const Navbar: React.FC = () => {
                 loading="eager"
               />
             </div>
+
             <span className="font-serif text-base md:text-lg uppercase tracking-[0.28em] font-normal text-brand-dark">
               ELMVALE GLOBAL
             </span>
@@ -113,10 +125,15 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
 
-            {/* Language */}
+            {/* Desktop Language Switcher */}
             <button
               onClick={toggleLang}
               className="text-[11px] font-semibold tracking-[0.18em] text-brand-dark border-l border-stone-300 pl-5 ml-1 hover:opacity-70 transition-opacity whitespace-nowrap"
+              aria-label={
+                language === 'en'
+                  ? 'Switch to French'
+                  : 'Switch to English'
+              }
             >
               {language === 'en' ? 'FR' : 'EN'}
             </button>
@@ -127,6 +144,11 @@ const Navbar: React.FC = () => {
             <button
               onClick={toggleLang}
               className="text-xs font-bold text-brand-dark tracking-wider"
+              aria-label={
+                language === 'en'
+                  ? 'Switch to French'
+                  : 'Switch to English'
+              }
             >
               {language === 'en' ? 'FR' : 'EN'}
             </button>
@@ -137,13 +159,17 @@ const Navbar: React.FC = () => {
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
             >
-              {isOpen ? <X strokeWidth={1.5} size={28} /> : <Menu strokeWidth={1.5} size={28} />}
+              {isOpen ? (
+                <X strokeWidth={1.5} size={28} />
+              ) : (
+                <Menu strokeWidth={1.5} size={28} />
+              )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-brand-cream z-40 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
@@ -152,6 +178,7 @@ const Navbar: React.FC = () => {
         <button
           onClick={() => setIsOpen(false)}
           className="absolute top-8 right-8 text-brand-dark"
+          aria-label="Close menu"
         >
           <X size={32} strokeWidth={1} />
         </button>
@@ -166,6 +193,15 @@ const Navbar: React.FC = () => {
             {link.label}
           </Link>
         ))}
+
+        {/* Mobile CTA */}
+        <Link
+          to={withLang('/contact')}
+          onClick={() => setIsOpen(false)}
+          className="mt-4 bg-brand-dark text-white px-8 py-3 rounded-full text-sm uppercase tracking-[0.18em]"
+        >
+          {language === 'fr' ? 'Demander un devis' : 'Request Quote'}
+        </Link>
       </div>
     </nav>
   );

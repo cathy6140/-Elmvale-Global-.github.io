@@ -7,6 +7,7 @@ import React, {
 import {
   Routes,
   Route,
+  Navigate,
   useLocation,
   useSearchParams,
 } from "react-router-dom";
@@ -16,9 +17,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Solutions from "./pages/Solutions";
-import Products from "./pages/Products"; // ✅ NEW
-import SkincareMaskPackaging from "./pages/SkincareMaskPackaging";
+import Products from "./pages/Products";
 import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
@@ -75,16 +74,8 @@ const TitleManager: React.FC = () => {
         page = language === "fr" ? "Accueil" : "Home";
         break;
 
-      case "/solutions":
-        page = "Solutions";
-        break;
-
-      case "/products": // ✅ NEW
+      case "/products":
         page = language === "fr" ? "Produits" : "Products";
-        break;
-
-      case "/skincare-mask-packaging":
-        page = language === "fr" ? "Packaging masques" : "Mask Packaging";
         break;
 
       case "/about":
@@ -97,6 +88,18 @@ const TitleManager: React.FC = () => {
 
       case "/contact":
         page = language === "fr" ? "Contact" : "Contact";
+        break;
+
+      case "/privacy":
+        page = language === "fr" ? "Confidentialité" : "Privacy";
+        break;
+
+      case "/terms":
+        page = language === "fr" ? "Conditions" : "Terms";
+        break;
+
+      case "/cookies":
+        page = language === "fr" ? "Cookies" : "Cookies";
         break;
 
       default:
@@ -168,18 +171,29 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/solutions" element={<Solutions />} />
 
-            {/* ✅ NEW ROUTE */}
+            {/* Main commercial page */}
             <Route path="/products" element={<Products />} />
 
-            <Route path="/skincare-mask-packaging" element={<SkincareMaskPackaging />} />
+            {/* Trust and conversion pages */}
             <Route path="/compliance" element={<Compliance />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* Legal pages */}
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/cookies" element={<Cookies />} />
+
+            {/* Legacy redirects */}
+            <Route path="/solutions" element={<Navigate to="/products" replace />} />
+            <Route
+              path="/skincare-mask-packaging"
+              element={<Navigate to="/products" replace />}
+            />
+
+            {/* Fallback */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 

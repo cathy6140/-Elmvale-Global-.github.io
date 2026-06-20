@@ -80,8 +80,8 @@ const Home: React.FC = () => {
           <div>
             <h3 className="font-semibold text-lg mb-3">
               {language === "fr"
-                ? "Focus masques & K-beauty"
-                : "Mask & K-Beauty Focus"}
+                ? "Produits packaging masques"
+                : "Mask Packaging Product"}
             </h3>
             <p className="text-stone-600">
               {language === "fr"

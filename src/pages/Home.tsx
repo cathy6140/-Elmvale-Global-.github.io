@@ -224,33 +224,35 @@ const Home: React.FC = () => {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="bg-stone-900 text-white">
+      <section className="bg-stone-50 border-t border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-20 text-center">
 
-          <h2 className="font-serif text-3xl mb-4">
+          <h2 className="font-serif text-3xl mb-4 text-brand-dark">
             {language === "fr"
               ? "Prêt à développer votre projet packaging ?"
               : "Ready to Start Your Packaging Project?"}
           </h2>
 
-          <p className="text-stone-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-stone-600 mb-8 max-w-2xl mx-auto">
             {language === "fr"
               ? "Contactez-nous pour développer une solution adaptée à vos produits skincare ou K-beauty."
               : "Contact us to develop a tailored packaging solution for your skincare or K-beauty brand."}
           </p>
 
           <div className="flex flex-col md:flex-row justify-center gap-4">
-
             <Link
               to="/products"
-              className="bg-white text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-stone-200 transition"
+              className="bg-brand-dark text-white px-8 py-3 rounded-full font-medium hover:opacity-90 transition"
             >
               {language === "fr" ? "Voir les produits" : "View Products"}
             </Link>
 
             <Link
               to="/contact"
-              className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-stone-900 transition"
+              className="border border-stone-400 text-brand-dark px-8 py-3 rounded-full hover:bg-white transition"
+            >
+
+        {language === "fr" ? "Contact" : "Get in Touch"}
             >
               {language === "fr" ? "Contact" : "Get in Touch"}
             </Link>

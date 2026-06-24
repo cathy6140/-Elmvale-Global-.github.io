@@ -161,7 +161,7 @@ const Products: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Link
               to="/contact"
-              className="bg-black text-white px-6 py-3 rounded-full hover:opacity-90 transition"
+              className="bg-brand-dark text-white px-6 py-3 rounded-full hover:opacity-90 transition"
             >
               {language === "fr" ? "Demander un devis" : "Request Quote"}
             </Link>
@@ -213,7 +213,7 @@ const Products: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="text-sm px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition inline-block"
+                className="text-sm px-4 py-2 bg-brand-dark text-white rounded-full hover:opacity-90 transition inline-block"
               >
                 {language === "fr" ? "Demander un devis" : "Request Quote"}
               </Link>

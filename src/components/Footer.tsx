@@ -35,7 +35,9 @@ const Footer: React.FC = () => {
             </div>
 
             <p className="text-sm font-light leading-relaxed text-stone-200/90">
-              {t.footer?.blurb ?? t.home.hero.subtext}
+              {language === 'fr'
+                ? 'Sourcing et coordination de packaging cosmétique et parfum auprès de fabricants en Chine.'
+                : 'Cosmetic and fragrance packaging sourcing and project coordination with manufacturers in China.'}
             </p>
 
             <div className="text-xs text-stone-400">
@@ -54,6 +56,8 @@ const Footer: React.FC = () => {
               <ul className="space-y-3 text-sm font-light">
                 <li><Link to={withLang('/about')} className="hover:text-white transition">{t.nav.about}</Link></li>
                 <li><Link to={withLang('/products')} className="hover:text-white transition">{t.nav.products}</Link></li>
+                <li><Link to={withLang('/sourcing')} className="hover:text-white transition">Sourcing</Link></li>
+                <li><Link to={withLang('/fragrance-packaging')} className="hover:text-white transition">{language === 'fr' ? 'Parfum' : 'Fragrance'}</Link></li>
                 <li><Link to={withLang('/compliance')} className="hover:text-white transition">{t.nav.compliance}</Link></li>
                 <li><Link to={withLang('/contact')} className="hover:text-white transition">{t.nav.contact}</Link></li>
               </ul>
@@ -109,8 +113,8 @@ const Footer: React.FC = () => {
           </p>
           <div className="opacity-90">
             {language === 'fr'
-              ? 'Emballages durables · Conformité · Traçabilité'
-              : 'Sustainable packaging · Compliance · Traceability'}
+              ? 'Sourcing Chine · Packaging beauté · Packaging parfum'
+              : 'China sourcing · Beauty packaging · Fragrance packaging'}
           </div>
         </div>
       </div>

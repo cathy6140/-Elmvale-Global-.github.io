@@ -8,7 +8,7 @@ const Privacy: React.FC = () => {
   const isFR = language === "fr";
   
   useEffect(() => {
-    if (isFr) {
+    if (isFR) {
       setSeoMeta(
         "Elmvale Global – Politique de confidentialité",
         "Politique de confidentialité d’Elmvale Global expliquant comment nous traitons les données personnelles sur ce site."
@@ -19,7 +19,7 @@ const Privacy: React.FC = () => {
         "Elmvale Global privacy policy explaining how we handle personal data on this website."
       );
     }
-  }, [isFr]);
+  }, [isFR]);
 
   return (
     <div className="bg-brand-cream min-h-screen pt-32 pb-24">
@@ -42,14 +42,14 @@ const Privacy: React.FC = () => {
             <p>
               {isFR ? (
                 <>
-                  La présente Politique de confidentialité explique comment <strong>Elmvale Global</strong>{" "}
+                  La présente Politique de confidentialité explique comment l’équipe exploitant <strong>Elmvale Global</strong>{" "}
                   (« nous ») collecte, utilise et protège vos données personnelles lorsque vous visitez{" "}
                   <strong>elmvaleglobal.com</strong> ou nous contactez au sujet de projets de packaging pour
                   cosmétiques et soins.
                 </>
               ) : (
                 <>
-                  This Privacy Policy explains how <strong>Elmvale Global</strong> (“we”, “us”, “our”) collects,
+                  This Privacy Policy explains how the team operating <strong>Elmvale Global</strong> (“we”, “us”, “our”) collects,
                   uses, and protects personal information when you visit{" "}
                   <strong>elmvaleglobal.com</strong> or contact us about cosmetic and skincare packaging projects.
                 </>

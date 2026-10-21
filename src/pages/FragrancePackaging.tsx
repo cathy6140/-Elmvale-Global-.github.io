@@ -73,20 +73,26 @@ const FragrancePackaging: React.FC = () => {
             {categories.map((item, index) => (
               <article
                 key={item}
-                className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-900 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div
                   role="img"
                   aria-label={item}
-                  className="aspect-[4/3] bg-no-repeat"
+                  className="relative aspect-[4/3] bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                   style={{
                     backgroundImage: `url(${fragranceSprite})`,
                     backgroundSize: "400% 200%",
                     backgroundPosition: cardPositions[index],
+                    filter: "contrast(1.04) saturate(0.82) brightness(0.92) sepia(0.05)",
                   }}
-                />
-                <div className="p-5">
-                  <h2 className="font-medium text-brand-dark leading-snug">{item}</h2>
+                >
+                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,22,18,0.16),rgba(24,19,15,0.28),rgba(14,11,9,0.52))]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,247,235,0.16),transparent_45%)]" />
+                  <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
+                    <h2 className="max-w-[90%] text-white text-lg md:text-xl font-medium leading-snug tracking-[0.06em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.38)]">
+                      {item}
+                    </h2>
+                  </div>
                 </div>
               </article>
             ))}

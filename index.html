@@ -4,10 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- 1. 标题优化：包含核心业务关键词，有利于海外搜索 -->
     <title>Elmvale Global | Sustainable Cosmetic Packaging & Supply Chain Solutions</title>
-    
-    <!-- 2. Google Analytics (GA4) + Consent Mode (保持你原有的逻辑) -->
+
+    <meta
+      name="description"
+      content="Elmvale Global helps beauty and skincare brands source sustainable cosmetic packaging with reliable lead times, clear documentation, and tailored development support."
+    />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://elmvaleglobal.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Elmvale Global" />
+    <meta property="og:title" content="Elmvale Global | Sustainable Cosmetic Packaging" />
+    <meta property="og:description" content="Sustainable cosmetic packaging sourcing and development for beauty and skincare brands." />
+    <meta property="og:url" content="https://elmvaleglobal.com/" />
+    <meta property="og:image" content="https://elmvaleglobal.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRRFY9DWWK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -25,24 +38,9 @@
       };
     </script>
 
-    <!-- 3. SEO 描述：增加吸引力，突出“可持续”和“专业性” -->
-    <meta
-      name="description"
-      content="Elmvale Global is a premium partner for sustainable cosmetic packaging. We provide high-end sourcing, formula compatibility, and supply chain transparency for global beauty brands."
-    />
-    <meta name="keywords" content="sustainable packaging, cosmetic glass bottles, eco-friendly beauty, PCR plastic, beauty supply chain, Elmvale Global" />
-
-    <!-- 4. Open Graph / Facebook：当你在 LinkedIn 或 WhatsApp 分享链接时，会显示精美的缩略图 -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Elmvale Global | Sustainable Cosmetic Packaging" />
-    <meta property="og:description" content="Premium, sustainable sourcing solutions for the global beauty industry." />
-    <meta property="og:image" content="/og-image.jpg" /> <!-- 建议在 public 文件夹放一张品牌预览图 -->
-
-    <!-- 5. 品牌色调：将主题色改为你的品牌绿 (#1B4332 是建议的高级森林绿) -->
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#1B4332" />
 
-    <!-- 6. Favicons (保持你现有的路径) -->
     <link rel="icon" href="/elmvale-logo.svg?v=10" type="image/svg+xml" sizes="any" />
     <link rel="icon" href="/favicon-32.png?v=10" type="image/png" sizes="32x32" />
     <link rel="icon" href="/favicon-16.png?v=10" type="image/png" sizes="16x16" />
@@ -50,7 +48,6 @@
     <link rel="shortcut icon" href="/favicon.ico?v=10" />
     <link rel="manifest" href="/site.webmanifest?v=10" />
 
-    <!-- 7. 字体加载：预连结提高速度 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -59,17 +56,13 @@
     />
 
     <style>
-      /* 简单的加载占位背景色，防止白屏闪烁 */
       body { background-color: #FAF9F7; margin: 0; }
       #root { min-height: 100vh; }
     </style>
   </head>
 
   <body class="bg-brand-cream text-stone-800 antialiased selection:bg-green-900 selection:text-white">
-    <!-- React 挂载点 -->
     <div id="root"></div>
-    
-    <!-- 8. 入口文件 -->
     <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>

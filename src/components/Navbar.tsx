@@ -68,8 +68,10 @@ const Navbar: React.FC = () => {
   // Home / Products / Compliance / About / Contact
   const navLinks = [
     { path: '/', label: t.home },
-    { path: '/products', label: language === 'fr' ? 'Produits' : 'Products' },
-    { path: '/compliance', label: t.compliance },
+    { path: '/products', label: language === 'fr' ? 'Packaging' : 'Packaging' },
+    { path: '/sourcing', label: language === 'fr' ? 'Sourcing' : 'Sourcing' },
+    { path: '/fragrance-packaging', label: language === 'fr' ? 'Parfum' : 'Fragrance' },
+    { path: '/compliance', label: language === 'fr' ? 'Conformité' : 'Compliance' },
     { path: '/about', label: t.about },
     { path: '/contact', label: t.contact },
   ];
@@ -200,7 +202,7 @@ const Navbar: React.FC = () => {
           onClick={() => setIsOpen(false)}
           className="mt-4 bg-brand-dark text-white px-8 py-3 rounded-full text-sm uppercase tracking-[0.18em]"
         >
-          {language === 'fr' ? 'Demander un devis' : 'Request Quote'}
+          {language === 'fr' ? 'Envoyer un brief' : 'Send a Brief'}
         </Link>
       </div>
     </nav>

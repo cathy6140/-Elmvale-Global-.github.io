@@ -1,264 +1,132 @@
 import React, { useContext, useEffect, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
 import { LanguageContext } from "../App";
-import { content } from "../content";
-import { Mail, Phone, Clock } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 import { setSeoMeta } from "../seo";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjkaopok";
 
 const Contact: React.FC = () => {
   const { language } = useContext(LanguageContext);
-  const t = content[language].contact;
+  const fr = language === "fr";
 
   useEffect(() => {
-    if (language === "fr") {
-      setSeoMeta(
-        "Elmvale Global – Contactez-nous",
-        "Parlez-nous de vos projets d’emballages cosmétiques : demandes de devis, sourcing de nouveaux packs ou questions de conformité."
-      );
-    } else {
-      setSeoMeta(
-        "Elmvale Global – Contact us",
-        "Get in touch about cosmetic packaging projects: quotations, new pack sourcing, or compliance questions for your beauty brand."
-      );
-    }
-  }, [language]);
+    setSeoMeta(
+      fr ? "Envoyer un brief packaging | Elmvale Global" : "Send a Packaging Brief | Elmvale Global",
+      fr
+        ? "Envoyez votre brief de sourcing packaging cosmétique ou parfum à Elmvale Global."
+        : "Send your cosmetic or fragrance packaging sourcing brief to Elmvale Global."
+    );
+  }, [fr]);
 
-  const [searchParams] = useSearchParams();
-  const presetCategory = searchParams.get("category") || "";
-
-  const isOfficialHost = useMemo(() => {
-    const host = window.location.hostname;
-    return host === "elmvaleglobal.com"; // 你确认最终就是这个
-  }, []);
-
-  // 你要的“其他”
-  const categories = useMemo(
-    () => [
-      { value: "airless", labelEn: "Airless", labelFr: "Airless" },
-      { value: "bottles-jars", labelEn: "Bottles & Jars", labelFr: "Flacons & Pots" },
-      { value: "tubes-sachets", labelEn: "Tubes & Sachets", labelFr: "Tubes & Sachets" },
-      { value: "pumps-dispensers", labelEn: "Pumps & Dispensers", labelFr: "Pompes & Distributeurs" },
-      { value: "caps-closures", labelEn: "Caps & Closures", labelFr: "Bouchons & Fermetures" },
-      { value: "other", labelEn: "Other", labelFr: "Autre" },
-    ],
-    []
-  );
-
-  const categoryLabel = (c: (typeof categories)[number]) =>
-    language === "fr" ? c.labelFr : c.labelEn;
+  const isOfficialHost = useMemo(() => window.location.hostname === "elmvaleglobal.com", []);
 
   return (
-    <div className="bg-white min-h-screen pt-32">
-      {/* Header */}
-      <section className="px-6 lg:px-12 max-w-screen-2xl mx-auto mb-20">
-        <h1 className="font-serif text-5xl md:text-7xl text-brand-dark mb-8">{t.intro.title}</h1>
-        <p className="text-xl text-stone-600 font-light max-w-2xl leading-relaxed">{t.intro.desc}</p>
+    <div className="bg-white min-h-screen pt-28">
+      <section className="px-6 max-w-6xl mx-auto mb-14">
+        <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "NOUVEAU PROJET" : "NEW PROJECT"}</p>
+        <h1 className="font-serif text-5xl md:text-6xl text-brand-dark mb-6">
+          {fr ? "Envoyez-nous votre brief packaging" : "Send Us Your Packaging Brief"}
+        </h1>
+        <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
+          {fr
+            ? "Plus votre brief est précis, plus nous pouvons identifier rapidement les fabricants et options adaptés à votre projet."
+            : "The more specific your brief, the faster we can identify suitable manufacturing options for your project."}
+        </p>
       </section>
 
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
-          {/* Info Side */}
-          <div className="space-y-16">
+      <section className="max-w-6xl mx-auto px-6 pb-28 grid lg:grid-cols-[0.8fr_1.2fr] gap-16">
+        <div className="space-y-8">
+          <div className="flex gap-4 items-start">
+            <Mail className="w-5 h-5 mt-1 text-stone-400" />
             <div>
-              <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mb-8">
-                {t.details.title}
-              </h2>
-
-              <div className="space-y-8">
-                <div className="flex items-start gap-6 group">
-                  <Mail className="w-6 h-6 text-stone-300 group-hover:text-brand-primary transition" strokeWidth={1.5} />
-                  <div>
-                    <span className="block font-serif text-xl text-brand-dark mb-1">
-                      {t.details.labels?.email ?? "Email"}
-                    </span>
-                    <a href={`mailto:${t.details.email}`} className="text-stone-500 font-light hover:text-brand-dark transition">
-                      {t.details.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 group">
-                  <Phone className="w-6 h-6 text-stone-300 group-hover:text-brand-primary transition" strokeWidth={1.5} />
-                  <div>
-                    <span className="block font-serif text-xl text-brand-dark mb-1">
-                      {t.details.labels?.phone ?? "Phone"}
-                    </span>
-                    <span className="text-stone-500 font-light">{t.details.phone}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 group">
-                  <Clock className="w-6 h-6 text-stone-300 group-hover:text-brand-primary transition" strokeWidth={1.5} />
-                  <div>
-                    <span className="block font-serif text-xl text-brand-dark mb-1">
-                      {t.details.labels?.hours ?? "Hours"}
-                    </span>
-                    <span className="text-stone-500 font-light">{t.details.hours}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-l-2 border-brand-primary pl-6 py-2">
-              <p className="text-stone-600 font-serif italic text-lg leading-relaxed">{t.map}</p>
+              <h2 className="font-semibold text-brand-dark">Email</h2>
+              <a href="mailto:contact@elmvaleglobal.com" className="text-stone-600 hover:text-brand-dark">contact@elmvaleglobal.com</a>
             </div>
           </div>
+          <div className="flex gap-4 items-start">
+            <Clock className="w-5 h-5 mt-1 text-stone-400" />
+            <div>
+              <h2 className="font-semibold text-brand-dark">{fr ? "Réponse" : "Response"}</h2>
+              <p className="text-stone-600">{fr ? "Généralement sous 1–2 jours ouvrés." : "Usually within 1–2 business days."}</p>
+            </div>
+          </div>
+          <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6">
+            <h2 className="font-semibold text-brand-dark mb-3">{fr ? "Vous pouvez aussi envoyer" : "Helpful to Include"}</h2>
+            <ul className="list-disc pl-5 text-sm text-stone-600 space-y-2">
+              <li>{fr ? "Photos ou liens de référence" : "Reference photos or links"}</li>
+              <li>{fr ? "Dimensions ou volume" : "Dimensions or fill volume"}</li>
+              <li>{fr ? "Finition / décoration souhaitée" : "Desired finish / decoration"}</li>
+              <li>{fr ? "Quantité estimée" : "Estimated quantity"}</li>
+              <li>{fr ? "Marché cible" : "Target market"}</li>
+              <li>{fr ? "Calendrier de lancement" : "Target launch timing"}</li>
+            </ul>
+          </div>
+        </div>
 
-          {/* Form Side */}
+        <form action={FORMSPREE_ENDPOINT} method="POST" acceptCharset="UTF-8" className="space-y-6">
+          <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+          <input type="hidden" name="language" value={language} />
+          <input type="hidden" name="source" value={window.location.href} />
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Field label={fr ? "Nom" : "Name"} name="name" required disabled={!isOfficialHost} />
+            <Field label={fr ? "Entreprise / marque" : "Company / Brand"} name="company" required disabled={!isOfficialHost} />
+          </div>
+          <Field label="Email" name="email" type="email" required disabled={!isOfficialHost} />
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Select
+              label={fr ? "Type de packaging" : "Packaging Type"}
+              name="packaging_type"
+              disabled={!isOfficialHost}
+              options={fr
+                ? ["Skincare primaire", "Packaging parfum", "Tubes & pompes", "Packaging secondaire", "Packaging durable", "Autre"]
+                : ["Skincare primary", "Fragrance packaging", "Tubes & pumps", "Secondary packaging", "Sustainable packaging", "Other"]}
+            />
+            <Field label={fr ? "Quantité estimée" : "Estimated Quantity"} name="quantity" disabled={!isOfficialHost} />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Field label={fr ? "Marché cible" : "Target Market"} name="target_market" disabled={!isOfficialHost} />
+            <Field label={fr ? "Date de lancement cible" : "Target Launch Date"} name="launch_timing" disabled={!isOfficialHost} />
+          </div>
+
           <div>
-            <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mb-10">{t.form.title}</h2>
-
-            {!isOfficialHost && (
-              <div className="mb-8 p-4 border border-stone-200 bg-stone-50 text-stone-600 text-sm leading-relaxed">
-                表单只在 <span className="font-semibold">elmvaleglobal.com</span> 上启用（Formspree 免费版域名限制）。
-                你现在这个地址提交会被拒绝。
-              </div>
-            )}
-
-            <form
-              action={FORMSPREE_ENDPOINT}
-              method="POST"
-              className="space-y-10"
-              // 关键：让 Formspree 返回 200/JSON，而不是跳转
-              //（有些浏览器对 action 跳转会让你误以为“没反应”）
-              acceptCharset="UTF-8"
-            >
-              {/* 防垃圾 蜜罐 */}
-              <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
-
-              {/* 你需要的隐藏字段：语言 / 预选类目 / 来源 */}
-              <input type="hidden" name="language" value={language} />
-              <input type="hidden" name="source" value={window.location.href} />
-
-              {/* Name */}
-              <div className="relative z-0 w-full group">
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="block py-4 px-0 w-full text-lg text-brand-dark bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-brand-dark peer font-light"
-                  placeholder=" "
-                  required
-                  disabled={!isOfficialHost}
-                />
-                <label
-                  htmlFor="name"
-                  className="peer-focus:font-medium absolute text-lg text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
-                  peer-focus:left-0 peer-focus:text-brand-dark peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75
-                  peer-focus:-translate-y-6"
-                >
-                  {t.form.name}
-                </label>
-              </div>
-
-              {/* Company */}
-              <div className="relative z-0 w-full group">
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  className="block py-4 px-0 w-full text-lg text-brand-dark bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-brand-dark peer font-light"
-                  placeholder=" "
-                  disabled={!isOfficialHost}
-                />
-                <label
-                  htmlFor="company"
-                  className="peer-focus:font-medium absolute text-lg text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
-                  peer-focus:left-0 peer-focus:text-brand-dark peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75
-                  peer-focus:-translate-y-6"
-                >
-                  {t.form.company}
-                </label>
-              </div>
-
-              {/* Email */}
-              <div className="relative z-0 w-full group">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="block py-4 px-0 w-full text-lg text-brand-dark bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-brand-dark peer font-light"
-                  placeholder=" "
-                  required
-                  disabled={!isOfficialHost}
-                />
-                <label
-                  htmlFor="email"
-                  className="peer-focus:font-medium absolute text-lg text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
-                  peer-focus:left-0 peer-focus:text-brand-dark peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75
-                  peer-focus:-translate-y-6"
-                >
-                  {t.form.email}
-                </label>
-              </div>
-
-              {/* Category */}
-              <div className="relative z-0 w-full group">
-                <select
-                  name="category"
-                  id="category"
-                  defaultValue={presetCategory}
-                  className="block py-4 px-0 w-full text-lg text-brand-dark bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-brand-dark font-light"
-                  required
-                  disabled={!isOfficialHost}
-                >
-                  <option value="" disabled>
-                    {language === "fr" ? "Sélectionnez…" : "Select…"}
-                  </option>
-                  {categories.map((c) => (
-                    <option key={c.value} value={c.value}>
-                      {categoryLabel(c)}
-                    </option>
-                  ))}
-                </select>
-                <label className="block text-sm text-stone-400 mt-2">
-                  {language === "fr" ? "Catégorie" : "Category"}
-                </label>
-              </div>
-
-              {/* Message */}
-              <div className="relative z-0 w-full group">
-                <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  className="block py-4 px-0 w-full text-lg text-brand-dark bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-brand-dark peer font-light resize-none"
-                  placeholder=" "
-                  required
-                  disabled={!isOfficialHost}
-                />
-                <label
-                  htmlFor="message"
-                  className="peer-focus:font-medium absolute text-lg text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
-                  peer-focus:left-0 peer-focus:text-brand-dark peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75
-                  peer-focus:-translate-y-6"
-                >
-                  {t.form.message}
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                disabled={!isOfficialHost}
-                className={`mt-8 px-10 py-4 uppercase tracking-[0.2em] text-xs font-semibold transition duration-500
-                ${isOfficialHost ? "bg-brand-dark text-white hover:bg-brand-primary" : "bg-stone-300 text-white cursor-not-allowed"}`}
-              >
-                {t.form.submit}
-              </button>
-
-              <p className="text-xs text-stone-400 mt-4 font-light">{t.details.privacy}</p>
-            </form>
+            <label className="block text-sm font-medium text-brand-dark mb-2">{fr ? "Brief / message" : "Project Brief / Message"}</label>
+            <textarea name="message" rows={6} required disabled={!isOfficialHost} className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark" placeholder={fr ? "Décrivez le produit, le packaging recherché, les références, finitions et contraintes importantes." : "Tell us about the product, packaging you are looking for, references, finishes and important requirements."} />
           </div>
-        </div>
 
-        <div className="mt-32 text-center">
-          <h3 className="font-serif text-3xl text-brand-dark">{t.final}</h3>
-        </div>
-      </div>
+          {!isOfficialHost && (
+            <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-xl p-4">
+              {fr ? "Le formulaire est activé uniquement sur elmvaleglobal.com." : "The inquiry form is enabled only on elmvaleglobal.com."}
+            </p>
+          )}
+
+          <button type="submit" disabled={!isOfficialHost} className="bg-brand-dark text-white px-8 py-3 rounded-full disabled:opacity-40">
+            {fr ? "Envoyer le brief" : "Send Brief"}
+          </button>
+          <p className="text-xs text-stone-400">{fr ? "Vos informations servent uniquement à répondre à votre demande et à évaluer votre projet." : "Your information is used only to respond to your inquiry and evaluate your project."}</p>
+        </form>
+      </section>
     </div>
   );
 };
+
+const Field = ({ label, name, type = "text", required = false, disabled = false }: { label: string; name: string; type?: string; required?: boolean; disabled?: boolean }) => (
+  <div>
+    <label className="block text-sm font-medium text-brand-dark mb-2">{label}</label>
+    <input type={type} name={name} required={required} disabled={disabled} className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark" />
+  </div>
+);
+
+const Select = ({ label, name, options, disabled = false }: { label: string; name: string; options: string[]; disabled?: boolean }) => (
+  <div>
+    <label className="block text-sm font-medium text-brand-dark mb-2">{label}</label>
+    <select name={name} disabled={disabled} className="w-full border border-stone-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-dark">
+      <option value="">Select</option>
+      {options.map((option) => <option key={option} value={option}>{option}</option>)}
+    </select>
+  </div>
+);
 
 export default Contact;

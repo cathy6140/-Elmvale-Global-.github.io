@@ -1,127 +1,85 @@
-import React, { useContext, useEffect } from 'react'; 
-import { Link, useSearchParams } from 'react-router-dom';
-import { LanguageContext } from '../App';
-import { content } from '../content';
-import { ArrowRight } from 'lucide-react';
+import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { LanguageContext } from "../App";
 import { setSeoMeta } from "../seo";
 
 const About: React.FC = () => {
   const { language } = useContext(LanguageContext);
-  const t = content[language].about;
-  const nav = content[language].nav;
+  const fr = language === "fr";
 
   useEffect(() => {
-    if (language === "fr") {
-      setSeoMeta(
-        "Elmvale Global – Qui nous sommes",
-        "Elmvale Global est un partenaire de sourcing d’emballages cosmétiques, basé en Europe et en Asie, qui relie les marques de beauté à des usines fiables et conformes."
-      );
-    } else {
-      setSeoMeta(
-        "Elmvale Global – Who we are",
-        "Elmvale Global is a sourcing and trading partner for cosmetic packaging, connecting beauty brands with vetted factories and reliable supply in Europe and Asia."
-      );
-    }
-  }, [language]);
-
-  const [searchParams] = useSearchParams();
-  const withLang = (path: string) => {
-    const next = new URLSearchParams(searchParams);
-    next.set('lang', language);
-    return { pathname: path, search: `?${next.toString()}` };
-  };
+    setSeoMeta(
+      fr ? "À propos | Elmvale Global" : "About Elmvale Global | Packaging Sourcing",
+      fr
+        ? "Elmvale Global est un projet de sourcing dédié au packaging cosmétique et parfum, reliant les marques internationales à des ressources fabricants en Chine."
+        : "Elmvale Global is a packaging sourcing project connecting international beauty and fragrance brands with manufacturing resources in China."
+    );
+  }, [fr]);
 
   return (
     <div className="bg-white">
-      {/* Editorial Hero */}
-      <section className="pt-32 pb-20 px-6 lg:px-12 max-w-screen-2xl mx-auto">
-        <div className="border-l-4 border-brand-dark pl-8 md:pl-16 py-4">
-          <h1 className="font-serif text-5xl md:text-7xl text-brand-dark mb-10 leading-tight max-w-4xl">
-            {t.hero.title}
-          </h1>
-          <p className="text-lg md:text-2xl text-stone-600 leading-relaxed font-light max-w-4xl">
-            {t.hero.desc}
-          </p>
-        </div>
+      <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
+        <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "À PROPOS" : "ABOUT"}</p>
+        <h1 className="font-serif text-5xl md:text-6xl text-brand-dark mb-6">
+          {fr ? "Un projet de sourcing construit autour du packaging beauté" : "A Sourcing Project Built Around Beauty Packaging"}
+        </h1>
+        <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
+          {fr
+            ? "Elmvale Global est actuellement un projet entrepreneurial en développement, dédié au sourcing et à la coordination de packaging pour les marques skincare, beauté et parfum."
+            : "Elmvale Global is currently an early-stage sourcing venture focused on packaging sourcing and project coordination for skincare, beauty and fragrance brands."}
+        </p>
       </section>
 
-      {/* Mission Image Break */}
-      <section className="w-full h-[60vh] overflow-hidden">
-        {/* ✅ 建议后续换成 public/about-hero.jpg:  src="/about-hero.jpg" */}
-        <img
-          src="/about-hero.png"
-          alt="Nature and sustainable packaging"
-          className="w-full h-full object-cover object-center"
-          loading="lazy"
-        />
-      </section>
-
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-32">
-        {/* Mission & Values Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40">
-          <div className="lg:col-span-4">
-            <h2 className="font-serif text-4xl text-brand-dark mb-8 sticky top-32">
-              {t.mission.title}
-            </h2>
-          </div>
-
-          <div className="lg:col-span-8">
-            <p className="text-xl md:text-2xl text-stone-700 font-serif leading-relaxed italic mb-20">
-              {t.mission.desc}
+      <section className="bg-stone-50 border-y border-stone-200">
+        <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8">
+          <div>
+            <h2 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Notre point de départ" : "Our Starting Point"}</h2>
+            <p className="text-stone-600 leading-relaxed">
+              {fr
+                ? "Nous disposons de ressources et contacts auprès de fabricants de packaging en Chine et développons progressivement un réseau adapté aux besoins des marques internationales."
+                : "We have manufacturing resources and contacts in China and are progressively building a network suited to the needs of international beauty brands."}
             </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {t.values.items.map((value, idx) => (
-                <div key={idx} className="border-t border-stone-200 pt-8">
-                  <h3 className="font-sans text-sm font-bold uppercase tracking-widest text-brand-dark mb-4">
-                    {value.title}
-                  </h3>
-                  <p className="text-stone-600 font-light leading-relaxed">
-                    {value.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
-        </div>
-
-        {/* Expertise - Dark Block */}
-        <div className="bg-brand-dark text-white p-12 md:p-24 relative overflow-hidden mb-32">
-          {/* 用 style 写 backgroundImage，比 Tailwind arbitrary url 更稳 */}
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage:
-                "url('https://www.transparenttextures.com/patterns/noise.png')",
-            }}
-            aria-hidden="true"
-          />
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-serif text-4xl md:text-5xl mb-8">
-                {t.expertise.title}
-              </h2>
-              <Link
-                to={withLang('/contact')}
-                className="inline-flex items-center gap-2 text-white border-b border-white pb-1 hover:text-brand-primary hover:border-brand-primary transition-colors"
-              >
-                {nav.contact} <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            <p className="text-stone-300 leading-loose text-lg font-light">
-              {t.expertise.desc}
+          <div>
+            <h2 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Notre rôle" : "Our Role"}</h2>
+            <p className="text-stone-600 leading-relaxed">
+              {fr
+                ? "Aider le client à clarifier son besoin, rechercher des options, comparer les solutions et coordonner les échanges avec les fabricants."
+                : "Help clients clarify requirements, source options, compare solutions and coordinate communication with manufacturers."}
+            </p>
+          </div>
+          <div>
+            <h2 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Notre approche" : "Our Approach"}</h2>
+            <p className="text-stone-600 leading-relaxed">
+              {fr
+                ? "Privilégier la transparence : ce qui est confirmé par le fabricant est présenté comme tel, et ce qui nécessite un test ou une validation est clairement indiqué."
+                : "Work transparently: information confirmed by a manufacturer is presented as such, while anything requiring testing or validation is clearly identified."}
             </p>
           </div>
         </div>
+      </section>
 
-        {/* Closing Quote */}
-        <div className="text-center max-w-4xl mx-auto py-20">
-          <p className="font-serif text-3xl md:text-4xl text-brand-dark leading-tight">
-            “{t.conclusion}”
+      <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Pourquoi la Chine ?" : "Why China?"}</h2>
+          <p className="text-stone-600 leading-relaxed">
+            {fr
+              ? "La Chine dispose d’un écosystème très large pour les flacons, pots, pompes, tubes, composants parfum, décorations et packaging secondaire. La difficulté n’est pas seulement de trouver une usine, mais de trouver une option adaptée au projet et de bien coordonner le développement."
+              : "China has a broad manufacturing ecosystem for bottles, jars, pumps, tubes, fragrance components, decoration and secondary packaging. The challenge is not simply finding a factory, but finding the right fit and coordinating development well."}
           </p>
         </div>
-      </div>
+        <div className="bg-brand-dark text-white rounded-3xl p-8">
+          <h2 className="font-serif text-3xl mb-4">{fr ? "Construisons le premier projet ensemble" : "Build the Next Project With Us"}</h2>
+          <p className="text-white/75 mb-6">
+            {fr
+              ? "Nous n’affichons pas de faux logos clients ni de faux cas d’étude. Si votre projet correspond à nos ressources, nous préférons vous montrer des options concrètes et avancer étape par étape."
+              : "We do not display invented client logos or fabricated case studies. If your project fits our resources, we prefer to show concrete options and move forward step by step."}
+          </p>
+          <Link to="/contact" className="inline-block bg-white text-brand-dark px-6 py-3 rounded-full">
+            {fr ? "Envoyer votre brief" : "Send Your Brief"}
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

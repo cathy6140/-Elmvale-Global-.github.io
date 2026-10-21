@@ -20,6 +20,8 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
+import Sourcing from "./pages/Sourcing";
+import FragrancePackaging from "./pages/FragrancePackaging";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
@@ -37,7 +39,7 @@ const LANG_KEY = "elmvale_lang";
 // ================= SAFE LANGUAGE =================
 
 const normalizeLang = (lang: any): "en" | "fr" => {
-  if (!lang) return "fr";
+  if (!lang) return "en";
 
   const clean = String(lang)
     .replace("#/", "")
@@ -69,13 +71,23 @@ const TitleManager: React.FC = () => {
 
     let page = "";
 
-    switch (pathname) {
+    const route = pathname !== "/" && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+
+    switch (route) {
       case "/":
         page = language === "fr" ? "Accueil" : "Home";
         break;
 
       case "/products":
-        page = language === "fr" ? "Produits" : "Products";
+        page = language === "fr" ? "Packaging" : "Packaging";
+        break;
+
+      case "/sourcing":
+        page = language === "fr" ? "Sourcing packaging en Chine" : "China Packaging Sourcing";
+        break;
+
+      case "/fragrance-packaging":
+        page = language === "fr" ? "Packaging parfum" : "Fragrance Packaging";
         break;
 
       case "/about":
@@ -121,7 +133,7 @@ const App: React.FC = () => {
   const storedLang = localStorage.getItem(LANG_KEY) as Language | null;
 
   const initialLang: Language = normalizeLang(
-    urlLang || storedLang || "fr"
+    urlLang || storedLang || "en"
   );
 
   const [language, setLanguageState] = useState<Language>(initialLang);
@@ -175,6 +187,10 @@ const App: React.FC = () => {
             {/* Main commercial page */}
             <Route path="/products" element={<Products />} />
             <Route path="/products/" element={<Products />} />
+            <Route path="/sourcing" element={<Sourcing />} />
+            <Route path="/sourcing/" element={<Sourcing />} />
+            <Route path="/fragrance-packaging" element={<FragrancePackaging />} />
+            <Route path="/fragrance-packaging/" element={<FragrancePackaging />} />
 
             {/* Trust and conversion pages */}
             <Route path="/compliance" element={<Compliance />} />

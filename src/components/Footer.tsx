@@ -35,7 +35,9 @@ const Footer: React.FC = () => {
             </div>
 
             <p className="text-sm font-light leading-relaxed text-stone-200/90">
-              {t.footer?.blurb ?? t.home.hero.subtext}
+              {language === 'fr'
+                ? 'Sourcing et coordination de packaging cosmétique et parfum auprès de fabricants en Chine.'
+                : 'Cosmetic and fragrance packaging sourcing and project coordination with manufacturers in China.'}
             </p>
 
             <div className="text-xs text-stone-400">
@@ -49,11 +51,13 @@ const Footer: React.FC = () => {
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-10">
             <div className="space-y-5">
               <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
-                {t.footer?.menu ?? 'Menu'}
+                {language === 'fr' ? 'Menu' : 'Menu'}
               </h4>
               <ul className="space-y-3 text-sm font-light">
                 <li><Link to={withLang('/about')} className="hover:text-white transition">{t.nav.about}</Link></li>
                 <li><Link to={withLang('/products')} className="hover:text-white transition">{t.nav.products}</Link></li>
+                <li><Link to={withLang('/sourcing')} className="hover:text-white transition">Sourcing</Link></li>
+                <li><Link to={withLang('/fragrance-packaging')} className="hover:text-white transition">{language === 'fr' ? 'Parfum' : 'Fragrance'}</Link></li>
                 <li><Link to={withLang('/compliance')} className="hover:text-white transition">{t.nav.compliance}</Link></li>
                 <li><Link to={withLang('/contact')} className="hover:text-white transition">{t.nav.contact}</Link></li>
               </ul>
@@ -61,7 +65,7 @@ const Footer: React.FC = () => {
             {/* Legal */}
             <div className="space-y-5">
               <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
-                {t.footer?.legal ?? (language === 'fr' ? 'Légal' : 'Legal')}
+                {language === 'fr' ? 'Légal' : 'Legal'}
               </h4>
               <ul className="space-y-3 text-sm font-light">
                 <li>
@@ -69,7 +73,7 @@ const Footer: React.FC = () => {
                     to={withLang('/privacy')}
                     className="hover:text-white transition"
                   >
-                    {t.footer?.privacy ?? 'Privacy Policy'}
+                    {language === 'fr' ? 'Confidentialité' : 'Privacy Policy'}
                   </Link>
                 </li>
                 <li>
@@ -77,7 +81,7 @@ const Footer: React.FC = () => {
                     to={withLang('/terms')}
                     className="hover:text-white transition"
                   >
-                    {t.footer?.terms ?? 'Terms of Service'}
+                    {language === 'fr' ? 'Conditions' : 'Terms'}
                   </Link>
                 </li>
                 <li>
@@ -85,7 +89,7 @@ const Footer: React.FC = () => {
                     to={withLang('/cookies')}
                     className="hover:text-white transition"
                   >
-                    {t.footer?.cookies ?? 'Cookies'}
+                    Cookies
                   </Link>
                 </li>
               </ul>
@@ -109,8 +113,8 @@ const Footer: React.FC = () => {
           </p>
           <div className="opacity-90">
             {language === 'fr'
-              ? 'Emballages durables · Conformité · Traçabilité'
-              : 'Sustainable packaging · Compliance · Traceability'}
+              ? 'Sourcing Chine · Packaging beauté · Packaging parfum'
+              : 'China sourcing · Beauty packaging · Fragrance packaging'}
           </div>
         </div>
       </div>

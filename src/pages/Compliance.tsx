@@ -12,12 +12,12 @@ const Compliance: React.FC = () => {
     if (language === "fr") {
       setSeoMeta(
         "Elmvale Global – Conformité & durabilité des emballages cosmétiques",
-        "Informations sur la conformité des emballages cosmétiques (règlement UE, REACH, ISO 22716) et les initiatives de durabilité proposées par Elmvale Global."
+        "Comment Elmvale Global peut coordonner les documents packaging, les informations fournisseurs et les essais tiers lorsque le projet le nécessite."
       );
     } else {
       setSeoMeta(
         "Elmvale Global – Cosmetic packaging compliance & sustainability",
-        "Overview of cosmetic packaging compliance (EU regulation, REACH, ISO 22716) and sustainability initiatives supported by Elmvale Global."
+        "How Elmvale Global can coordinate packaging documentation, supplier information and third-party testing support when required by a beauty packaging project."
       );
     }
   }, [language]);
@@ -29,13 +29,13 @@ const Compliance: React.FC = () => {
     ? [
         'Fiches techniques matières / specs composants (sur demande)',
         'Traçabilité lot & certificats disponibles (selon usine / matière)',
-        'Coordination tests tiers (SGS/BV/Intertek) si requis',
+        'Coordination d’essais tiers sur demande ; le laboratoire dépend du projet',
         'Revue “design for recycling” (mono-matériau, démontabilité, marquage)'
       ]
     : [
         'Material specs / component drawings (on request)',
         'Batch traceability + available certificates (per factory/material)',
-        'Third-party testing coordination (SGS/BV/Intertek) when needed',
+        'Third-party testing coordination when requested; laboratory selection depends on the project',
         'Design-for-recycling review (mono-material, disassembly, markings)'
       ];
 

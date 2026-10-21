@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
 
           {/* Logo */}
-          <Link to={withLang('/')} className="flex items-center gap-3 group">
+          <Link to={withLang('/')} className="flex items-center gap-3 group shrink-0">
             <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-black/5 shadow-sm transition-transform duration-500 group-hover:rotate-6">
               <img
                 src="/elmvale-logo-512.png"
@@ -98,9 +98,14 @@ const Navbar: React.FC = () => {
               />
             </div>
 
-            <span className="font-serif text-base md:text-lg uppercase tracking-[0.28em] font-normal text-brand-dark">
-              ELMVALE GLOBAL
-            </span>
+            <div className="flex flex-col leading-none text-brand-dark">
+              <span className="font-serif text-[17px] md:text-[19px] tracking-[0.08em]">
+                ELMVALE
+              </span>
+              <span className="mt-1 text-[8px] md:text-[9px] font-medium tracking-[0.34em] pl-[0.34em]">
+                GLOBAL
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

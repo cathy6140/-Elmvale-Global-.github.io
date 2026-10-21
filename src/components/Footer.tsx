@@ -28,9 +28,9 @@ const Footer: React.FC = () => {
                 className="w-9 h-9"
                 loading="eager"
               />
-              <div>
-                <div className="font-serif text-2xl tracking-wide leading-none">ELMVALE</div>
-                <div className="text-xs tracking-[0.2em] text-stone-300/90">GLOBAL</div>
+              <div className="flex flex-col leading-none">
+                <div className="font-serif text-2xl tracking-[0.08em]">ELMVALE</div>
+                <div className="mt-1 text-[10px] tracking-[0.34em] pl-[0.34em] text-stone-300/90">GLOBAL</div>
               </div>
             </div>
 

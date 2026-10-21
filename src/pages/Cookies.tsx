@@ -1,107 +1,52 @@
 import React, { useContext, useEffect } from "react";
 import { LanguageContext } from "../App";
+import { setSeoMeta } from "../seo";
 
 const Cookies: React.FC = () => {
-
   const { language } = useContext(LanguageContext);
-  const isFr = language === "fr";
+  const fr = language === "fr";
 
   useEffect(() => {
-    document.title = isFr
-      ? "Elmvale Global – Cookies"
-      : "Elmvale Global – Cookies";
+    setSeoMeta(
+      fr ? "Politique cookies | Elmvale Global" : "Cookie Policy | Elmvale Global",
+      fr
+        ? "Politique cookies d’Elmvale Global : cookies nécessaires et Google Analytics avec consentement."
+        : "Elmvale Global cookie policy covering necessary cookies and consent-based Google Analytics."
+    );
+  }, [fr]);
 
-    const desc = isFr
-      ? "Politique cookies d’Elmvale Global : cookies strictement nécessaires et mesure d’audience Google Analytics 4 avec consentement."
-      : "Elmvale Global Cookies Policy: strictly necessary cookies and Google Analytics 4 used with consent.";
+  const sections = fr
+    ? [
+        ["1. Que sont les cookies ?", "Les cookies sont de petits fichiers stockés sur votre appareil. Ils peuvent être nécessaires au fonctionnement du site ou utilisés pour mesurer l’audience lorsque vous y consentez."],
+        ["2. Cookies nécessaires", "Nous pouvons utiliser des éléments de stockage nécessaires au fonctionnement du site, notamment pour mémoriser votre langue ou vos choix de consentement."],
+        ["3. Mesure d’audience", "Google Analytics 4 est configuré avec un mode de consentement. Les fonctions d’analyse nécessitant un consentement ne sont activées qu’après votre accord lorsque celui-ci est requis."],
+        ["4. Gérer vos choix", "Vous pouvez accepter ou refuser l’analyse via la bannière de consentement et supprimer les cookies ou données de site depuis les réglages de votre navigateur."],
+        ["5. Contact", "Pour toute question concernant cette politique : contact@elmvaleglobal.com."]
+      ]
+    : [
+        ["1. What are cookies?", "Cookies are small files stored on your device. They may be necessary for website functionality or used for audience measurement when you consent."],
+        ["2. Necessary storage", "We may use storage that is necessary for the website to function, including remembering your language or consent choices."],
+        ["3. Analytics", "Google Analytics 4 is configured with consent mode. Analytics functions that require consent are enabled only after you agree where consent is required."],
+        ["4. Managing your choices", "You can accept or reject analytics through the consent banner and remove cookies or site data through your browser settings."],
+        ["5. Contact", "For questions about this policy: contact@elmvaleglobal.com."]
+      ];
 
-    const meta =
-      document.querySelector('meta[name="description"]') ||
-      (() => {
-        const m = document.createElement("meta");
-        m.name = "description";
-        document.head.appendChild(m);
-        return m;
-      })();
-    meta.setAttribute("content", desc);
-  }, [isFr]);
-  
   return (
-    <div className="bg-white">
-      <section className="pt-32 pb-16 px-6 lg:px-12 max-w-screen-2xl mx-auto">
-        <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-6">
-          Cookies Policy
+    <div className="bg-white min-h-screen">
+      <section className="max-w-4xl mx-auto px-6 pt-28 pb-20">
+        <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-4">
+          {fr ? "Politique cookies" : "Cookie Policy"}
         </h1>
-        <p className="text-stone-600 max-w-3xl leading-relaxed">
-          This Cookies Policy explains how Elmvale Global uses cookies and
-          similar technologies on elmvaleglobal.com.
+        <p className="text-sm text-stone-500 mb-10">
+          {fr ? "Dernière mise à jour : 21 octobre 2026" : "Last updated: 21 October 2026"}
         </p>
-      </section>
-
-      <section className="pb-32 px-6 lg:px-12 max-w-screen-2xl mx-auto space-y-10">
-        <div>
-          <h2 className="font-serif text-2xl text-brand-dark mb-3">
-            1. What are cookies?
-          </h2>
-          <p className="text-stone-600 leading-relaxed">
-            Cookies are small text files placed on your device when you visit a
-            website. They help the site function, remember your preferences and
-            understand how visitors use the site.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-serif text-2xl text-brand-dark mb-3">
-            2. Types of cookies we use
-          </h2>
-          <h3 className="font-semibold text-stone-800 mb-1">
-            a) Strictly necessary cookies
-          </h3>
-          <p className="text-stone-600 leading-relaxed mb-3">
-            These cookies are essential for the website to function (for
-            example, to remember your language choice and cookie preferences).
-            They do not require your consent.
-          </p>
-
-          <h3 className="font-semibold text-stone-800 mb-1">
-            b) Analytics cookies (Google Analytics 4)
-          </h3>
-          <p className="text-stone-600 leading-relaxed">
-            With your consent, we use Google Analytics 4 to collect aggregated
-            statistics about how visitors use our site (pages visited, time
-            spent, browser type, etc.). These cookies help us improve our
-            content and user experience. Analytics cookies are only activated
-            after you click “Accept analytics” in our cookie banner.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-serif text-2xl text-brand-dark mb-3">
-            3. Managing your cookie choices
-          </h2>
-          <p className="text-stone-600 leading-relaxed">
-            On your first visit, you can accept or reject analytics cookies via
-            our cookie banner. If you change your mind later, you can delete
-            cookies via your browser settings. We will present the banner again
-            when needed so you can update your choice.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-serif text-2xl text-brand-dark mb-3">
-            4. Contact
-          </h2>
-          <p className="text-stone-600 leading-relaxed">
-            If you have any questions about this Cookies Policy, you can
-            contact us at{" "}
-            <a
-              href="mailto:contact@elmvaleglobal.com"
-              className="underline underline-offset-2"
-            >
-              contact@elmvaleglobal.com
-            </a>
-            .
-          </p>
+        <div className="space-y-9 text-stone-700 leading-relaxed">
+          {sections.map(([title, body]) => (
+            <section key={title}>
+              <h2 className="font-serif text-2xl text-brand-dark mb-3">{title}</h2>
+              <p>{body}</p>
+            </section>
+          ))}
         </div>
       </section>
     </div>

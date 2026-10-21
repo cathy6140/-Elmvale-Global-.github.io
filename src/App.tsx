@@ -174,16 +174,23 @@ const App: React.FC = () => {
 
             {/* Main commercial page */}
             <Route path="/products" element={<Products />} />
+            <Route path="/products/" element={<Products />} />
 
             {/* Trust and conversion pages */}
             <Route path="/compliance" element={<Compliance />} />
+            <Route path="/compliance/" element={<Compliance />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/contact/" element={<Contact />} />
 
             {/* Legal pages */}
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/privacy/" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/terms/" element={<Terms />} />
             <Route path="/cookies" element={<Cookies />} />
+            <Route path="/cookies/" element={<Cookies />} />
 
             {/* Legacy redirects */}
             <Route path="/solutions" element={<Navigate to="/products" replace />} />

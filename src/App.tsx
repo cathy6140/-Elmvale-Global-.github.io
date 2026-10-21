@@ -71,13 +71,23 @@ const TitleManager: React.FC = () => {
 
     let page = "";
 
-    switch (pathname) {
+    const route = pathname !== "/" && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+
+    switch (route) {
       case "/":
         page = language === "fr" ? "Accueil" : "Home";
         break;
 
       case "/products":
-        page = language === "fr" ? "Produits" : "Products";
+        page = language === "fr" ? "Packaging" : "Packaging";
+        break;
+
+      case "/sourcing":
+        page = language === "fr" ? "Sourcing packaging en Chine" : "China Packaging Sourcing";
+        break;
+
+      case "/fragrance-packaging":
+        page = language === "fr" ? "Packaging parfum" : "Fragrance Packaging";
         break;
 
       case "/about":

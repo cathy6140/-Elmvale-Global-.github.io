@@ -4,274 +4,129 @@ import { LanguageContext } from "../App";
 
 const Home: React.FC = () => {
   const { language } = useContext(LanguageContext);
+  const fr = language === "fr";
+
+  const steps = fr
+    ? [
+        ["01", "Partagez votre brief", "Type de produit, références, quantités, budget cible, finitions et calendrier."],
+        ["02", "Sourcing fournisseurs", "Nous recherchons et comparons des options adaptées parmi notre réseau de fabricants en Chine."],
+        ["03", "Échantillons & développement", "Coordination des échantillons, couleurs, décorations, composants et ajustements techniques."],
+        ["04", "Production & qualité", "Suivi de production et coordination des contrôles et documents disponibles selon le projet."],
+        ["05", "Préparation à l’expédition", "Coordination des exigences de livraison et des informations nécessaires à votre importation."]
+      ]
+    : [
+        ["01", "Share your brief", "Product type, references, quantity, target cost, decoration and launch timing."],
+        ["02", "Supplier sourcing", "We identify and compare suitable options across our manufacturing network in China."],
+        ["03", "Sampling & development", "We coordinate samples, colors, decoration, components and technical adjustments."],
+        ["04", "Production & quality", "We follow production and coordinate inspections and available documentation when required."],
+        ["05", "Delivery preparation", "We coordinate shipment requirements and the information needed for your import process."]
+      ];
 
   return (
     <div className="w-full">
-
-      {/* ================= HERO ================= */}
       <section
-        className="relative min-h-[520px] md:min-h-[620px] bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage: "url('/hero-home.png')",
-        }}
+        className="relative min-h-[620px] bg-cover bg-center overflow-hidden"
+        style={{ backgroundImage: "url('/hero-home.png')" }}
       >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/55" />
-      
-        {/* Optional left gradient for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10" />
-      
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 md:py-36">
-          <div className="max-w-3xl text-left">
-      
-            <h1 className="font-serif text-5xl md:text-7xl text-white mb-8 leading-tight">
-              {language === "fr"
-                ? "Emballages durables pour marques beauté"
-                : "Sustainable Packaging for Skincare"}
+          <div className="max-w-4xl">
+            <p className="uppercase tracking-[0.28em] text-xs text-white/70 mb-5">
+              {fr ? "SOURCING PACKAGING EN CHINE" : "COSMETIC PACKAGING SOURCING FROM CHINA"}
+            </p>
+            <h1 className="font-serif text-5xl md:text-7xl text-white mb-7 leading-tight">
+              {fr
+                ? "Sourcing de packaging cosmétique & parfum en Chine"
+                : "Cosmetic & Fragrance Packaging Sourcing from China"}
             </h1>
-      
-            <div className="border-l-4 border-emerald-500 pl-6">
-              <p className="text-white/90 max-w-2xl text-lg md:text-xl leading-relaxed">
-                {language === "fr"
-                  ? "Nous accompagnons les marques de beauté, les entreprises K-beauty et les fabricants OEM/ODM dans le sourcing de packagings cosmétiques, avec des délais fiables et une documentation claire."
-                  : "We help beauty brands, K-beauty companies, and OEM/ODM manufacturers source cosmetic packaging with reliable lead times and clear documentation."}
-              </p>
-            </div>
-      
+            <p className="text-white/90 max-w-3xl text-lg md:text-xl leading-relaxed">
+              {fr
+                ? "Elmvale Global accompagne les marques beauté, skincare et parfum dans la recherche et le développement de packaging auprès de fabricants en Chine — du sourcing et des échantillons jusqu’au suivi de production."
+                : "Elmvale Global helps beauty, skincare and fragrance brands source and develop packaging with manufacturers in China — from supplier search and sampling to production follow-up."}
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
-              <Link
-                to="/products"
-                className="bg-white text-brand-dark px-8 py-3 rounded-full font-medium hover:bg-stone-100 transition text-center"
-              >
-                {language === "fr"
-                  ? "Explorer les produits"
-                  : "Explore Products"}
+              <Link to="/contact" className="bg-white text-brand-dark px-8 py-3 rounded-full font-medium text-center hover:bg-stone-100 transition">
+                {fr ? "Envoyer votre brief" : "Send Your Packaging Brief"}
               </Link>
-      
-              <Link
-                to="/contact"
-                className="border border-white/70 text-white px-8 py-3 rounded-full hover:bg-white hover:text-brand-dark transition text-center"
-              >
-                {language === "fr" ? "Demander un devis" : "Request Quote"}
+              <Link to="/sourcing" className="border border-white/70 text-white px-8 py-3 rounded-full text-center hover:bg-white hover:text-brand-dark transition">
+                {fr ? "Notre méthode de sourcing" : "How We Source"}
               </Link>
             </div>
-      
           </div>
         </div>
       </section>
 
-      {/* ================= VALUE PROPS ================= */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-10">
-
-          <div>
-            <h3 className="font-semibold text-lg mb-3">
-              {language === "fr"
-                ? "Produits packaging skincare"
-                : "Skincare Packaging Products"}
-            </h3>
-            <p className="text-stone-600">
-              {language === "fr"
-                ? "Flacons, pots, airless, droppers, tubes et systèmes de distribution pour marques skincare."
-                : "Bottles, jars, airless systems, droppers, tubes and dispensing systems for skincare brands."}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-3">
-              {language === "fr"
-                ? "Produits packaging masques"
-                : "Mask Packaging Product"}
-            </h3>
-            <p className="text-stone-600">
-              {language === "fr"
-                ? "Pochettes sheet mask, packaging eye patch et sachets échantillons pour lancements K-beauty."
-                : "Sheet mask pouches, eye patch packaging and sachet samples for K-beauty launches."}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-3">
-              {language === "fr"
-                ? "Matériaux durables"
-                : "Sustainable Materials"}
-            </h3>
-            <p className="text-stone-600">
-              {language === "fr"
-                ? "PCR, papier FSC, mono-matériaux et conception recyclable pour les exigences internationales."
-                : "PCR plastics, FSC paper, mono-material structures and recyclable design for global requirements."}
-            </p>
-          </div>
-
+          {[
+            fr ? ["Beauty & skincare", "Flacons, pots, airless, droppers, tubes, pompes et packaging secondaire."] : ["Beauty & Skincare", "Bottles, jars, airless, droppers, tubes, pumps and secondary packaging."],
+            fr ? ["Parfum", "Flacons verre, pompes, capots, cols, décorations, coffrets et développements sur mesure."] : ["Fragrance", "Glass bottles, pumps, caps, collars, decoration, boxes and custom development."],
+            fr ? ["Coordination de projet", "Sourcing, comparaison d’options, échantillons, personnalisation, suivi de production et documentation disponible."] : ["Project Coordination", "Sourcing, option comparison, sampling, customization, production follow-up and available documentation."]
+          ].map(([title, desc]) => (
+            <div key={title}>
+              <h2 className="font-semibold text-lg mb-3 text-brand-dark">{title}</h2>
+              <p className="text-stone-600 leading-relaxed">{desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ================= PRODUCT CATEGORY ENTRY ================= */}
       <section className="bg-stone-50 border-y border-stone-200">
-        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
-
-          <div>
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="max-w-3xl mb-12">
             <p className="uppercase text-xs tracking-[0.3em] text-stone-500 mb-3">
-              {language === "fr" ? "CATÉGORIES PRODUITS" : "PRODUCT CATEGORIES"}
+              {fr ? "COMMENT NOUS TRAVAILLONS" : "HOW WE WORK"}
             </p>
-
-            <h2 className="font-serif text-3xl md:text-4xl text-brand-dark mb-3">
-              {language === "fr"
-                ? "Cinq catégories pour vos projets skincare"
-                : "Five Packaging Categories for Skincare Projects"}
+            <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-4">
+              {fr ? "Un interlocuteur pour coordonner votre projet packaging" : "One Partner to Coordinate Your Packaging Project"}
             </h2>
-
-            <p className="text-stone-600 max-w-2xl">
-              {language === "fr"
-                ? "Découvrez nos systèmes de packaging pour masques, packaging primaire, tubes, packaging secondaire et solutions durables."
-                : "Explore mask packaging, primary skincare packaging, tubes and dispensing, secondary packaging and sustainable solutions."}
+            <p className="text-stone-600 leading-relaxed">
+              {fr
+                ? "Nous sommes en phase de développement commercial et travaillons à partir de ressources fabricants en Chine. Notre rôle est de vous aider à identifier les bonnes options et à coordonner le projet avec transparence."
+                : "We are building our client portfolio and work from manufacturing resources in China. Our role is to help you identify suitable options and coordinate the project transparently from brief to production."}
             </p>
           </div>
-
-          <Link
-            to="/products"
-            className="bg-brand-dark text-white px-8 py-3 rounded-full whitespace-nowrap hover:opacity-90 transition"
-          >
-            {language === "fr" ? "Voir les produits" : "View Products"}
-          </Link>
-
-        </div>
-      </section>
-
-      {/* ================= PRODUCT OVERVIEW ================= */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-
-          <h2 className="font-serif text-3xl text-center mb-12">
-            {language === "fr"
-              ? "Nos catégories packaging"
-              : "Our Packaging Categories"}
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {[
-              {
-                title:
-                  language === "fr"
-                    ? "Mask Packaging Systems"
-                    : "Mask Packaging Systems",
-                desc:
-                  language === "fr"
-                    ? "Pochettes sheet mask, eye patch packaging et sachets échantillons."
-                    : "Sheet mask pouches, eye patch packaging and sachet samples.",
-              },
-              {
-                title:
-                  language === "fr"
-                    ? "Packaging primaire skincare"
-                    : "Skincare Primary Packaging",
-                desc:
-                  language === "fr"
-                    ? "Flacons, pots, airless et droppers."
-                    : "Bottles, jars, airless systems and droppers.",
-              },
-              {
-                title:
-                  language === "fr"
-                    ? "Tubes & systèmes de distribution"
-                    : "Tubes & Dispensing Systems",
-                desc:
-                  language === "fr"
-                    ? "Tubes, pompes et sprays pour crèmes, gels et soins."
-                    : "Tubes, pumps and sprayers for creams, gels and skincare products.",
-              },
-              {
-                title:
-                  language === "fr"
-                    ? "Packaging secondaire"
-                    : "Secondary Packaging",
-                desc:
-                  language === "fr"
-                    ? "Cartons, gift boxes, beauty sets et retail packaging."
-                    : "Cartons, gift boxes, beauty sets and retail packaging.",
-              },
-              {
-                title:
-                  language === "fr"
-                    ? "Solutions packaging durables"
-                    : "Sustainable Packaging Solutions",
-                desc:
-                  language === "fr"
-                    ? "PCR, mono-matériaux, papier FSC et design recyclable."
-                    : "PCR plastics, mono-material, FSC paper and recyclable design.",
-              },
-              {
-                title:
-                  language === "fr"
-                    ? "Développement sur mesure"
-                    : "Custom Packaging Development",
-                desc:
-                  language === "fr"
-                    ? "Sélection matériaux, impression, finition et développement adapté à votre marque."
-                    : "Material selection, printing, finishing and brand-specific packaging development.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="border border-stone-200 rounded-2xl p-6 hover:shadow-sm transition"
-              >
-                <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-stone-600 text-sm">{item.desc}</p>
+          <div className="grid md:grid-cols-5 gap-5">
+            {steps.map(([num, title, desc]) => (
+              <div key={num} className="bg-white border border-stone-200 rounded-2xl p-5">
+                <div className="text-xs tracking-[0.25em] text-stone-400 mb-4">{num}</div>
+                <h3 className="font-semibold text-brand-dark mb-2">{title}</h3>
+                <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
               </div>
             ))}
-
           </div>
-
-          <div className="text-center mt-10">
-            <Link
-              to="/products"
-              className="text-brand-dark underline underline-offset-4 hover:opacity-70"
-            >
-              {language === "fr"
-                ? "Voir toutes les catégories produits →"
-                : "View all product categories →"}
-            </Link>
-          </div>
-
         </div>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
-      <section className="bg-stone-50 border-t border-stone-200">
-        <div className="max-w-7xl mx-auto px-6 py-20 text-center">
-      
-          <h2 className="font-serif text-3xl mb-4 text-brand-dark">
-            {language === "fr"
-              ? "Prêt à développer votre projet packaging ?"
-              : "Ready to Start Your Packaging Project?"}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-8">
+          <Link to="/sourcing" className="border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
+            <p className="uppercase text-xs tracking-[0.25em] text-stone-400 mb-3">{fr ? "SERVICE" : "SERVICE"}</p>
+            <h2 className="font-serif text-3xl text-brand-dark mb-3">{fr ? "Sourcing packaging en Chine" : "Packaging Sourcing in China"}</h2>
+            <p className="text-stone-600">{fr ? "Comprendre notre processus de sélection, développement et coordination fournisseurs." : "See how we approach supplier search, development and project coordination."}</p>
+          </Link>
+          <Link to="/fragrance-packaging" className="border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
+            <p className="uppercase text-xs tracking-[0.25em] text-stone-400 mb-3">{fr ? "SPÉCIALITÉ" : "SPECIALTY"}</p>
+            <h2 className="font-serif text-3xl text-brand-dark mb-3">{fr ? "Packaging parfum" : "Fragrance Packaging"}</h2>
+            <p className="text-stone-600">{fr ? "Flacons, pompes, capots, cols, décoration et packaging secondaire pour projets parfum." : "Bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects."}</p>
+          </Link>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark text-white">
+        <div className="max-w-5xl mx-auto px-6 py-20 text-center">
+          <h2 className="font-serif text-3xl md:text-4xl mb-4">
+            {fr ? "Vous avez déjà une référence ou une idée de packaging ?" : "Already Have a Packaging Reference or Idea?"}
           </h2>
-      
-          <p className="text-stone-600 mb-8 max-w-2xl mx-auto">
-            {language === "fr"
-              ? "Contactez-nous pour développer une solution adaptée à vos produits skincare ou K-beauty."
-              : "Contact us to develop a tailored packaging solution for your skincare or K-beauty brand."}
+          <p className="text-white/75 mb-8">
+            {fr ? "Envoyez-nous votre brief, une photo de référence, vos quantités et votre calendrier cible." : "Send us your brief, reference image, expected quantity and target launch timing."}
           </p>
-      
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Link
-              to="/products"
-              className="bg-brand-dark text-white px-8 py-3 rounded-full font-medium hover:opacity-90 transition"
-            >
-              {language === "fr" ? "Voir les produits" : "View Products"}
-            </Link>
-      
-            <Link
-              to="/contact"
-              className="border border-stone-400 text-brand-dark px-8 py-3 rounded-full hover:bg-white transition"
-            >
-              {language === "fr" ? "Contact" : "Get in Touch"}
-            </Link>
-          </div>
-      
+          <Link to="/contact" className="inline-block bg-white text-brand-dark px-8 py-3 rounded-full font-medium">
+            {fr ? "Envoyer un brief" : "Send a Brief"}
+          </Link>
         </div>
       </section>
-
     </div>
   );
 };

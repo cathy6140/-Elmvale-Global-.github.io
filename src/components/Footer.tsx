@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-10">
             <div className="space-y-5">
               <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
-                {t.footer?.menu ?? 'Menu'}
+                {language === 'fr' ? 'Menu' : 'Menu'}
               </h4>
               <ul className="space-y-3 text-sm font-light">
                 <li><Link to={withLang('/about')} className="hover:text-white transition">{t.nav.about}</Link></li>
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
             {/* Legal */}
             <div className="space-y-5">
               <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
-                {t.footer?.legal ?? (language === 'fr' ? 'Légal' : 'Legal')}
+                {language === 'fr' ? 'Légal' : 'Legal'}
               </h4>
               <ul className="space-y-3 text-sm font-light">
                 <li>
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
                     to={withLang('/privacy')}
                     className="hover:text-white transition"
                   >
-                    {t.footer?.privacy ?? 'Privacy Policy'}
+                    {language === 'fr' ? 'Confidentialité' : 'Privacy Policy'}
                   </Link>
                 </li>
                 <li>
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                     to={withLang('/terms')}
                     className="hover:text-white transition"
                   >
-                    {t.footer?.terms ?? 'Terms of Service'}
+                    {language === 'fr' ? 'Conditions' : 'Terms'}
                   </Link>
                 </li>
                 <li>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                     to={withLang('/cookies')}
                     className="hover:text-white transition"
                   >
-                    {t.footer?.cookies ?? 'Cookies'}
+                    Cookies
                   </Link>
                 </li>
               </ul>

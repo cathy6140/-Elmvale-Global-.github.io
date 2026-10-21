@@ -27,8 +27,8 @@ const Terms: React.FC = () => {
           <section>
             <h2 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "1. À propos du site" : "1. About this website"}</h2>
             <p>{fr
-              ? "Elmvale Global est actuellement un nom commercial et un projet de sourcing en développement. Le site présente nos services envisagés de sourcing, développement et coordination de packaging pour professionnels. Il ne doit pas être interprété comme la présentation d’une société déjà constituée si cela n’est pas expressément indiqué."
-              : "Elmvale Global is currently a trading name and sourcing project under development. This website presents our intended packaging sourcing, development and coordination services for business users. It should not be interpreted as representing an incorporated company unless expressly stated otherwise."}</p>
+              ? "Les présentes conditions régissent l’utilisation de elmvaleglobal.com et des informations et services présentés sous Elmvale Global. Le site est destiné principalement aux utilisateurs professionnels intéressés par le sourcing, le développement et la coordination de projets de packaging."
+              : "These terms govern the use of elmvaleglobal.com and the information and services presented under Elmvale Global. The website is intended primarily for business users interested in packaging sourcing, development and project coordination."}</p>
           </section>
 
           <section>
@@ -69,8 +69,8 @@ const Terms: React.FC = () => {
           <section>
             <h2 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "7. Droit applicable" : "7. Governing law"}</h2>
             <p>{fr
-              ? "Aucune juridiction contractuelle spécifique n’est désignée sur ce site tant que la structure juridique exploitant Elmvale Global n’est pas définitivement établie. Toute relation commerciale future précisera les règles applicables dans les conditions convenues entre les parties."
-              : "No specific contractual jurisdiction is designated on this website while the legal structure operating Elmvale Global is still being established. Future commercial engagements will specify applicable terms in the written agreement between the parties."}</p>
+              ? "Les présentes conditions concernent uniquement l’utilisation du site. Toute relation commerciale, commande ou mission pourra faire l’objet de conditions spécifiques convenues séparément entre les parties, y compris, lorsque cela est pertinent, les règles applicables au contrat."
+              : "These terms relate only to use of the website. Any commercial relationship, order or project engagement may be subject to separate terms agreed between the parties, including, where relevant, the rules applicable to that agreement."}</p>
           </section>
 
           <section>

@@ -245,31 +245,31 @@ export const content = {
       intro: {
         title: "Compliance & Sustainability",
         desc:
-          "We help skincare and beauty brands develop packaging aligned with global regulatory expectations and sustainability goals.",
+          "We help beauty and fragrance brands identify the packaging information, supplier documentation and validation steps that may be relevant to their target market and project requirements.",
       },
 
       regulations: {
-        title: "Regulatory Compliance",
+        title: "Documentation & Validation",
         items: [
           {
-            title: "Global Standards",
+            title: "Target-Market Requirements",
             desc:
-              "Packaging projects can be developed with EU, US and international cosmetic packaging expectations in mind.",
+              "We help identify the documentation and validation questions that may need to be addressed for the intended market. Final regulatory suitability should be confirmed for the specific product and market.",
           },
           {
-            title: "PPWR Readiness",
+            title: "Evolving Requirements",
             desc:
-              "We support packaging directions aligned with recyclability, material reduction and recycled content considerations.",
+              "Where relevant, we can help explore packaging directions linked to recyclability, material reduction and recycled content, while distinguishing sourcing options from final regulatory validation.",
           },
           {
-            title: "Quality Systems",
+            title: "Supplier Information",
             desc:
-              "Manufacturing partners are selected with attention to quality control, consistency and production documentation.",
+              "We coordinate available technical information with manufacturers, including component specifications, production information and supporting documents where available.",
           },
           {
-            title: "Documentation",
+            title: "Testing & Documentation",
             desc:
-              "Technical and compliance documents can be coordinated upon request depending on the packaging type and project scope.",
+              "Technical documents and third-party testing can be coordinated when needed, depending on the packaging type, formula, target market and project scope.",
           },
         ],
       },
@@ -278,30 +278,30 @@ export const content = {
         title: "Sustainability",
         items: [
           {
-            title: "Eco Design",
+            title: "Material Reduction",
             desc:
-              "We help reduce unnecessary material usage and improve recyclability across packaging structures.",
+              "Where feasible, we can explore packaging directions aimed at reducing unnecessary material use or simplifying structures.",
           },
           {
             title: "PCR Materials",
             desc:
-              "Post-consumer recycled plastics can be integrated into suitable packaging applications.",
+              "PCR options can be explored for suitable applications, subject to material availability, appearance requirements and project feasibility.",
           },
           {
             title: "FSC Paper",
             desc:
-              "FSC paper options are available for cartons, boxes and selected secondary packaging projects.",
+              "FSC-certified paper options can be sourced for cartons, boxes and selected secondary packaging projects where appropriate.",
           },
           {
-            title: "Mono-Material Structures",
+            title: "Mono-Material Options",
             desc:
-              "Mono-material approaches can help simplify recycling and improve circularity potential.",
+              "Mono-material approaches can be explored where technically suitable, with recyclability claims requiring confirmation for the relevant market and structure.",
           },
         ],
       },
 
       closing:
-        "We help brands transition toward more responsible, compliant and commercially viable packaging solutions.",
+        "We help brands explore more responsible packaging options while keeping documentation, feasibility and required validation clearly separated.",
     },
 
     contact: {
@@ -593,31 +593,31 @@ export const content = {
       intro: {
         title: "Conformité & durabilité",
         desc:
-          "Nous aidons les marques skincare et beauty à développer des packagings alignés avec les attentes réglementaires internationales et les objectifs durables.",
+          "Nous aidons les marques beauté et parfum à identifier les informations packaging, documents fournisseurs et étapes de validation pouvant être pertinents selon leur marché cible et les exigences du projet.",
       },
 
       regulations: {
-        title: "Conformité réglementaire",
+        title: "Documentation & validation",
         items: [
           {
-            title: "Standards globaux",
+            title: "Exigences du marché cible",
             desc:
-              "Les projets packaging peuvent être développés en tenant compte des attentes européennes, américaines et internationales.",
+              "Nous aidons à identifier les questions de documentation et de validation à traiter selon le marché visé. L’adéquation réglementaire finale doit être confirmée pour le produit et le marché concernés.",
           },
           {
-            title: "Préparation PPWR",
+            title: "Exigences en évolution",
             desc:
-              "Nous soutenons les directions packaging liées à la recyclabilité, à la réduction matière et au contenu recyclé.",
+              "Lorsque cela est pertinent, nous pouvons explorer des directions liées à la recyclabilité, à la réduction matière et au contenu recyclé, tout en distinguant les options de sourcing de la validation réglementaire finale.",
           },
           {
-            title: "Systèmes qualité",
+            title: "Informations fournisseurs",
             desc:
-              "Les partenaires de fabrication sont sélectionnés avec attention à la qualité, à la constance et à la documentation de production.",
+              "Nous coordonnons les informations techniques disponibles auprès des fabricants, notamment les spécifications composants, informations de production et documents justificatifs disponibles.",
           },
           {
-            title: "Documentation",
+            title: "Essais & documentation",
             desc:
-              "Les documents techniques et de conformité peuvent être coordonnés sur demande selon le type de packaging et le périmètre du projet.",
+              "Les documents techniques et essais tiers peuvent être coordonnés lorsque nécessaire, selon le packaging, la formule, le marché cible et le périmètre du projet.",
           },
         ],
       },
@@ -626,30 +626,30 @@ export const content = {
         title: "Durabilité",
         items: [
           {
-            title: "Eco design",
+            title: "Réduction matière",
             desc:
-              "Nous aidons à réduire l’usage de matière inutile et à améliorer la recyclabilité des structures packaging.",
+              "Lorsque cela est faisable, nous pouvons explorer des directions visant à réduire l’usage de matière inutile ou à simplifier les structures.",
           },
           {
             title: "Matériaux PCR",
             desc:
-              "Les plastiques recyclés post-consommation peuvent être intégrés dans certaines applications packaging.",
+              "Des options PCR peuvent être explorées pour les applications adaptées, selon la disponibilité matière, les contraintes esthétiques et la faisabilité du projet.",
           },
           {
             title: "Papier FSC",
             desc:
-              "Des options papier FSC sont disponibles pour cartons, boîtes et certains projets de packaging secondaire.",
+              "Des options en papier certifié FSC peuvent être sourcées pour cartons, boîtes et certains projets de packaging secondaire lorsque cela est pertinent.",
           },
           {
-            title: "Structures mono-matériaux",
+            title: "Options mono-matériau",
             desc:
-              "Les approches mono-matériaux peuvent simplifier le recyclage et améliorer le potentiel de circularité.",
+              "Des approches mono-matériau peuvent être explorées lorsqu’elles sont techniquement adaptées, les allégations de recyclabilité devant être confirmées selon le marché et la structure concernés.",
           },
         ],
       },
 
       closing:
-        "Nous aidons les marques à évoluer vers des solutions packaging plus responsables, conformes et viables commercialement.",
+        "Nous aidons les marques à explorer des options packaging plus responsables tout en séparant clairement documentation disponible, faisabilité et validations nécessaires.",
     },
 
     contact: {

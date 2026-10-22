@@ -15,7 +15,7 @@ const routes = [
   {
     path: "/sourcing/",
     title: "Packaging sourcing & supplier coordination | Elmvale Global",
-    description: "Elmvale Global helps beauty and fragrance brands compare sourcing options, clarify MOQ, timing, customization and technical feasibility, then coordinate sampling and supplier communication.",
+    description: "Elmvale Global helps beauty and fragrance brands compare packaging sourcing options, clarify MOQ and timing, and coordinate sampling and suppliers.",
     h1: "Cosmetic packaging sourcing",
     intro: "Elmvale Global helps beauty and fragrance brands compare sourcing options, clarify MOQ, timing, customization and technical feasibility, then coordinate sampling and supplier communication."
   },
@@ -29,7 +29,7 @@ const routes = [
   {
     path: "/compliance/",
     title: "Packaging documentation & sustainability support | Elmvale Global",
-    description: "Elmvale Global coordinates available supplier documentation, technical information and third-party testing support while helping brands explore more responsible packaging options.",
+    description: "Elmvale Global coordinates supplier documentation, technical information and third-party testing support for beauty and fragrance packaging projects.",
     h1: "Compliance & sustainability",
     intro: "Elmvale Global coordinates available supplier documentation, technical information and third-party testing support while helping brands explore more responsible packaging options."
   },

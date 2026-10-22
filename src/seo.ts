@@ -32,12 +32,12 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
   "/sourcing": {
     en: {
       title: "Packaging sourcing & supplier coordination | Elmvale Global",
-      description: "Elmvale Global helps beauty and fragrance brands compare sourcing options, clarify MOQ, timing, customization and technical feasibility, then coordinate sampling and supplier communication.",
+      description: "Elmvale Global helps beauty and fragrance brands compare packaging sourcing options, clarify MOQ and timing, and coordinate sampling and suppliers.",
       path: "/sourcing/",
     },
     fr: {
       title: "Sourcing packaging & coordination fournisseurs | Elmvale Global",
-      description: "Elmvale Global aide les marques beauté et parfum à comparer les options de sourcing, clarifier MOQ, délais, personnalisation et faisabilité, puis coordonner échantillons et échanges fournisseurs.",
+      description: "Elmvale Global aide les marques beauté et parfum à comparer les options de sourcing, clarifier MOQ et délais, puis coordonner échantillons et fournisseurs.",
       path: "/sourcing/",
     },
   },
@@ -56,12 +56,12 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
   "/compliance": {
     en: {
       title: "Packaging documentation & sustainability support | Elmvale Global",
-      description: "Elmvale Global coordinates available supplier documentation, technical information and third-party testing support while helping brands explore more responsible packaging options.",
+      description: "Elmvale Global coordinates supplier documentation, technical information and third-party testing support for beauty and fragrance packaging projects.",
       path: "/compliance/",
     },
     fr: {
       title: "Documentation packaging & durabilité | Elmvale Global",
-      description: "Elmvale Global coordonne les documents fournisseurs, informations techniques et essais tiers disponibles tout en aidant les marques à explorer des options packaging plus responsables.",
+      description: "Elmvale Global coordonne documents fournisseurs, informations techniques et essais tiers pour les projets packaging beauté et parfum.",
       path: "/compliance/",
     },
   },

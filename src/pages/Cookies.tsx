@@ -1,19 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "../App";
-import { setSeoMeta } from "../seo";
 
 const Cookies: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const fr = language === "fr";
-
-  useEffect(() => {
-    setSeoMeta(
-      fr ? "Politique cookies | Elmvale Global" : "Cookie Policy | Elmvale Global",
-      fr
-        ? "Politique cookies d’Elmvale Global : cookies nécessaires et Google Analytics avec consentement."
-        : "Elmvale Global cookie policy covering necessary cookies and consent-based Google Analytics."
-    );
-  }, [fr]);
 
   const sections = fr
     ? [

@@ -64,6 +64,44 @@ const Home: React.FC = () => {
         },
       ];
 
+  const whyElmvale = fr
+    ? [
+        {
+          title: "Sourcing ciblé",
+          desc: "Nous recherchons des options selon votre catégorie, vos quantités, votre budget cible et votre calendrier.",
+        },
+        {
+          title: "Développement flexible",
+          desc: "Nous coordonnons échantillons, couleurs, finitions, composants et ajustements techniques avec les fabricants.",
+        },
+        {
+          title: "Suivi structuré",
+          desc: "Un même interlocuteur suit les étapes clés du brief à la préparation de l’expédition.",
+        },
+        {
+          title: "Qualité & documentation",
+          desc: "Selon le projet, nous coordonnons contrôles qualité et documents techniques disponibles auprès des fabricants.",
+        },
+      ]
+    : [
+        {
+          title: "Focused Sourcing",
+          desc: "We search for options based on your category, quantity, target cost and launch timing.",
+        },
+        {
+          title: "Flexible Development",
+          desc: "We coordinate samples, colors, finishes, components and technical adjustments with manufacturers.",
+        },
+        {
+          title: "Structured Follow-up",
+          desc: "One point of contact follows key project stages from brief through shipment preparation.",
+        },
+        {
+          title: "Quality & Documentation",
+          desc: "Depending on the project, we coordinate quality checks and available technical documentation with manufacturers.",
+        },
+      ];
+
   const featureCards = fr
     ? [
         {
@@ -187,6 +225,35 @@ const Home: React.FC = () => {
 
       <section className="bg-white border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-24">
+          <div className="grid lg:grid-cols-[0.9fr_1.5fr] gap-12 lg:gap-16 items-start">
+            <div className="max-w-xl">
+              <p className="uppercase text-[11px] tracking-[0.34em] text-stone-400 mb-4">
+                {fr ? "POURQUOI ELMVALE" : "WHY ELMVALE"}
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em] leading-[1.08]">
+                {fr ? "Un sourcing plus simple, plus lisible et mieux coordonné" : "A Clearer, More Coordinated Way to Source Packaging"}
+              </h2>
+              <p className="text-stone-600 leading-relaxed">
+                {fr
+                  ? "Elmvale Global accompagne les marques qui recherchent un interlocuteur unique pour comparer des options, avancer sur les échantillons et garder une vision claire des prochaines étapes."
+                  : "Elmvale Global supports brands looking for one point of contact to compare options, move samples forward and keep the next steps clear throughout the sourcing process."}
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
+              {whyElmvale.map((item, index) => (
+                <div key={item.title} className="bg-[#fbfaf8] p-7 md:p-8 min-h-[220px]">
+                  <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-8">0{index + 1}</div>
+                  <h3 className="font-serif text-2xl text-brand-dark mb-3 tracking-[-0.01em]">{item.title}</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-stone-200">
+        <div className="max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-3xl mb-14">
             <p className="uppercase text-[11px] tracking-[0.34em] text-stone-400 mb-4">
               {fr ? "COMMENT NOUS TRAVAILLONS" : "HOW WE WORK"}
@@ -196,8 +263,8 @@ const Home: React.FC = () => {
             </h2>
             <p className="text-stone-600 leading-relaxed max-w-2xl">
               {fr
-                ? "Nous sommes en phase de développement commercial et construisons progressivement notre réseau de sourcing. Notre rôle est de vous aider à identifier les bonnes options et à coordonner le projet avec transparence."
-                : "We are building our client portfolio and progressively developing our sourcing network. Our role is to help you identify suitable options and coordinate the project transparently from brief to production."}
+                ? "Notre rôle est de simplifier le sourcing packaging : identifier des options adaptées, coordonner les échanges techniques et suivre les étapes clés avec les fabricants jusqu’à la préparation de la production et de l’expédition."
+                : "Our role is to simplify packaging sourcing: identify suitable options, coordinate technical exchanges and follow key stages with manufacturers through production and shipment preparation."}
             </p>
           </div>
           <div className="grid md:grid-cols-5 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
@@ -246,19 +313,19 @@ const Home: React.FC = () => {
       <section className="bg-stone-50 border-t border-stone-200">
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <p className="uppercase text-[10px] tracking-[0.32em] text-stone-400 mb-5">
-            {fr ? "COMMENCER UN PROJET" : "START A PROJECT"}
+            {fr ? "PARLEZ-NOUS DE VOTRE BESOIN" : "TELL US WHAT YOU NEED"}
           </p>
           <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em]">
-            {fr ? "Vous avez déjà une référence ou une idée de packaging ?" : "Already Have a Packaging Reference or Idea?"}
+            {fr ? "Une référence, une photo ou simplement une direction ?" : "A Reference, a Photo, or Just a Direction?"}
           </h2>
           <p className="text-stone-600 mb-9 max-w-2xl mx-auto leading-relaxed">
-            {fr ? "Envoyez-nous votre brief, une photo de référence, vos quantités et votre calendrier cible." : "Send us your brief, reference image, expected quantity and target launch timing."}
+            {fr ? "Envoyez-nous ce que vous avez : une référence, une photo, une quantité cible ou simplement votre besoin. Nous vous aiderons à identifier les options à explorer." : "Send us what you have: a reference, an image, a target quantity or simply what you are looking for. We will help identify the options worth exploring."}
           </p>
           <Link
             to="/contact"
             className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium hover:bg-brand-dark/90 transition"
           >
-            {fr ? "Envoyer un brief" : "Send a Brief"}
+            {fr ? "Partager votre besoin" : "Share Your Requirements"}
           </Link>
         </div>
       </section>

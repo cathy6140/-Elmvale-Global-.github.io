@@ -71,14 +71,12 @@ const Home: React.FC = () => {
           title: "Sourcing packaging",
           desc: "Recherche fournisseurs, comparaison d’options, échantillons et coordination de projet.",
           to: "/sourcing",
-          tone: "dark",
         },
         {
           eyebrow: "PARFUM",
           title: "Packaging parfum",
           desc: "Un espace dédié aux flacons, pompes, capots, cols, décorations et packaging secondaire pour projets fragrance.",
           to: "/fragrance-packaging",
-          tone: "light",
         },
       ]
     : [
@@ -87,14 +85,12 @@ const Home: React.FC = () => {
           title: "Packaging Sourcing",
           desc: "Supplier search, option comparison, sampling and project coordination.",
           to: "/sourcing",
-          tone: "dark",
         },
         {
           eyebrow: "FRAGRANCE",
           title: "Fragrance Packaging",
           desc: "A dedicated space for bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
           to: "/fragrance-packaging",
-          tone: "light",
         },
       ];
 
@@ -174,11 +170,11 @@ const Home: React.FC = () => {
                   src={card.image}
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.74] contrast-[1.08] brightness-[0.76]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.92] contrast-[1.03] brightness-[0.98]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17110d]/94 via-[#211711]/58 to-[#17110d]/18" />
-                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(218,187,145,0.10),transparent_42%)]" />
+                <div className="absolute inset-x-0 bottom-0 h-[64%] bg-gradient-to-t from-[#17110d]/88 via-[#211711]/44 to-transparent" />
+                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,248,239,0.04),transparent_46%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-7 md:p-8 min-h-[250px] flex flex-col justify-end">
                   <h2 className="font-serif text-[2rem] text-white mb-3 tracking-[-0.01em] leading-[1.08] min-h-[4.4rem] flex items-end">{card.title}</h2>
                   <p className="text-sm text-white/[0.92] leading-relaxed max-w-sm min-h-[4.9rem]">{card.desc}</p>
@@ -223,33 +219,30 @@ const Home: React.FC = () => {
       <section className="bg-[#f3eee7]">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-2 gap-6">
-            {featureCards.map((card, index) => {
-              const dark = card.tone === "dark";
-              return (
-                <Link
-                  key={card.title}
-                  to={card.to}
-                  className={`group relative min-h-[360px] overflow-hidden rounded-[30px] p-8 md:p-10 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 ${dark ? "bg-[#201915] text-white shadow-[0_18px_48px_rgba(32,24,18,0.12)]" : "bg-[#e9e0d4] text-[#201915] border border-[#d9cbbb]"}`}
-                >
+            {featureCards.map((card, index) => (
+              <Link
+                key={card.title}
+                to={card.to}
+                className="group relative min-h-[340px] overflow-hidden rounded-[30px] border border-[#d8cec2] bg-[#ece5dc] p-8 md:p-10 text-[#201915] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(53,42,33,0.08)]"
+              >
+                <div className="relative z-10 flex h-full flex-col justify-between">
                   <div className="flex items-center justify-between">
-                    <p className={`uppercase text-[10px] tracking-[0.28em] ${dark ? "text-white/[0.56]" : "text-stone-500"}`}>{card.eyebrow}</p>
-                    <span className={`text-[10px] tracking-[0.18em] ${dark ? "text-white/[0.45]" : "text-stone-400"}`}>
-                      0{index + 1}
-                    </span>
+                    <p className="uppercase text-[10px] tracking-[0.28em] text-stone-500">{card.eyebrow}</p>
+                    <span className="text-[10px] tracking-[0.18em] text-stone-400">0{index + 1}</span>
                   </div>
-                  <div className="max-w-xl">
+                  <div className="max-w-xl pt-16">
                     <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em]">{card.title}</h2>
-                    <p className={`leading-relaxed max-w-lg ${dark ? "text-white/[0.78]" : "text-stone-600"}`}>{card.desc}</p>
-                    <span className={`mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] ${dark ? "text-white/[0.92]" : "text-[#201915]"}`}>
+                    <p className="leading-relaxed max-w-lg text-stone-600">{card.desc}</p>
+                    <span className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#201915]">
                       {fr ? "En savoir plus" : "Learn more"}
                       <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                     </span>
                   </div>
-                  <div aria-hidden="true" className={`absolute -right-16 -bottom-24 h-56 w-56 rounded-full border ${dark ? "border-white/10" : "border-stone-400/20"}`} />
-                  <div aria-hidden="true" className={`absolute -right-6 -bottom-14 h-36 w-36 rounded-full border ${dark ? "border-white/10" : "border-stone-400/20"}`} />
-                </Link>
-              );
-            })}
+                </div>
+                <div aria-hidden="true" className="absolute -right-20 -bottom-24 h-60 w-60 rounded-full border border-[#cfc2b3]/55" />
+                <div aria-hidden="true" className="absolute -right-5 -bottom-12 h-36 w-36 rounded-full border border-[#cfc2b3]/55" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

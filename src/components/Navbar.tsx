@@ -53,8 +53,8 @@ const Navbar: React.FC = () => {
     return (pathname: string) => ({ pathname, search });
   }, [language, searchParams]);
 
-  const toggleLang = () => {
-    const next = language === 'en' ? 'fr' : 'en';
+  const selectLang = (next: 'en' | 'fr') => {
+    if (next === language) return;
 
     setLanguage(next);
 
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-10">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -133,32 +133,46 @@ const Navbar: React.FC = () => {
             ))}
 
             {/* Desktop Language Switcher */}
-            <button
-              onClick={toggleLang}
-              className="text-[11px] font-semibold tracking-[0.18em] text-brand-dark border-l border-stone-300 pl-5 ml-1 hover:opacity-70 transition-opacity whitespace-nowrap"
-              aria-label={
-                language === 'en'
-                  ? 'Switch to French'
-                  : 'Switch to English'
-              }
-            >
-              {language === 'en' ? 'FR' : 'EN'}
-            </button>
+            <div className="flex items-center gap-2 border-l border-stone-300 pl-5 ml-1 text-[10px] tracking-[0.18em] font-semibold">
+              <button
+                onClick={() => selectLang('en')}
+                className={`transition-opacity ${language === 'en' ? 'text-brand-dark opacity-100' : 'text-stone-400 opacity-70 hover:opacity-100'}`}
+                aria-pressed={language === 'en'}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+              <span className="text-stone-300">·</span>
+              <button
+                onClick={() => selectLang('fr')}
+                className={`transition-opacity ${language === 'fr' ? 'text-brand-dark opacity-100' : 'text-stone-400 opacity-70 hover:opacity-100'}`}
+                aria-pressed={language === 'fr'}
+                aria-label="Passer en français"
+              >
+                FR
+              </button>
+            </div>
           </div>
 
           {/* Mobile */}
-          <div className="md:hidden flex items-center gap-4">
-            <button
-              onClick={toggleLang}
-              className="text-xs font-bold text-brand-dark tracking-wider"
-              aria-label={
-                language === 'en'
-                  ? 'Switch to French'
-                  : 'Switch to English'
-              }
-            >
-              {language === 'en' ? 'FR' : 'EN'}
-            </button>
+          <div className="lg:hidden flex items-center gap-4">
+            <div className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em]">
+              <button
+                onClick={() => selectLang('en')}
+                className={language === 'en' ? 'text-brand-dark' : 'text-stone-400'}
+                aria-pressed={language === 'en'}
+              >
+                EN
+              </button>
+              <span className="text-stone-300">·</span>
+              <button
+                onClick={() => selectLang('fr')}
+                className={language === 'fr' ? 'text-brand-dark' : 'text-stone-400'}
+                aria-pressed={language === 'fr'}
+              >
+                FR
+              </button>
+            </div>
 
             <button
               onClick={() => setIsOpen((v) => !v)}
@@ -178,7 +192,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-brand-cream z-40 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8 ${
+        className={`fixed inset-0 bg-brand-cream z-40 transform transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center items-center space-y-8 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

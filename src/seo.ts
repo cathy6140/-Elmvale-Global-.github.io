@@ -53,6 +53,18 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
       path: "/fragrance-packaging/",
     },
   },
+  "/packaging-sourcing-brief": {
+    en: {
+      title: "Cosmetic packaging sourcing brief | Elmvale Global",
+      description: "Learn what to include in a cosmetic packaging sourcing brief, from references and quantity to finish, target market and launch timing.",
+      path: "/packaging-sourcing-brief/",
+    },
+    fr: {
+      title: "Brief de sourcing packaging cosmétique | Elmvale Global",
+      description: "Découvrez les informations utiles à inclure dans un brief de sourcing packaging : références, quantités, finitions, marché cible et calendrier.",
+      path: "/packaging-sourcing-brief/",
+    },
+  },
   "/compliance": {
     en: {
       title: "Packaging documentation & sustainability support | Elmvale Global",

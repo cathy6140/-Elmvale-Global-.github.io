@@ -61,6 +61,13 @@ const Sourcing: React.FC = () => {
             <li>{fr ? "Marché cible" : "Target market"}</li>
             <li>{fr ? "Date de lancement souhaitée" : "Target launch date"}</li>
           </ul>
+          <Link
+            to="/packaging-sourcing-brief"
+            className="mt-6 inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4"
+          >
+            {fr ? "Voir le guide complet du brief sourcing" : "See the full packaging sourcing brief guide"}
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
         <div className="bg-brand-dark text-white rounded-3xl p-8">
           <h2 className="font-serif text-3xl mb-4">{fr ? "Vous cherchez une option précise ?" : "Looking for a specific packaging option?"}</h2>

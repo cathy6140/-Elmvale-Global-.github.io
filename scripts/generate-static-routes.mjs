@@ -27,6 +27,13 @@ const routes = [
     intro: "Source fragrance bottles, pumps, caps, collars, decoration and secondary packaging with structured supplier comparison and project coordination."
   },
   {
+    path: "/packaging-sourcing-brief/",
+    title: "Cosmetic packaging sourcing brief | Elmvale Global",
+    description: "Learn what to include in a cosmetic packaging sourcing brief, from references and quantity to finish, target market and launch timing.",
+    h1: "What to include in a cosmetic packaging sourcing brief",
+    intro: "A useful packaging sourcing brief can start with a visual reference, estimated quantity, product type and launch timing. More technical details can be clarified as suitable manufacturing options are identified."
+  },
+  {
     path: "/compliance/",
     title: "Packaging documentation & sustainability support | Elmvale Global",
     description: "Elmvale Global coordinates supplier documentation, technical information and third-party testing support for beauty and fragrance packaging projects.",

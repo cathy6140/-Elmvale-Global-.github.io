@@ -134,8 +134,7 @@ const Products: React.FC = () => {
                 <div className="aspect-[4/3] overflow-hidden bg-stone-100">
                   <img
                     src={category.image}
-                    alt=""
-                    aria-hidden="true"
+                    alt={category.title}
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />

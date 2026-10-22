@@ -28,18 +28,21 @@ const Home: React.FC = () => {
           title: "Beauty & skincare",
           desc: "Flacons, pots, airless, droppers, tubes, pompes et packaging secondaire.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_33-1.png",
+          alt: "Packaging skincare avec flacons, pots et composants de distribution",
           to: "/products",
         },
         {
           title: "Parfum",
           desc: "Flacons verre, pompes, capots, cols, décorations, coffrets et développements sur mesure.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
+          alt: "Packaging parfum avec flacons et composants",
           to: "/fragrance-packaging",
         },
         {
           title: "Coordination de projet",
           desc: "Sourcing, comparaison d’options, échantillons, personnalisation, suivi de production et documentation disponible.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_35-2.png",
+          alt: "Sourcing packaging et coordination de projet",
           to: "/sourcing",
         },
       ]
@@ -48,18 +51,21 @@ const Home: React.FC = () => {
           title: "Beauty & skincare",
           desc: "Bottles, jars, airless, droppers, tubes, pumps and secondary packaging.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_33-1.png",
+          alt: "Skincare cosmetic packaging with bottles, jars and dispensing components",
           to: "/products",
         },
         {
           title: "Fragrance",
           desc: "Glass bottles, pumps, caps, collars, decoration, boxes and custom development.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
+          alt: "Fragrance packaging with perfume bottles and components",
           to: "/fragrance-packaging",
         },
         {
           title: "Project coordination",
           desc: "Sourcing, option comparison, sampling, customization, production follow-up and available documentation.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_35-2.png",
+          alt: "Packaging sourcing and project coordination",
           to: "/sourcing",
         },
       ];
@@ -202,8 +208,7 @@ const Home: React.FC = () => {
               >
                 <img
                   src={card.image}
-                  alt=""
-                  aria-hidden="true"
+                  alt={card.alt}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.98] contrast-[1.02] brightness-[1.00]"
                   loading="lazy"
                 />

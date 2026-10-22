@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { trackContactCta } from "../analytics";
 
 const fragranceImages = [
   "/1.png",
@@ -251,7 +252,7 @@ const FragrancePackaging: React.FC = () => {
               ? "Envoyez-nous une photo, un lien, un flacon existant ou simplement votre besoin. Nous vous aiderons à identifier les options à explorer."
               : "Send us an image, link, existing bottle or simply what you are looking for. We will help identify the options worth exploring."}
           </p>
-          <Link to="/contact" className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full">
+          <Link to="/contact" onClick={() => trackContactCta("/fragrance-packaging/", fr ? "Partager votre référence" : "Share Your Reference")} className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full">
             {fr ? "Partager votre référence" : "Share Your Reference"}
           </Link>
         </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { trackContactCta } from "../analytics";
 
 const Home: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -161,6 +162,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link
                 to="/contact"
+                onClick={() => trackContactCta("/", fr ? "Envoyer votre brief" : "Send Your Packaging Brief")}
                 className="bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium text-center hover:bg-stone-100 transition shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
               >
                 {fr ? "Envoyer votre brief" : "Send Your Packaging Brief"}
@@ -328,6 +330,7 @@ const Home: React.FC = () => {
           </p>
           <Link
             to="/contact"
+            onClick={() => trackContactCta("/", fr ? "Partager votre besoin" : "Share Your Requirements")}
             className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium hover:bg-brand-dark/90 transition"
           >
             {fr ? "Partager votre besoin" : "Share Your Requirements"}

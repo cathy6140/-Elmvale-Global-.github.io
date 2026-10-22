@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useMemo, useRef } from "react";
 import { LanguageContext } from "../App";
 import { Mail, Clock } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
+import { trackEmailClick } from "../analytics";
 
 const FORMSPREE_FORM_ID = "xjkaopok";
 
@@ -61,7 +62,7 @@ const Contact: React.FC = () => {
             <Mail className="w-5 h-5 mt-1 text-stone-400" />
             <div>
               <h2 className="font-semibold text-brand-dark">Email</h2>
-              <a href="mailto:contact@elmvaleglobal.com" className="text-stone-600 hover:text-brand-dark">contact@elmvaleglobal.com</a>
+              <a href="mailto:contact@elmvaleglobal.com" onClick={() => trackEmailClick("/contact/")} className="text-stone-600 hover:text-brand-dark">contact@elmvaleglobal.com</a>
             </div>
           </div>
           <div className="flex gap-4 items-start">

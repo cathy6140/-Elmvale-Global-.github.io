@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
+import RelatedGuides from "../components/RelatedGuides";
 
 const StockVsCustomPackaging: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -130,6 +131,8 @@ const StockVsCustomPackaging: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <RelatedGuides language={language} current="stock" />
 
       <section className="max-w-5xl mx-auto px-6 py-20 text-center bg-stone-50 border border-stone-200 rounded-[30px] mb-20">
         <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-5">{fr ? "VOTRE PROJET" : "YOUR PROJECT"}</p>

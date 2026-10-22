@@ -69,32 +69,32 @@ const Home: React.FC = () => {
         {
           eyebrow: "SERVICE",
           title: "Sourcing packaging en Chine",
-          desc: "Comprendre notre processus de sélection, développement et coordination fournisseurs.",
-          image: "/compliance-hero.png",
+          desc: "Recherche fournisseurs, comparaison d’options, échantillons et coordination de projet avec des fabricants en Chine.",
           to: "/sourcing",
+          tone: "dark",
         },
         {
           eyebrow: "SPÉCIALITÉ",
           title: "Packaging parfum",
-          desc: "Flacons, pompes, capots, cols, décoration et packaging secondaire pour projets parfum.",
-          image: "/hero-home.png",
+          desc: "Un espace dédié aux flacons, pompes, capots, cols, décorations et packaging secondaire pour projets fragrance.",
           to: "/fragrance-packaging",
+          tone: "light",
         },
       ]
     : [
         {
           eyebrow: "SERVICE",
           title: "Packaging Sourcing in China",
-          desc: "See how we approach supplier search, development and project coordination.",
-          image: "/compliance-hero.png",
+          desc: "Supplier search, option comparison, sampling and project coordination with manufacturers in China.",
           to: "/sourcing",
+          tone: "dark",
         },
         {
           eyebrow: "SPECIALTY",
           title: "Fragrance Packaging",
-          desc: "Bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
-          image: "/hero-home.png",
+          desc: "A dedicated space for bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
           to: "/fragrance-packaging",
+          tone: "light",
         },
       ];
 
@@ -109,7 +109,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(255,244,224,0.16),transparent_34%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40">
           <div className="max-w-4xl">
-            <p className="uppercase tracking-[0.34em] text-[11px] text-white/70 mb-6">
+            <p className="uppercase tracking-[0.34em] text-[11px] text-white/[0.72] mb-6">
               {fr ? "SOURCING PACKAGING EN CHINE" : "COSMETIC PACKAGING SOURCING FROM CHINA"}
             </p>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-[78px] text-white mb-8 leading-[1.03] tracking-[-0.02em]">
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
                 ? "Sourcing de packaging cosmétique & parfum en Chine"
                 : "Cosmetic & Fragrance Packaging Sourcing from China"}
             </h1>
-            <p className="text-white/85 max-w-2xl text-lg md:text-xl leading-relaxed font-light">
+            <p className="text-white/[0.88] max-w-2xl text-lg md:text-xl leading-relaxed font-light">
               {fr
                 ? "Elmvale Global accompagne les marques beauté, skincare et parfum dans la recherche et le développement de packaging auprès de fabricants en Chine — du sourcing et des échantillons jusqu’au suivi de production."
                 : "Elmvale Global helps beauty, skincare and fragrance brands source and develop packaging with manufacturers in China — from supplier search and sampling to production follow-up."}
@@ -177,12 +177,12 @@ const Home: React.FC = () => {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.82] contrast-[1.03] brightness-[0.88]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17110d]/80 via-[#211711]/26 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#17110d]/92 via-[#211711]/48 to-[#17110d]/10" />
                 <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(218,187,145,0.10),transparent_42%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
                   <h2 className="font-serif text-3xl text-white mb-3 tracking-[-0.01em]">{card.title}</h2>
-                  <p className="text-sm text-white/78 leading-relaxed max-w-md">{card.desc}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/85">
+                  <p className="text-sm text-white/[0.90] leading-relaxed max-w-sm">{card.desc}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/[0.92]">
                     {fr ? "Découvrir" : "Explore"}
                     <span aria-hidden="true">→</span>
                   </span>
@@ -221,46 +221,48 @@ const Home: React.FC = () => {
       </section>
 
       <section className="bg-[#f7f4ef]">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-6">
-          {featureCards.map((card) => (
-            <Link
-              key={card.title}
-              to={card.to}
-              className="group relative min-h-[390px] overflow-hidden rounded-[30px] bg-stone-900 shadow-[0_16px_50px_rgba(32,24,18,0.09)]"
-            >
-              <img
-                src={card.image}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.78] contrast-[1.04] brightness-[0.78]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#17110d]/82 via-[#1b130e]/48 to-[#17110d]/12" />
-              <div className="absolute inset-0 flex items-end p-8 md:p-10">
-                <div className="max-w-lg">
-                  <p className="uppercase text-[10px] tracking-[0.28em] text-white/60 mb-3">{card.eyebrow}</p>
-                  <h2 className="font-serif text-3xl md:text-4xl text-white mb-4 tracking-[-0.02em]">{card.title}</h2>
-                  <p className="text-white/75 leading-relaxed max-w-md">{card.desc}</p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/85">
-                    {fr ? "En savoir plus" : "Learn more"}
-                    <span aria-hidden="true">→</span>
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid lg:grid-cols-2 gap-6">
+            {featureCards.map((card, index) => {
+              const dark = card.tone === "dark";
+              return (
+                <Link
+                  key={card.title}
+                  to={card.to}
+                  className={`group relative min-h-[360px] overflow-hidden rounded-[30px] p-8 md:p-10 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 ${dark ? "bg-[#201915] text-white shadow-[0_18px_48px_rgba(32,24,18,0.12)]" : "bg-[#ebe3d8] text-brand-dark border border-[#ddd1c2]"}`}
+                >
+                  <div className="flex items-center justify-between">
+                    <p className={`uppercase text-[10px] tracking-[0.28em] ${dark ? "text-white/[0.56]" : "text-stone-500"}`}>{card.eyebrow}</p>
+                    <span className={`text-[10px] tracking-[0.18em] ${dark ? "text-white/[0.45]" : "text-stone-400"}`}>
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <div className="max-w-xl">
+                    <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em]">{card.title}</h2>
+                    <p className={`leading-relaxed max-w-lg ${dark ? "text-white/[0.78]" : "text-stone-600"}`}>{card.desc}</p>
+                    <span className={`mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] ${dark ? "text-white/[0.92]" : "text-brand-dark"}`}>
+                      {fr ? "En savoir plus" : "Learn more"}
+                      <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                    </span>
+                  </div>
+                  <div aria-hidden="true" className={`absolute -right-16 -bottom-24 h-56 w-56 rounded-full border ${dark ? "border-white/10" : "border-stone-400/20"}`} />
+                  <div aria-hidden="true" className={`absolute -right-6 -bottom-14 h-36 w-36 rounded-full border ${dark ? "border-white/10" : "border-stone-400/20"}`} />
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       <section className="bg-brand-dark text-white">
         <div className="max-w-5xl mx-auto px-6 py-24 text-center">
-          <p className="uppercase text-[10px] tracking-[0.32em] text-white/45 mb-5">
+          <p className="uppercase text-[10px] tracking-[0.32em] text-white/[0.48] mb-5">
             {fr ? "COMMENCER UN PROJET" : "START A PROJECT"}
           </p>
           <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em]">
             {fr ? "Vous avez déjà une référence ou une idée de packaging ?" : "Already Have a Packaging Reference or Idea?"}
           </h2>
-          <p className="text-white/65 mb-9 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/[0.70] mb-9 max-w-2xl mx-auto leading-relaxed">
             {fr ? "Envoyez-nous votre brief, une photo de référence, vos quantités et votre calendrier cible." : "Send us your brief, reference image, expected quantity and target launch timing."}
           </p>
           <Link

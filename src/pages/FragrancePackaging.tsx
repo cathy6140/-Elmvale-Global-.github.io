@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { setSeoMeta } from "../seo";
 
-const fragranceSprite = "/images/fragrance-categories.avif";
-
-const cardPositions = [
-  "0% 0%",
-  "33.333% 0%",
-  "66.666% 0%",
-  "100% 0%",
-  "0% 100%",
-  "33.333% 100%",
-  "66.666% 100%",
-  "100% 100%",
+const fragranceImages = [
+  "/1.png",
+  "/2.png",
+  "/3.png",
+  "/4.png",
+  "/5.png",
+  "/6.png",
+  "/7.png",
+  "/8.png",
 ];
 
 const FragrancePackaging: React.FC = () => {
@@ -101,20 +99,12 @@ const FragrancePackaging: React.FC = () => {
                     key={item}
                     className="overflow-hidden rounded-[22px] border border-stone-200 bg-white"
                   >
-                    <div
-                      role="img"
-                      aria-label={item}
-                      className="relative aspect-[4/3] overflow-hidden bg-stone-100"
-                    >
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-no-repeat"
-                        style={{
-                          backgroundImage: `url(${fragranceSprite})`,
-                          backgroundSize: "400% 200%",
-                          backgroundPosition: cardPositions[group.offset + index],
-                          filter: "saturate(0.92) contrast(1.03) brightness(0.98)",
-                        }}
+                    <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+                      <img
+                        src={fragranceImages[group.offset + index]}
+                        alt={item}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
                       />
                     </div>
                     <div className="px-5 py-5">

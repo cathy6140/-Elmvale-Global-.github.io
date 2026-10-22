@@ -67,13 +67,11 @@ const Home: React.FC = () => {
   const featureCards = fr
     ? [
         {
-          eyebrow: "SERVICE",
           title: "Sourcing packaging",
           desc: "Recherche fournisseurs, comparaison d’options, échantillons et coordination de projet.",
           to: "/sourcing",
         },
         {
-          eyebrow: "PARFUM",
           title: "Packaging parfum",
           desc: "Un espace dédié aux flacons, pompes, capots, cols, décorations et packaging secondaire pour projets fragrance.",
           to: "/fragrance-packaging",
@@ -81,13 +79,11 @@ const Home: React.FC = () => {
       ]
     : [
         {
-          eyebrow: "SERVICE",
           title: "Packaging Sourcing",
           desc: "Supplier search, option comparison, sampling and project coordination.",
           to: "/sourcing",
         },
         {
-          eyebrow: "FRAGRANCE",
           title: "Fragrance Packaging",
           desc: "A dedicated space for bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
           to: "/fragrance-packaging",
@@ -97,13 +93,13 @@ const Home: React.FC = () => {
   return (
     <div className="w-full bg-white">
       <section
-        className="relative min-h-[680px] bg-cover bg-center overflow-hidden"
+        className="relative min-h-[560px] bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: "url('/hero-home.png')" }}
       >
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#17120f]/85 via-[#241b16]/48 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(255,244,224,0.16),transparent_34%)]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-28 lg:py-32">
           <div className="max-w-4xl">
             <p className="uppercase tracking-[0.34em] text-[11px] text-white/[0.72] mb-6">
               {fr ? "SOURCING PACKAGING BEAUTÉ & PARFUM" : "PACKAGING SOURCING FOR BEAUTY & FRAGRANCE"}
@@ -226,11 +222,10 @@ const Home: React.FC = () => {
                 className="group relative min-h-[330px] overflow-hidden rounded-[28px] border border-stone-200 bg-white p-8 md:p-10 text-brand-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(2,44,34,0.08)]"
               >
                 <div className="relative z-10 flex h-full flex-col justify-between">
-                  <div className="flex items-center justify-between">
-                    <p className="uppercase text-[10px] tracking-[0.28em] text-stone-400">{card.eyebrow}</p>
+                  <div className="flex justify-end">
                     <span className="text-[10px] tracking-[0.18em] text-stone-300">0{index + 1}</span>
                   </div>
-                  <div className="max-w-xl pt-14">
+                  <div className="max-w-xl pt-10">
                     <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em] text-brand-dark">{card.title}</h2>
                     <p className="leading-relaxed max-w-lg text-stone-600">{card.desc}</p>
                     <span className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-brand-dark">

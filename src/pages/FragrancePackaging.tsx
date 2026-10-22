@@ -29,22 +29,28 @@ const FragrancePackaging: React.FC = () => {
     );
   }, [fr]);
 
-  const categories = fr
+  const components = fr
     ? [
         "Flacons en verre",
         "Pompes & systèmes de sertissage",
         "Capots",
         "Cols",
-        "Coating & coloration",
-        "Sérigraphie & marquage à chaud",
-        "Coffrets & étuis",
-        "Développement packaging sur mesure",
       ]
     : [
         "Glass bottles",
         "Pumps & crimp systems",
         "Caps",
         "Collars",
+      ];
+
+  const development = fr
+    ? [
+        "Coating & coloration",
+        "Sérigraphie & marquage à chaud",
+        "Coffrets & étuis",
+        "Développement packaging sur mesure",
+      ]
+    : [
         "Coating & coloration",
         "Silk screen & hot stamping",
         "Boxes & cartons",
@@ -68,40 +74,59 @@ const FragrancePackaging: React.FC = () => {
       </section>
 
       <section className="bg-stone-50 border-y border-stone-200">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((item, index) => (
-              <article
-                key={item}
-                className="group relative overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-900 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div
-                  role="img"
-                  aria-label={item}
-                  className="relative aspect-[4/3]"
-                >
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-[1.045]"
-                    style={{
-                      backgroundImage: `url(${fragranceSprite})`,
-                      backgroundSize: "400% 200%",
-                      backgroundPosition: cardPositions[index],
-                      filter: "saturate(0.82) contrast(1.06) brightness(0.9) sepia(0.05)",
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,22,18,0.22),rgba(24,19,15,0.36),rgba(14,11,9,0.58))]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,247,235,0.14),transparent_45%)]" />
-                  <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-                    <h2 className="max-w-[90%] text-white text-lg md:text-xl font-medium leading-snug tracking-[0.06em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
-                      {item}
-                    </h2>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          <p className="mt-7 text-xs text-stone-400 max-w-3xl leading-relaxed">
+        <div className="max-w-6xl mx-auto px-6 py-20 space-y-16">
+          {[
+            {
+              eyebrow: fr ? "COMPOSANTS" : "COMPONENTS",
+              title: fr ? "Les éléments principaux du pack parfum" : "Core Fragrance Packaging Components",
+              items: components,
+              offset: 0,
+            },
+            {
+              eyebrow: fr ? "DÉCORATION & DÉVELOPPEMENT" : "DECORATION & DEVELOPMENT",
+              title: fr ? "Finitions, étuis et développement sur mesure" : "Finishes, Boxes & Custom Development",
+              items: development,
+              offset: 4,
+            },
+          ].map((group) => (
+            <div key={group.eyebrow}>
+              <div className="max-w-2xl mb-8">
+                <p className="uppercase text-[10px] tracking-[0.28em] text-stone-400 mb-3">{group.eyebrow}</p>
+                <h2 className="font-serif text-3xl md:text-4xl text-brand-dark">{group.title}</h2>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {group.items.map((item, index) => (
+                  <article
+                    key={item}
+                    className="overflow-hidden rounded-[22px] border border-stone-200 bg-white"
+                  >
+                    <div
+                      role="img"
+                      aria-label={item}
+                      className="relative aspect-[4/3] overflow-hidden bg-stone-100"
+                    >
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-no-repeat"
+                        style={{
+                          backgroundImage: `url(${fragranceSprite})`,
+                          backgroundSize: "400% 200%",
+                          backgroundPosition: cardPositions[group.offset + index],
+                          filter: "saturate(0.92) contrast(1.03) brightness(0.98)",
+                        }}
+                      />
+                    </div>
+                    <div className="px-5 py-5">
+                      <h3 className="font-serif text-xl text-brand-dark leading-snug">{item}</h3>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <p className="text-xs text-stone-400 max-w-3xl leading-relaxed">
             {fr
               ? "Les visuels sont illustratifs. Les options finales, matériaux, finitions et structures dépendent du fabricant et du brief du projet."
               : "Visuals are illustrative. Final options, materials, finishes and structures depend on the manufacturer and project brief."}

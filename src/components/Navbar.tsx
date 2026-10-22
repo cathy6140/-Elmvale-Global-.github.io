@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-10">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -155,7 +155,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4">
             <div className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em]">
               <button
                 onClick={() => selectLang('en')}
@@ -192,7 +192,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-brand-cream z-40 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8 ${
+        className={`fixed inset-0 bg-brand-cream z-40 transform transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center items-center space-y-8 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

@@ -55,6 +55,40 @@ const FragrancePackaging: React.FC = () => {
         "Custom packaging development",
       ];
 
+  const sourcingRoutes = fr
+    ? [
+        ["Pack complet", "Recherche coordonnée du flacon, de la pompe, du capot, du col et du packaging secondaire pour construire un ensemble cohérent."],
+        ["Composants séparés", "Sourcing d’un composant spécifique si vous avez déjà une partie du pack ou souhaitez comparer une nouvelle option."],
+        ["Options standards", "Recherche de références existantes pour avancer plus rapidement sur les échantillons et limiter le développement initial."],
+        ["Développement personnalisé", "Recherche d’options de couleur, finition, décoration, composants spécifiques ou développement dédié selon faisabilité."],
+      ]
+    : [
+        ["Full-set sourcing", "Coordinate bottle, pump, cap, collar and secondary packaging sourcing to build a coherent fragrance pack."],
+        ["Individual components", "Source a specific component when part of the pack is already defined or you want to compare an alternative."],
+        ["Stock options", "Search existing references to move faster on sampling and reduce initial development requirements."],
+        ["Customized development", "Explore color, finish, decoration, component changes or dedicated development depending on feasibility."],
+      ];
+
+  const briefItems = fr
+    ? [
+        "Volume ou format recherché",
+        "Photo, lien ou packaging de référence",
+        "Type de pompe / système de sertissage si connu",
+        "Finition, couleur et décoration souhaitées",
+        "Quantité estimée",
+        "Marché cible",
+        "Calendrier de lancement",
+      ]
+    : [
+        "Bottle volume or desired format",
+        "Reference image, link or existing packaging",
+        "Pump / crimp system if already known",
+        "Desired finish, color and decoration",
+        "Estimated quantity",
+        "Target market",
+        "Target launch timing",
+      ];
+
   return (
     <div className="bg-white">
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
@@ -124,30 +158,111 @@ const FragrancePackaging: React.FC = () => {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12">
-        <div>
-          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Personnalisation" : "Customization"}</h2>
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="max-w-3xl mb-12">
+          <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
+            {fr ? "OPTIONS DE SOURCING" : "SOURCING ROUTES"}
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5">
+            {fr ? "Du composant unique au pack parfum complet" : "From a Single Component to a Complete Fragrance Pack"}
+          </h2>
           <p className="text-stone-600 leading-relaxed">
             {fr
-              ? "Selon le projet et le fabricant, nous pouvons rechercher des options de coloration verre, coating, sérigraphie, marquage à chaud, composants décoratifs et développements sur mesure."
-              : "Depending on the project and manufacturer, we can source options for glass coloration, coating, silk screen, hot stamping, decorative components and custom packaging development."}
+              ? "Le point de départ dépend de ce que vous avez déjà défini. Nous pouvons rechercher un ensemble complet ou intervenir sur une partie précise du packaging."
+              : "The starting point depends on what you already have defined. We can search a complete set or focus on one specific part of the packaging."}
           </p>
         </div>
-        <div>
-          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Informations utiles pour démarrer" : "Useful Information to Start"}</h2>
-          <p className="text-stone-600 leading-relaxed">
-            {fr
-              ? "Volume du flacon, référence visuelle, type de pompe, finition, quantité estimée, marché cible et calendrier de lancement."
-              : "Bottle volume, visual reference, pump type, finish, estimated quantity, target market and launch timing."}
-          </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
+          {sourcingRoutes.map(([title, desc], index) => (
+            <div key={title} className="bg-[#fbfaf8] p-7 min-h-[240px]">
+              <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">0{index + 1}</div>
+              <h3 className="font-serif text-2xl text-brand-dark mb-3">{title}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="bg-brand-dark text-white">
-        <div className="max-w-5xl mx-auto px-6 py-10 md:py-12 text-center">
-          <h2 className="font-serif text-3xl mb-4">{fr ? "Parlez-nous de votre projet parfum" : "Tell Us About Your Fragrance Project"}</h2>
-          <Link to="/contact" className="inline-block bg-white text-brand-dark px-7 py-3 rounded-full">
-            {fr ? "Envoyer un brief" : "Send Your Brief"}
+        <div className="max-w-6xl mx-auto px-6 py-20">
+          <div className="max-w-3xl mb-12">
+            <p className="uppercase text-[11px] tracking-[0.32em] text-white/45 mb-4">
+              {fr ? "MOQ, ÉCHANTILLONS & DÉLAIS" : "MOQ, SAMPLES & TIMING"}
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl mb-5">
+              {fr ? "Les paramètres dépendent du packaging sélectionné" : "Key Parameters Depend on the Selected Packaging"}
+            </h2>
+            <p className="text-white/70 leading-relaxed">
+              {fr
+                ? "Les exigences varient selon le flacon, les composants, la quantité et le niveau de personnalisation. Nous confirmons les conditions réalistes après sélection d’une option adaptée."
+                : "Requirements vary by bottle, components, quantity and level of customization. We confirm realistic conditions once a suitable option has been selected."}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="border border-white/15 rounded-2xl p-6">
+              <h3 className="font-serif text-2xl mb-3">MOQ</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                {fr
+                  ? "Le MOQ dépend des composants, du fabricant et du niveau de personnalisation. Les références standards peuvent parfois permettre des quantités de départ plus basses."
+                  : "MOQ depends on components, manufacturer and level of customization. Stock references may sometimes allow lower starting quantities."}
+              </p>
+            </div>
+            <div className="border border-white/15 rounded-2xl p-6">
+              <h3 className="font-serif text-2xl mb-3">{fr ? "Échantillons" : "Samples"}</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                {fr
+                  ? "Des échantillons standards peuvent être demandés pour certaines références. Les échantillons personnalisés dépendent du type de développement nécessaire."
+                  : "Stock samples can be requested for selected references. Customized samples depend on the development route required."}
+              </p>
+            </div>
+            <div className="border border-white/15 rounded-2xl p-6">
+              <h3 className="font-serif text-2xl mb-3">{fr ? "Délais" : "Lead Time"}</h3>
+              <p className="text-sm text-white/70 leading-relaxed">
+                {fr
+                  ? "Les délais dépendent du packaging, des quantités et du niveau de personnalisation. Nous confirmons le délai de production estimé une fois l’option adaptée sélectionnée."
+                  : "Timing depends on the packaging, quantity and customization required. We confirm the expected production lead time once a suitable option has been selected."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12">
+        <div>
+          <p className="uppercase text-[10px] tracking-[0.26em] text-stone-400 mb-4">{fr ? "PERSONNALISATION" : "CUSTOMIZATION"}</p>
+          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Personnalisation du pack parfum" : "Fragrance Pack Customization"}</h2>
+          <p className="text-stone-600 leading-relaxed">
+            {fr
+              ? "Selon le projet et le fabricant, nous pouvons rechercher des options de coloration verre, coating, sérigraphie, marquage à chaud, composants décoratifs, coffrets et développements sur mesure."
+              : "Depending on the project and manufacturer, we can source options for glass coloration, coating, silk screen, hot stamping, decorative components, boxes and custom packaging development."}
+          </p>
+        </div>
+        <div>
+          <p className="uppercase text-[10px] tracking-[0.26em] text-stone-400 mb-4">{fr ? "POUR DÉMARRER" : "TO GET STARTED"}</p>
+          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Ce qu’il est utile de nous envoyer" : "What Is Helpful to Send Us"}</h2>
+          <ul className="space-y-2.5 text-stone-600 list-disc pl-5">
+            {briefItems.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-stone-50 border-t border-stone-200">
+        <div className="max-w-5xl mx-auto px-6 py-20 text-center">
+          <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-5">
+            {fr ? "PROJET PARFUM" : "FRAGRANCE PROJECT"}
+          </p>
+          <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-5">
+            {fr ? "Vous avez une référence ou une direction en tête ?" : "Have a Reference or Direction in Mind?"}
+          </h2>
+          <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+            {fr
+              ? "Envoyez-nous une photo, un lien, un flacon existant ou simplement votre besoin. Nous vous aiderons à identifier les options à explorer."
+              : "Send us an image, link, existing bottle or simply what you are looking for. We will help identify the options worth exploring."}
+          </p>
+          <Link to="/contact" className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full">
+            {fr ? "Partager votre référence" : "Share Your Reference"}
           </Link>
         </div>
       </section>

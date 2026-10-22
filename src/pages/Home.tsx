@@ -140,6 +140,27 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section className="border-b border-stone-200/70 bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-7 grid sm:grid-cols-3 gap-6 sm:gap-0">
+          {[
+            fr ? ["01", "Recherche fournisseurs", "Options selon catégorie, quantité, budget et calendrier."] : ["01", "Supplier search", "Options matched to category, quantity, target cost and timing."],
+            fr ? ["02", "Échantillons & développement", "Coordination des échantillons, finitions et ajustements techniques."] : ["02", "Sampling & development", "Samples, finishes and technical adjustments coordinated with manufacturers."],
+            fr ? ["03", "Suivi de production", "Communication projet et suivi des étapes clés jusqu’à la préparation expédition."] : ["03", "Production follow-up", "Project communication and milestone follow-up through shipment preparation."]
+          ].map(([num, title, desc], index) => (
+            <div
+              key={num}
+              className={`flex gap-4 sm:px-6 ${index > 0 ? "sm:border-l sm:border-stone-200" : ""}`}
+            >
+              <span className="text-[10px] tracking-[0.24em] text-stone-350 pt-1">{num}</span>
+              <div>
+                <h2 className="text-sm font-medium text-brand-dark mb-1.5">{title}</h2>
+                <p className="text-xs leading-relaxed text-stone-500">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="bg-[#f7f4ef]">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-3 gap-6">

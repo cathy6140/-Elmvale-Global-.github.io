@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React, { FormEvent, useContext, useMemo, useState } from "react";
 import { LanguageContext } from "../App";
 import { Mail, Clock } from "lucide-react";
 
@@ -7,8 +7,46 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjkaopok";
 const Contact: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const fr = language === "fr";
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const isOfficialHost = useMemo(() => window.location.hostname === "elmvaleglobal.com", []);
+
+  const trackLead = () => {
+    if (typeof window === "undefined") return;
+    const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+    if (typeof gtag === "function") {
+      gtag("event", "generate_lead", {
+        event_category: "contact",
+        form_name: "packaging_brief",
+      });
+    }
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!isOfficialHost || status === "submitting") return;
+
+    const form = event.currentTarget;
+    setStatus("submitting");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      trackLead();
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  };
 
   const nextSteps = fr
     ? [
@@ -67,7 +105,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        <form action={FORMSPREE_ENDPOINT} method="POST" acceptCharset="UTF-8" className="space-y-6">
+        <form action={FORMSPREE_ENDPOINT} method="POST" acceptCharset="UTF-8" className="space-y-6" onSubmit={handleSubmit}>
           <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
           <input type="hidden" name="language" value={language} />
           <input type="hidden" name="source" value={window.location.href} />
@@ -123,9 +161,25 @@ const Contact: React.FC = () => {
             </p>
           )}
 
-          <button type="submit" disabled={!isOfficialHost} className="bg-brand-dark text-white px-8 py-3 rounded-full disabled:opacity-40">
-            {fr ? "Partager votre brief" : "Share Your Packaging Brief"}
+          <button type="submit" disabled={!isOfficialHost || status === "submitting"} className="bg-brand-dark text-white px-8 py-3 rounded-full disabled:opacity-40">
+            {status === "submitting"
+              ? (fr ? "Envoi..." : "Sending...")
+              : (fr ? "Partager votre brief" : "Share Your Packaging Brief")}
           </button>
+          {status === "success" && (
+            <p className="text-sm text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl p-4" role="status">
+              {fr
+                ? "Merci. Votre brief a bien été envoyé. Nous reviendrons vers vous prochainement."
+                : "Thank you. Your packaging brief has been sent successfully. We will get back to you shortly."}
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4" role="alert">
+              {fr
+                ? "Une erreur est survenue lors de l’envoi. Veuillez réessayer ou nous écrire directement par email."
+                : "Something went wrong while sending your brief. Please try again or email us directly."}
+            </p>
+          )}
           <p className="text-xs text-stone-400">
             {fr
               ? "Vos informations servent uniquement à répondre à votre demande et à évaluer votre projet."

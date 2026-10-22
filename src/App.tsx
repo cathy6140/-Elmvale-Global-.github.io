@@ -24,6 +24,7 @@ import Sourcing from "./pages/Sourcing";
 import FragrancePackaging from "./pages/FragrancePackaging";
 import PackagingSourcingBrief from "./pages/PackagingSourcingBrief";
 import CosmeticPackagingMoq from "./pages/CosmeticPackagingMoq";
+import StockVsCustomPackaging from "./pages/StockVsCustomPackaging";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
@@ -149,6 +150,8 @@ const App: React.FC = () => {
             <Route path="/packaging-sourcing-brief/" element={<PackagingSourcingBrief />} />
             <Route path="/cosmetic-packaging-moq" element={<CosmeticPackagingMoq />} />
             <Route path="/cosmetic-packaging-moq/" element={<CosmeticPackagingMoq />} />
+            <Route path="/stock-vs-custom-packaging" element={<StockVsCustomPackaging />} />
+            <Route path="/stock-vs-custom-packaging/" element={<StockVsCustomPackaging />} />
 
             {/* Trust and conversion pages */}
             <Route path="/compliance" element={<Compliance />} />

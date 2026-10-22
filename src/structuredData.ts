@@ -2,7 +2,8 @@ import { Language } from "./types";
 import { localizedPath, stripLocalePrefix } from "./locale";
 
 export function buildStructuredData(pathname: string, language: Language) {
-  const basePath = stripLocalePrefix(pathname);
+  const rawBasePath = stripLocalePrefix(pathname);
+  const basePath = rawBasePath === "/" || rawBasePath.endsWith("/") ? rawBasePath : `${rawBasePath}/`;
   const pagePath = localizedPath(basePath, language);
   const siteUrl = language === "fr" ? "https://elmvaleglobal.com/fr/" : "https://elmvaleglobal.com/";
   const sourcingUrl = language === "fr"

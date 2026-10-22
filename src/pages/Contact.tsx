@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
               rows={6}
               required
               disabled={!isOfficialHost}
-              className="w-full h-[52px] border border-stone-300 rounded-xl px-4 focus:outline-none focus:border-brand-dark"
+              className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark"
               placeholder={fr
                 ? "Décrivez le produit, le packaging recherché, les références, finitions et contraintes importantes."
                 : "Tell us about the product, packaging you are looking for, references, finishes and important requirements."}
@@ -219,7 +219,7 @@ const Field = ({
       required={required}
       disabled={disabled}
       placeholder={placeholder}
-      className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark"
+      className="w-full h-[52px] border border-stone-300 rounded-xl px-4 focus:outline-none focus:border-brand-dark"
     />
   </div>
 );

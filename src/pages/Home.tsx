@@ -95,7 +95,7 @@ const Home: React.FC = () => {
       ];
 
   return (
-    <div className="w-full bg-[#f7f4ef]">
+    <div className="w-full bg-white">
       <section
         className="relative min-h-[680px] bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: "url('/hero-home.png')" }}
@@ -121,13 +121,13 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link
                 to="/contact"
-                className="bg-white text-[#201915] px-8 py-3.5 rounded-full font-medium text-center hover:bg-stone-100 transition shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
+                className="bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium text-center hover:bg-stone-100 transition shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
               >
                 {fr ? "Envoyer votre brief" : "Send Your Packaging Brief"}
               </Link>
               <Link
                 to="/sourcing"
-                className="border border-white/60 bg-white/5 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-center hover:bg-white hover:text-[#201915] transition"
+                className="border border-white/60 bg-white/5 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-center hover:bg-white hover:text-brand-dark transition"
               >
                 {fr ? "Notre méthode de sourcing" : "How We Source"}
               </Link>
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="border-b border-[#e5ddd2] bg-[#fbf9f5]">
+      <section className="border-b border-stone-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-7 grid sm:grid-cols-3 gap-6 sm:gap-0">
           {[
             fr ? ["01", "Recherche fournisseurs", "Options selon catégorie, quantité, budget et calendrier."] : ["01", "Supplier search", "Options matched to category, quantity, target cost and timing."],
@@ -149,7 +149,7 @@ const Home: React.FC = () => {
             >
               <span className="text-[10px] tracking-[0.24em] text-stone-350 pt-1">{num}</span>
               <div>
-                <h2 className="text-sm font-medium text-[#201915] mb-1.5">{title}</h2>
+                <h2 className="text-sm font-medium text-brand-dark mb-1.5">{title}</h2>
                 <p className="text-xs leading-relaxed text-stone-500">{desc}</p>
               </div>
             </div>
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[#f3eee7]">
+      <section className="bg-stone-50">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-3 gap-6">
             {focusCards.map((card) => (
@@ -170,14 +170,14 @@ const Home: React.FC = () => {
                   src={card.image}
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.92] contrast-[1.03] brightness-[0.98]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.98] contrast-[1.02] brightness-[1.00]"
                   loading="lazy"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-[64%] bg-gradient-to-t from-[#17110d]/88 via-[#211711]/44 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-t from-brand-dark/[0.92] via-brand-dark/[0.82] to-transparent" />
                 <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,248,239,0.04),transparent_46%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-7 md:p-8 min-h-[250px] flex flex-col justify-end">
-                  <h2 className="font-serif text-[2rem] text-white mb-3 tracking-[-0.01em] leading-[1.08] min-h-[4.4rem] flex items-end">{card.title}</h2>
-                  <p className="text-sm text-white/[0.92] leading-relaxed max-w-sm min-h-[4.9rem]">{card.desc}</p>
+                <div className="absolute inset-x-0 bottom-0 p-7 md:p-8 min-h-[230px] flex flex-col justify-end">
+                  <h2 className="font-serif text-[2rem] text-white mb-3 tracking-[-0.01em] leading-[1.08] min-h-[4.2rem] flex items-end drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]">{card.title}</h2>
+                  <p className="text-sm text-white/[0.92] leading-relaxed max-w-sm min-h-[4.7rem] drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">{card.desc}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/[0.94]">
                     {fr ? "Découvrir" : "Explore"}
                     <span aria-hidden="true">→</span>
@@ -189,13 +189,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[#fbf9f5] border-y border-[#e5ddd2]">
+      <section className="bg-white border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-3xl mb-14">
             <p className="uppercase text-[11px] tracking-[0.34em] text-stone-400 mb-4">
               {fr ? "COMMENT NOUS TRAVAILLONS" : "HOW WE WORK"}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#201915] mb-5 tracking-[-0.02em]">
+            <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em]">
               {fr ? "Un interlocuteur pour coordonner votre projet packaging" : "One Partner to Coordinate Your Packaging Project"}
             </h2>
             <p className="text-stone-600 leading-relaxed max-w-2xl">
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
             {steps.map(([num, title, desc]) => (
               <div key={num} className="bg-[#fbfaf8] p-6 min-h-[230px]">
                 <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">{num}</div>
-                <h3 className="font-medium text-[#201915] mb-3">{title}</h3>
+                <h3 className="font-medium text-brand-dark mb-3">{title}</h3>
                 <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -216,38 +216,39 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[#f3eee7]">
+      <section className="bg-stone-50">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-2 gap-6">
             {featureCards.map((card, index) => (
               <Link
                 key={card.title}
                 to={card.to}
-                className="group relative min-h-[340px] overflow-hidden rounded-[30px] border border-[#d8cec2] bg-[#ece5dc] p-8 md:p-10 text-[#201915] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(53,42,33,0.08)]"
+                className="group relative min-h-[330px] overflow-hidden rounded-[28px] border border-stone-200 bg-white p-8 md:p-10 text-brand-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(2,44,34,0.08)]"
               >
                 <div className="relative z-10 flex h-full flex-col justify-between">
                   <div className="flex items-center justify-between">
-                    <p className="uppercase text-[10px] tracking-[0.28em] text-stone-500">{card.eyebrow}</p>
-                    <span className="text-[10px] tracking-[0.18em] text-stone-400">0{index + 1}</span>
+                    <p className="uppercase text-[10px] tracking-[0.28em] text-stone-400">{card.eyebrow}</p>
+                    <span className="text-[10px] tracking-[0.18em] text-stone-300">0{index + 1}</span>
                   </div>
-                  <div className="max-w-xl pt-16">
-                    <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em]">{card.title}</h2>
+                  <div className="max-w-xl pt-14">
+                    <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em] text-brand-dark">{card.title}</h2>
                     <p className="leading-relaxed max-w-lg text-stone-600">{card.desc}</p>
-                    <span className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#201915]">
+                    <span className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-brand-dark">
                       {fr ? "En savoir plus" : "Learn more"}
                       <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                     </span>
                   </div>
                 </div>
-                <div aria-hidden="true" className="absolute -right-20 -bottom-24 h-60 w-60 rounded-full border border-[#cfc2b3]/55" />
-                <div aria-hidden="true" className="absolute -right-5 -bottom-12 h-36 w-36 rounded-full border border-[#cfc2b3]/55" />
+                <div aria-hidden="true" className="absolute left-0 top-0 h-[3px] w-24 bg-brand-dark/80" />
+                <div aria-hidden="true" className="absolute -right-20 -bottom-24 h-60 w-60 rounded-full border border-brand-dark/10" />
+                <div aria-hidden="true" className="absolute -right-5 -bottom-12 h-36 w-36 rounded-full border border-brand-dark/10" />
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#201915] text-white">
+      <section className="bg-brand-dark text-white">
         <div className="max-w-5xl mx-auto px-6 py-24 text-center">
           <p className="uppercase text-[10px] tracking-[0.32em] text-white/[0.48] mb-5">
             {fr ? "COMMENCER UN PROJET" : "START A PROJECT"}
@@ -260,7 +261,7 @@ const Home: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-[#201915] px-8 py-3.5 rounded-full font-medium hover:bg-stone-100 transition"
+            className="inline-block bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium hover:bg-stone-100 transition"
           >
             {fr ? "Envoyer un brief" : "Send a Brief"}
           </Link>

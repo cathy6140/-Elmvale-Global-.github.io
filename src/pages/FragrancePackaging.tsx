@@ -144,8 +144,8 @@ const FragrancePackaging: React.FC = () => {
       </section>
 
       <section className="bg-brand-dark text-white">
-        <div className="max-w-5xl mx-auto px-6 py-16 text-center">
-          <h2 className="font-serif text-3xl mb-5">{fr ? "Parlez-nous de votre projet parfum" : "Tell Us About Your Fragrance Project"}</h2>
+        <div className="max-w-5xl mx-auto px-6 py-10 md:py-12 text-center">
+          <h2 className="font-serif text-3xl mb-4">{fr ? "Parlez-nous de votre projet parfum" : "Tell Us About Your Fragrance Project"}</h2>
           <Link to="/contact" className="inline-block bg-white text-brand-dark px-7 py-3 rounded-full">
             {fr ? "Envoyer un brief" : "Send Your Brief"}
           </Link>

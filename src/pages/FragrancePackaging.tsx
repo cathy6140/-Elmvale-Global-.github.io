@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
-import { setSeoMeta } from "../seo";
 
 const fragranceImages = [
   "/1.png",
@@ -17,15 +16,6 @@ const fragranceImages = [
 const FragrancePackaging: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const fr = language === "fr";
-
-  useEffect(() => {
-    setSeoMeta(
-      fr ? "Packaging parfum & flacons | Elmvale Global" : "Fragrance & Perfume Packaging Sourcing | Elmvale Global",
-      fr
-        ? "Sourcing de flacons parfum, pompes, capots, cols, décoration et packaging secondaire pour projets fragrance."
-        : "Source perfume bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects."
-    );
-  }, [fr]);
 
   const components = fr
     ? [

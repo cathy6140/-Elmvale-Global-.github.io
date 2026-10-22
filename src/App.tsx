@@ -22,6 +22,7 @@ import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
 import Sourcing from "./pages/Sourcing";
 import FragrancePackaging from "./pages/FragrancePackaging";
+import PackagingSourcingBrief from "./pages/PackagingSourcingBrief";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
@@ -143,6 +144,8 @@ const App: React.FC = () => {
             <Route path="/sourcing/" element={<Sourcing />} />
             <Route path="/fragrance-packaging" element={<FragrancePackaging />} />
             <Route path="/fragrance-packaging/" element={<FragrancePackaging />} />
+            <Route path="/packaging-sourcing-brief" element={<PackagingSourcingBrief />} />
+            <Route path="/packaging-sourcing-brief/" element={<PackagingSourcingBrief />} />
 
             {/* Trust and conversion pages */}
             <Route path="/compliance" element={<Compliance />} />

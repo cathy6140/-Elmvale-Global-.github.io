@@ -47,7 +47,7 @@ const About: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "À PROPOS" : "ABOUT"}</p>
         <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
-          {fr ? "Un accompagnement structuré pour vos projets packaging" : "A More Structured Approach to Packaging Sourcing"}
+          {fr ? "Un accompagnement structuré pour vos projets packaging" : "A more structured approach to packaging sourcing"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
@@ -63,7 +63,7 @@ const About: React.FC = () => {
               {fr ? "NOTRE RÔLE" : "WHAT WE HELP WITH"}
             </p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-              {fr ? "Transformer une direction packaging en brief plus clair et exploitable" : "Turn a Packaging Direction into a Clearer, Actionable Brief"}
+              {fr ? "Transformer une direction packaging en brief plus clair et exploitable" : "Turn a packaging direction into a clearer, actionable brief"}
             </h2>
             <p className="text-stone-600 leading-relaxed">
               {fr
@@ -91,7 +91,7 @@ const About: React.FC = () => {
               {fr ? "NOTRE APPROCHE" : "OUR APPROACH"}
             </p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-              {fr ? "Trois critères pour évaluer une option packaging" : "Three Lenses for Evaluating a Packaging Option"}
+              {fr ? "Trois critères pour évaluer une option packaging" : "Three lenses for Evaluating a Packaging Option"}
             </h2>
             <p className="text-stone-600 leading-relaxed">
               {fr
@@ -132,7 +132,7 @@ const About: React.FC = () => {
             </p>
           </div>
           <div className="border border-white/15 rounded-3xl p-8">
-            <h3 className="font-serif text-3xl mb-4">{fr ? "Une information claire à chaque étape" : "Clear Information at Each Stage"}</h3>
+            <h3 className="font-serif text-3xl mb-4">{fr ? "Une information claire à chaque étape" : "Clear information at each stage"}</h3>
             <p className="text-white/75 leading-relaxed">
               {fr
                 ? "Nous distinguons ce qui est confirmé par le fabricant de ce qui nécessite encore un test, un échantillon ou une validation technique. L’objectif est d’aider la marque à avancer avec une vision réaliste des options disponibles."
@@ -148,7 +148,7 @@ const About: React.FC = () => {
             {fr ? "VOTRE PROJET" : "YOUR PROJECT"}
           </p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-            {fr ? "Vous avez déjà une référence ou vous définissez encore la direction ?" : "Already Have a Reference, or Still Defining the Direction?"}
+            {fr ? "Vous avez déjà une référence ou vous définissez encore la direction ?" : "Already have a reference, or still defining the direction?"}
           </h2>
           <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">
             {fr

@@ -41,6 +41,13 @@ const routes = [
     intro: "There is no single standard MOQ for cosmetic packaging. Minimum quantities depend on the reference, component, material, decoration, manufacturer and level of customization required."
   },
   {
+    path: "/stock-vs-custom-packaging/",
+    title: "Stock vs custom cosmetic packaging | Elmvale Global",
+    description: "Compare stock and custom cosmetic packaging across MOQ, lead time, investment, differentiation and launch risk to choose the right sourcing route.",
+    h1: "Stock vs custom cosmetic packaging: which route should you choose?",
+    intro: "Compare stock and custom packaging across MOQ, lead time, upfront investment, differentiation and launch risk to identify the route that best fits the project."
+  },
+  {
     path: "/compliance/",
     title: "Packaging documentation & sustainability support | Elmvale Global",
     description: "Elmvale Global coordinates supplier documentation, technical information and third-party testing support for beauty and fragrance packaging projects.",

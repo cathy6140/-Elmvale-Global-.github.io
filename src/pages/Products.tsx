@@ -106,9 +106,9 @@ const Products: React.FC = () => {
         ["Décoration", "Sérigraphie, marquage à chaud, étiquettes, impression et autres options de branding selon le packaging."],
       ]
     : [
-        ["Format & Capacity", "Shape, fill volume, neck finish, pump output and component configuration depending on available ranges."],
+        ["Format & capacity", "Shape, fill volume, neck finish, pump output and component configuration depending on available ranges."],
         ["Materials", "Plastic, glass, aluminium, paper and selected recycled-material options depending on application and feasibility."],
-        ["Color & Finish", "Custom color, matte or glossy finish, coating, metallization and other surface treatments depending on the component."],
+        ["Color & finish", "Custom color, matte or glossy finish, coating, metallization and other surface treatments depending on the component."],
         ["Decoration", "Silk screen, hot stamping, labels, printing and other branding options depending on the packaging."],
       ];
 
@@ -117,7 +117,7 @@ const Products: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16 text-center">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">PACKAGING</p>
         <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
-          {fr ? "Catégories de packaging que nous pouvons sourcer" : "Packaging Categories We Can Source"}
+          {fr ? "Catégories de packaging que nous pouvons sourcer" : "Packaging categories we can source"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
           {fr
@@ -179,7 +179,7 @@ const Products: React.FC = () => {
             {fr ? "PERSONNALISATION" : "CUSTOMIZATION"}
           </p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-            {fr ? "Ce qui peut être adapté à votre projet" : "What Can Be Adapted to Your Project"}
+            {fr ? "Ce qui peut être adapté à votre projet" : "What can be adapted to your project"}
           </h2>
           <p className="text-stone-600 leading-relaxed">
             {fr
@@ -254,7 +254,7 @@ const Products: React.FC = () => {
         <Link to="/contact" className="bg-stone-50 border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
           <p className="uppercase tracking-[0.2em] text-[10px] text-stone-400 mb-4">{fr ? "PAS DANS LE CATALOGUE ?" : "CAN’T FIND IT HERE?"}</p>
           <h2 className="font-serif text-3xl text-brand-dark mb-3">
-            {fr ? "Envoyez-nous une référence ou une photo" : "Send Us a Reference or Image"}
+            {fr ? "Envoyez-nous une référence ou une photo" : "Send us a reference or image"}
           </h2>
           <p className="text-stone-600 mb-5">
             {fr

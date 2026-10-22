@@ -180,7 +180,7 @@ const Home: React.FC = () => {
       </section>
 
       <section className="border-b border-stone-200 bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-7 grid sm:grid-cols-3 gap-6 sm:gap-0">
+        <div className="max-w-7xl mx-auto px-6 py-9 md:py-10 grid sm:grid-cols-3 gap-7 sm:gap-0">
           {[
             fr ? ["01", "Recherche fournisseurs", "Options selon catégorie, quantité, budget et calendrier."] : ["01", "Supplier search", "Options matched to category, quantity, target cost and timing."],
             fr ? ["02", "Échantillons & développement", "Coordination des échantillons, finitions et ajustements techniques."] : ["02", "Sampling & development", "Samples, finishes and technical adjustments coordinated with manufacturers."],
@@ -188,12 +188,12 @@ const Home: React.FC = () => {
           ].map(([num, title, desc], index) => (
             <div
               key={num}
-              className={`flex gap-4 sm:px-6 ${index > 0 ? "sm:border-l sm:border-stone-200" : ""}`}
+              className={`flex gap-4 sm:px-8 ${index > 0 ? "sm:border-l sm:border-stone-200" : ""}`}
             >
               <span className="text-[10px] tracking-[0.24em] text-stone-350 pt-1">{num}</span>
               <div>
-                <h2 className="text-sm font-medium text-brand-dark mb-1.5">{title}</h2>
-                <p className="text-xs leading-relaxed text-stone-500">{desc}</p>
+                <h2 className="text-base font-medium text-brand-dark mb-2">{title}</h2>
+                <p className="text-sm leading-relaxed text-stone-500 max-w-[23rem]">{desc}</p>
               </div>
             </div>
           ))}
@@ -294,16 +294,16 @@ const Home: React.FC = () => {
               <Link
                 key={card.title}
                 to={localizedPath(card.to, language)}
-                className="group relative min-h-[330px] overflow-hidden rounded-[28px] border border-stone-200 bg-white p-8 md:p-10 text-brand-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(2,44,34,0.08)]"
+                className="group relative min-h-[295px] overflow-hidden rounded-[28px] border border-stone-200 bg-white p-8 md:p-9 text-brand-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(2,44,34,0.08)]"
               >
                 <div className="relative z-10 flex h-full flex-col justify-between">
                   <div className="flex justify-end">
                     <span className="text-[10px] tracking-[0.18em] text-stone-300">0{index + 1}</span>
                   </div>
-                  <div className="max-w-xl pt-10">
-                    <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em] text-brand-dark">{card.title}</h2>
+                  <div className="max-w-xl pt-6">
+                    <h2 className="font-serif text-3xl md:text-[40px] mb-4 tracking-[-0.02em] leading-[1.08] text-brand-dark">{card.title}</h2>
                     <p className="leading-relaxed max-w-lg text-stone-600">{card.desc}</p>
-                    <span className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-brand-dark">
+                    <span className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-brand-dark">
                       {fr ? "En savoir plus" : "Learn more"}
                       <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                     </span>

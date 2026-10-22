@@ -1,20 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
-import { setSeoMeta } from "../seo";
 
 const About: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const fr = language === "fr";
-
-  useEffect(() => {
-    setSeoMeta(
-      fr ? "À propos | Elmvale Global" : "About Elmvale Global | Packaging Sourcing",
-      fr
-        ? "Elmvale Global accompagne les marques beauté et parfum dans la structuration, le sourcing et la coordination de leurs projets packaging."
-        : "Elmvale Global supports beauty and fragrance brands with structured packaging sourcing and project coordination."
-    );
-  }, [fr]);
 
   const supportItems = fr
     ? [

@@ -1,17 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "../App";
-import { setSeoMeta } from "../seo";
 
 const Terms: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const fr = language === "fr";
-
-  useEffect(() => {
-    setSeoMeta(
-      fr ? "Conditions d’utilisation | Elmvale Global" : "Website Terms | Elmvale Global",
-      fr ? "Conditions d’utilisation du site Elmvale Global." : "Website terms for Elmvale Global."
-    );
-  }, [fr]);
 
   return (
     <div className="bg-white min-h-screen">

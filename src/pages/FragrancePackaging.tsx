@@ -95,7 +95,7 @@ const FragrancePackaging: React.FC = () => {
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">
           {fr ? "PACKAGING PARFUM" : "FRAGRANCE PACKAGING"}
         </p>
-        <h1 className="font-serif text-5xl md:text-6xl text-brand-dark mb-6">
+        <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
           {fr ? "Sourcing packaging pour marques de parfum" : "Packaging Sourcing for Fragrance Brands"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
@@ -163,7 +163,7 @@ const FragrancePackaging: React.FC = () => {
           <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
             {fr ? "OPTIONS DE SOURCING" : "SOURCING ROUTES"}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5">
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
             {fr ? "Du composant unique au pack parfum complet" : "From a Single Component to a Complete Fragrance Pack"}
           </h2>
           <p className="text-stone-600 leading-relaxed">
@@ -190,7 +190,7 @@ const FragrancePackaging: React.FC = () => {
             <p className="uppercase text-[11px] tracking-[0.32em] text-white/45 mb-4">
               {fr ? "MOQ, ÉCHANTILLONS & DÉLAIS" : "MOQ, SAMPLES & TIMING"}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-5">
+            <h2 className="font-serif font-normal text-3xl md:text-4xl mb-5">
               {fr ? "Les paramètres dépendent du packaging sélectionné" : "Key Parameters Depend on the Selected Packaging"}
             </h2>
             <p className="text-white/70 leading-relaxed">
@@ -253,7 +253,7 @@ const FragrancePackaging: React.FC = () => {
           <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-5">
             {fr ? "PROJET PARFUM" : "FRAGRANCE PROJECT"}
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-5">
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
             {fr ? "Vous avez une référence ou une direction en tête ?" : "Have a Reference or Direction in Mind?"}
           </h2>
           <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">

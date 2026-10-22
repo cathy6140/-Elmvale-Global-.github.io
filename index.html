@@ -24,7 +24,7 @@
     <meta name="twitter:description" content="Elmvale Global supports beauty and fragrance brands with packaging sourcing, supplier comparison, sampling and project coordination." />
 
     <script id="elmvale-structured-data" type="application/ld+json">
-      {
+{
         "@context": "https://schema.org",
         "@graph": [
           {
@@ -40,14 +40,20 @@
             "@id": "https://elmvaleglobal.com/#website",
             "url": "https://elmvaleglobal.com/",
             "name": "Elmvale Global",
-            "publisher": { "@id": "https://elmvaleglobal.com/#organization" },
+            "inLanguage": "en",
+            "publisher": {
+              "@id": "https://elmvaleglobal.com/#organization"
+            },
             "description": "Elmvale Global supports beauty and fragrance brands with packaging sourcing, supplier comparison, sampling and project coordination."
           },
           {
             "@type": "Service",
             "@id": "https://elmvaleglobal.com/#sourcing-service",
             "name": "Cosmetic and fragrance packaging sourcing",
-            "provider": { "@id": "https://elmvaleglobal.com/#organization" },
+            "inLanguage": "en",
+            "provider": {
+              "@id": "https://elmvaleglobal.com/#organization"
+            },
             "areaServed": "Worldwide",
             "serviceType": [
               "Cosmetic packaging sourcing",
@@ -57,6 +63,18 @@
               "Packaging project coordination"
             ],
             "url": "https://elmvaleglobal.com/sourcing/"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://elmvaleglobal.com/#webpage",
+            "url": "https://elmvaleglobal.com/",
+            "inLanguage": "en",
+            "isPartOf": {
+              "@id": "https://elmvaleglobal.com/#website"
+            },
+            "about": {
+              "@id": "https://elmvaleglobal.com/#organization"
+            }
           }
         ]
       }

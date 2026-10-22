@@ -236,8 +236,8 @@ const Products: React.FC = () => {
               <h3 className="font-serif text-2xl mb-3">{fr ? "Délais" : "Lead Time"}</h3>
               <p className="text-sm text-white/70 leading-relaxed">
                 {fr
-                  ? "Le délai est confirmé après définition du packaging, de la décoration, de la quantité et des éventuels développements spécifiques."
-                  : "Lead time is confirmed after packaging, decoration, quantity and any custom development requirements are defined."}
+                  ? "Les délais dépendent du packaging, des quantités et du niveau de personnalisation. Nous confirmons le délai de production estimé une fois l’option adaptée sélectionnée."
+                  : "Timing depends on the packaging, quantity and customization required. We confirm the expected production lead time once a suitable option has been selected."}
               </p>
             </div>
           </div>

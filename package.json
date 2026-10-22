@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build && node scripts/generate-static-routes.mjs",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predev": "node scripts/prepare-fragrance-art.mjs",
+    "prebuild": "node scripts/prepare-fragrance-art.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.555.0",

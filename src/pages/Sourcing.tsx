@@ -37,7 +37,7 @@ const Sourcing: React.FC = () => {
     <div className="bg-white">
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "SOURCING PACKAGING" : "PACKAGING SOURCING"}</p>
-        <h1 className="font-serif text-5xl md:text-6xl text-brand-dark mb-6">
+        <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
           {fr ? "Sourcing de packaging cosmétique" : "Cosmetic Packaging Sourcing"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">

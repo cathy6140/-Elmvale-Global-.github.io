@@ -65,6 +65,18 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
       path: "/packaging-sourcing-brief/",
     },
   },
+  "/cosmetic-packaging-moq": {
+    en: {
+      title: "Cosmetic packaging MOQ guide | Elmvale Global",
+      description: "Understand what drives cosmetic packaging MOQ, how stock and custom routes differ, and what brands can do when minimum quantities are too high.",
+      path: "/cosmetic-packaging-moq/",
+    },
+    fr: {
+      title: "Guide MOQ packaging cosmétique | Elmvale Global",
+      description: "Comprenez ce qui détermine le MOQ packaging, les différences entre stock et custom, et les options lorsque les minimums sont trop élevés.",
+      path: "/cosmetic-packaging-moq/",
+    },
+  },
   "/compliance": {
     en: {
       title: "Packaging documentation & sustainability support | Elmvale Global",

@@ -34,6 +34,13 @@ const routes = [
     intro: "A useful packaging sourcing brief can start with a visual reference, estimated quantity, product type and launch timing. More technical details can be clarified as suitable manufacturing options are identified."
   },
   {
+    path: "/cosmetic-packaging-moq/",
+    title: "Cosmetic packaging MOQ guide | Elmvale Global",
+    description: "Understand what drives cosmetic packaging MOQ, how stock and custom routes differ, and what brands can do when minimum quantities are too high.",
+    h1: "Cosmetic packaging MOQ: what brands should expect",
+    intro: "There is no single standard MOQ for cosmetic packaging. Minimum quantities depend on the reference, component, material, decoration, manufacturer and level of customization required."
+  },
+  {
     path: "/compliance/",
     title: "Packaging documentation & sustainability support | Elmvale Global",
     description: "Elmvale Global coordinates supplier documentation, technical information and third-party testing support for beauty and fragrance packaging projects.",

@@ -230,10 +230,10 @@ const PackagingSourcingBrief: React.FC = () => {
             {fr ? "Partager votre brief" : "Share Your Brief"}
           </Link>
           <Link
-            to="/sourcing"
+            to="/cosmetic-packaging-moq"
             className="inline-block border border-stone-300 text-brand-dark px-8 py-3.5 rounded-full"
           >
-            {fr ? "Voir notre approche sourcing" : "See Our Sourcing Approach"}
+            {fr ? "Comprendre les MOQ packaging" : "Understand Packaging MOQ"}
           </Link>
         </div>
       </section>

@@ -254,7 +254,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-brand-dark text-white">      <section className="bg-brand-dark text-white">
+      <section className="bg-brand-dark text-white">
         <div className="max-w-5xl mx-auto px-6 py-24 text-center">
           <p className="uppercase text-[10px] tracking-[0.32em] text-white/[0.48] mb-5">
             {fr ? "COMMENCER UN PROJET" : "START A PROJECT"}

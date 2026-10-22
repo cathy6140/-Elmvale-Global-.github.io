@@ -96,7 +96,7 @@ const FragrancePackaging: React.FC = () => {
           {fr ? "PACKAGING PARFUM" : "FRAGRANCE PACKAGING"}
         </p>
         <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
-          {fr ? "Sourcing packaging pour marques de parfum" : "Packaging Sourcing for Fragrance Brands"}
+          {fr ? "Sourcing packaging pour marques de parfum" : "Packaging sourcing for fragrance brands"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
@@ -164,7 +164,7 @@ const FragrancePackaging: React.FC = () => {
             {fr ? "OPTIONS DE SOURCING" : "SOURCING ROUTES"}
           </p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-            {fr ? "Du composant unique au pack parfum complet" : "From a Single Component to a Complete Fragrance Pack"}
+            {fr ? "Du composant unique au pack parfum complet" : "From a single component to a complete fragrance pack"}
           </h2>
           <p className="text-stone-600 leading-relaxed">
             {fr
@@ -241,7 +241,7 @@ const FragrancePackaging: React.FC = () => {
         </div>
         <div>
           <p className="uppercase text-[10px] tracking-[0.26em] text-stone-400 mb-4">{fr ? "POUR DÉMARRER" : "TO GET STARTED"}</p>
-          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Ce qu’il est utile de nous envoyer" : "What Is Helpful to Send Us"}</h2>
+          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Ce qu’il est utile de nous envoyer" : "What is helpful to send us"}</h2>
           <ul className="space-y-2.5 text-stone-600 list-disc pl-5">
             {briefItems.map((item) => <li key={item}>{item}</li>)}
           </ul>
@@ -254,7 +254,7 @@ const FragrancePackaging: React.FC = () => {
             {fr ? "PROJET PARFUM" : "FRAGRANCE PROJECT"}
           </p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-            {fr ? "Vous avez une référence ou une direction en tête ?" : "Have a Reference or Direction in Mind?"}
+            {fr ? "Vous avez une référence ou une direction en tête ?" : "Have a reference or direction in mind?"}
           </h2>
           <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">
             {fr

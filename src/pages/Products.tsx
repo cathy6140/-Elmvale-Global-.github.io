@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const Products: React.FC = () => {
@@ -245,13 +246,13 @@ const Products: React.FC = () => {
       </section>
 
       <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-8">
-        <Link to="/sourcing" className="border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
+        <Link to={localizedPath("/sourcing", language)} className="border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
           <p className="uppercase tracking-[0.2em] text-[10px] text-stone-400 mb-4">{fr ? "MÉTHODE" : "PROCESS"}</p>
           <h2 className="font-serif text-3xl text-brand-dark mb-3">{fr ? "Besoin d’aide pour sourcer ?" : "Need Help Sourcing?"}</h2>
           <p className="text-stone-600">{fr ? "Découvrez comment nous recherchons, comparons et coordonnons les options fabricants." : "See how we search, compare and coordinate manufacturing options."}</p>
         </Link>
 
-        <Link to="/contact" onClick={() => trackContactCta("/products/", fr ? "Partager votre besoin" : "Share your requirements")} className="bg-stone-50 border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
+        <Link to={localizedPath("/contact", language)} onClick={() => trackContactCta("/products/", fr ? "Partager votre besoin" : "Share your requirements")} className="bg-stone-50 border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
           <p className="uppercase tracking-[0.2em] text-[10px] text-stone-400 mb-4">{fr ? "PAS DANS LE CATALOGUE ?" : "CAN’T FIND IT HERE?"}</p>
           <h2 className="font-serif text-3xl text-brand-dark mb-3">
             {fr ? "Envoyez-nous une référence ou une photo" : "Send us a reference or image"}

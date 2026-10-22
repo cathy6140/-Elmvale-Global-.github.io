@@ -9,35 +9,35 @@ const Products: React.FC = () => {
   const primaryCards = fr
     ? [
         {
-          title: "Packaging skincare primaire",
-          desc: "Flacons, pots, airless, droppers et composants pour sérums, crèmes et soins.",
+          title: "Flacons & pots",
+          desc: "Flacons, pots, formats airless et droppers pour sérums, crèmes et soins.",
           image: "/flacons-pots-product.png",
         },
         {
-          title: "Tubes & distribution",
-          desc: "Tubes, pompes, sprays et systèmes de distribution pour soins et cosmétiques.",
+          title: "Pompes & distributeurs",
+          desc: "Pompes, sprays et composants de distribution pour soins et cosmétiques.",
           image: "/pompes-distributeurs-product.png",
         },
         {
-          title: "Tubes & formats souples",
-          desc: "Tubes, sachets et formats souples pour soins, masques et échantillons.",
+          title: "Tubes & sachets",
+          desc: "Tubes et sachets pour soins, masques, échantillons et autres formats souples.",
           image: "/tubes-sachets-product.png",
         },
       ]
     : [
         {
-          title: "Skincare Primary Packaging",
-          desc: "Bottles, jars, airless systems, droppers and components for serums, creams and treatments.",
+          title: "Bottles & Jars",
+          desc: "Bottles, jars, airless formats and droppers for serums, creams and skincare treatments.",
           image: "/flacons-pots-product.png",
         },
         {
-          title: "Dispensing Systems",
+          title: "Pumps & Dispensers",
           desc: "Pumps, sprayers and dispensing systems for skincare and cosmetic applications.",
           image: "/pompes-distributeurs-product.png",
         },
         {
-          title: "Tubes & Flexible Formats",
-          desc: "Tubes, sachets and flexible formats for skincare, masks and sampling.",
+          title: "Tubes & Sachets",
+          desc: "Tubes and sachet formats for skincare, masks, sampling and other flexible-pack applications.",
           image: "/tubes-sachets-product.png",
         },
       ];

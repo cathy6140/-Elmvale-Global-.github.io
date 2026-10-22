@@ -165,13 +165,14 @@ const CosmeticPackagingMoq: React.FC = () => {
               <li>{fr ? "ce qui peut rester standard" : "what can remain standard"}</li>
               <li>{fr ? "la date de lancement" : "target launch date"}</li>
             </ul>
-            <Link
-              to="/packaging-sourcing-brief"
-              className="mt-6 inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4"
-            >
-              {fr ? "Voir le guide du brief sourcing" : "See the packaging sourcing brief guide"}
-              <span aria-hidden="true">→</span>
-            </Link>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link to="/packaging-sourcing-brief" className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
+                {fr ? "Voir le guide du brief sourcing" : "See the packaging sourcing brief guide"} <span aria-hidden="true">→</span>
+              </Link>
+              <Link to="/stock-vs-custom-packaging" className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
+                {fr ? "Comparer packaging stock et custom" : "Compare stock vs custom packaging"} <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

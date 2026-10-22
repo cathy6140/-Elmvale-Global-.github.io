@@ -77,6 +77,18 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
       path: "/cosmetic-packaging-moq/",
     },
   },
+  "/stock-vs-custom-packaging": {
+    en: {
+      title: "Stock vs custom cosmetic packaging | Elmvale Global",
+      description: "Compare stock and custom cosmetic packaging across MOQ, lead time, investment, differentiation and launch risk to choose the right sourcing route.",
+      path: "/stock-vs-custom-packaging/",
+    },
+    fr: {
+      title: "Packaging stock vs custom | Elmvale Global",
+      description: "Comparez packaging stock et custom selon MOQ, délais, investissement, différenciation et risque afin de choisir la bonne route de sourcing.",
+      path: "/stock-vs-custom-packaging/",
+    },
+  },
   "/compliance": {
     en: {
       title: "Packaging documentation & sustainability support | Elmvale Global",

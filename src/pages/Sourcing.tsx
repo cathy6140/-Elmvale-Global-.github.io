@@ -8,7 +8,7 @@ const Sourcing: React.FC = () => {
   const fr = language === "fr";
   useEffect(() => {
     setSeoMeta(
-      fr ? "Sourcing packaging cosmétique | Elmvale Global" : "Cosmetic Packaging Sourcing | Elmvale Global",
+      fr ? "Sourcing packaging cosmétique | Elmvale Global" : "Cosmetic packaging sourcing | Elmvale Global",
       fr
         ? "Elmvale Global aide les marques beauté et parfum à rechercher, comparer et développer des solutions packaging, avec un réseau de sourcing en Chine."
         : "Elmvale Global helps beauty and fragrance brands search, compare and develop packaging solutions, supported by a sourcing network in China."
@@ -38,7 +38,7 @@ const Sourcing: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "SOURCING PACKAGING" : "PACKAGING SOURCING"}</p>
         <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
-          {fr ? "Sourcing de packaging cosmétique" : "Cosmetic Packaging Sourcing"}
+          {fr ? "Sourcing de packaging cosmétique" : "Cosmetic packaging sourcing"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
@@ -60,7 +60,7 @@ const Sourcing: React.FC = () => {
 
       <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12">
         <div>
-          <h2 className="font-serif text-3xl text-brand-dark mb-5">{fr ? "Ce que nous demandons dans un brief" : "What to Include in Your Brief"}</h2>
+          <h2 className="font-serif text-3xl text-brand-dark mb-5">{fr ? "Ce que nous demandons dans un brief" : "What to include in your brief"}</h2>
           <ul className="space-y-3 text-stone-600 list-disc pl-5">
             <li>{fr ? "Produit et format souhaité" : "Product type and desired format"}</li>
             <li>{fr ? "Photos ou références existantes" : "Reference images or existing packaging"}</li>
@@ -71,7 +71,7 @@ const Sourcing: React.FC = () => {
           </ul>
         </div>
         <div className="bg-brand-dark text-white rounded-3xl p-8">
-          <h2 className="font-serif text-3xl mb-4">{fr ? "Vous cherchez une option précise ?" : "Looking for a Specific Packaging Option?"}</h2>
+          <h2 className="font-serif text-3xl mb-4">{fr ? "Vous cherchez une option précise ?" : "Looking for a specific packaging option?"}</h2>
           <p className="text-white/75 mb-6">{fr ? "Envoyez-nous votre brief. Nous vous répondrons avec les informations nécessaires pour démarrer le sourcing." : "Send us your brief. We will reply with the information needed to start sourcing."}</p>
           <Link to="/contact" className="inline-block bg-white text-brand-dark px-6 py-3 rounded-full">{fr ? "Envoyer un brief" : "Send Your Brief"}</Link>
         </div>

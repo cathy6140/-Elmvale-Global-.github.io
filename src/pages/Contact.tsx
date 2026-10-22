@@ -20,6 +20,20 @@ const Contact: React.FC = () => {
 
   const isOfficialHost = useMemo(() => window.location.hostname === "elmvaleglobal.com", []);
 
+  const nextSteps = fr
+    ? [
+        ["01", "Nous examinons votre brief", "Nous regardons le besoin, les références, la quantité cible et les contraintes principales."],
+        ["02", "Nous clarifions si nécessaire", "S’il manque une information importante, nous revenons vers vous avant de lancer le sourcing."],
+        ["03", "Nous identifions les directions pertinentes", "Nous recherchons et comparons les options fabricants correspondant au projet."],
+        ["04", "Nous avançons sur les options retenues", "Échantillons, informations techniques et demandes de prix sont coordonnés une fois une direction adaptée sélectionnée."],
+      ]
+    : [
+        ["01", "We review your brief", "We look at the requirement, references, target quantity and key project constraints."],
+        ["02", "We clarify what is missing", "If an important detail is missing, we come back to you before sourcing begins."],
+        ["03", "We identify relevant directions", "We search and compare manufacturing options that fit the project."],
+        ["04", "We move forward on selected options", "Samples, technical information and quotations are coordinated once a suitable direction has been selected."],
+      ];
+
   return (
     <div className="bg-white min-h-screen pt-28">
       <section className="px-6 max-w-6xl mx-auto mb-14">
@@ -29,12 +43,12 @@ const Contact: React.FC = () => {
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
-            ? "Plus votre brief est précis, plus nous pouvons identifier rapidement les fabricants et options adaptés à votre projet."
-            : "The more specific your brief, the faster we can identify suitable manufacturing options for your project."}
+            ? "Vous n’avez pas besoin d’un brief finalisé. Une référence visuelle, une quantité cible ou une première direction suffit pour commencer."
+            : "You do not need a complete specification to contact us. A visual reference, target quantity or initial direction is enough to get started."}
         </p>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 pb-28 grid lg:grid-cols-[0.8fr_1.2fr] gap-16">
+      <section className="max-w-6xl mx-auto px-6 pb-20 grid lg:grid-cols-[0.8fr_1.2fr] gap-16">
         <div className="space-y-8">
           <div className="flex gap-4 items-start">
             <Mail className="w-5 h-5 mt-1 text-stone-400" />
@@ -51,9 +65,9 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6">
-            <h2 className="font-semibold text-brand-dark mb-3">{fr ? "Vous pouvez aussi envoyer" : "Helpful to Include"}</h2>
+            <h2 className="font-semibold text-brand-dark mb-3">{fr ? "Informations utiles à partager" : "Helpful to Include"}</h2>
             <ul className="list-disc pl-5 text-sm text-stone-600 space-y-2">
-              <li>{fr ? "Photos ou liens de référence" : "Reference photos or links"}</li>
+              <li>{fr ? "Photos, liens ou références existantes" : "Reference photos, links or existing packaging"}</li>
               <li>{fr ? "Dimensions ou volume" : "Dimensions or fill volume"}</li>
               <li>{fr ? "Finition / décoration souhaitée" : "Desired finish / decoration"}</li>
               <li>{fr ? "Quantité estimée" : "Estimated quantity"}</li>
@@ -91,9 +105,26 @@ const Contact: React.FC = () => {
             <Field label={fr ? "Date de lancement cible" : "Target Launch Date"} name="launch_timing" disabled={!isOfficialHost} />
           </div>
 
+          <Field
+            label={fr ? "Lien de référence (optionnel)" : "Reference Link (Optional)"}
+            name="reference_link"
+            type="url"
+            disabled={!isOfficialHost}
+            placeholder={fr ? "Lien produit, Pinterest, Google Drive, site de marque..." : "Product link, Pinterest, Google Drive, brand website..."}
+          />
+
           <div>
             <label className="block text-sm font-medium text-brand-dark mb-2">{fr ? "Brief / message" : "Project Brief / Message"}</label>
-            <textarea name="message" rows={6} required disabled={!isOfficialHost} className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark" placeholder={fr ? "Décrivez le produit, le packaging recherché, les références, finitions et contraintes importantes." : "Tell us about the product, packaging you are looking for, references, finishes and important requirements."} />
+            <textarea
+              name="message"
+              rows={6}
+              required
+              disabled={!isOfficialHost}
+              className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark"
+              placeholder={fr
+                ? "Décrivez le produit, le packaging recherché, les références, finitions et contraintes importantes."
+                : "Tell us about the product, packaging you are looking for, references, finishes and important requirements."}
+            />
           </div>
 
           {!isOfficialHost && (
@@ -103,19 +134,72 @@ const Contact: React.FC = () => {
           )}
 
           <button type="submit" disabled={!isOfficialHost} className="bg-brand-dark text-white px-8 py-3 rounded-full disabled:opacity-40">
-            {fr ? "Envoyer le brief" : "Send Brief"}
+            {fr ? "Partager votre brief" : "Share Your Packaging Brief"}
           </button>
-          <p className="text-xs text-stone-400">{fr ? "Vos informations servent uniquement à répondre à votre demande et à évaluer votre projet." : "Your information is used only to respond to your inquiry and evaluate your project."}</p>
+          <p className="text-xs text-stone-400">
+            {fr
+              ? "Vos informations servent uniquement à répondre à votre demande et à évaluer votre projet."
+              : "Your information is used only to respond to your inquiry and evaluate your project."}
+          </p>
         </form>
+      </section>
+
+      <section className="bg-stone-50 border-t border-stone-200">
+        <div className="max-w-6xl mx-auto px-6 py-20">
+          <div className="max-w-3xl mb-12">
+            <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
+              {fr ? "APRÈS VOTRE DEMANDE" : "WHAT HAPPENS NEXT"}
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5">
+              {fr ? "Un processus simple pour cadrer la prochaine étape" : "A Simple Process to Define the Next Step"}
+            </h2>
+            <p className="text-stone-600 leading-relaxed">
+              {fr
+                ? "L’objectif du premier échange est de comprendre suffisamment le besoin pour savoir quelles options méritent d’être explorées."
+                : "The first exchange is about understanding the requirement well enough to identify which sourcing directions are worth exploring."}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
+            {nextSteps.map(([num, title, desc]) => (
+              <div key={num} className="bg-white p-7 min-h-[230px]">
+                <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">{num}</div>
+                <h3 className="font-serif text-2xl text-brand-dark mb-3">{title}</h3>
+                <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
 };
 
-const Field = ({ label, name, type = "text", required = false, disabled = false }: { label: string; name: string; type?: string; required?: boolean; disabled?: boolean }) => (
+const Field = ({
+  label,
+  name,
+  type = "text",
+  required = false,
+  disabled = false,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  disabled?: boolean;
+  placeholder?: string;
+}) => (
   <div>
     <label className="block text-sm font-medium text-brand-dark mb-2">{label}</label>
-    <input type={type} name={name} required={required} disabled={disabled} className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark" />
+    <input
+      type={type}
+      name={name}
+      required={required}
+      disabled={disabled}
+      placeholder={placeholder}
+      className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark"
+    />
   </div>
 );
 
@@ -123,10 +207,12 @@ const Select = ({ label, name, options, disabled = false }: { label: string; nam
   <div>
     <label className="block text-sm font-medium text-brand-dark mb-2">{label}</label>
     <select name={name} disabled={disabled} className="w-full border border-stone-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-dark">
-      <option value="">Select</option>
+      <option value="">{languageLabelPlaceholder()}</option>
       {options.map((option) => <option key={option} value={option}>{option}</option>)}
     </select>
   </div>
 );
+
+const languageLabelPlaceholder = () => "Select";
 
 export default Contact;

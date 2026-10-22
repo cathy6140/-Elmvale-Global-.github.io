@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { setSeoMeta } from "../seo";
 
-const fragranceSprite = "/images/fragrance-categories.webp";
-
-const cardPositions = [
-  "0% 0%",
-  "33.333% 0%",
-  "66.666% 0%",
-  "100% 0%",
-  "0% 100%",
-  "33.333% 100%",
-  "66.666% 100%",
-  "100% 100%",
+const fragranceImages = [
+  "/flacons-pots.png",
+  "/pompes-distributeurs.png",
+  "/bouchons-fermetures.png",
+  "/bouchons-fermetures-product.png",
+  "/flacons-pots-product.png",
+  "/hero-home.png",
+  "/about-hero.png",
+  "/compliance-hero.png",
 ];
 
 const FragrancePackaging: React.FC = () => {
@@ -80,9 +78,9 @@ const FragrancePackaging: React.FC = () => {
                   aria-label={item}
                   className="relative aspect-[4/3] bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                   style={{
-                    backgroundImage: `url(${fragranceSprite})`,
-                    backgroundSize: "400% 200%",
-                    backgroundPosition: cardPositions[index],                  }}
+                    backgroundImage: `url(${fragranceImages[index]})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",                  }}
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,22,18,0.16),rgba(24,19,15,0.28),rgba(14,11,9,0.52))]" />
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,247,235,0.16),transparent_45%)]" />

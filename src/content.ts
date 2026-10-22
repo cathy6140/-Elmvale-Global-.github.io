@@ -252,22 +252,22 @@ export const content = {
         title: "Documentation & Validation",
         items: [
           {
-            title: "Target-Market Requirements",
+            title: "Target-market requirements",
             desc:
               "We help identify the documentation and validation questions that may need to be addressed for the intended market. Final regulatory suitability should be confirmed for the specific product and market.",
           },
           {
-            title: "Evolving Requirements",
+            title: "Evolving requirements",
             desc:
               "Where relevant, we can help explore packaging directions linked to recyclability, material reduction and recycled content, while distinguishing sourcing options from final regulatory validation.",
           },
           {
-            title: "Supplier Information",
+            title: "Supplier information",
             desc:
               "We coordinate available technical information with manufacturers, including component specifications, production information and supporting documents where available.",
           },
           {
-            title: "Testing & Documentation",
+            title: "Testing & documentation",
             desc:
               "Technical documents and third-party testing can be coordinated when needed, depending on the packaging type, formula, target market and project scope.",
           },
@@ -278,22 +278,22 @@ export const content = {
         title: "Sustainability",
         items: [
           {
-            title: "Material Reduction",
+            title: "Material reduction",
             desc:
               "Where feasible, we can explore packaging directions aimed at reducing unnecessary material use or simplifying structures.",
           },
           {
-            title: "PCR Materials",
+            title: "PCR materials",
             desc:
               "PCR options can be explored for suitable applications, subject to material availability, appearance requirements and project feasibility.",
           },
           {
-            title: "FSC Paper",
+            title: "FSC paper",
             desc:
               "FSC-certified paper options can be sourced for cartons, boxes and selected secondary packaging projects where appropriate.",
           },
           {
-            title: "Mono-Material Options",
+            title: "Mono-material options",
             desc:
               "Mono-material approaches can be explored where technically suitable, with recyclability claims requiring confirmation for the relevant market and structure.",
           },

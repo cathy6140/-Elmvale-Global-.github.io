@@ -22,35 +22,35 @@ const Compliance: React.FC = () => {
     }
   }, [language]);
 
-  const supportTitle = language === 'fr' ? 'Ce que nous fournissons' : 'What we provide';
-  const needTitle = language === 'fr' ? 'Ce dont nous avons besoin' : 'What we need from you';
+  const supportTitle = language === 'fr' ? 'Documentation & support de validation' : 'Documentation & Validation Support';
+  const needTitle = language === 'fr' ? 'Informations utiles pour cadrer le projet' : 'Information Helpful to Frame the Project';
 
   const provide = language === 'fr'
     ? [
-        'Fiches techniques matières / specs composants (sur demande)',
-        'Traçabilité lot & certificats disponibles (selon usine / matière)',
-        'Coordination d’essais tiers sur demande ; le laboratoire dépend du projet',
-        'Revue “design for recycling” (mono-matériau, démontabilité, marquage)'
+        'Coordination des fiches techniques matières et specs composants disponibles',
+        'Collecte des déclarations, certificats ou informations de traçabilité disponibles selon l’usine et la matière',
+        'Coordination d’essais tiers lorsque le projet le nécessite ; le laboratoire dépend du besoin',
+        'Identification des points à vérifier pour la recyclabilité, la démontabilité ou le marquage selon le projet'
       ]
     : [
-        'Material specs / component drawings (on request)',
-        'Batch traceability + available certificates (per factory/material)',
-        'Third-party testing coordination when requested; laboratory selection depends on the project',
-        'Design-for-recycling review (mono-material, disassembly, markings)'
+        'Coordination of available material specifications and component drawings',
+        'Collection of available supplier declarations, certificates or traceability information depending on factory and material',
+        'Third-party testing coordination when the project requires it; laboratory selection depends on the need',
+        'Identification of points to verify around recyclability, disassembly or markings depending on the project'
       ];
 
   const need = language === 'fr'
     ? [
-        'Marché cible + exigences internes',
-        'Type de formule (sensibilités, alcool, huiles essentielles, etc.)',
-        'Format, col/standard, décor, MOQ & délai',
-        'Niveau PCR souhaité & contraintes esthétiques'
+        'Marché cible et éventuelles exigences internes',
+        'Type de formule et sensibilités connues (alcool, huiles essentielles, etc.)',
+        'Format, col/standard, décor, MOQ cible et calendrier',
+        'Objectifs éventuels liés au PCR, à la matière ou à la recyclabilité'
       ]
     : [
-        'Target market + any internal requirements',
-        'Formula type (sensitivities, alcohol, essential oils, etc.)',
-        'Format, neck finish/standard, decoration, MOQ & timeline',
-        'Target PCR % and appearance constraints'
+        'Target market and any internal requirements',
+        'Formula type and known sensitivities (alcohol, essential oils, etc.)',
+        'Format, neck finish/standard, decoration, target MOQ and timeline',
+        'Any objectives related to PCR, materials or recyclability'
       ];
 
   return (

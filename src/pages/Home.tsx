@@ -169,11 +169,11 @@ const Home: React.FC = () => {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.98] contrast-[1.02] brightness-[1.00]"
                   loading="lazy"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-t from-[#171717]/[0.90] via-[#2b2926]/[0.58] to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-[#141414]/[0.92] via-[#22201e]/[0.68] via-55% to-transparent" />
                 <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,248,239,0.04),transparent_46%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-7 md:p-8 min-h-[230px] flex flex-col justify-end">
+                <div className="absolute inset-x-0 bottom-0 p-7 md:p-8 min-h-[220px] flex flex-col justify-end">
                   <h2 className="font-serif text-[2rem] text-white mb-3 tracking-[-0.01em] leading-[1.08] min-h-[4.2rem] flex items-end drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]">{card.title}</h2>
-                  <p className="text-sm text-white/[0.92] leading-relaxed max-w-sm min-h-[4.7rem] drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">{card.desc}</p>
+                  <p className="text-sm text-white/[0.94] leading-relaxed max-w-[22rem] min-h-[4.7rem] drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">{card.desc}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/[0.94]">
                     {fr ? "Découvrir" : "Explore"}
                     <span aria-hidden="true">→</span>

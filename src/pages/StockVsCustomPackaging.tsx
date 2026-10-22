@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const StockVsCustomPackaging: React.FC = () => {
@@ -123,7 +124,7 @@ const StockVsCustomPackaging: React.FC = () => {
               <li>{fr ? "Quel niveau d’investissement initial est acceptable ?" : "What level of upfront investment is acceptable?"}</li>
               <li>{fr ? "Une référence standard peut-elle répondre aux contraintes techniques ?" : "Can a standard reference meet the technical requirements?"}</li>
             </ul>
-            <Link to="/cosmetic-packaging-moq" className="mt-6 inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
+            <Link to={localizedPath("/cosmetic-packaging-moq", language)} className="mt-6 inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
               {fr ? "Comprendre les MOQ packaging" : "Understand packaging MOQ"} <span aria-hidden="true">→</span>
             </Link>
           </div>
@@ -134,7 +135,7 @@ const StockVsCustomPackaging: React.FC = () => {
         <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-5">{fr ? "VOTRE PROJET" : "YOUR PROJECT"}</p>
         <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Vous hésitez entre une référence stock et un développement custom ?" : "Deciding between stock packaging and custom development?"}</h2>
         <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">{fr ? "Partagez votre volume, votre référence et vos priorités. Nous pouvons comparer les options autour du MOQ, du délai, de la personnalisation et de la faisabilité." : "Share your volume, reference and priorities. We can compare options around MOQ, timing, customization and feasibility."}</p>
-        <Link to="/contact" onClick={() => trackContactCta("/stock-vs-custom-packaging/", fr ? "Comparer les options" : "Compare Your Options")} className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full">
+        <Link to={localizedPath("/contact", language)} onClick={() => trackContactCta("/stock-vs-custom-packaging/", fr ? "Comparer les options" : "Compare Your Options")} className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full">
           {fr ? "Comparer les options" : "Compare Your Options"}
         </Link>
       </section>

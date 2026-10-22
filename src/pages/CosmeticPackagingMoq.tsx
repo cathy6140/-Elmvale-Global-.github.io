@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const CosmeticPackagingMoq: React.FC = () => {
@@ -166,10 +167,10 @@ const CosmeticPackagingMoq: React.FC = () => {
               <li>{fr ? "la date de lancement" : "target launch date"}</li>
             </ul>
             <div className="mt-6 flex flex-col gap-3">
-              <Link to="/packaging-sourcing-brief" className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
+              <Link to={localizedPath("/packaging-sourcing-brief", language)} className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
                 {fr ? "Voir le guide du brief sourcing" : "See the packaging sourcing brief guide"} <span aria-hidden="true">→</span>
               </Link>
-              <Link to="/stock-vs-custom-packaging" className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
+              <Link to={localizedPath("/stock-vs-custom-packaging", language)} className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
                 {fr ? "Comparer packaging stock et custom" : "Compare stock vs custom packaging"} <span aria-hidden="true">→</span>
               </Link>
             </div>
@@ -212,7 +213,7 @@ const CosmeticPackagingMoq: React.FC = () => {
             : "Share your target quantity, reference or packaging direction. We can compare sourcing routes and clarify the tradeoffs between MOQ, customization, timing and feasibility."}
         </p>
         <Link
-          to="/contact"
+          to={localizedPath("/contact", language)}
           onClick={() => trackContactCta("/cosmetic-packaging-moq/", fr ? "Partager votre projet" : "Share Your Project")}
           className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full"
         >

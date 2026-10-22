@@ -1,3 +1,6 @@
+import { Language } from "./types";
+import { localizedPath, stripLocalePrefix } from "./locale";
+
 export type SeoEntry = {
   title: string;
   description: string;
@@ -140,15 +143,25 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
 };
 
 export function normalizeSeoPath(pathname: string) {
-  if (pathname === "/") return "/";
-  const withoutSlash = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  const basePath = stripLocalePrefix(pathname);
+  if (basePath === "/") return "/";
+  const withoutSlash = basePath.endsWith("/") ? basePath.slice(0, -1) : basePath;
   return seoByRoute[withoutSlash] ? withoutSlash : "/";
 }
 
-export function setSeoMeta(title: string, description: string, canonicalPath = "/") {
+export function setSeoMeta(
+  title: string,
+  description: string,
+  canonicalPath = "/",
+  language: Language = "en"
+) {
   if (typeof document === "undefined") return;
 
-  const canonicalUrl = `https://elmvaleglobal.com${canonicalPath}`;
+  const englishPath = stripLocalePrefix(canonicalPath);
+  const currentPath = localizedPath(englishPath, language);
+  const canonicalUrl = `https://elmvaleglobal.com${currentPath}`;
+  const englishUrl = `https://elmvaleglobal.com${localizedPath(englishPath, "en")}`;
+  const frenchUrl = `https://elmvaleglobal.com${localizedPath(englishPath, "fr")}`;
 
   document.title = title;
 
@@ -162,18 +175,27 @@ export function setSeoMeta(title: string, description: string, canonicalPath = "
     node.content = content;
   };
 
+  const setLink = (selector: string, rel: string, href: string, hreflang?: string) => {
+    let node = document.querySelector<HTMLLinkElement>(selector);
+    if (!node) {
+      node = document.createElement("link");
+      node.rel = rel;
+      if (hreflang) node.hreflang = hreflang;
+      document.head.appendChild(node);
+    }
+    node.href = href;
+  };
+
   setMeta('meta[name="description"]', "name", "description", description);
   setMeta('meta[property="og:title"]', "property", "og:title", title);
   setMeta('meta[property="og:description"]', "property", "og:description", description);
   setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);
+  setMeta('meta[property="og:locale"]', "property", "og:locale", language === "fr" ? "fr_FR" : "en_US");
   setMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
   setMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
 
-  let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (!canonical) {
-    canonical = document.createElement("link");
-    canonical.rel = "canonical";
-    document.head.appendChild(canonical);
-  }
-  canonical.href = canonicalUrl;
+  setLink('link[rel="canonical"]', "canonical", canonicalUrl);
+  setLink('link[rel="alternate"][hreflang="en"]', "alternate", englishUrl, "en");
+  setLink('link[rel="alternate"][hreflang="fr"]', "alternate", frenchUrl, "fr");
+  setLink('link[rel="alternate"][hreflang="x-default"]', "alternate", englishUrl, "x-default");
 }

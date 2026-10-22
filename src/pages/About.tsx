@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const About: React.FC = () => {
@@ -146,7 +147,7 @@ const About: React.FC = () => {
               ? "Partagez votre besoin, votre quantité cible ou une simple référence visuelle. Nous vous aiderons à identifier les options pertinentes à explorer."
               : "Share your requirements, target quantity or simply a visual reference. We will help identify the options worth exploring."}
           </p>
-          <Link to="/contact" onClick={() => trackContactCta("/about/", fr ? "Partager votre besoin" : "Share Your Requirements")} className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full">
+          <Link to={localizedPath("/contact", language)} onClick={() => trackContactCta("/about/", fr ? "Partager votre besoin" : "Share Your Requirements")} className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full">
             {fr ? "Partager votre besoin" : "Share Your Requirements"}
           </Link>
         </div>

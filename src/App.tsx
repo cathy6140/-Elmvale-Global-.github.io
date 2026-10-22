@@ -1,14 +1,10 @@
-import React, {
-  useState,
-  createContext,
-  useEffect,
-  useMemo,
-} from "react";
+import React, { createContext, useEffect, useMemo, useState } from "react";
 import {
   Routes,
   Route,
   Navigate,
   useLocation,
+  useNavigate,
   useSearchParams,
 } from "react-router-dom";
 
@@ -30,8 +26,7 @@ import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import CookieBanner from "./components/CookieBanner";
 import { normalizeSeoPath, seoByRoute, setSeoMeta } from "./seo";
-
-// ================= CONTEXT =================
+import { languageFromPath, localizedPath, stripLocalePrefix } from "./locale";
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: "en",
@@ -39,20 +34,6 @@ export const LanguageContext = createContext<LanguageContextType>({
 });
 
 const LANG_KEY = "elmvale_lang";
-
-// ================= SAFE LANGUAGE =================
-
-const normalizeLang = (lang: any): "en" | "fr" => {
-  if (!lang) return "en";
-
-  const clean = String(lang)
-    .replace("#/", "")
-    .trim();
-
-  return clean.startsWith("en") ? "en" : "fr";
-};
-
-// ================= SCROLL =================
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -64,8 +45,6 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
-// ================= SEO =================
-
 const SeoManager: React.FC = () => {
   const { pathname } = useLocation();
   const { language } = React.useContext(LanguageContext);
@@ -73,54 +52,66 @@ const SeoManager: React.FC = () => {
   useEffect(() => {
     const route = normalizeSeoPath(pathname);
     const entry = seoByRoute[route][language];
-    setSeoMeta(entry.title, entry.description, entry.path);
+    setSeoMeta(entry.title, entry.description, entry.path, language);
   }, [pathname, language]);
 
   return null;
 };
 
-// ================= APP =================
-
 const App: React.FC = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const urlLang = searchParams.get("lang") as Language | null;
-  const storedLang = localStorage.getItem(LANG_KEY) as Language | null;
-
-  const initialLang: Language = normalizeLang(
-    urlLang || storedLang || "en"
-  );
+  const initialLang: Language =
+    location.pathname === "/fr" || location.pathname.startsWith("/fr/")
+      ? "fr"
+      : urlLang === "fr"
+        ? "fr"
+        : "en";
 
   const [language, setLanguageState] = useState<Language>(initialLang);
 
-  // ================= SET LANGUAGE =================
-
-  const setLanguage = (l: Language) => {
-    const clean = normalizeLang(l);
-
-    setLanguageState(clean);
-    localStorage.setItem(LANG_KEY, clean);
-
-    const next = new URLSearchParams(searchParams);
-    next.set("lang", clean);
-    setSearchParams(next, { replace: true });
-  };
-
-  // ================= SYNC URL =================
-
   useEffect(() => {
-    if (urlLang) {
-      setLanguageState(normalizeLang(urlLang));
-    }
-  }, [urlLang]);
+    const pathLanguage = languageFromPath(location.pathname);
 
-  // ================= HTML LANG =================
+    if (urlLang === "fr" && pathLanguage === "en") {
+      const next = new URLSearchParams(searchParams);
+      next.delete("lang");
+      const search = next.toString();
+      navigate(
+        {
+          pathname: localizedPath(location.pathname, "fr"),
+          search: search ? `?${search}` : "",
+        },
+        { replace: true }
+      );
+      return;
+    }
+
+    setLanguageState(pathLanguage);
+    localStorage.setItem(LANG_KEY, pathLanguage);
+  }, [location.pathname, navigate, searchParams, urlLang]);
+
+  const setLanguage = (nextLanguage: Language) => {
+    const basePath = stripLocalePrefix(location.pathname);
+    const next = new URLSearchParams(searchParams);
+    next.delete("lang");
+
+    setLanguageState(nextLanguage);
+    localStorage.setItem(LANG_KEY, nextLanguage);
+
+    const search = next.toString();
+    navigate({
+      pathname: localizedPath(basePath, nextLanguage),
+      search: search ? `?${search}` : "",
+    });
+  };
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
-
-  // ================= CONTEXT =================
 
   const ctx = useMemo(
     () => ({ language, setLanguage }),
@@ -130,7 +121,6 @@ const App: React.FC = () => {
   return (
     <LanguageContext.Provider value={ctx}>
       <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
-
         <ScrollToTop />
         <SeoManager />
         <Navbar />
@@ -138,52 +128,78 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/fr" element={<Home />} />
+            <Route path="/fr/" element={<Home />} />
 
-            {/* Main commercial page */}
             <Route path="/products" element={<Products />} />
             <Route path="/products/" element={<Products />} />
+            <Route path="/fr/products" element={<Products />} />
+            <Route path="/fr/products/" element={<Products />} />
+
             <Route path="/sourcing" element={<Sourcing />} />
             <Route path="/sourcing/" element={<Sourcing />} />
+            <Route path="/fr/sourcing" element={<Sourcing />} />
+            <Route path="/fr/sourcing/" element={<Sourcing />} />
+
             <Route path="/fragrance-packaging" element={<FragrancePackaging />} />
             <Route path="/fragrance-packaging/" element={<FragrancePackaging />} />
+            <Route path="/fr/fragrance-packaging" element={<FragrancePackaging />} />
+            <Route path="/fr/fragrance-packaging/" element={<FragrancePackaging />} />
+
             <Route path="/packaging-sourcing-brief" element={<PackagingSourcingBrief />} />
             <Route path="/packaging-sourcing-brief/" element={<PackagingSourcingBrief />} />
+            <Route path="/fr/packaging-sourcing-brief" element={<PackagingSourcingBrief />} />
+            <Route path="/fr/packaging-sourcing-brief/" element={<PackagingSourcingBrief />} />
+
             <Route path="/cosmetic-packaging-moq" element={<CosmeticPackagingMoq />} />
             <Route path="/cosmetic-packaging-moq/" element={<CosmeticPackagingMoq />} />
+            <Route path="/fr/cosmetic-packaging-moq" element={<CosmeticPackagingMoq />} />
+            <Route path="/fr/cosmetic-packaging-moq/" element={<CosmeticPackagingMoq />} />
+
             <Route path="/stock-vs-custom-packaging" element={<StockVsCustomPackaging />} />
             <Route path="/stock-vs-custom-packaging/" element={<StockVsCustomPackaging />} />
+            <Route path="/fr/stock-vs-custom-packaging" element={<StockVsCustomPackaging />} />
+            <Route path="/fr/stock-vs-custom-packaging/" element={<StockVsCustomPackaging />} />
 
-            {/* Trust and conversion pages */}
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/compliance/" element={<Compliance />} />
+            <Route path="/fr/compliance" element={<Compliance />} />
+            <Route path="/fr/compliance/" element={<Compliance />} />
+
             <Route path="/about" element={<About />} />
             <Route path="/about/" element={<About />} />
+            <Route path="/fr/about" element={<About />} />
+            <Route path="/fr/about/" element={<About />} />
+
             <Route path="/contact" element={<Contact />} />
             <Route path="/contact/" element={<Contact />} />
+            <Route path="/fr/contact" element={<Contact />} />
+            <Route path="/fr/contact/" element={<Contact />} />
 
-            {/* Legal pages */}
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/privacy/" element={<Privacy />} />
+            <Route path="/fr/privacy" element={<Privacy />} />
+            <Route path="/fr/privacy/" element={<Privacy />} />
+
             <Route path="/terms" element={<Terms />} />
             <Route path="/terms/" element={<Terms />} />
+            <Route path="/fr/terms" element={<Terms />} />
+            <Route path="/fr/terms/" element={<Terms />} />
+
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/cookies/" element={<Cookies />} />
+            <Route path="/fr/cookies" element={<Cookies />} />
+            <Route path="/fr/cookies/" element={<Cookies />} />
 
-            {/* Legacy redirects */}
             <Route path="/solutions" element={<Navigate to="/products" replace />} />
-            <Route
-              path="/skincare-mask-packaging"
-              element={<Navigate to="/products" replace />}
-            />
+            <Route path="/skincare-mask-packaging" element={<Navigate to="/products" replace />} />
 
-            {/* Fallback */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 
         <CookieBanner />
         <Footer />
-
       </div>
     </LanguageContext.Provider>
   );

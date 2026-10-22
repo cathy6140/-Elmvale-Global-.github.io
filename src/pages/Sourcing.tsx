@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const Sourcing: React.FC = () => {
@@ -66,17 +67,17 @@ const Sourcing: React.FC = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <Link to="/packaging-sourcing-brief" className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
+            <Link to={localizedPath("/packaging-sourcing-brief", language)} className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
               <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 01" : "GUIDE 01"}</p>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Brief sourcing packaging" : "Packaging sourcing brief"}</h3>
               <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Les informations utiles pour commencer un sourcing sans brief finalisé." : "What to include when starting sourcing without a fully finalized brief."}</p>
             </Link>
-            <Link to="/cosmetic-packaging-moq" className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
+            <Link to={localizedPath("/cosmetic-packaging-moq", language)} className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
               <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 02" : "GUIDE 02"}</p>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "MOQ packaging cosmétique" : "Cosmetic packaging MOQ"}</h3>
               <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Pourquoi les minimums varient et comment évaluer une route réaliste." : "Why minimums vary and how to judge which sourcing route is realistic."}</p>
             </Link>
-            <Link to="/stock-vs-custom-packaging" className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
+            <Link to={localizedPath("/stock-vs-custom-packaging", language)} className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
               <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 03" : "GUIDE 03"}</p>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Stock vs custom" : "Stock vs custom packaging"}</h3>
               <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Comparer MOQ, délai, investissement, différenciation et risque de lancement." : "Compare MOQ, timing, investment, differentiation and launch risk."}</p>
@@ -97,7 +98,7 @@ const Sourcing: React.FC = () => {
             <li>{fr ? "Date de lancement souhaitée" : "Target launch date"}</li>
           </ul>
           <Link
-            to="/packaging-sourcing-brief"
+            to={localizedPath("/packaging-sourcing-brief", language)}
             className="mt-6 inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4"
           >
             {fr ? "Voir le guide complet du brief sourcing" : "See the full packaging sourcing brief guide"}
@@ -107,7 +108,7 @@ const Sourcing: React.FC = () => {
         <div className="bg-brand-dark text-white rounded-3xl p-8">
           <h2 className="font-serif text-3xl mb-4">{fr ? "Vous cherchez une option précise ?" : "Looking for a specific packaging option?"}</h2>
           <p className="text-white/75 mb-6">{fr ? "Envoyez-nous votre brief. Nous vous répondrons avec les informations nécessaires pour démarrer le sourcing." : "Send us your brief. We will reply with the information needed to start sourcing."}</p>
-          <Link to="/contact" onClick={() => trackContactCta("/sourcing/", fr ? "Envoyer un brief" : "Send Your Brief")} className="inline-block bg-white text-brand-dark px-6 py-3 rounded-full">{fr ? "Envoyer un brief" : "Send Your Brief"}</Link>
+          <Link to={localizedPath("/contact", language)} onClick={() => trackContactCta("/sourcing/", fr ? "Envoyer un brief" : "Send Your Brief")} className="inline-block bg-white text-brand-dark px-6 py-3 rounded-full">{fr ? "Envoyer un brief" : "Send Your Brief"}</Link>
         </div>
       </section>
     </div>

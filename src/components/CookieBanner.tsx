@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 
 const STORAGE_KEY = "elmvale_cookie_consent"; // localStorage 里记住用户选择
 
@@ -11,7 +13,7 @@ interface Props {
 
 const CookieBanner: React.FC<Props> = () => {
   const [visible, setVisible] = useState(false);
-  const [lang, setLang] = useState<"en" | "fr">("en");
+  const { language } = useContext(LanguageContext);
 
   // 页面加载时检查是否已有记录 + 读取语言
   useEffect(() => {
@@ -29,11 +31,6 @@ const CookieBanner: React.FC<Props> = () => {
         anyWindow.declineAnalytics?.();
       }
     }
-
-    // 从 <html lang=".."> 读取语言
-    const htmlLang = document.documentElement.lang;
-    if (htmlLang === "fr") setLang("fr");
-    else setLang("en");
   }, []);
 
   const handleChoice = (choice: ConsentValue) => {
@@ -51,9 +48,8 @@ const CookieBanner: React.FC<Props> = () => {
 
   if (!visible) return null;
 
-  const isFr = lang === "fr";
-  // 这里统一拼出 cookie 页的路由，带上 ?lang=xx
-  const cookiePath = isFr ? "/cookies?lang=fr" : "/cookies?lang=en";
+  const isFr = language === "fr";
+  const cookiePath = localizedPath("/cookies", language);
 
   return (
     <div

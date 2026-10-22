@@ -1,18 +1,22 @@
 import React, { useContext } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { LanguageContext } from '../App';
 import { content } from '../content';
+import { localizedPath } from '../locale';
 
 const Footer: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language];
-  const [searchParams] = useSearchParams();
+  const location = useLocation();
 
-  // 保持语言不丢：所有 footer 链接自动带 ?lang=
   const withLang = (path: string) => {
-    const next = new URLSearchParams(searchParams);
-    next.set('lang', language);
-    return { pathname: path, search: `?${next.toString()}` };
+    const next = new URLSearchParams(location.search);
+    next.delete('lang');
+    const search = next.toString();
+    return {
+      pathname: localizedPath(path, language),
+      search: search ? `?${search}` : '',
+    };
   };
 
   return (

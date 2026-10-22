@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { trackContactCta } from "../analytics";
 
 const Sourcing: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -64,7 +65,7 @@ const Sourcing: React.FC = () => {
         <div className="bg-brand-dark text-white rounded-3xl p-8">
           <h2 className="font-serif text-3xl mb-4">{fr ? "Vous cherchez une option précise ?" : "Looking for a specific packaging option?"}</h2>
           <p className="text-white/75 mb-6">{fr ? "Envoyez-nous votre brief. Nous vous répondrons avec les informations nécessaires pour démarrer le sourcing." : "Send us your brief. We will reply with the information needed to start sourcing."}</p>
-          <Link to="/contact" className="inline-block bg-white text-brand-dark px-6 py-3 rounded-full">{fr ? "Envoyer un brief" : "Send Your Brief"}</Link>
+          <Link to="/contact" onClick={() => trackContactCta("/sourcing/", fr ? "Envoyer un brief" : "Send Your Brief")} className="inline-block bg-white text-brand-dark px-6 py-3 rounded-full">{fr ? "Envoyer un brief" : "Send Your Brief"}</Link>
         </div>
       </section>
     </div>

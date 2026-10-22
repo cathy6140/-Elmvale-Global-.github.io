@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const PackagingSourcingBrief: React.FC = () => {
@@ -223,14 +224,14 @@ const PackagingSourcingBrief: React.FC = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
-            to="/contact"
+            to={localizedPath("/contact", language)}
             onClick={() => trackContactCta("/packaging-sourcing-brief/", fr ? "Partager votre brief" : "Share Your Brief")}
             className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full"
           >
             {fr ? "Partager votre brief" : "Share Your Brief"}
           </Link>
           <Link
-            to="/cosmetic-packaging-moq"
+            to={localizedPath("/cosmetic-packaging-moq", language)}
             className="inline-block border border-stone-300 text-brand-dark px-8 py-3.5 rounded-full"
           >
             {fr ? "Comprendre les MOQ packaging" : "Understand Packaging MOQ"}

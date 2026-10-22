@@ -83,7 +83,7 @@ const TitleManager: React.FC = () => {
         break;
 
       case "/sourcing":
-        page = language === "fr" ? "Sourcing packaging en Chine" : "China Packaging Sourcing";
+        page = language === "fr" ? "Sourcing packaging" : "Packaging Sourcing";
         break;
 
       case "/fragrance-packaging":

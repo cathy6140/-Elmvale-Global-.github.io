@@ -7,19 +7,19 @@ const Products: React.FC = () => {
   const fr = language === "fr";
   const categories = fr
     ? [
-        ["Packaging skincare primaire", "Flacons, pots, airless, droppers et composants pour sérums, crèmes et soins.", "/Image ChatGPT 22 oct. 2026 à 17_15_26.png"],
-        ["Packaging parfum", "Flacons verre, pompes, capots, cols, décoration et étuis pour projets fragrance.", "/Image ChatGPT 22 oct. 2026 à 17_15_40.png"],
+        ["Packaging skincare primaire", "Flacons, pots, airless, droppers et composants pour sérums, crèmes et soins.", "/Image ChatGPT 22 oct. 2026 à 17_16_14.png"],
+        ["Packaging parfum", "Flacons verre, pompes, capots, cols, décoration et étuis pour projets fragrance.", "/Image ChatGPT 22 oct. 2026 à 17_15_26.png"],
         ["Tubes & distribution", "Tubes, pompes, sprays et systèmes de distribution pour soins et cosmétiques.", "/Nature morte cosmétique en lumière naturelle.png"],
         ["Mask & sachet packaging", "Pochettes sheet mask, eye patch et sachets échantillons.", "/Image ChatGPT 22 oct. 2026 à 17_16_00.png"],
-        ["Packaging secondaire", "Cartons, coffrets, beauty sets et solutions de présentation retail.", "/Image ChatGPT 22 oct. 2026 à 17_16_14.png"],
+        ["Packaging secondaire", "Cartons, coffrets, beauty sets et solutions de présentation retail.", "/Image ChatGPT 22 oct. 2026 à 17_15_40.png"],
         ["Options plus durables", "Recherche d’options PCR, papier FSC, mono-matériau ou réduction matière selon faisabilité.", "/Cosmétiques écoresponsables sous lumière naturelle.png"]
       ]
     : [
-        ["Skincare Primary Packaging", "Bottles, jars, airless systems, droppers and components for serums, creams and treatments.", "/Image ChatGPT 22 oct. 2026 à 17_15_26.png"],
-        ["Fragrance Packaging", "Glass bottles, pumps, caps, collars, decoration and cartons for fragrance projects.", "/Image ChatGPT 22 oct. 2026 à 17_15_40.png"],
+        ["Skincare Primary Packaging", "Bottles, jars, airless systems, droppers and components for serums, creams and treatments.", "/Image ChatGPT 22 oct. 2026 à 17_16_14.png"],
+        ["Fragrance Packaging", "Glass bottles, pumps, caps, collars, decoration and cartons for fragrance projects.", "/Image ChatGPT 22 oct. 2026 à 17_15_26.png"],
         ["Tubes & Dispensing", "Tubes, pumps, sprayers and dispensing systems for skincare and cosmetics.", "/Nature morte cosmétique en lumière naturelle.png"],
         ["Mask & Sachet Packaging", "Sheet mask pouches, eye patch packs and sample sachets.", "/Image ChatGPT 22 oct. 2026 à 17_16_00.png"],
-        ["Secondary Packaging", "Cartons, boxes, beauty sets and retail presentation solutions.", "/Image ChatGPT 22 oct. 2026 à 17_16_14.png"],
+        ["Secondary Packaging", "Cartons, boxes, beauty sets and retail presentation solutions.", "/Image ChatGPT 22 oct. 2026 à 17_15_40.png"],
         ["More Sustainable Options", "Source PCR, FSC paper, mono-material or material-reduction options where feasible.", "/Cosmétiques écoresponsables sous lumière naturelle.png"]
       ];
 

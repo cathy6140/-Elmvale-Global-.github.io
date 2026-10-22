@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
               rows={6}
               required
               disabled={!isOfficialHost}
-              className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-dark"
+              className="w-full h-[52px] border border-stone-300 rounded-xl px-4 focus:outline-none focus:border-brand-dark"
               placeholder={fr
                 ? "Décrivez le produit, le packaging recherché, les références, finitions et contraintes importantes."
                 : "Tell us about the product, packaging you are looking for, references, finishes and important requirements."}
@@ -227,7 +227,7 @@ const Field = ({
 const Select = ({ label, name, options, disabled = false }: { label: string; name: string; options: string[]; disabled?: boolean }) => (
   <div>
     <label className="block text-sm font-medium text-brand-dark mb-2">{label}</label>
-    <select name={name} disabled={disabled} className="w-full border border-stone-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-dark">
+    <select name={name} disabled={disabled} className="w-full h-[52px] border border-stone-300 rounded-xl px-4 bg-white focus:outline-none focus:border-brand-dark">
       <option value="">{languageLabelPlaceholder()}</option>
       {options.map((option) => <option key={option} value={option}>{option}</option>)}
     </select>

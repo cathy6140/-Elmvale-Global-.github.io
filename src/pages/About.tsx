@@ -11,8 +11,8 @@ const About: React.FC = () => {
     setSeoMeta(
       fr ? "À propos | Elmvale Global" : "About Elmvale Global | Packaging Sourcing",
       fr
-        ? "Elmvale Global est un projet de sourcing dédié au packaging cosmétique et parfum, reliant les marques internationales à des ressources fabricants en Chine."
-        : "Elmvale Global is a packaging sourcing project connecting international beauty and fragrance brands with manufacturing resources in China."
+        ? "Elmvale Global est un projet de sourcing dédié au packaging cosmétique et parfum pour les marques internationales."
+        : "Elmvale Global is a packaging sourcing project for international beauty and fragrance brands."
     );
   }, [fr]);
 

@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { LanguageContext } from '../App';
 import { content } from '../content';
 import { Menu, X } from 'lucide-react';
+import { localizedPath, stripLocalePrefix } from '../locale';
 
 const Navbar: React.FC = () => {
   const { language, setLanguage } = useContext(LanguageContext);
@@ -12,7 +13,6 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const location = useLocation();
-  const [searchParams, setSearchParams] = useSearchParams();
 
   // scroll effect
   useEffect(() => {
@@ -41,26 +41,22 @@ const Navbar: React.FC = () => {
     };
   }, [isOpen]);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => stripLocalePrefix(location.pathname).replace(/\/$/, '') === path.replace(/\/$/, '');
 
-  // Keep ?lang= in links
   const withLang = useMemo(() => {
-    const current = new URLSearchParams(searchParams);
-    current.set('lang', language);
+    const current = new URLSearchParams(location.search);
+    current.delete('lang');
+    const search = current.toString();
 
-    const search = `?${current.toString()}`;
-
-    return (pathname: string) => ({ pathname, search });
-  }, [language, searchParams]);
+    return (pathname: string) => ({
+      pathname: localizedPath(pathname, language),
+      search: search ? `?${search}` : '',
+    });
+  }, [language, location.search]);
 
   const selectLang = (next: 'en' | 'fr') => {
     if (next === language) return;
-
     setLanguage(next);
-
-    const p = new URLSearchParams(searchParams);
-    p.set('lang', next);
-    setSearchParams(p, { replace: true });
   };
 
   // ================= NAV LINKS =================

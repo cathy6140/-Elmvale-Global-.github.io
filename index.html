@@ -62,7 +62,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRRFY9DWWK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      var gtag = window.gtag;
       gtag('consent', 'default', {
         'ad_storage': 'denied',
         'analytics_storage': 'denied',
@@ -73,6 +74,9 @@
       gtag('config', 'G-BRRFY9DWWK', { anonymize_ip: true });
       window.acceptAnalytics = function() {
         gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
+      };
+      window.declineAnalytics = function() {
+        gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'denied' });
       };
     </script>
 

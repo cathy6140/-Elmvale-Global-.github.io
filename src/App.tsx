@@ -26,6 +26,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import CookieBanner from "./components/CookieBanner";
+import { normalizeSeoPath, seoByRoute, setSeoMeta } from "./seo";
 
 // ================= CONTEXT =================
 
@@ -60,65 +61,16 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
-// ================= TITLE =================
+// ================= SEO =================
 
-const TitleManager: React.FC = () => {
+const SeoManager: React.FC = () => {
   const { pathname } = useLocation();
   const { language } = React.useContext(LanguageContext);
 
   useEffect(() => {
-    const base = "Elmvale Global";
-
-    let page = "";
-
-    const route = pathname !== "/" && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
-
-    switch (route) {
-      case "/":
-        page = language === "fr" ? "Accueil" : "Home";
-        break;
-
-      case "/products":
-        page = language === "fr" ? "Packaging" : "Packaging";
-        break;
-
-      case "/sourcing":
-        page = language === "fr" ? "Sourcing packaging" : "Packaging Sourcing";
-        break;
-
-      case "/fragrance-packaging":
-        page = language === "fr" ? "Packaging parfum" : "Fragrance Packaging";
-        break;
-
-      case "/about":
-        page = language === "fr" ? "À propos" : "About";
-        break;
-
-      case "/compliance":
-        page = language === "fr" ? "Conformité" : "Compliance";
-        break;
-
-      case "/contact":
-        page = language === "fr" ? "Contact" : "Contact";
-        break;
-
-      case "/privacy":
-        page = language === "fr" ? "Confidentialité" : "Privacy";
-        break;
-
-      case "/terms":
-        page = language === "fr" ? "Conditions" : "Terms";
-        break;
-
-      case "/cookies":
-        page = language === "fr" ? "Cookies" : "Cookies";
-        break;
-
-      default:
-        page = "";
-    }
-
-    document.title = page ? `${page} | ${base}` : base;
+    const route = normalizeSeoPath(pathname);
+    const entry = seoByRoute[route][language];
+    setSeoMeta(entry.title, entry.description, entry.path);
   }, [pathname, language]);
 
   return null;
@@ -177,7 +129,7 @@ const App: React.FC = () => {
       <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
 
         <ScrollToTop />
-        <TitleManager />
+        <SeoManager />
         <Navbar />
 
         <main className="flex-grow">

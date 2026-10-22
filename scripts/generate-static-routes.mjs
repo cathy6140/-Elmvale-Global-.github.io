@@ -5,15 +5,15 @@ const distDir = "dist";
 const baseHtml = await readFile(join(distDir, "index.html"), "utf8");
 
 const routes = [
-  { path: "/products/", title: "Cosmetic & Fragrance Packaging | Elmvale Global", description: "Explore skincare, cosmetic and fragrance packaging categories that Elmvale Global can source and coordinate for international brands." },
-  { path: "/sourcing/", title: "Cosmetic Packaging Sourcing | Elmvale Global", description: "Elmvale Global helps beauty and fragrance brands search, compare and develop packaging solutions, with sourcing support from brief to production." },
-  { path: "/fragrance-packaging/", title: "Fragrance & Perfume Packaging Sourcing | Elmvale Global", description: "Source perfume bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects." },
-  { path: "/compliance/", title: "Cosmetic Packaging Compliance | Elmvale Global", description: "Learn how Elmvale Global supports cosmetic packaging compliance with material documentation, supplier traceability, testing coordination, and regulatory-ready sourcing." },
-  { path: "/about/", title: "About Elmvale Global | Packaging Sourcing", description: "Elmvale Global is an early-stage packaging sourcing venture focused on cosmetic and fragrance packaging for international brands." },
-  { path: "/contact/", title: "Send a Packaging Brief | Elmvale Global", description: "Send your cosmetic or fragrance packaging sourcing brief to Elmvale Global." },
-  { path: "/privacy/", title: "Privacy Policy | Elmvale Global", description: "Read the Elmvale Global privacy policy." },
-  { path: "/terms/", title: "Terms | Elmvale Global", description: "Read the Elmvale Global website terms." },
-  { path: "/cookies/", title: "Cookie Policy | Elmvale Global", description: "Read the Elmvale Global cookie policy." }
+  { path: "/products/", title: "Cosmetic & fragrance packaging | Elmvale Global", description: "Explore skincare, fragrance, tubes, dispensing, secondary packaging and more sustainable packaging options supported by Elmvale Global sourcing." },
+  { path: "/sourcing/", title: "Packaging sourcing & supplier coordination | Elmvale Global", description: "Elmvale Global helps beauty and fragrance brands compare sourcing options, clarify MOQ, timing, customization and technical feasibility, then coordinate sampling and supplier communication." },
+  { path: "/fragrance-packaging/", title: "Fragrance packaging sourcing | Elmvale Global", description: "Source fragrance bottles, pumps, caps, collars, decoration and secondary packaging with structured supplier comparison and project coordination." },
+  { path: "/compliance/", title: "Packaging documentation & sustainability support | Elmvale Global", description: "Elmvale Global coordinates available supplier documentation, technical information and third-party testing support while helping brands explore more responsible packaging options." },
+  { path: "/about/", title: "About Elmvale Global | Packaging sourcing support", description: "Elmvale Global supports beauty and fragrance brands with structured packaging sourcing, supplier comparison and project coordination." },
+  { path: "/contact/", title: "Send a packaging brief | Elmvale Global", description: "Share your cosmetic or fragrance packaging brief, reference, target quantity or initial direction with Elmvale Global." },
+  { path: "/privacy/", title: "Privacy policy | Elmvale Global", description: "Read the Elmvale Global privacy policy." },
+  { path: "/terms/", title: "Website terms | Elmvale Global", description: "Read the Elmvale Global website terms." },
+  { path: "/cookies/", title: "Cookie policy | Elmvale Global", description: "Read the Elmvale Global cookie policy." }
 ];
 
 function replaceOrInsert(html, pattern, replacement) {
@@ -29,6 +29,8 @@ for (const route of routes) {
   html = replaceOrInsert(html, /<meta\s+property=["\']og:title["\'][^>]*>/i, '<meta property="og:title" content="' + route.title + '" />');
   html = replaceOrInsert(html, /<meta\s+property=["\']og:description["\'][^>]*>/i, '<meta property="og:description" content="' + route.description + '" />');
   html = replaceOrInsert(html, /<meta\s+property=["\']og:url["\'][^>]*>/i, '<meta property="og:url" content="' + canonical + '" />');
+  html = replaceOrInsert(html, /<meta\s+name=["\']twitter:title["\'][^>]*>/i, '<meta name="twitter:title" content="' + route.title + '" />');
+  html = replaceOrInsert(html, /<meta\s+name=["\']twitter:description["\'][^>]*>/i, '<meta name="twitter:description" content="' + route.description + '" />');
   const outputPath = join(distDir, route.path.replace(/^\//, ""), "index.html");
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html, "utf8");

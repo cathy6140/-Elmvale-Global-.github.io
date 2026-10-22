@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { setSeoMeta } from "../seo";
 
-const fragranceSprite = "/images/fragrance-categories.webp";
+const fragranceSprite = "/images/fragrance-categories.webp"; // static asset
 
 const cardPositions = [
   "0% 0%",

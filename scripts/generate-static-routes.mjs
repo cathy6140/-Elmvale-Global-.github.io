@@ -207,6 +207,61 @@ function semanticFallback(route, lang) {
       <!-- STATIC_SEMANTIC_END -->`;
 }
 
+function structuredData(path, lang) {
+  const pageUrl = "https://elmvaleglobal.com" + path;
+  const siteUrl = lang === "fr" ? "https://elmvaleglobal.com/fr/" : "https://elmvaleglobal.com/";
+  const sourcingUrl = lang === "fr" ? "https://elmvaleglobal.com/fr/sourcing/" : "https://elmvaleglobal.com/sourcing/";
+  const websiteId = lang === "fr" ? "https://elmvaleglobal.com/fr/#website" : "https://elmvaleglobal.com/#website";
+  const serviceId = lang === "fr" ? "https://elmvaleglobal.com/fr/#sourcing-service" : "https://elmvaleglobal.com/#sourcing-service";
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://elmvaleglobal.com/#organization",
+        name: "Elmvale Global",
+        url: "https://elmvaleglobal.com/",
+        email: "contact@elmvaleglobal.com",
+        description: lang === "fr"
+          ? "Sourcing packaging et coordination de projet pour les marques de beauté et de parfum."
+          : "Packaging sourcing and project coordination support for beauty and fragrance brands."
+      },
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: siteUrl,
+        name: "Elmvale Global",
+        inLanguage: lang,
+        publisher: { "@id": "https://elmvaleglobal.com/#organization" },
+        description: lang === "fr"
+          ? "Elmvale Global accompagne les marques beauté et parfum dans le sourcing packaging, la comparaison de fournisseurs, les échantillons et la coordination de projet."
+          : "Elmvale Global supports beauty and fragrance brands with packaging sourcing, supplier comparison, sampling and project coordination."
+      },
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: lang === "fr" ? "Sourcing de packaging cosmétique et parfum" : "Cosmetic and fragrance packaging sourcing",
+        inLanguage: lang,
+        provider: { "@id": "https://elmvaleglobal.com/#organization" },
+        areaServed: "Worldwide",
+        serviceType: lang === "fr"
+          ? ["Sourcing de packaging cosmétique", "Sourcing de packaging parfum", "Comparaison de fournisseurs", "Coordination d’échantillons", "Coordination de projets packaging"]
+          : ["Cosmetic packaging sourcing", "Fragrance packaging sourcing", "Supplier comparison", "Sampling coordination", "Packaging project coordination"],
+        url: sourcingUrl
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageUrl + "#webpage",
+        url: pageUrl,
+        inLanguage: lang,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": "https://elmvaleglobal.com/#organization" }
+      }
+    ]
+  };
+}
+
 function applyRoute(html, route, lang) {
   const data = route[lang];
   const path = localizedPath(route.path, lang);
@@ -227,6 +282,10 @@ function applyRoute(html, route, lang) {
   html = replaceOrInsert(html, /<meta\s+property=["']og:locale["'][^>]*>/i, '<meta property="og:locale" content="' + (lang === "fr" ? "fr_FR" : "en_US") + '" />');
   html = replaceOrInsert(html, /<meta\s+name=["']twitter:title["'][^>]*>/i, '<meta name="twitter:title" content="' + data.title + '" />');
   html = replaceOrInsert(html, /<meta\s+name=["']twitter:description["'][^>]*>/i, '<meta name="twitter:description" content="' + data.description + '" />');
+  html = html.replace(
+    /<script id=["']elmvale-structured-data["'] type=["']application\/ld\+json["']>[\s\S]*?<\/script>/i,
+    '<script id="elmvale-structured-data" type="application/ld+json">\n' + JSON.stringify(structuredData(path, lang), null, 2) + '\n    </script>'
+  );
   html = html.replace(/<!-- STATIC_SEMANTIC_START -->[\s\S]*?<!-- STATIC_SEMANTIC_END -->/, semanticFallback(route, lang));
   return html;
 }

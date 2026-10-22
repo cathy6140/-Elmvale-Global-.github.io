@@ -27,6 +27,7 @@ import Cookies from "./pages/Cookies";
 import CookieBanner from "./components/CookieBanner";
 import { normalizeSeoPath, seoByRoute, setSeoMeta } from "./seo";
 import { languageFromPath, localizedPath, stripLocalePrefix } from "./locale";
+import { syncStructuredData } from "./structuredData";
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: "en",
@@ -111,7 +112,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     document.documentElement.lang = language;
-  }, [language]);
+    syncStructuredData(location.pathname, language);
+  }, [language, location.pathname]);
 
   const ctx = useMemo(
     () => ({ language, setLanguage }),

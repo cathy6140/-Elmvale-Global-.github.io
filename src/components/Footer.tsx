@@ -62,6 +62,17 @@ const Footer: React.FC = () => {
                 <li><Link to={withLang('/contact')} className="hover:text-white transition">{t.nav.contact}</Link></li>
               </ul>
             </div>
+            <div className="space-y-5">
+              <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">
+                {language === 'fr' ? 'Guides' : 'Guides'}
+              </h4>
+              <ul className="space-y-3 text-sm font-light">
+                <li><Link to={withLang('/packaging-sourcing-brief')} className="hover:text-white transition">{language === 'fr' ? 'Brief sourcing packaging' : 'Packaging sourcing brief'}</Link></li>
+                <li><Link to={withLang('/cosmetic-packaging-moq')} className="hover:text-white transition">{language === 'fr' ? 'MOQ packaging cosmétique' : 'Cosmetic packaging MOQ'}</Link></li>
+                <li><Link to={withLang('/stock-vs-custom-packaging')} className="hover:text-white transition">{language === 'fr' ? 'Packaging stock vs custom' : 'Stock vs custom packaging'}</Link></li>
+              </ul>
+            </div>
+
             {/* Legal */}
             <div className="space-y-5">
               <h4 className="text-white uppercase tracking-[0.2em] text-xs font-semibold">

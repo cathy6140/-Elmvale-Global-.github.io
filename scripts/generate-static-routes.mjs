@@ -9,7 +9,7 @@ const routes = [
   { path: "/sourcing/", title: "Cosmetic Packaging Sourcing | Elmvale Global", description: "Elmvale Global helps beauty and fragrance brands search, compare and develop packaging solutions, with sourcing support from brief to production." },
   { path: "/fragrance-packaging/", title: "Fragrance & Perfume Packaging Sourcing | Elmvale Global", description: "Source perfume bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects." },
   { path: "/compliance/", title: "Cosmetic Packaging Compliance | Elmvale Global", description: "Learn how Elmvale Global supports cosmetic packaging compliance with material documentation, supplier traceability, testing coordination, and regulatory-ready sourcing." },
-  { path: "/about/", title: "About Elmvale Global | Packaging Sourcing", description: "Elmvale Global is an early-stage packaging sourcing venture connecting international beauty and fragrance brands with manufacturing resources in China." },
+  { path: "/about/", title: "About Elmvale Global | Packaging Sourcing", description: "Elmvale Global is an early-stage packaging sourcing venture focused on cosmetic and fragrance packaging for international brands." },
   { path: "/contact/", title: "Send a Packaging Brief | Elmvale Global", description: "Send your cosmetic or fragrance packaging sourcing brief to Elmvale Global." },
   { path: "/privacy/", title: "Privacy Policy | Elmvale Global", description: "Read the Elmvale Global privacy policy." },
   { path: "/terms/", title: "Terms | Elmvale Global", description: "Read the Elmvale Global website terms." },

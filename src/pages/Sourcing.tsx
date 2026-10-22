@@ -50,6 +50,41 @@ const Sourcing: React.FC = () => {
         </div>
       </section>
 
+      <section className="bg-stone-50 border-y border-stone-200">
+        <div className="max-w-6xl mx-auto px-6 py-20">
+          <div className="max-w-3xl mb-10">
+            <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
+              {fr ? "GUIDES PACKAGING" : "PACKAGING GUIDES"}
+            </p>
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
+              {fr ? "Approfondir les décisions de sourcing" : "Explore common packaging sourcing decisions"}
+            </h2>
+            <p className="text-stone-600 leading-relaxed">
+              {fr
+                ? "Des guides pratiques pour cadrer un brief, comprendre les MOQ et choisir entre une référence stock et un développement custom."
+                : "Practical guides to help structure a brief, understand MOQ, and decide between stock packaging and custom development."}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/packaging-sourcing-brief" className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
+              <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 01" : "GUIDE 01"}</p>
+              <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Brief sourcing packaging" : "Packaging sourcing brief"}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Les informations utiles pour commencer un sourcing sans brief finalisé." : "What to include when starting sourcing without a fully finalized brief."}</p>
+            </Link>
+            <Link to="/cosmetic-packaging-moq" className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
+              <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 02" : "GUIDE 02"}</p>
+              <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "MOQ packaging cosmétique" : "Cosmetic packaging MOQ"}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Pourquoi les minimums varient et comment évaluer une route réaliste." : "Why minimums vary and how to judge which sourcing route is realistic."}</p>
+            </Link>
+            <Link to="/stock-vs-custom-packaging" className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
+              <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 03" : "GUIDE 03"}</p>
+              <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Stock vs custom" : "Stock vs custom packaging"}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Comparer MOQ, délai, investissement, différenciation et risque de lancement." : "Compare MOQ, timing, investment, differentiation and launch risk."}</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12">
         <div>
           <h2 className="font-serif text-3xl text-brand-dark mb-5">{fr ? "Ce que nous demandons dans un brief" : "What to include in your brief"}</h2>

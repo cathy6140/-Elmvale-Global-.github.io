@@ -45,7 +45,7 @@ const Home: React.FC = () => {
       ]
     : [
         {
-          title: "Beauty & Skincare",
+          title: "Beauty & skincare",
           desc: "Bottles, jars, airless, droppers, tubes, pumps and secondary packaging.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_33-1.png",
           to: "/products",
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
           to: "/fragrance-packaging",
         },
         {
-          title: "Project Coordination",
+          title: "Project coordination",
           desc: "Sourcing, option comparison, sampling, customization, production follow-up and available documentation.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_35-2.png",
           to: "/sourcing",
@@ -85,19 +85,19 @@ const Home: React.FC = () => {
       ]
     : [
         {
-          title: "Focused Sourcing",
+          title: "Focused sourcing",
           desc: "We search for options based on your category, quantity, target cost and launch timing.",
         },
         {
-          title: "Flexible Development",
+          title: "Flexible development",
           desc: "We coordinate samples, colors, finishes, components and technical adjustments with manufacturers.",
         },
         {
-          title: "Structured Follow-up",
+          title: "Structured follow-up",
           desc: "One point of contact follows key project stages from brief through shipment preparation.",
         },
         {
-          title: "Quality & Documentation",
+          title: "Quality & documentation",
           desc: "Depending on the project, we coordinate quality checks and available technical documentation with manufacturers.",
         },
       ];
@@ -117,12 +117,12 @@ const Home: React.FC = () => {
       ]
     : [
         {
-          title: "Packaging Sourcing",
+          title: "Packaging sourcing",
           desc: "Supplier search, option comparison, sampling and project coordination.",
           to: "/sourcing",
         },
         {
-          title: "Fragrance Packaging",
+          title: "Fragrance packaging",
           desc: "A dedicated space for bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
           to: "/fragrance-packaging",
         },
@@ -145,7 +145,7 @@ const Home: React.FC = () => {
             <h1 className="font-serif font-normal text-[44px] md:text-6xl lg:text-[68px] text-white mb-8 leading-[1.04] tracking-[-0.02em]">
               {fr
                 ? "Sourcing de packaging cosmétique & parfum"
-                : "Cosmetic & Fragrance Packaging Sourcing"}
+                : "Cosmetic & Fragrance packaging sourcing"}
             </h1>
             <p className="text-white/[0.88] max-w-2xl text-lg md:text-xl leading-relaxed font-light">
               {fr
@@ -231,7 +231,7 @@ const Home: React.FC = () => {
                 {fr ? "POURQUOI ELMVALE" : "WHY ELMVALE"}
               </p>
               <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5 tracking-[-0.02em] leading-[1.12]">
-                {fr ? "Un sourcing plus simple, plus lisible et mieux coordonné" : "A Clearer, More Coordinated Way to Source Packaging"}
+                {fr ? "Un sourcing plus simple, plus lisible et mieux coordonné" : "A clearer, more coordinated way to source packaging"}
               </h2>
               <p className="text-stone-600 leading-relaxed">
                 {fr
@@ -259,7 +259,7 @@ const Home: React.FC = () => {
               {fr ? "COMMENT NOUS TRAVAILLONS" : "HOW WE WORK"}
             </p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5 tracking-[-0.02em]">
-              {fr ? "Un interlocuteur pour coordonner votre projet packaging" : "One Partner to Coordinate Your Packaging Project"}
+              {fr ? "Un interlocuteur pour coordonner votre projet packaging" : "One partner to coordinate your packaging project"}
             </h2>
             <p className="text-stone-600 leading-relaxed max-w-2xl">
               {fr
@@ -316,7 +316,7 @@ const Home: React.FC = () => {
             {fr ? "PARLEZ-NOUS DE VOTRE BESOIN" : "TELL US WHAT YOU NEED"}
           </p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5 tracking-[-0.02em]">
-            {fr ? "Une référence, une photo ou simplement une direction ?" : "A Reference, a Photo, or Just a Direction?"}
+            {fr ? "Une référence, une photo ou simplement une direction ?" : "A reference, a photo, or just a direction?"}
           </h2>
           <p className="text-stone-600 mb-9 max-w-2xl mx-auto leading-relaxed">
             {fr ? "Envoyez-nous ce que vous avez : une référence, une photo, une quantité cible ou simplement votre besoin. Nous vous aiderons à identifier les options à explorer." : "Send us what you have: a reference, an image, a target quantity or simply what you are looking for. We will help identify the options worth exploring."}

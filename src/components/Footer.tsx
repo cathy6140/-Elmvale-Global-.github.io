@@ -36,8 +36,8 @@ const Footer: React.FC = () => {
 
             <p className="text-sm font-light leading-relaxed text-stone-200/90">
               {language === 'fr'
-                ? 'Sourcing et coordination de packaging cosmétique et parfum auprès de fabricants en Chine.'
-                : 'Cosmetic and fragrance packaging sourcing and project coordination with manufacturers in China.'}
+                ? 'Sourcing et coordination de packaging cosmétique et parfum pour marques internationales.'
+                : 'Cosmetic and fragrance packaging sourcing and project coordination for international brands.'}
             </p>
 
             <div className="text-xs text-stone-400">
@@ -113,8 +113,8 @@ const Footer: React.FC = () => {
           </p>
           <div className="opacity-90">
             {language === 'fr'
-              ? 'Sourcing Chine · Packaging beauté · Packaging parfum'
-              : 'China sourcing · Beauty packaging · Fragrance packaging'}
+              ? 'Sourcing packaging · Packaging beauté · Packaging parfum'
+              : 'Packaging sourcing · Beauty packaging · Fragrance packaging'}
           </div>
         </div>
       </div>

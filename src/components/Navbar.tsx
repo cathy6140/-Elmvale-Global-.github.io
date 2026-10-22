@@ -67,6 +67,7 @@ const Navbar: React.FC = () => {
   // Updated structure:
   // Home / Products / Compliance / About / Contact
   const navLinks = [
+    { path: '/', label: t.home },
     { path: '/products', label: language === 'fr' ? 'Packaging' : 'Packaging' },
     { path: '/sourcing', label: language === 'fr' ? 'Sourcing' : 'Sourcing' },
     { path: '/fragrance-packaging', label: language === 'fr' ? 'Parfum' : 'Fragrance' },

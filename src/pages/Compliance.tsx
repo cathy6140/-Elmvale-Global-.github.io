@@ -22,8 +22,8 @@ const Compliance: React.FC = () => {
     }
   }, [language]);
 
-  const supportTitle = language === 'fr' ? 'Documentation & support de validation' : 'Documentation & Validation Support';
-  const needTitle = language === 'fr' ? 'Informations utiles pour cadrer le projet' : 'Information Helpful to Frame the Project';
+  const supportTitle = language === 'fr' ? 'Documentation & support de validation' : 'Documentation & validation support';
+  const needTitle = language === 'fr' ? 'Informations utiles pour cadrer le projet' : 'Information helpful to frame the project';
 
   const provide = language === 'fr'
     ? [

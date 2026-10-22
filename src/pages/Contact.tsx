@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
       <section className="px-6 max-w-6xl mx-auto mb-14">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "NOUVEAU PROJET" : "NEW PROJECT"}</p>
         <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
-          {fr ? "Envoyez-nous votre brief packaging" : "Send Us Your Packaging Brief"}
+          {fr ? "Envoyez-nous votre brief packaging" : "Send us your packaging brief"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6">
-            <h2 className="font-semibold text-brand-dark mb-3">{fr ? "Informations utiles à partager" : "Helpful to Include"}</h2>
+            <h2 className="font-semibold text-brand-dark mb-3">{fr ? "Informations utiles à partager" : "Helpful to include"}</h2>
             <ul className="list-disc pl-5 text-sm text-stone-600 space-y-2">
               <li>{fr ? "Photos, liens ou références existantes" : "Reference photos, links or existing packaging"}</li>
               <li>{fr ? "Dimensions ou volume" : "Dimensions or fill volume"}</li>
@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
           </div>
 
           <Field
-            label={fr ? "Lien de référence (optionnel)" : "Reference Link (Optional)"}
+            label={fr ? "Lien de référence (optionnel)" : "Reference link (optional)"}
             name="reference_link"
             type="url"
             disabled={!isOfficialHost}
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
           />
 
           <div>
-            <label className="block text-sm font-medium text-brand-dark mb-2">{fr ? "Brief / message" : "Project Brief / Message"}</label>
+            <label className="block text-sm font-medium text-brand-dark mb-2">{fr ? "Brief / message" : "Project brief / message"}</label>
             <textarea
               name="message"
               rows={6}
@@ -151,7 +151,7 @@ const Contact: React.FC = () => {
               {fr ? "APRÈS VOTRE DEMANDE" : "WHAT HAPPENS NEXT"}
             </p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-              {fr ? "Un processus simple pour cadrer la prochaine étape" : "A Simple Process to Define the Next Step"}
+              {fr ? "Un processus simple pour cadrer la prochaine étape" : "A simple process to define the next step"}
             </h2>
             <p className="text-stone-600 leading-relaxed">
               {fr

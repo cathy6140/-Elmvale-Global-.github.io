@@ -1,22 +1,12 @@
-import React, { useContext, useEffect, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import { LanguageContext } from "../App";
 import { Mail, Clock } from "lucide-react";
-import { setSeoMeta } from "../seo";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjkaopok";
 
 const Contact: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const fr = language === "fr";
-
-  useEffect(() => {
-    setSeoMeta(
-      fr ? "Envoyer un brief packaging | Elmvale Global" : "Send a Packaging Brief | Elmvale Global",
-      fr
-        ? "Envoyez votre brief de sourcing packaging cosmétique ou parfum à Elmvale Global."
-        : "Send your cosmetic or fragrance packaging sourcing brief to Elmvale Global."
-    );
-  }, [fr]);
 
   const isOfficialHost = useMemo(() => window.location.hostname === "elmvaleglobal.com", []);
 

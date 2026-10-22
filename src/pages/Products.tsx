@@ -116,7 +116,7 @@ const Products: React.FC = () => {
     <div className="bg-white">
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16 text-center">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">PACKAGING</p>
-        <h1 className="font-serif text-5xl md:text-6xl text-brand-dark mb-6">
+        <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
           {fr ? "Catégories de packaging que nous pouvons sourcer" : "Packaging Categories We Can Source"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
@@ -178,7 +178,7 @@ const Products: React.FC = () => {
           <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
             {fr ? "PERSONNALISATION" : "CUSTOMIZATION"}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5">
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
             {fr ? "Ce qui peut être adapté à votre projet" : "What Can Be Adapted to Your Project"}
           </h2>
           <p className="text-stone-600 leading-relaxed">
@@ -205,7 +205,7 @@ const Products: React.FC = () => {
             <p className="uppercase text-[11px] tracking-[0.32em] text-white/45 mb-4">
               {fr ? "MOQ, ÉCHANTILLONS & DÉLAIS" : "MOQ, SAMPLES & LEAD TIME"}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-5">
+            <h2 className="font-serif font-normal text-3xl md:text-4xl mb-5">
               {fr ? "Les paramètres se confirment après sélection du packaging" : "Key Parameters Are Confirmed After Packaging Selection"}
             </h2>
             <p className="text-white/70 leading-relaxed">

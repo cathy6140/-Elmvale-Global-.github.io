@@ -142,7 +142,7 @@ const Home: React.FC = () => {
             <p className="uppercase tracking-[0.34em] text-[11px] text-white/[0.72] mb-6">
               {fr ? "SOURCING PACKAGING BEAUTÉ & PARFUM" : "PACKAGING SOURCING FOR BEAUTY & FRAGRANCE"}
             </p>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-[78px] text-white mb-8 leading-[1.03] tracking-[-0.02em]">
+            <h1 className="font-serif font-normal text-[44px] md:text-6xl lg:text-[68px] text-white mb-8 leading-[1.04] tracking-[-0.02em]">
               {fr
                 ? "Sourcing de packaging cosmétique & parfum"
                 : "Cosmetic & Fragrance Packaging Sourcing"}
@@ -230,7 +230,7 @@ const Home: React.FC = () => {
               <p className="uppercase text-[11px] tracking-[0.34em] text-stone-400 mb-4">
                 {fr ? "POURQUOI ELMVALE" : "WHY ELMVALE"}
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em] leading-[1.08]">
+              <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5 tracking-[-0.02em] leading-[1.12]">
                 {fr ? "Un sourcing plus simple, plus lisible et mieux coordonné" : "A Clearer, More Coordinated Way to Source Packaging"}
               </h2>
               <p className="text-stone-600 leading-relaxed">
@@ -258,7 +258,7 @@ const Home: React.FC = () => {
             <p className="uppercase text-[11px] tracking-[0.34em] text-stone-400 mb-4">
               {fr ? "COMMENT NOUS TRAVAILLONS" : "HOW WE WORK"}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em]">
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5 tracking-[-0.02em]">
               {fr ? "Un interlocuteur pour coordonner votre projet packaging" : "One Partner to Coordinate Your Packaging Project"}
             </h2>
             <p className="text-stone-600 leading-relaxed max-w-2xl">
@@ -315,7 +315,7 @@ const Home: React.FC = () => {
           <p className="uppercase text-[10px] tracking-[0.32em] text-stone-400 mb-5">
             {fr ? "PARLEZ-NOUS DE VOTRE BESOIN" : "TELL US WHAT YOU NEED"}
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em]">
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5 tracking-[-0.02em]">
             {fr ? "Une référence, une photo ou simplement une direction ?" : "A Reference, a Photo, or Just a Direction?"}
           </h2>
           <p className="text-stone-600 mb-9 max-w-2xl mx-auto leading-relaxed">

@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
     <div className="bg-white min-h-screen pt-28">
       <section className="px-6 max-w-6xl mx-auto mb-14">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "NOUVEAU PROJET" : "NEW PROJECT"}</p>
-        <h1 className="font-serif text-5xl md:text-6xl text-brand-dark mb-6">
+        <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
           {fr ? "Envoyez-nous votre brief packaging" : "Send Us Your Packaging Brief"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
@@ -150,7 +150,7 @@ const Contact: React.FC = () => {
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
               {fr ? "APRÈS VOTRE DEMANDE" : "WHAT HAPPENS NEXT"}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5">
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
               {fr ? "Un processus simple pour cadrer la prochaine étape" : "A Simple Process to Define the Next Step"}
             </h2>
             <p className="text-stone-600 leading-relaxed">

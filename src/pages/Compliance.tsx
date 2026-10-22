@@ -77,7 +77,7 @@ const Compliance: React.FC = () => {
         {/* 文案层 */}
         <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-12 pt-40 pb-20 md:pb-28">
           <div className="max-w-3xl">
-            <h1 className="font-serif text-white text-4xl md:text-6xl lg:text-7xl leading-[1.12] md:leading-[1.08] mb-8 max-w-[16ch] tracking-[-0.02em]">
+            <h1 className="font-serif font-normal text-white text-4xl md:text-5xl lg:text-[58px] leading-[1.12] md:leading-[1.08] mb-8 max-w-[16ch] tracking-[-0.02em]">
               {t.intro.title}
             </h1>
             <p className="text-base md:text-xl text-stone-100/95 font-light leading-relaxed max-w-2xl border-l-2 border-brand-primary/90 pl-6">
@@ -91,7 +91,7 @@ const Compliance: React.FC = () => {
         {/* Regulations */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40">
           <div className="lg:col-span-4">
-            <h2 className="font-serif text-4xl text-brand-dark sticky top-32">
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark sticky top-32">
               {t.regulations.title}
             </h2>
           </div>
@@ -118,7 +118,7 @@ const Compliance: React.FC = () => {
         {/* Sustainability */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           <div className="lg:col-span-4">
-            <h2 className="font-serif text-4xl text-brand-dark sticky top-32">
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark sticky top-32">
               {t.sustainability.title}
             </h2>
           </div>

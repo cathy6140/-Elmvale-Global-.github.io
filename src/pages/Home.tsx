@@ -27,19 +27,19 @@ const Home: React.FC = () => {
         {
           title: "Beauty & skincare",
           desc: "Flacons, pots, airless, droppers, tubes, pompes et packaging secondaire.",
-          image: "/flacons-pots.png",
+          image: "/Image ChatGPT 22 oct. 2026 à 16_24_33-1.png",
           to: "/products",
         },
         {
           title: "Parfum",
           desc: "Flacons verre, pompes, capots, cols, décorations, coffrets et développements sur mesure.",
-          image: "/bouchons-fermetures.png",
+          image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
           to: "/fragrance-packaging",
         },
         {
           title: "Coordination de projet",
           desc: "Sourcing, comparaison d’options, échantillons, personnalisation, suivi de production et documentation disponible.",
-          image: "/about-hero.png",
+          image: "/Image ChatGPT 22 oct. 2026 à 16_24_35-2.png",
           to: "/sourcing",
         },
       ]
@@ -47,19 +47,19 @@ const Home: React.FC = () => {
         {
           title: "Beauty & Skincare",
           desc: "Bottles, jars, airless, droppers, tubes, pumps and secondary packaging.",
-          image: "/flacons-pots.png",
+          image: "/Image ChatGPT 22 oct. 2026 à 16_24_33-1.png",
           to: "/products",
         },
         {
           title: "Fragrance",
           desc: "Glass bottles, pumps, caps, collars, decoration, boxes and custom development.",
-          image: "/bouchons-fermetures.png",
+          image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
           to: "/fragrance-packaging",
         },
         {
           title: "Project Coordination",
           desc: "Sourcing, option comparison, sampling, customization, production follow-up and available documentation.",
-          image: "/about-hero.png",
+          image: "/Image ChatGPT 22 oct. 2026 à 16_24_35-2.png",
           to: "/sourcing",
         },
       ];

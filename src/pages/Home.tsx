@@ -149,7 +149,7 @@ const Home: React.FC = () => {
             >
               <span className="text-[10px] tracking-[0.24em] text-stone-350 pt-1">{num}</span>
               <div>
-                <h2 className="text-sm font-medium text-[#201915] mb-1.5">{title}</h2>
+                <h2 className="text-sm font-medium text-brand-dark mb-1.5">{title}</h2>
                 <p className="text-xs leading-relaxed text-stone-500">{desc}</p>
               </div>
             </div>
@@ -195,7 +195,7 @@ const Home: React.FC = () => {
             <p className="uppercase text-[11px] tracking-[0.34em] text-stone-400 mb-4">
               {fr ? "COMMENT NOUS TRAVAILLONS" : "HOW WE WORK"}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#201915] mb-5 tracking-[-0.02em]">
+            <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em]">
               {fr ? "Un interlocuteur pour coordonner votre projet packaging" : "One Partner to Coordinate Your Packaging Project"}
             </h2>
             <p className="text-stone-600 leading-relaxed max-w-2xl">
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
             {steps.map(([num, title, desc]) => (
               <div key={num} className="bg-[#fbfaf8] p-6 min-h-[230px]">
                 <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">{num}</div>
-                <h3 className="font-medium text-[#201915] mb-3">{title}</h3>
+                <h3 className="font-medium text-brand-dark mb-3">{title}</h3>
                 <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -261,7 +261,7 @@ const Home: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-[#201915] px-8 py-3.5 rounded-full font-medium hover:bg-stone-100 transition"
+            className="inline-block bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium hover:bg-stone-100 transition"
           >
             {fr ? "Envoyer un brief" : "Send a Brief"}
           </Link>

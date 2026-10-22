@@ -1,26 +1,11 @@
-import React, { useContext, useEffect } from "react"; 
+import React, { useContext } from "react"; 
 import { LanguageContext } from '../App';
 import { content } from '../content';
 import { Check } from 'lucide-react';
-import { setSeoMeta } from "../seo";
 
 const Compliance: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = content[language].compliance;
-
-  useEffect(() => {
-    if (language === "fr") {
-      setSeoMeta(
-        "Elmvale Global – Conformité & durabilité des emballages cosmétiques",
-        "Comment Elmvale Global peut coordonner les documents packaging, les informations fournisseurs et les essais tiers lorsque le projet le nécessite."
-      );
-    } else {
-      setSeoMeta(
-        "Elmvale Global – Cosmetic packaging compliance & sustainability",
-        "How Elmvale Global can coordinate packaging documentation, supplier information and third-party testing support when required by a beauty packaging project."
-      );
-    }
-  }, [language]);
 
   const supportTitle = language === 'fr' ? 'Documentation & support de validation' : 'Documentation & validation support';
   const needTitle = language === 'fr' ? 'Informations utiles pour cadrer le projet' : 'Information helpful to frame the project';

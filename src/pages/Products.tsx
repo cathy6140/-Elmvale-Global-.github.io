@@ -7,20 +7,20 @@ const Products: React.FC = () => {
   const fr = language === "fr";
   const categories = fr
     ? [
-        ["Packaging skincare primaire", "Flacons, pots, airless, droppers et composants pour sérums, crèmes et soins."],
-        ["Packaging parfum", "Flacons verre, pompes, capots, cols, décoration et étuis pour projets fragrance."],
-        ["Tubes & distribution", "Tubes, pompes, sprays et systèmes de distribution pour soins et cosmétiques."],
-        ["Mask & sachet packaging", "Pochettes sheet mask, eye patch et sachets échantillons."],
-        ["Packaging secondaire", "Cartons, coffrets, beauty sets et solutions de présentation retail."],
-        ["Options plus durables", "Recherche d’options PCR, papier FSC, mono-matériau ou réduction matière selon faisabilité."]
+        ["Packaging skincare primaire", "Flacons, pots, airless, droppers et composants pour sérums, crèmes et soins.", "/Image ChatGPT 22 oct. 2026 à 17_15_26.png"],
+        ["Packaging parfum", "Flacons verre, pompes, capots, cols, décoration et étuis pour projets fragrance.", "/Image ChatGPT 22 oct. 2026 à 17_15_40.png"],
+        ["Tubes & distribution", "Tubes, pompes, sprays et systèmes de distribution pour soins et cosmétiques.", "/Nature morte cosmétique en lumière naturelle.png"],
+        ["Mask & sachet packaging", "Pochettes sheet mask, eye patch et sachets échantillons.", "/Image ChatGPT 22 oct. 2026 à 17_16_00.png"],
+        ["Packaging secondaire", "Cartons, coffrets, beauty sets et solutions de présentation retail.", "/Image ChatGPT 22 oct. 2026 à 17_16_14.png"],
+        ["Options plus durables", "Recherche d’options PCR, papier FSC, mono-matériau ou réduction matière selon faisabilité.", "/Cosmétiques écoresponsables sous lumière naturelle.png"]
       ]
     : [
-        ["Skincare Primary Packaging", "Bottles, jars, airless systems, droppers and components for serums, creams and treatments."],
-        ["Fragrance Packaging", "Glass bottles, pumps, caps, collars, decoration and cartons for fragrance projects."],
-        ["Tubes & Dispensing", "Tubes, pumps, sprayers and dispensing systems for skincare and cosmetics."],
-        ["Mask & Sachet Packaging", "Sheet mask pouches, eye patch packs and sample sachets."],
-        ["Secondary Packaging", "Cartons, boxes, beauty sets and retail presentation solutions."],
-        ["More Sustainable Options", "Source PCR, FSC paper, mono-material or material-reduction options where feasible."]
+        ["Skincare Primary Packaging", "Bottles, jars, airless systems, droppers and components for serums, creams and treatments.", "/Image ChatGPT 22 oct. 2026 à 17_15_26.png"],
+        ["Fragrance Packaging", "Glass bottles, pumps, caps, collars, decoration and cartons for fragrance projects.", "/Image ChatGPT 22 oct. 2026 à 17_15_40.png"],
+        ["Tubes & Dispensing", "Tubes, pumps, sprayers and dispensing systems for skincare and cosmetics.", "/Nature morte cosmétique en lumière naturelle.png"],
+        ["Mask & Sachet Packaging", "Sheet mask pouches, eye patch packs and sample sachets.", "/Image ChatGPT 22 oct. 2026 à 17_16_00.png"],
+        ["Secondary Packaging", "Cartons, boxes, beauty sets and retail presentation solutions.", "/Image ChatGPT 22 oct. 2026 à 17_16_14.png"],
+        ["More Sustainable Options", "Source PCR, FSC paper, mono-material or material-reduction options where feasible.", "/Cosmétiques écoresponsables sous lumière naturelle.png"]
       ];
 
   return (
@@ -39,10 +39,21 @@ const Products: React.FC = () => {
 
       <section className="bg-stone-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map(([title, desc]) => (
-            <div key={title} className="bg-white rounded-2xl border border-stone-200 p-6">
-              <h2 className="font-serif text-2xl text-brand-dark mb-3">{title}</h2>
-              <p className="text-stone-600 leading-relaxed">{desc}</p>
+          {categories.map(([title, desc, image]) => (
+            <div key={title} className="overflow-hidden bg-white rounded-2xl border border-stone-200">
+              <div className="aspect-[4/3] overflow-hidden bg-stone-100">
+                <img
+                  src={image}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="font-serif text-2xl text-brand-dark mb-3">{title}</h2>
+                <p className="text-stone-600 leading-relaxed">{desc}</p>
+              </div>
             </div>
           ))}
         </div>

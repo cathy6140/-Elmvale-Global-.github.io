@@ -243,20 +243,20 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-brand-dark text-white">
-        <div className="max-w-5xl mx-auto px-6 py-24 text-center">
-          <p className="uppercase text-[10px] tracking-[0.32em] text-white/[0.48] mb-5">
+      <section className="bg-stone-50 border-t border-stone-200">
+        <div className="max-w-5xl mx-auto px-6 py-20 text-center">
+          <p className="uppercase text-[10px] tracking-[0.32em] text-stone-400 mb-5">
             {fr ? "COMMENCER UN PROJET" : "START A PROJECT"}
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em]">
+          <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em]">
             {fr ? "Vous avez déjà une référence ou une idée de packaging ?" : "Already Have a Packaging Reference or Idea?"}
           </h2>
-          <p className="text-white/[0.70] mb-9 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-stone-600 mb-9 max-w-2xl mx-auto leading-relaxed">
             {fr ? "Envoyez-nous votre brief, une photo de référence, vos quantités et votre calendrier cible." : "Send us your brief, reference image, expected quantity and target launch timing."}
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium hover:bg-stone-100 transition"
+            className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium hover:bg-brand-dark/90 transition"
           >
             {fr ? "Envoyer un brief" : "Send a Brief"}
           </Link>

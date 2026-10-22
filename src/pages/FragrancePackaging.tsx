@@ -24,8 +24,8 @@ const FragrancePackaging: React.FC = () => {
     setSeoMeta(
       fr ? "Packaging parfum & flacons | Elmvale Global" : "Fragrance & Perfume Packaging Sourcing | Elmvale Global",
       fr
-        ? "Sourcing de flacons parfum, pompes, capots, cols, décoration et packaging secondaire auprès de fabricants en Chine."
-        : "Source perfume bottles, pumps, caps, collars, decoration and secondary packaging with manufacturers in China."
+        ? "Sourcing de flacons parfum, pompes, capots, cols, décoration et packaging secondaire pour projets fragrance."
+        : "Source perfume bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects."
     );
   }, [fr]);
 
@@ -62,8 +62,8 @@ const FragrancePackaging: React.FC = () => {
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
-            ? "Nous recherchons et coordonnons des solutions de packaging parfum auprès de fabricants en Chine, des composants standards aux développements personnalisés."
-            : "We source and coordinate fragrance packaging solutions with manufacturers in China, from stock components to customized development."}
+            ? "Nous recherchons et coordonnons des solutions de packaging parfum, des composants standards aux développements personnalisés."
+            : "We source and coordinate fragrance packaging solutions, from stock components to customized development."}
         </p>
       </section>
 

@@ -9,14 +9,14 @@ const Home: React.FC = () => {
   const steps = fr
     ? [
         ["01", "Partagez votre brief", "Type de produit, références, quantités, budget cible, finitions et calendrier."],
-        ["02", "Sourcing fournisseurs", "Nous recherchons et comparons des options adaptées parmi notre réseau de fabricants en Chine."],
+        ["02", "Sourcing fournisseurs", "Nous recherchons et comparons des options adaptées parmi notre réseau de fabricants."],
         ["03", "Échantillons & développement", "Coordination des échantillons, couleurs, décorations, composants et ajustements techniques."],
         ["04", "Production & qualité", "Suivi de production et coordination des contrôles et documents disponibles selon le projet."],
         ["05", "Préparation à l’expédition", "Coordination des exigences de livraison et des informations nécessaires à votre importation."]
       ]
     : [
         ["01", "Share your brief", "Product type, references, quantity, target cost, decoration and launch timing."],
-        ["02", "Supplier sourcing", "We identify and compare suitable options across our manufacturing network in China."],
+        ["02", "Supplier sourcing", "We identify and compare suitable options across our manufacturing network."],
         ["03", "Sampling & development", "We coordinate samples, colors, decoration, components and technical adjustments."],
         ["04", "Production & quality", "We follow production and coordinate inspections and available documentation when required."],
         ["05", "Delivery preparation", "We coordinate shipment requirements and the information needed for your import process."]
@@ -68,13 +68,13 @@ const Home: React.FC = () => {
     ? [
         {
           eyebrow: "SERVICE",
-          title: "Sourcing packaging en Chine",
-          desc: "Recherche fournisseurs, comparaison d’options, échantillons et coordination de projet avec des fabricants en Chine.",
+          title: "Sourcing packaging",
+          desc: "Recherche fournisseurs, comparaison d’options, échantillons et coordination de projet.",
           to: "/sourcing",
           tone: "dark",
         },
         {
-          eyebrow: "SPÉCIALITÉ",
+          eyebrow: "PARFUM",
           title: "Packaging parfum",
           desc: "Un espace dédié aux flacons, pompes, capots, cols, décorations et packaging secondaire pour projets fragrance.",
           to: "/fragrance-packaging",
@@ -84,13 +84,13 @@ const Home: React.FC = () => {
     : [
         {
           eyebrow: "SERVICE",
-          title: "Packaging Sourcing in China",
-          desc: "Supplier search, option comparison, sampling and project coordination with manufacturers in China.",
+          title: "Packaging Sourcing",
+          desc: "Supplier search, option comparison, sampling and project coordination.",
           to: "/sourcing",
           tone: "dark",
         },
         {
-          eyebrow: "SPECIALTY",
+          eyebrow: "FRAGRANCE",
           title: "Fragrance Packaging",
           desc: "A dedicated space for bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
           to: "/fragrance-packaging",
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
       ];
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-[#f7f4ef]">
       <section
         className="relative min-h-[680px] bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: "url('/hero-home.png')" }}
@@ -110,28 +110,28 @@ const Home: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40">
           <div className="max-w-4xl">
             <p className="uppercase tracking-[0.34em] text-[11px] text-white/[0.72] mb-6">
-              {fr ? "SOURCING PACKAGING EN CHINE" : "COSMETIC PACKAGING SOURCING FROM CHINA"}
+              {fr ? "SOURCING PACKAGING BEAUTÉ & PARFUM" : "PACKAGING SOURCING FOR BEAUTY & FRAGRANCE"}
             </p>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-[78px] text-white mb-8 leading-[1.03] tracking-[-0.02em]">
               {fr
-                ? "Sourcing de packaging cosmétique & parfum en Chine"
-                : "Cosmetic & Fragrance Packaging Sourcing from China"}
+                ? "Sourcing de packaging cosmétique & parfum"
+                : "Cosmetic & Fragrance Packaging Sourcing"}
             </h1>
             <p className="text-white/[0.88] max-w-2xl text-lg md:text-xl leading-relaxed font-light">
               {fr
-                ? "Elmvale Global accompagne les marques beauté, skincare et parfum dans la recherche et le développement de packaging auprès de fabricants en Chine — du sourcing et des échantillons jusqu’au suivi de production."
-                : "Elmvale Global helps beauty, skincare and fragrance brands source and develop packaging with manufacturers in China — from supplier search and sampling to production follow-up."}
+                ? "Elmvale Global accompagne les marques beauté, skincare et parfum dans la recherche et le développement de packaging, du sourcing et des échantillons jusqu’au suivi de production."
+                : "Elmvale Global helps beauty, skincare and fragrance brands source and develop packaging, from supplier search and sampling to production follow-up."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link
                 to="/contact"
-                className="bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium text-center hover:bg-stone-100 transition shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
+                className="bg-white text-[#201915] px-8 py-3.5 rounded-full font-medium text-center hover:bg-stone-100 transition shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
               >
                 {fr ? "Envoyer votre brief" : "Send Your Packaging Brief"}
               </Link>
               <Link
                 to="/sourcing"
-                className="border border-white/60 bg-white/5 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-center hover:bg-white hover:text-brand-dark transition"
+                className="border border-white/60 bg-white/5 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-center hover:bg-white hover:text-[#201915] transition"
               >
                 {fr ? "Notre méthode de sourcing" : "How We Source"}
               </Link>
@@ -140,7 +140,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="border-b border-stone-200/70 bg-white">
+      <section className="border-b border-[#e5ddd2] bg-[#fbf9f5]">
         <div className="max-w-7xl mx-auto px-6 py-7 grid sm:grid-cols-3 gap-6 sm:gap-0">
           {[
             fr ? ["01", "Recherche fournisseurs", "Options selon catégorie, quantité, budget et calendrier."] : ["01", "Supplier search", "Options matched to category, quantity, target cost and timing."],
@@ -153,7 +153,7 @@ const Home: React.FC = () => {
             >
               <span className="text-[10px] tracking-[0.24em] text-stone-350 pt-1">{num}</span>
               <div>
-                <h2 className="text-sm font-medium text-brand-dark mb-1.5">{title}</h2>
+                <h2 className="text-sm font-medium text-[#201915] mb-1.5">{title}</h2>
                 <p className="text-xs leading-relaxed text-stone-500">{desc}</p>
               </div>
             </div>
@@ -161,7 +161,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[#f7f4ef]">
+      <section className="bg-[#f3eee7]">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-3 gap-6">
             {focusCards.map((card) => (
@@ -174,15 +174,15 @@ const Home: React.FC = () => {
                   src={card.image}
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.82] contrast-[1.03] brightness-[0.88]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.74] contrast-[1.08] brightness-[0.76]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17110d]/92 via-[#211711]/48 to-[#17110d]/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#17110d]/94 via-[#211711]/58 to-[#17110d]/18" />
                 <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(218,187,145,0.10),transparent_42%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
-                  <h2 className="font-serif text-3xl text-white mb-3 tracking-[-0.01em]">{card.title}</h2>
-                  <p className="text-sm text-white/[0.90] leading-relaxed max-w-sm">{card.desc}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/[0.92]">
+                <div className="absolute inset-x-0 bottom-0 p-7 md:p-8 min-h-[250px] flex flex-col justify-end">
+                  <h2 className="font-serif text-[2rem] text-white mb-3 tracking-[-0.01em] leading-[1.08] min-h-[4.4rem] flex items-end">{card.title}</h2>
+                  <p className="text-sm text-white/[0.92] leading-relaxed max-w-sm min-h-[4.9rem]">{card.desc}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/[0.94]">
                     {fr ? "Découvrir" : "Explore"}
                     <span aria-hidden="true">→</span>
                   </span>
@@ -193,26 +193,26 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-white border-y border-stone-200/70">
+      <section className="bg-[#fbf9f5] border-y border-[#e5ddd2]">
         <div className="max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-3xl mb-14">
             <p className="uppercase text-[11px] tracking-[0.34em] text-stone-400 mb-4">
               {fr ? "COMMENT NOUS TRAVAILLONS" : "HOW WE WORK"}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-brand-dark mb-5 tracking-[-0.02em]">
+            <h2 className="font-serif text-4xl md:text-5xl text-[#201915] mb-5 tracking-[-0.02em]">
               {fr ? "Un interlocuteur pour coordonner votre projet packaging" : "One Partner to Coordinate Your Packaging Project"}
             </h2>
             <p className="text-stone-600 leading-relaxed max-w-2xl">
               {fr
-                ? "Nous sommes en phase de développement commercial et travaillons à partir de ressources fabricants en Chine. Notre rôle est de vous aider à identifier les bonnes options et à coordonner le projet avec transparence."
-                : "We are building our client portfolio and work from manufacturing resources in China. Our role is to help you identify suitable options and coordinate the project transparently from brief to production."}
+                ? "Nous sommes en phase de développement commercial et construisons progressivement notre réseau de sourcing. Notre rôle est de vous aider à identifier les bonnes options et à coordonner le projet avec transparence."
+                : "We are building our client portfolio and progressively developing our sourcing network. Our role is to help you identify suitable options and coordinate the project transparently from brief to production."}
             </p>
           </div>
           <div className="grid md:grid-cols-5 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
             {steps.map(([num, title, desc]) => (
               <div key={num} className="bg-[#fbfaf8] p-6 min-h-[230px]">
                 <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">{num}</div>
-                <h3 className="font-medium text-brand-dark mb-3">{title}</h3>
+                <h3 className="font-medium text-[#201915] mb-3">{title}</h3>
                 <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -220,7 +220,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[#f7f4ef]">
+      <section className="bg-[#f3eee7]">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-2 gap-6">
             {featureCards.map((card, index) => {
@@ -229,7 +229,7 @@ const Home: React.FC = () => {
                 <Link
                   key={card.title}
                   to={card.to}
-                  className={`group relative min-h-[360px] overflow-hidden rounded-[30px] p-8 md:p-10 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 ${dark ? "bg-[#201915] text-white shadow-[0_18px_48px_rgba(32,24,18,0.12)]" : "bg-[#ebe3d8] text-brand-dark border border-[#ddd1c2]"}`}
+                  className={`group relative min-h-[360px] overflow-hidden rounded-[30px] p-8 md:p-10 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 ${dark ? "bg-[#201915] text-white shadow-[0_18px_48px_rgba(32,24,18,0.12)]" : "bg-[#e9e0d4] text-[#201915] border border-[#d9cbbb]"}`}
                 >
                   <div className="flex items-center justify-between">
                     <p className={`uppercase text-[10px] tracking-[0.28em] ${dark ? "text-white/[0.56]" : "text-stone-500"}`}>{card.eyebrow}</p>
@@ -240,7 +240,7 @@ const Home: React.FC = () => {
                   <div className="max-w-xl">
                     <h2 className="font-serif text-3xl md:text-5xl mb-5 tracking-[-0.02em]">{card.title}</h2>
                     <p className={`leading-relaxed max-w-lg ${dark ? "text-white/[0.78]" : "text-stone-600"}`}>{card.desc}</p>
-                    <span className={`mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] ${dark ? "text-white/[0.92]" : "text-brand-dark"}`}>
+                    <span className={`mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] ${dark ? "text-white/[0.92]" : "text-[#201915]"}`}>
                       {fr ? "En savoir plus" : "Learn more"}
                       <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                     </span>
@@ -254,7 +254,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-brand-dark text-white">
+      <section className="bg-[#201915] text-white">
         <div className="max-w-5xl mx-auto px-6 py-24 text-center">
           <p className="uppercase text-[10px] tracking-[0.32em] text-white/[0.48] mb-5">
             {fr ? "COMMENCER UN PROJET" : "START A PROJECT"}
@@ -267,7 +267,7 @@ const Home: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium hover:bg-stone-100 transition"
+            className="inline-block bg-white text-[#201915] px-8 py-3.5 rounded-full font-medium hover:bg-stone-100 transition"
           >
             {fr ? "Envoyer un brief" : "Send a Brief"}
           </Link>

@@ -11,8 +11,8 @@ const About: React.FC = () => {
     setSeoMeta(
       fr ? "À propos | Elmvale Global" : "About Elmvale Global | Packaging Sourcing",
       fr
-        ? "Elmvale Global est un projet de sourcing dédié au packaging cosmétique et parfum, reliant les marques internationales à des ressources fabricants en Chine."
-        : "Elmvale Global is a packaging sourcing project connecting international beauty and fragrance brands with manufacturing resources in China."
+        ? "Elmvale Global est un projet de sourcing dédié au packaging cosmétique et parfum pour les marques internationales."
+        : "Elmvale Global is a packaging sourcing project for international beauty and fragrance brands."
     );
   }, [fr]);
 
@@ -36,8 +36,8 @@ const About: React.FC = () => {
             <h2 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Notre point de départ" : "Our Starting Point"}</h2>
             <p className="text-stone-600 leading-relaxed">
               {fr
-                ? "Nous disposons de ressources et contacts auprès de fabricants de packaging en Chine et développons progressivement un réseau adapté aux besoins des marques internationales."
-                : "We have manufacturing resources and contacts in China and are progressively building a network suited to the needs of international beauty brands."}
+                ? "Nous développons progressivement un réseau de fabricants de packaging adapté aux besoins des marques internationales."
+                : "We are progressively building a packaging manufacturing network suited to the needs of international beauty brands."}
             </p>
           </div>
           <div>
@@ -61,11 +61,11 @@ const About: React.FC = () => {
 
       <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12">
         <div>
-          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Pourquoi la Chine ?" : "Why China?"}</h2>
+          <h2 className="font-serif text-3xl text-brand-dark mb-4">{fr ? "Réseau de fabrication" : "Manufacturing Network"}</h2>
           <p className="text-stone-600 leading-relaxed">
             {fr
-              ? "La Chine dispose d’un écosystème très large pour les flacons, pots, pompes, tubes, composants parfum, décorations et packaging secondaire. La difficulté n’est pas seulement de trouver une usine, mais de trouver une option adaptée au projet et de bien coordonner le développement."
-              : "China has a broad manufacturing ecosystem for bottles, jars, pumps, tubes, fragrance components, decoration and secondary packaging. The challenge is not simply finding a factory, but finding the right fit and coordinating development well."}
+              ? "Notre réseau s’appuie notamment sur des ressources fabricants en Chine pour les flacons, pots, pompes, tubes, composants parfum, décorations et packaging secondaire. Notre rôle est d’identifier les options adaptées au projet et de coordonner le développement avec clarté."
+              : "Our sourcing network includes manufacturing resources in China for bottles, jars, pumps, tubes, fragrance components, decoration and secondary packaging. Our role is to identify suitable options and coordinate development clearly."}
           </p>
         </div>
         <div className="bg-brand-dark text-white rounded-3xl p-8">

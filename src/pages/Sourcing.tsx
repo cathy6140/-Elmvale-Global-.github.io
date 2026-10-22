@@ -8,10 +8,10 @@ const Sourcing: React.FC = () => {
   const fr = language === "fr";
   useEffect(() => {
     setSeoMeta(
-      fr ? "Sourcing packaging cosmétique en Chine | Elmvale Global" : "Cosmetic Packaging Sourcing from China | Elmvale Global",
+      fr ? "Sourcing packaging cosmétique | Elmvale Global" : "Cosmetic Packaging Sourcing | Elmvale Global",
       fr
-        ? "Elmvale Global aide les marques beauté et parfum à rechercher, comparer et développer des solutions packaging auprès de fabricants en Chine."
-        : "Elmvale Global helps beauty and fragrance brands search, compare and develop packaging solutions with manufacturers in China."
+        ? "Elmvale Global aide les marques beauté et parfum à rechercher, comparer et développer des solutions packaging, avec un réseau de sourcing en Chine."
+        : "Elmvale Global helps beauty and fragrance brands search, compare and develop packaging solutions, supported by a sourcing network in China."
     );
   }, [fr]);
 
@@ -36,14 +36,14 @@ const Sourcing: React.FC = () => {
   return (
     <div className="bg-white">
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
-        <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "SOURCING EN CHINE" : "CHINA SOURCING"}</p>
+        <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "SOURCING PACKAGING" : "PACKAGING SOURCING"}</p>
         <h1 className="font-serif text-5xl md:text-6xl text-brand-dark mb-6">
-          {fr ? "Sourcing de packaging cosmétique en Chine" : "Cosmetic Packaging Sourcing from China"}
+          {fr ? "Sourcing de packaging cosmétique" : "Cosmetic Packaging Sourcing"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
-            ? "Nous aidons les marques à naviguer l’offre fabricants en Chine et à coordonner les étapes essentielles d’un projet packaging, sans prétendre remplacer vos équipes réglementaires ou qualité."
-            : "We help brands navigate manufacturing options in China and coordinate the essential steps of a packaging project, without replacing your own regulatory or quality teams."}
+            ? "Nous aidons les marques à naviguer les options fabricants et à coordonner les étapes essentielles d’un projet packaging. Notre réseau de sourcing comprend des ressources fabricants en Chine, sans prétendre remplacer vos équipes réglementaires ou qualité."
+            : "We help brands navigate manufacturing options and coordinate the essential steps of a packaging project. Our sourcing network includes manufacturing resources in China, without replacing your own regulatory or quality teams."}
         </p>
       </section>
 

@@ -16,6 +16,7 @@ const Contact: React.FC = () => {
     const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
     if (typeof gtag === "function") {
       gtag("event", "generate_lead", {
+        send_to: "G-BRRFY9DWWK",
         event_category: "contact",
         form_name: "packaging_brief",
       });

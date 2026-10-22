@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
+import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const Home: React.FC = () => {
@@ -161,14 +162,14 @@ const Home: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link
-                to="/contact"
+                to={localizedPath("/contact", language)}
                 onClick={() => trackContactCta("/", fr ? "Envoyer votre brief" : "Send Your Packaging Brief")}
                 className="bg-white text-brand-dark px-8 py-3.5 rounded-full font-medium text-center hover:bg-stone-100 transition shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
               >
                 {fr ? "Envoyer votre brief" : "Send Your Packaging Brief"}
               </Link>
               <Link
-                to="/sourcing"
+                to={localizedPath("/sourcing", language)}
                 className="border border-white/60 bg-white/5 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-center hover:bg-white hover:text-brand-dark transition"
               >
                 {fr ? "Notre méthode de sourcing" : "How We Source"}
@@ -205,7 +206,7 @@ const Home: React.FC = () => {
             {focusCards.map((card) => (
               <Link
                 key={card.title}
-                to={card.to}
+                to={localizedPath(card.to, language)}
                 className="group relative min-h-[360px] overflow-hidden rounded-[28px] bg-stone-900 shadow-[0_14px_40px_rgba(32,24,18,0.08)]"
               >
                 <img
@@ -292,7 +293,7 @@ const Home: React.FC = () => {
             {featureCards.map((card, index) => (
               <Link
                 key={card.title}
-                to={card.to}
+                to={localizedPath(card.to, language)}
                 className="group relative min-h-[330px] overflow-hidden rounded-[28px] border border-stone-200 bg-white p-8 md:p-10 text-brand-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(2,44,34,0.08)]"
               >
                 <div className="relative z-10 flex h-full flex-col justify-between">
@@ -329,7 +330,7 @@ const Home: React.FC = () => {
             {fr ? "Envoyez-nous ce que vous avez : une référence, une photo, une quantité cible ou simplement votre besoin. Nous vous aiderons à identifier les options à explorer." : "Send us what you have: a reference, an image, a target quantity or simply what you are looking for. We will help identify the options worth exploring."}
           </p>
           <Link
-            to="/contact"
+            to={localizedPath("/contact", language)}
             onClick={() => trackContactCta("/", fr ? "Partager votre besoin" : "Share Your Requirements")}
             className="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium hover:bg-brand-dark/90 transition"
           >

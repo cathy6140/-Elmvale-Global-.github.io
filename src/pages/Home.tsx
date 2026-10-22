@@ -173,7 +173,7 @@ const Home: React.FC = () => {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] saturate-[0.98] contrast-[1.02] brightness-[1.00]"
                   loading="lazy"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-t from-brand-dark/[0.92] via-brand-dark/[0.82] to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-t from-[#171717]/[0.90] via-[#2b2926]/[0.58] to-transparent" />
                 <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,248,239,0.04),transparent_46%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-7 md:p-8 min-h-[230px] flex flex-col justify-end">
                   <h2 className="font-serif text-[2rem] text-white mb-3 tracking-[-0.01em] leading-[1.08] min-h-[4.2rem] flex items-end drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]">{card.title}</h2>

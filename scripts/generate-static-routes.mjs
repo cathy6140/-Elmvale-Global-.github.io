@@ -156,6 +156,22 @@ const routes = [
     }
   },
   {
+    path: "/client-feedback/",
+    noindex: true,
+    en: {
+      title: "Client feedback | Elmvale Global",
+      description: "Share feedback about your experience working with Elmvale Global.",
+      h1: "Share your experience with Elmvale Global",
+      intro: "Your feedback helps us improve how we support packaging sourcing, supplier comparison and project coordination."
+    },
+    fr: {
+      title: "Retour client | Elmvale Global",
+      description: "Partagez votre retour sur votre expérience avec Elmvale Global.",
+      h1: "Partagez votre expérience avec Elmvale Global",
+      intro: "Votre retour nous aide à améliorer notre accompagnement sur les projets de sourcing packaging, de comparaison fournisseurs et de coordination."
+    }
+  },
+  {
     path: "/privacy/",
     en: { title: "Privacy policy | Elmvale Global", description: "Read the Elmvale Global privacy policy.", h1: "Privacy policy", intro: "Information about how Elmvale Global handles personal information submitted through this website." },
     fr: { title: "Politique de confidentialité | Elmvale Global", description: "Consultez la politique de confidentialité d’Elmvale Global.", h1: "Politique de confidentialité", intro: "Informations sur la manière dont Elmvale Global traite les informations personnelles soumises via ce site." }
@@ -272,6 +288,7 @@ function applyRoute(html, route, lang) {
   html = html.replace(/<html\s+lang=["'][^"']*["']/i, '<html lang="' + lang + '"');
   html = html.replace(/<title>[^<]*<\/title>/i, "<title>" + data.title + "</title>");
   html = replaceOrInsert(html, /<meta\s+name=["']description["'][^>]*>/i, '<meta name="description" content="' + data.description + '" />');
+  html = replaceOrInsert(html, /<meta\s+name=["']robots["'][^>]*>/i, '<meta name="robots" content="' + (route.noindex ? 'noindex, nofollow' : 'index, follow') + '" />');
   html = replaceOrInsert(html, /<link\s+rel=["']canonical["'][^>]*>/i, '<link rel="canonical" href="' + canonical + '" />');
   html = replaceOrInsert(html, /<link\s+rel=["']alternate["']\s+hreflang=["']en["'][^>]*>/i, '<link rel="alternate" hreflang="en" href="' + enUrl + '" />');
   html = replaceOrInsert(html, /<link\s+rel=["']alternate["']\s+hreflang=["']fr["'][^>]*>/i, '<link rel="alternate" hreflang="fr" href="' + frUrl + '" />');

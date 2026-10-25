@@ -22,7 +22,7 @@ const PackagingSourcingBrief: React.FC = () => {
     : [
         ["01", "Product type & format", "Bottle, jar, tube, airless, fragrance packaging or another format. A visual reference can be a useful starting point if the exact format is not yet defined."],
         ["02", "Capacity & components", "Target fill volume, pump, cap, neck finish or component configuration when these details are already known."],
-        ["03", "Target quantity", "An estimated first order helps narrow down which MOQ ranges and manufacturing routes are worth exploring."],
+        ["03", "Target quantity", "An estimated first order helps narrow down which MOQ ranges and manufacturing options are worth exploring."],
         ["04", "Visual references", "Photos, links, existing products or moodboards help align shape, finish and customization direction faster."],
         ["05", "Color, finish & decoration", "Custom color, coating, silk screen, hot stamping, metallization or other effects depending on the desired result."],
         ["06", "Target market", "The country or region where the product will be sold may affect which documents, materials or validations should be requested."],
@@ -54,7 +54,7 @@ const PackagingSourcingBrief: React.FC = () => {
       ]
     : [
         ["Actual MOQ", "Final MOQ depends on the component, manufacturer and level of customization."],
-        ["Production lead time", "Timing is confirmed once the option, quantity and customization route are defined."],
+        ["Production lead time", "Timing is confirmed once the option, quantity and customization approach are defined."],
         ["Compatibility & testing", "Formula-packaging compatibility and some technical tests need project-specific validation."],
         ["Documentation availability", "Supplier declarations, certificates and technical information vary by manufacturer and material."]
       ];

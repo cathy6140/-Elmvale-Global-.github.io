@@ -18,6 +18,7 @@ import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
 import ClientFeedback from "./pages/ClientFeedback";
 import Sourcing from "./pages/Sourcing";
+import FragrancePackaging from "./pages/FragrancePackaging";
 import PackagingSourcingBrief from "./pages/PackagingSourcingBrief";
 import CosmeticPackagingMoq from "./pages/CosmeticPackagingMoq";
 import StockVsCustomPackaging from "./pages/StockVsCustomPackaging";
@@ -143,10 +144,10 @@ const App: React.FC = () => {
             <Route path="/fr/sourcing" element={<Sourcing />} />
             <Route path="/fr/sourcing/" element={<Sourcing />} />
 
-            <Route path="/fragrance-packaging" element={<Navigate to="/products" replace />} />
-            <Route path="/fragrance-packaging/" element={<Navigate to="/products/" replace />} />
-            <Route path="/fr/fragrance-packaging" element={<Navigate to="/fr/products" replace />} />
-            <Route path="/fr/fragrance-packaging/" element={<Navigate to="/fr/products/" replace />} />
+            <Route path="/fragrance-packaging" element={<FragrancePackaging />} />
+            <Route path="/fragrance-packaging/" element={<FragrancePackaging />} />
+            <Route path="/fr/fragrance-packaging" element={<FragrancePackaging />} />
+            <Route path="/fr/fragrance-packaging/" element={<FragrancePackaging />} />
 
             <Route path="/packaging-sourcing-brief" element={<PackagingSourcingBrief />} />
             <Route path="/packaging-sourcing-brief/" element={<PackagingSourcingBrief />} />

@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Compliance from "./pages/Compliance";
 import Contact from "./pages/Contact";
+import ClientFeedback from "./pages/ClientFeedback";
 import Sourcing from "./pages/Sourcing";
 import FragrancePackaging from "./pages/FragrancePackaging";
 import PackagingSourcingBrief from "./pages/PackagingSourcingBrief";
@@ -177,6 +178,11 @@ const App: React.FC = () => {
             <Route path="/contact/" element={<Contact />} />
             <Route path="/fr/contact" element={<Contact />} />
             <Route path="/fr/contact/" element={<Contact />} />
+
+            <Route path="/client-feedback" element={<ClientFeedback />} />
+            <Route path="/client-feedback/" element={<ClientFeedback />} />
+            <Route path="/fr/client-feedback" element={<ClientFeedback />} />
+            <Route path="/fr/client-feedback/" element={<ClientFeedback />} />
 
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/privacy/" element={<Privacy />} />

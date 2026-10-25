@@ -45,6 +45,18 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
       path: "/sourcing/",
     },
   },
+  "/fragrance-packaging": {
+    en: {
+      title: "Fragrance packaging sourcing | Elmvale Global",
+      description: "Source fragrance bottles, pumps, caps, collars, decoration and secondary packaging with structured supplier comparison and project coordination.",
+      path: "/fragrance-packaging/",
+    },
+    fr: {
+      title: "Sourcing packaging parfum | Elmvale Global",
+      description: "Sourcing de flacons, pompes, capots, cols, décorations et packaging secondaire pour projets parfum, avec comparaison fournisseurs et coordination de projet.",
+      path: "/fragrance-packaging/",
+    },
+  },
   "/packaging-sourcing-brief": {
     en: {
       title: "Cosmetic packaging sourcing brief | Elmvale Global",

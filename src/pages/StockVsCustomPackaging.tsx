@@ -98,7 +98,7 @@ const StockVsCustomPackaging: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12">
           <div>
             <p className="uppercase text-[11px] tracking-[0.32em] text-white/45 mb-4">{fr ? "QUAND LE STOCK EST PERTINENT" : "WHEN STOCK MAKES SENSE"}</p>
-            <h2 className="font-serif font-normal text-3xl md:text-4xl mb-5">{fr ? "Réduire le risque sans renoncer à l’identité de marque" : "Reduce launch risk without giving up brand identity"}</h2>
+            <h2 className="font-serif font-normal text-3xl md:text-4xl mb-5">{fr ? "Réduire le risque tout en gardant de la marge pour la différenciation" : "Reduce launch risk while keeping room for brand differentiation"}</h2>
             <ul className="space-y-3 text-white/80 list-disc pl-5">{stockBest.map(x => <li key={x}>{x}</li>)}</ul>
           </div>
           <div className="border border-white/15 rounded-3xl p-8">
@@ -113,7 +113,7 @@ const StockVsCustomPackaging: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">{fr ? "UNE ROUTE INTERMÉDIAIRE" : "A MIDDLE ROUTE"}</p>
-            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Stock + personnalisation peut être le meilleur compromis" : "Stock + customization can be the strongest compromise"}</h2>
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Stock + personnalisation peut offrir un compromis solide" : "Stock + customization can offer a strong middle route"}</h2>
             <p className="text-stone-600 leading-relaxed">{fr ? "Beaucoup de projets n’ont pas besoin d’un nouveau moule. Une référence existante peut être différenciée par la couleur, le coating, la sérigraphie, le marquage à chaud, les composants ou le packaging secondaire." : "Many projects do not need new tooling. An existing reference can still be differentiated through color, coating, silk screen, hot stamping, components or secondary packaging."}</p>
           </div>
           <div className="bg-stone-50 border border-stone-200 rounded-3xl p-8">

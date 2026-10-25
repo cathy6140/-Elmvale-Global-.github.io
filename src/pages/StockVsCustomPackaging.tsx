@@ -112,7 +112,7 @@ const StockVsCustomPackaging: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 py-24">
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">{fr ? "UNE ROUTE INTERMÉDIAIRE" : "A MIDDLE ROUTE"}</p>
+            <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">{fr ? "UNE ROUTE INTERMÉDIAIRE" : "A MIDDLE OPTION"}</p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Stock + personnalisation peut offrir un compromis solide" : "Stock + customization can offer a strong middle option"}</h2>
             <p className="text-stone-600 leading-relaxed">{fr ? "Beaucoup de projets n’ont pas besoin d’un nouveau moule. Une référence existante peut être différenciée par la couleur, le coating, la sérigraphie, le marquage à chaud, les composants ou le packaging secondaire." : "Many projects do not need new tooling. An existing reference can still be differentiated through color, coating, silk screen, hot stamping, components or secondary packaging."}</p>
           </div>

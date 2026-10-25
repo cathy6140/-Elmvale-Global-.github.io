@@ -26,7 +26,7 @@ const PackagingSourcingBrief: React.FC = () => {
         ["04", "Visual references", "Photos, links, existing products or moodboards help align shape, finish and customization direction faster."],
         ["05", "Color, finish & decoration", "Custom color, coating, silk screen, hot stamping, metallization or other effects depending on the desired result."],
         ["06", "Target market", "The country or region where the product will be sold may affect which documents, materials or validations should be requested."],
-        ["07", "Launch timing", "A target launch date helps assess whether a stock reference, customization route or dedicated development is realistic."]
+        ["07", "Launch timing", "A target launch date helps assess whether a stock reference, customization approach or dedicated development is realistic."]
       ];
 
   const notRequired = fr
@@ -106,7 +106,7 @@ const PackagingSourcingBrief: React.FC = () => {
           <p className="text-stone-600 leading-relaxed">
             {fr
               ? "Plus ces éléments sont clairs, plus il devient facile de présélectionner des options pertinentes et d’éviter des comparaisons qui ne correspondent pas aux contraintes réelles du projet."
-              : "The clearer these inputs are, the easier it becomes to pre-select relevant options and avoid comparing routes that do not fit the project's real constraints."}
+              : "The clearer these inputs are, the easier it becomes to pre-select relevant options and avoid comparing approaches that do not fit the project's real constraints."}
           </p>
         </div>
 
@@ -133,7 +133,7 @@ const PackagingSourcingBrief: React.FC = () => {
             <p className="text-white/75 leading-relaxed">
               {fr
                 ? "Le sourcing peut commencer alors que certaines décisions sont encore ouvertes. L’objectif de la première étape est justement d’identifier les routes réalistes avant de figer trop tôt le packaging."
-                : "Sourcing can begin while some decisions are still open. The first step is often to identify realistic routes before locking the packaging direction too early."}
+                : "Sourcing can begin while some decisions are still open. The first step is often to identify realistic options before locking the packaging direction too early."}
             </p>
           </div>
           <div className="border border-white/15 rounded-3xl p-8">
@@ -202,10 +202,10 @@ const PackagingSourcingBrief: React.FC = () => {
             </h3>
             <ul className="space-y-3 text-stone-600 list-disc pl-5">
               <li>{fr ? "Références standard vs personnalisation" : "Stock references vs customization"}</li>
-              <li>{fr ? "Différentes routes de MOQ" : "Different MOQ routes"}</li>
+              <li>{fr ? "Différentes routes de MOQ" : "Different MOQ options"}</li>
               <li>{fr ? "Options de matériaux et composants" : "Material and component options"}</li>
               <li>{fr ? "Finitions techniquement réalistes" : "Technically realistic finishes"}</li>
-              <li>{fr ? "Délais estimés selon la route retenue" : "Expected timing by sourcing route"}</li>
+              <li>{fr ? "Délais estimés selon la route retenue" : "Expected timing by sourcing option"}</li>
             </ul>
           </div>
         </div>

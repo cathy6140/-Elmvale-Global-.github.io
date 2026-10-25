@@ -11,7 +11,7 @@ const PackagingSourcingBrief: React.FC = () => {
 
   const briefItems = fr
     ? [
-        ["01", "Type de produit & format", "Flacon, pot, tube, airless, packaging parfum ou autre format. Une référence visuelle peut suffire si le format exact n’est pas encore défini."],
+        ["01", "Type de produit & format", "Flacon, pot, tube, airless, packaging parfum ou autre format. Une référence visuelle peut constituer un bon point de départ si le format exact n’est pas encore défini."],
         ["02", "Capacité & composants", "Volume cible, type de pompe, bouchon, col ou configuration souhaitée lorsqu’ils sont déjà connus."],
         ["03", "Quantité cible", "Une estimation de la première commande aide à déterminer quelles options de MOQ valent la peine d’être explorées."],
         ["04", "Références visuelles", "Photos, liens, produits existants ou moodboards permettent d’aligner plus rapidement forme, finition et niveau de personnalisation."],
@@ -20,7 +20,7 @@ const PackagingSourcingBrief: React.FC = () => {
         ["07", "Calendrier de lancement", "Une date cible permet d’évaluer si une référence standard, une personnalisation ou un développement dédié est réaliste."]
       ]
     : [
-        ["01", "Product type & format", "Bottle, jar, tube, airless, fragrance packaging or another format. A visual reference is often enough if the exact format is not yet defined."],
+        ["01", "Product type & format", "Bottle, jar, tube, airless, fragrance packaging or another format. A visual reference can be a useful starting point if the exact format is not yet defined."],
         ["02", "Capacity & components", "Target fill volume, pump, cap, neck finish or component configuration when these details are already known."],
         ["03", "Target quantity", "An estimated first order helps narrow down which MOQ ranges and manufacturing routes are worth exploring."],
         ["04", "Visual references", "Photos, links, existing products or moodboards help align shape, finish and customization direction faster."],

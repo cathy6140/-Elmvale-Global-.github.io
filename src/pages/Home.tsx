@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           desc: "Flacons verre, pompes, capots, cols, décorations, coffrets et développements sur mesure.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
           alt: "Packaging parfum avec flacons et composants",
-          to: "/fragrance-packaging",
+          to: "/products",
         },
         {
           title: "Coordination de projet",
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
           desc: "Glass bottles, pumps, caps, collars, decoration, boxes and custom development.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
           alt: "Fragrance packaging with perfume bottles and components",
-          to: "/fragrance-packaging",
+          to: "/products",
         },
         {
           title: "Project coordination",
@@ -118,9 +118,9 @@ const Home: React.FC = () => {
           to: "/sourcing",
         },
         {
-          title: "Packaging parfum",
-          desc: "Un espace dédié aux flacons, pompes, capots, cols, décorations et packaging secondaire pour projets fragrance.",
-          to: "/fragrance-packaging",
+          title: "Catégories de packaging",
+          desc: "Explorez les principales catégories de packaging que nous pouvons sourcer selon votre projet.",
+          to: "/products",
         },
       ]
     : [
@@ -130,9 +130,9 @@ const Home: React.FC = () => {
           to: "/sourcing",
         },
         {
-          title: "Fragrance packaging",
-          desc: "A dedicated space for bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
-          to: "/fragrance-packaging",
+          title: "Packaging categories",
+          desc: "Explore the main packaging categories we can source based on your project requirements.",
+          to: "/products",
         },
       ];
 

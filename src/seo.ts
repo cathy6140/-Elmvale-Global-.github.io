@@ -5,6 +5,7 @@ export type SeoEntry = {
   title: string;
   description: string;
   path: string;
+  robots?: string;
 };
 
 export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
@@ -128,6 +129,20 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
       path: "/contact/",
     },
   },
+  "/client-feedback": {
+    en: {
+      title: "Client feedback | Elmvale Global",
+      description: "Share feedback about your experience working with Elmvale Global.",
+      path: "/client-feedback/",
+      robots: "noindex, nofollow",
+    },
+    fr: {
+      title: "Retour client | Elmvale Global",
+      description: "Partagez votre retour sur votre expérience avec Elmvale Global.",
+      path: "/client-feedback/",
+      robots: "noindex, nofollow",
+    },
+  },
   "/privacy": {
     en: { title: "Privacy policy | Elmvale Global", description: "Read the Elmvale Global privacy policy.", path: "/privacy/" },
     fr: { title: "Politique de confidentialité | Elmvale Global", description: "Consultez la politique de confidentialité d’Elmvale Global.", path: "/privacy/" },
@@ -153,7 +168,8 @@ export function setSeoMeta(
   title: string,
   description: string,
   canonicalPath = "/",
-  language: Language = "en"
+  language: Language = "en",
+  robots = "index, follow"
 ) {
   if (typeof document === "undefined") return;
 
@@ -187,6 +203,7 @@ export function setSeoMeta(
   };
 
   setMeta('meta[name="description"]', "name", "description", description);
+  setMeta('meta[name="robots"]', "name", "robots", robots);
   setMeta('meta[property="og:title"]', "property", "og:title", title);
   setMeta('meta[property="og:description"]', "property", "og:description", description);
   setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);

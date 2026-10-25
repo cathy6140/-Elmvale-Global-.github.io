@@ -66,7 +66,6 @@ const Navbar: React.FC = () => {
     { path: '/', label: t.home },
     { path: '/products', label: language === 'fr' ? 'Packaging' : 'Packaging' },
     { path: '/sourcing', label: language === 'fr' ? 'Sourcing' : 'Sourcing' },
-    { path: '/fragrance-packaging', label: language === 'fr' ? 'Parfum' : 'Fragrance' },
     { path: '/compliance', label: language === 'fr' ? 'Conformité' : 'Compliance' },
     { path: '/about', label: t.about },
     { path: '/contact', label: t.contact },

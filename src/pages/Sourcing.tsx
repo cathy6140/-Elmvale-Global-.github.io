@@ -19,7 +19,7 @@ const Sourcing: React.FC = () => {
       ]
     : [
         ["Supplier search", "Identify options based on category, quantity, target cost, finish and timing."],
-        ["Option comparison", "Compare MOQ, lead time, customization routes and available information."],
+        ["Option comparison", "Compare MOQ, lead time, customization options and available information."],
         ["Sampling", "Coordinate stock or customized samples before production."],
         ["Development", "Color, silk screen, hot stamping, coating, components and tooling when feasible."],
         ["Production follow-up", "Coordinate communication with manufacturers and follow key project milestones."],
@@ -75,7 +75,7 @@ const Sourcing: React.FC = () => {
             <Link to={localizedPath("/cosmetic-packaging-moq", language)} className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
               <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 02" : "GUIDE 02"}</p>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "MOQ packaging cosmétique" : "Cosmetic packaging MOQ"}</h3>
-              <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Pourquoi les minimums varient et comment évaluer une route réaliste." : "Why minimums vary and how to judge which sourcing route is realistic."}</p>
+              <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Pourquoi les minimums varient et comment évaluer une route réaliste." : "Why minimums vary and how to judge which sourcing option is realistic."}</p>
             </Link>
             <Link to={localizedPath("/stock-vs-custom-packaging", language)} className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
               <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 03" : "GUIDE 03"}</p>

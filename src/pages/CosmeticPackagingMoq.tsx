@@ -16,9 +16,9 @@ const CosmeticPackagingMoq: React.FC = () => {
         ["03", "Développement custom", "Une nouvelle forme, un nouveau moule, des composants dédiés ou certaines matières spécifiques impliquent généralement des minimums plus élevés et davantage d’étapes de validation."]
       ]
     : [
-        ["01", "Stock packaging", "Often the most flexible route when the shape, material and components already exist. Minimum quantities can be lower, but still depend on actual stock and supplier conditions."],
+        ["01", "Stock packaging", "Often the most flexible option when the shape, material and components already exist. Minimum quantities can be lower, but still depend on actual stock and supplier conditions."],
         ["02", "Stock packaging + decoration", "The base pack already exists, but custom color, coating, silk screen, hot stamping or other finishes can introduce their own production minimums."],
-        ["03", "Custom development", "A new shape, tooling, dedicated components or certain material routes generally require higher minimums and more validation steps."]
+        ["03", "Custom development", "A new shape, tooling, dedicated components or certain material choices generally require higher minimums and more validation steps."]
       ];
 
   const factors = fr
@@ -32,7 +32,7 @@ const CosmeticPackagingMoq: React.FC = () => {
       ]
     : [
         ["Component", "A bottle, pump, cap or jar can each have a different MOQ."],
-        ["Material", "Glass, plastic, aluminium or recycled-content routes can follow different minimums by manufacturer."],
+        ["Material", "Glass, plastic, aluminium or recycled-content options can follow different minimums by manufacturer."],
         ["Color", "A standard color is usually more flexible than a custom color run."],
         ["Decoration", "Silk screen, hot stamping, coating and metallization can each introduce separate production minimums."],
         ["Tooling", "New tooling usually increases the minimum commitment needed to make development viable."],
@@ -48,9 +48,9 @@ const CosmeticPackagingMoq: React.FC = () => {
       ]
     : [
         ["Reduce customization", "Start with a standard reference and keep differentiation in labeling, decoration or secondary packaging."],
-        ["Compare sourcing routes", "Look for another reference, component or manufacturer with an MOQ structure that better fits the project."],
+        ["Compare sourcing options", "Look for another reference, component or manufacturer with an MOQ structure that better fits the project."],
         ["Consolidate variants", "Reduce the number of colors, formats or components at launch so more volume sits behind each SKU."],
-        ["Phase the development", "Launch with a more standard route first, then move to a more customized development when volumes justify it."]
+        ["Phase the development", "Launch with a more standard option first, then move to a more customized development when volumes justify it."]
       ];
 
   return (
@@ -76,12 +76,12 @@ const CosmeticPackagingMoq: React.FC = () => {
               {fr ? "RÉPONSE COURTE" : "SHORT ANSWER"}
             </p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-              {fr ? "Le MOQ dépend fortement de la route de sourcing" : "MOQ is strongly influenced by the sourcing route"}
+              {fr ? "Le MOQ dépend fortement de la route de sourcing" : "MOQ is strongly influenced by the sourcing approach"}
             </h2>
             <p className="text-stone-600 leading-relaxed">
               {fr
                 ? "Une référence déjà en stock peut permettre une première commande plus souple. Dès que l’on ajoute une couleur sur mesure, une décoration spécifique, un nouveau moule ou des composants dédiés, les minimums ont tendance à augmenter. Le premier travail consiste donc à identifier quelle route correspond réellement au volume du projet."
-                : "An in-stock reference can allow a more flexible first order. Once custom color, decoration, new tooling or dedicated components are added, minimums usually rise. The first task is therefore to identify which sourcing route actually fits the project volume."}
+                : "An in-stock reference can allow a more flexible first order. Once custom color, decoration, new tooling or dedicated components are added, minimums usually rise. The first task is therefore to identify which sourcing option actually fits the project volume."}
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ const CosmeticPackagingMoq: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 py-24">
         <div className="max-w-3xl mb-12">
           <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
-            {fr ? "3 ROUTES FRÉQUENTES" : "3 COMMON ROUTES"}
+            {fr ? "3 ROUTES FRÉQUENTES" : "3 COMMON OPTIONS"}
           </p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
             {fr ? "Pourquoi deux projets similaires peuvent avoir des MOQ très différents" : "Why similar projects can have very different MOQs"}
@@ -152,7 +152,7 @@ const CosmeticPackagingMoq: React.FC = () => {
             <p className="text-stone-600 leading-relaxed">
               {fr
                 ? "Pour un premier lancement, une solution légèrement plus standard peut parfois réduire l’engagement initial tout en laissant de la place à la différenciation."
-                : "For an initial launch, a slightly more standard route can sometimes reduce initial commitment while still leaving room for differentiation."}
+                : "For an initial launch, a slightly more standard option can sometimes reduce initial commitment while still leaving room for differentiation."}
             </p>
           </div>
 
@@ -208,12 +208,12 @@ const CosmeticPackagingMoq: React.FC = () => {
           {fr ? "VOTRE PROJET" : "YOUR PROJECT"}
         </p>
         <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-          {fr ? "Vous avez une quantité cible mais vous ne savez pas quelles options sont réalistes ?" : "Have a target quantity but not sure which packaging routes are realistic?"}
+          {fr ? "Vous avez une quantité cible mais vous ne savez pas quelles options sont réalistes ?" : "Have a target quantity but not sure which packaging options are realistic?"}
         </h2>
         <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">
           {fr
             ? "Partagez votre quantité, votre référence ou votre direction packaging. Nous pouvons comparer les routes de sourcing et clarifier les compromis entre MOQ, personnalisation, délai et faisabilité."
-            : "Share your target quantity, reference or packaging direction. We can compare sourcing routes and clarify the tradeoffs between MOQ, customization, timing and feasibility."}
+            : "Share your target quantity, reference or packaging direction. We can compare sourcing options and clarify the tradeoffs between MOQ, customization, timing and feasibility."}
         </p>
         <Link
           to={localizedPath("/contact", language)}

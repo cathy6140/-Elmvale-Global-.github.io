@@ -11,12 +11,12 @@ const CosmeticPackagingMoq: React.FC = () => {
 
   const routes = fr
     ? [
-        ["01", "Référence standard en stock", "La route la plus flexible lorsque la forme, la matière et les composants existent déjà. Les quantités minimales peuvent être plus basses, mais dépendent toujours du stock réel et du fournisseur."],
+        ["01", "Référence standard en stock", "Souvent la route la plus flexible lorsque la forme, la matière et les composants existent déjà. Les quantités minimales peuvent être plus basses, mais dépendent toujours du stock réel et du fournisseur."],
         ["02", "Référence standard + décoration", "La base packaging existe déjà, mais la couleur, le coating, la sérigraphie, le marquage à chaud ou d’autres finitions peuvent créer leur propre minimum de production."],
         ["03", "Développement custom", "Une nouvelle forme, un nouveau moule, des composants dédiés ou certaines matières spécifiques impliquent généralement des minimums plus élevés et davantage d’étapes de validation."]
       ]
     : [
-        ["01", "Stock packaging", "The most flexible route when the shape, material and components already exist. Minimum quantities can be lower, but still depend on actual stock and supplier conditions."],
+        ["01", "Stock packaging", "Often the most flexible route when the shape, material and components already exist. Minimum quantities can be lower, but still depend on actual stock and supplier conditions."],
         ["02", "Stock packaging + decoration", "The base pack already exists, but custom color, coating, silk screen, hot stamping or other finishes can introduce their own production minimums."],
         ["03", "Custom development", "A new shape, tooling, dedicated components or certain material routes generally require higher minimums and more validation steps."]
       ];
@@ -76,7 +76,7 @@ const CosmeticPackagingMoq: React.FC = () => {
               {fr ? "RÉPONSE COURTE" : "SHORT ANSWER"}
             </p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-              {fr ? "Le bon MOQ dépend surtout de la route de sourcing" : "MOQ is mainly a sourcing-route question"}
+              {fr ? "Le MOQ dépend fortement de la route de sourcing" : "MOQ is strongly influenced by the sourcing route"}
             </h2>
             <p className="text-stone-600 leading-relaxed">
               {fr
@@ -142,17 +142,17 @@ const CosmeticPackagingMoq: React.FC = () => {
               {fr ? "QUANTITÉ VS PROJET" : "VOLUME VS PROJECT"}
             </p>
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-              {fr ? "Un MOQ n’est utile que s’il correspond au risque du lancement" : "A workable MOQ should match the launch risk"}
+              {fr ? "Un MOQ réaliste doit correspondre au volume que la marque peut engager au lancement" : "A workable MOQ should match the volume the brand can realistically commit to at launch"}
             </h2>
             <p className="text-stone-600 leading-relaxed mb-5">
               {fr
-                ? "Le bon choix n’est pas forcément l’option avec le MOQ le plus bas. Il faut aussi regarder le prix unitaire, la personnalisation, le délai, la qualité perçue et le volume que la marque est réellement prête à engager."
-                : "The right option is not necessarily the one with the lowest MOQ. Unit cost, customization, lead time, perceived quality and the volume the brand is genuinely ready to commit all matter."}
+                ? "Le bon choix n’est pas forcément l’option avec le MOQ le plus bas. Il faut aussi regarder le prix unitaire, la personnalisation, le délai, l’adéquation technique et le volume que la marque est réellement prête à engager."
+                : "The right option is not necessarily the one with the lowest MOQ. Unit cost, customization, lead time, technical fit and the volume the brand is genuinely ready to commit all matter."}
             </p>
             <p className="text-stone-600 leading-relaxed">
               {fr
-                ? "Pour un premier lancement, une solution légèrement plus standard peut parfois réduire le risque sans bloquer l’identité de marque."
-                : "For an initial launch, a slightly more standard route can sometimes reduce risk without compromising the brand direction."}
+                ? "Pour un premier lancement, une solution légèrement plus standard peut parfois réduire l’engagement initial tout en laissant de la place à la différenciation."
+                : "For an initial launch, a slightly more standard route can sometimes reduce initial commitment while still leaving room for differentiation."}
             </p>
           </div>
 

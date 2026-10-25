@@ -84,7 +84,7 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
   "/stock-vs-custom-packaging": {
     en: {
       title: "Stock vs custom cosmetic packaging | Elmvale Global",
-      description: "Compare stock and custom cosmetic packaging across MOQ, lead time, investment, differentiation and launch risk to choose the right sourcing route.",
+      description: "Compare stock and custom cosmetic packaging across MOQ, lead time, investment, differentiation and launch risk to choose the right sourcing option.",
       path: "/stock-vs-custom-packaging/",
     },
     fr: {

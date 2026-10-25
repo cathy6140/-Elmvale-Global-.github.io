@@ -152,7 +152,7 @@ const CosmeticPackagingMoq: React.FC = () => {
             <p className="text-stone-600 leading-relaxed">
               {fr
                 ? "Pour un premier lancement, une solution légèrement plus standard peut parfois réduire l’engagement initial tout en laissant de la place à la différenciation."
-                : "For an initial launch, a slightly more standard route can sometimes reduce initial commitment while still leaving room for differentiation."}
+                : "For an initial launch, a slightly more standard option can sometimes reduce initial commitment while still leaving room for differentiation."}
             </p>
           </div>
 
@@ -208,7 +208,7 @@ const CosmeticPackagingMoq: React.FC = () => {
           {fr ? "VOTRE PROJET" : "YOUR PROJECT"}
         </p>
         <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
-          {fr ? "Vous avez une quantité cible mais vous ne savez pas quelles options sont réalistes ?" : "Have a target quantity but not sure which packaging routes are realistic?"}
+          {fr ? "Vous avez une quantité cible mais vous ne savez pas quelles options sont réalistes ?" : "Have a target quantity but not sure which packaging options are realistic?"}
         </h2>
         <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">
           {fr

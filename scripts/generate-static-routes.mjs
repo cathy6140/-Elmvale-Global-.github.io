@@ -84,7 +84,7 @@ const routes = [
     path: "/cosmetic-packaging-moq/",
     en: {
       title: "Cosmetic packaging MOQ guide | Elmvale Global",
-      description: "Understand what drives cosmetic packaging MOQ, how stock and custom routes differ, and what brands can do when minimum quantities are too high.",
+      description: "Understand what drives cosmetic packaging MOQ, how stock and custom options differ, and what brands can do when minimum quantities are too high.",
       h1: "Cosmetic packaging MOQ: what brands should expect",
       intro: "There is no single standard MOQ for cosmetic packaging. Minimum quantities depend on the reference, component, material, decoration, manufacturer and level of customization required."
     },
@@ -99,9 +99,9 @@ const routes = [
     path: "/stock-vs-custom-packaging/",
     en: {
       title: "Stock vs custom cosmetic packaging | Elmvale Global",
-      description: "Compare stock and custom cosmetic packaging across MOQ, lead time, investment, differentiation and launch risk to choose the right sourcing route.",
-      h1: "Stock vs custom cosmetic packaging: which route should you choose?",
-      intro: "Compare stock and custom packaging across MOQ, lead time, upfront investment, differentiation and launch risk to identify the route that best fits the project."
+      description: "Compare stock and custom cosmetic packaging across MOQ, lead time, investment, differentiation and launch risk to choose the right sourcing option.",
+      h1: "Stock vs custom cosmetic packaging: which option should you choose?",
+      intro: "Compare stock and custom packaging across MOQ, lead time, upfront investment, differentiation and launch risk to identify the option that best fits the project."
     },
     fr: {
       title: "Packaging stock vs custom | Elmvale Global",

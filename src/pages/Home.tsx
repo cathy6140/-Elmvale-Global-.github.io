@@ -34,13 +34,6 @@ const Home: React.FC = () => {
           to: "/products",
         },
         {
-          title: "Parfum",
-          desc: "Flacons verre, pompes, capots, cols, décorations, coffrets et développements sur mesure.",
-          image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
-          alt: "Packaging parfum avec flacons et composants",
-          to: "/fragrance-packaging",
-        },
-        {
           title: "Coordination de projet",
           desc: "Sourcing, comparaison d’options, échantillons, personnalisation, suivi de production et documentation disponible.",
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_35-2.png",
@@ -55,13 +48,6 @@ const Home: React.FC = () => {
           image: "/Image ChatGPT 22 oct. 2026 à 16_24_33-1.png",
           alt: "Skincare cosmetic packaging with bottles, jars and dispensing components",
           to: "/products",
-        },
-        {
-          title: "Fragrance",
-          desc: "Glass bottles, pumps, caps, collars, decoration, boxes and custom development.",
-          image: "/Image ChatGPT 22 oct. 2026 à 16_24_38-3.png",
-          alt: "Fragrance packaging with perfume bottles and components",
-          to: "/fragrance-packaging",
         },
         {
           title: "Project coordination",
@@ -118,9 +104,9 @@ const Home: React.FC = () => {
           to: "/sourcing",
         },
         {
-          title: "Packaging parfum",
-          desc: "Un espace dédié aux flacons, pompes, capots, cols, décorations et packaging secondaire pour projets fragrance.",
-          to: "/fragrance-packaging",
+          title: "Catégories de packaging",
+          desc: "Découvrez les principales catégories de packaging que nous pouvons sourcer selon votre projet.",
+          to: "/products",
         },
       ]
     : [
@@ -130,9 +116,9 @@ const Home: React.FC = () => {
           to: "/sourcing",
         },
         {
-          title: "Fragrance packaging",
-          desc: "A dedicated space for bottles, pumps, caps, collars, decoration and secondary packaging for fragrance projects.",
-          to: "/fragrance-packaging",
+          title: "Packaging categories",
+          desc: "Explore the main packaging categories we can source based on your project requirements.",
+          to: "/products",
         },
       ];
 
@@ -202,7 +188,7 @@ const Home: React.FC = () => {
 
       <section className="bg-stone-50">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-2 gap-6">
             {focusCards.map((card) => (
               <Link
                 key={card.title}

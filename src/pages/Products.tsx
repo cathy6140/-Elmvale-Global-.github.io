@@ -23,6 +23,7 @@ const Products: React.FC = () => {
           image: "/Image ChatGPT 22 oct. 2026 à 17_15_26.png",
           products: "Flacons · Pompes · Capots · Cols · Étuis",
           suitable: "Eau de parfum · Brumes · Formats nomades",
+          to: "/fragrance-packaging",
         },
         {
           title: "Tubes & distribution",

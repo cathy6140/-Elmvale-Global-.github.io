@@ -52,8 +52,6 @@ const routes = [
   },
   {
     path: "/fragrance-packaging/",
-    noindex: true,
-    redirectTo: "/products/",
     en: {
       title: "Fragrance packaging sourcing | Elmvale Global",
       description: "Source fragrance bottles, pumps, caps, collars, decoration and secondary packaging with structured supplier comparison and project coordination.",
@@ -218,6 +216,7 @@ function semanticFallback(route, lang) {
         <nav aria-label="Key pages">
           <a href="${prefix}/products/" style="margin-right:18px;color:#065f46;">Packaging</a>
           <a href="${prefix}/sourcing/" style="margin-right:18px;color:#065f46;">Sourcing</a>
+          <a href="${prefix}/fragrance-packaging/" style="margin-right:18px;color:#065f46;">${lang === "fr" ? "Packaging parfum" : "Fragrance packaging"}</a>
           <a href="${prefix}/contact/" style="color:#065f46;">Contact</a>
         </nav>
       </main>
@@ -282,19 +281,14 @@ function structuredData(path, lang) {
 function applyRoute(html, route, lang) {
   const data = route[lang];
   const path = localizedPath(route.path, lang);
-  const canonicalPath = route.redirectTo ? localizedPath(route.redirectTo, lang) : path;
-  const canonical = "https://elmvaleglobal.com" + canonicalPath;
-  const enUrl = "https://elmvaleglobal.com" + localizedPath(route.redirectTo || route.path, "en");
-  const frUrl = "https://elmvaleglobal.com" + localizedPath(route.redirectTo || route.path, "fr");
+  const canonical = "https://elmvaleglobal.com" + path;
+  const enUrl = "https://elmvaleglobal.com" + localizedPath(route.path, "en");
+  const frUrl = "https://elmvaleglobal.com" + localizedPath(route.path, "fr");
 
   html = html.replace(/<html\s+lang=["'][^"']*["']/i, '<html lang="' + lang + '"');
   html = html.replace(/<title>[^<]*<\/title>/i, "<title>" + data.title + "</title>");
   html = replaceOrInsert(html, /<meta\s+name=["']description["'][^>]*>/i, '<meta name="description" content="' + data.description + '" />');
   html = replaceOrInsert(html, /<meta\s+name=["']robots["'][^>]*>/i, '<meta name="robots" content="' + (route.noindex ? 'noindex, nofollow' : 'index, follow') + '" />');
-  if (route.redirectTo) {
-    const redirectPath = localizedPath(route.redirectTo, lang);
-    html = replaceOrInsert(html, /<meta\s+http-equiv=["']refresh["'][^>]*>/i, '<meta http-equiv="refresh" content="0; url=' + redirectPath + '" />');
-  }
   html = replaceOrInsert(html, /<link\s+rel=["']canonical["'][^>]*>/i, '<link rel="canonical" href="' + canonical + '" />');
   html = replaceOrInsert(html, /<link\s+rel=["']alternate["']\s+hreflang=["']en["'][^>]*>/i, '<link rel="alternate" hreflang="en" href="' + enUrl + '" />');
   html = replaceOrInsert(html, /<link\s+rel=["']alternate["']\s+hreflang=["']fr["'][^>]*>/i, '<link rel="alternate" hreflang="fr" href="' + frUrl + '" />');

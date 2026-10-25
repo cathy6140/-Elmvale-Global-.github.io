@@ -72,7 +72,7 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
   "/cosmetic-packaging-moq": {
     en: {
       title: "Cosmetic packaging MOQ guide | Elmvale Global",
-      description: "Understand what drives cosmetic packaging MOQ, how stock and custom routes differ, and what brands can do when minimum quantities are too high.",
+      description: "Understand what drives cosmetic packaging MOQ, how stock and custom options differ, and what brands can do when minimum quantities are too high.",
       path: "/cosmetic-packaging-moq/",
     },
     fr: {

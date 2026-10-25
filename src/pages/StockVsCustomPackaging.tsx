@@ -58,17 +58,17 @@ const StockVsCustomPackaging: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "GUIDE DÉCISION PACKAGING" : "PACKAGING DECISION GUIDE"}</p>
         <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6 max-w-4xl">
-          {fr ? "Packaging stock ou custom : quelle route choisir ?" : "Stock vs custom cosmetic packaging: which route should you choose?"}
+          {fr ? "Packaging stock ou custom : quelle route choisir ?" : "Stock vs custom cosmetic packaging: which option should you choose?"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
-          {fr ? "Le meilleur choix dépend rarement du niveau de personnalisation seul. MOQ, délai, investissement, différenciation et risque de lancement doivent être regardés ensemble." : "The better route is rarely decided by customization alone. MOQ, lead time, upfront investment, differentiation and launch risk need to be considered together."}
+          {fr ? "Le meilleur choix dépend rarement du niveau de personnalisation seul. MOQ, délai, investissement, différenciation et risque de lancement doivent être regardés ensemble." : "The better option is rarely decided by customization alone. MOQ, lead time, upfront investment, differentiation and launch risk need to be considered together."}
         </p>
       </section>
 
       <section className="bg-stone-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">{fr ? "RÉPONSE COURTE" : "SHORT ANSWER"}</p>
-          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Choisissez la route qui correspond au stade réel du projet" : "Choose the route that fits the actual stage of the project"}</h2>
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Choisissez la route qui correspond au stade réel du projet" : "Choose the option that fits the actual stage of the project"}</h2>
           <p className="text-stone-600 leading-relaxed max-w-3xl">
             {fr ? "Le stock packaging est souvent pertinent pour lancer plus vite, limiter l’engagement initial et tester un marché. Le custom devient plus logique lorsque la différenciation, l’usage ou les contraintes techniques justifient des volumes, un budget et un calendrier plus importants." : "Stock packaging is often a strong option when speed, lower initial commitment and market testing matter. Custom development becomes more logical when differentiation, user experience or technical requirements justify higher volumes, budget and a longer timeline."}
           </p>
@@ -113,7 +113,7 @@ const StockVsCustomPackaging: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">{fr ? "UNE ROUTE INTERMÉDIAIRE" : "A MIDDLE ROUTE"}</p>
-            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Stock + personnalisation peut offrir un compromis solide" : "Stock + customization can offer a strong middle route"}</h2>
+            <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Stock + personnalisation peut offrir un compromis solide" : "Stock + customization can offer a strong middle option"}</h2>
             <p className="text-stone-600 leading-relaxed">{fr ? "Beaucoup de projets n’ont pas besoin d’un nouveau moule. Une référence existante peut être différenciée par la couleur, le coating, la sérigraphie, le marquage à chaud, les composants ou le packaging secondaire." : "Many projects do not need new tooling. An existing reference can still be differentiated through color, coating, silk screen, hot stamping, components or secondary packaging."}</p>
           </div>
           <div className="bg-stone-50 border border-stone-200 rounded-3xl p-8">

@@ -54,7 +54,7 @@ const SeoManager: React.FC = () => {
   useEffect(() => {
     const route = normalizeSeoPath(pathname);
     const entry = seoByRoute[route][language];
-    setSeoMeta(entry.title, entry.description, entry.path, language);
+    setSeoMeta(entry.title, entry.description, entry.path, language, entry.robots);
   }, [pathname, language]);
 
   return null;

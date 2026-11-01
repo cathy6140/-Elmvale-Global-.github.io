@@ -185,7 +185,7 @@ const Products: React.FC = () => {
           <p className="text-stone-600 leading-relaxed">
             {fr
               ? "Les possibilités dépendent du type de packaging, du fabricant, de la quantité et du niveau de personnalisation. Nous vous aidons à identifier les options réalistes avant d’avancer."
-              : "Available options depend on packaging type, manufacturer, quantity and level of customization. We help identify realistic routes before moving forward."}
+              : "Available options depend on packaging type, manufacturer, quantity and level of customization. We help identify realistic options before moving forward."}
           </p>
         </div>
 
@@ -230,7 +230,7 @@ const Products: React.FC = () => {
               <p className="text-sm text-white/70 leading-relaxed">
                 {fr
                   ? "Des échantillons standards peuvent être demandés pour certaines références. Les échantillons personnalisés dépendent du mode de développement."
-                  : "Stock samples can be requested for selected references. Customized samples depend on the development route."}
+                  : "Stock samples can be requested for selected references. Customized samples depend on the development approach."}
               </p>
             </div>
             <div className="border border-white/15 rounded-2xl p-6">
@@ -241,6 +241,21 @@ const Products: React.FC = () => {
                   : "Timing depends on the packaging, quantity and customization required. We confirm the expected production lead time once a suitable option has been selected."}
               </p>
             </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              to={localizedPath("/cosmetic-packaging-moq", language)}
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-sm text-white hover:bg-white hover:text-brand-dark transition"
+            >
+              {fr ? "Lire le guide MOQ" : "Read the MOQ guide"} <span aria-hidden="true">→</span>
+            </Link>
+            <Link
+              to={localizedPath("/stock-vs-custom-packaging", language)}
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-sm text-white hover:bg-white hover:text-brand-dark transition"
+            >
+              {fr ? "Comparer stock et custom" : "Compare stock vs custom packaging"} <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>

@@ -78,13 +78,14 @@ const App: React.FC = () => {
   useEffect(() => {
     const pathLanguage = languageFromPath(location.pathname);
 
-    if (urlLang === "fr" && pathLanguage === "en") {
+    if (urlLang === "en" || urlLang === "fr") {
       const next = new URLSearchParams(searchParams);
       next.delete("lang");
       const search = next.toString();
+      const basePath = stripLocalePrefix(location.pathname);
       navigate(
         {
-          pathname: localizedPath(location.pathname, "fr"),
+          pathname: localizedPath(basePath, urlLang),
           search: search ? `?${search}` : "",
         },
         { replace: true }

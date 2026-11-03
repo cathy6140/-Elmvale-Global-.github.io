@@ -56,7 +56,7 @@ const RelatedGuides: React.FC<Props> = ({ language, current }) => {
     .filter(([key]) => key !== current);
 
   return (
-    <section className="bg-stone-50 border-y border-stone-200">
+    <section className="bg-zinc-50 border-y border-stone-200">
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="max-w-3xl mb-10">
           <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-4">

@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
               <p className="text-stone-600">{fr ? "Généralement sous 1–2 jours ouvrés." : "Usually within 1–2 business days."}</p>
             </div>
           </div>
-          <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6">
+          <div className="bg-zinc-50 border border-stone-200 rounded-2xl p-6">
             <h2 className="font-semibold text-brand-dark mb-3">{fr ? "Informations utiles à partager" : "Helpful to include"}</h2>
             <ul className="list-disc pl-5 text-sm text-stone-600 space-y-2">
               <li>{fr ? "Photos, liens ou références existantes" : "Reference photos, links or existing packaging"}</li>
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
         </form>
       </section>
 
-      <section className="bg-stone-50 border-t border-stone-200">
+      <section className="bg-zinc-50 border-t border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="max-w-3xl mb-12">
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">

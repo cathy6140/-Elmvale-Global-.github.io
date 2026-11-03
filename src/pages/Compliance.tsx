@@ -39,7 +39,7 @@ const Compliance: React.FC = () => {
       ];
 
   return (
-    <div className="bg-brand-cream min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero with background image */}
       <section className="relative w-full min-h-[520px] md:min-h-[580px] overflow-hidden">
         {/* 背景图：放在 public/compliance-hero.jpg */}

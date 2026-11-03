@@ -46,8 +46,6 @@ const Footer: React.FC = () => {
 
             <div className="text-xs text-stone-400">
               {t.contact?.details?.email ?? 'info@elmvaleglobal.com'}
-              {' · '}
-              {t.contact?.details?.phone ?? 'WhatsApp +86 130 6260 1713'}
             </div>
           </div>
 

@@ -187,7 +187,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-brand-cream z-40 transform transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center items-center space-y-8 ${
+        className={`fixed inset-0 bg-white z-40 transform transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-center items-center space-y-8 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

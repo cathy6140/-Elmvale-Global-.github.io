@@ -314,14 +314,12 @@ export const content = {
       details: {
         title: "Contact Information",
         email: "contact@elmvaleglobal.com",
-        phone: "WhatsApp +33 07 82 15 23 65",
         address: "Global Service",
         hours: "Response within 1–2 business days",
         privacy:
           "Your information is only used to respond to your inquiry.",
         labels: {
           email: "Email",
-          phone: "Phone",
           address: "Address",
           hours: "Hours",
         },
@@ -662,14 +660,12 @@ export const content = {
       details: {
         title: "Informations de contact",
         email: "contact@elmvaleglobal.com",
-        phone: "WhatsApp +33 07 82 15 23 65",
         address: "Global Service",
         hours: "Réponse sous 1–2 jours ouvrés",
         privacy:
           "Vos informations sont uniquement utilisées pour répondre à votre demande.",
         labels: {
           email: "Email",
-          phone: "Téléphone",
           address: "Adresse",
           hours: "Horaires",
         },

@@ -40,7 +40,7 @@ const Sourcing: React.FC = () => {
         </p>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(([title, desc]) => (
             <div key={title} className="bg-white rounded-2xl border border-stone-200 p-6">
@@ -51,7 +51,7 @@ const Sourcing: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="max-w-3xl mb-10">
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">

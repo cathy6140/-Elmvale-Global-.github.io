@@ -7,7 +7,7 @@ const Privacy: React.FC = () => {
   const isFR = language === "fr";
 
   return (
-    <div className="bg-brand-cream min-h-screen pt-32 pb-24">
+    <div className="bg-white min-h-screen pt-32 pb-24">
       <section className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         <header className="mb-12">
           <h1 className="font-serif text-4xl md:text-5xl text-brand-dark mb-4">

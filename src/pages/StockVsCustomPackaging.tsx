@@ -65,7 +65,7 @@ const StockVsCustomPackaging: React.FC = () => {
         </p>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">{fr ? "RÉPONSE COURTE" : "SHORT ANSWER"}</p>
           <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Choisissez la route qui correspond au stade réel du projet" : "Choose the option that fits the actual stage of the project"}</h2>
@@ -116,7 +116,7 @@ const StockVsCustomPackaging: React.FC = () => {
             <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Stock + personnalisation peut offrir un compromis solide" : "Stock + customization can offer a strong middle option"}</h2>
             <p className="text-stone-600 leading-relaxed">{fr ? "Beaucoup de projets n’ont pas besoin d’un nouveau moule. Une référence existante peut être différenciée par la couleur, le coating, la sérigraphie, le marquage à chaud, les composants ou le packaging secondaire." : "Many projects do not need new tooling. An existing reference can still be differentiated through color, coating, silk screen, hot stamping, components or secondary packaging."}</p>
           </div>
-          <div className="bg-stone-50 border border-stone-200 rounded-3xl p-8">
+          <div className="bg-zinc-50 border border-stone-200 rounded-3xl p-8">
             <h3 className="font-serif text-3xl text-brand-dark mb-5">{fr ? "Questions à poser avant de décider" : "Questions to ask before deciding"}</h3>
             <ul className="space-y-3 text-stone-600 list-disc pl-5">
               <li>{fr ? "Quel est le volume réaliste du premier lancement ?" : "What is the realistic first-launch volume?"}</li>
@@ -134,7 +134,7 @@ const StockVsCustomPackaging: React.FC = () => {
 
       <RelatedGuides language={language} current="stock" />
 
-      <section className="max-w-5xl mx-auto px-6 py-20 text-center bg-stone-50 border border-stone-200 rounded-[30px] mb-20">
+      <section className="max-w-5xl mx-auto px-6 py-20 text-center bg-zinc-50 border border-stone-200 rounded-[30px] mb-20">
         <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-5">{fr ? "VOTRE PROJET" : "YOUR PROJECT"}</p>
         <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">{fr ? "Vous hésitez entre une référence stock et un développement custom ?" : "Deciding between stock packaging and custom development?"}</h2>
         <p className="text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">{fr ? "Partagez votre volume, votre référence et vos priorités. Nous pouvons comparer les options autour du MOQ, du délai, de la personnalisation et de la faisabilité." : "Share your volume, reference and priorities. We can compare options around MOQ, timing, customization and feasibility."}</p>

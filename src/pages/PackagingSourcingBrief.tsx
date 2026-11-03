@@ -77,7 +77,7 @@ const PackagingSourcingBrief: React.FC = () => {
         </p>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="max-w-3xl mb-10">
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
@@ -174,7 +174,7 @@ const PackagingSourcingBrief: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-start">
           <div>
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">

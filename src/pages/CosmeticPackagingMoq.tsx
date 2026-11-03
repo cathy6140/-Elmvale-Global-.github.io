@@ -69,7 +69,7 @@ const CosmeticPackagingMoq: React.FC = () => {
         </p>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="max-w-3xl">
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
@@ -156,7 +156,7 @@ const CosmeticPackagingMoq: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-stone-50 border border-stone-200 rounded-3xl p-8">
+          <div className="bg-zinc-50 border border-stone-200 rounded-3xl p-8">
             <h3 className="font-serif text-3xl text-brand-dark mb-5">
               {fr ? "Avant de demander un MOQ, clarifiez :" : "Before asking for MOQ, clarify:"}
             </h3>
@@ -179,7 +179,7 @@ const CosmeticPackagingMoq: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="max-w-3xl mb-12">
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">

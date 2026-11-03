@@ -128,7 +128,7 @@ const Products: React.FC = () => {
         </p>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category) => {
             const card = (
@@ -191,7 +191,7 @@ const Products: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
           {customization.map(([title, desc], index) => (
-            <div key={title} className="bg-[#fbfaf8] p-7 min-h-[230px]">
+            <div key={title} className="bg-[#f8fafc] p-7 min-h-[230px]">
               <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">0{index + 1}</div>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{title}</h3>
               <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
@@ -267,7 +267,7 @@ const Products: React.FC = () => {
           <p className="text-stone-600">{fr ? "Découvrez comment nous recherchons, comparons et coordonnons les options fabricants." : "See how we search, compare and coordinate manufacturing options."}</p>
         </Link>
 
-        <Link to={localizedPath("/contact", language)} onClick={() => trackContactCta("/products/", fr ? "Partager votre besoin" : "Share your requirements")} className="bg-stone-50 border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
+        <Link to={localizedPath("/contact", language)} onClick={() => trackContactCta("/products/", fr ? "Partager votre besoin" : "Share your requirements")} className="bg-zinc-50 border border-stone-200 rounded-3xl p-8 hover:shadow-md transition">
           <p className="uppercase tracking-[0.2em] text-[10px] text-stone-400 mb-4">{fr ? "PAS DANS LE CATALOGUE ?" : "CAN’T FIND IT HERE?"}</p>
           <h2 className="font-serif text-3xl text-brand-dark mb-3">
             {fr ? "Envoyez-nous une référence ou une photo" : "Send us a reference or image"}

@@ -186,7 +186,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50">
+      <section className="bg-zinc-50">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-2 gap-6">
             {focusCards.map((card) => (
@@ -235,7 +235,7 @@ const Home: React.FC = () => {
             </div>
             <div className="grid sm:grid-cols-2 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
               {whyElmvale.map((item, index) => (
-                <div key={item.title} className="bg-[#fbfaf8] p-7 md:p-8 min-h-[220px]">
+                <div key={item.title} className="bg-[#f8fafc] p-7 md:p-8 min-h-[220px]">
                   <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-8">0{index + 1}</div>
                   <h3 className="font-serif text-2xl text-brand-dark mb-3 tracking-[-0.01em]">{item.title}</h3>
                   <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
@@ -263,7 +263,7 @@ const Home: React.FC = () => {
           </div>
           <div className="grid md:grid-cols-5 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
             {steps.map(([num, title, desc]) => (
-              <div key={num} className="bg-[#fbfaf8] p-6 min-h-[230px]">
+              <div key={num} className="bg-[#f8fafc] p-6 min-h-[230px]">
                 <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">{num}</div>
                 <h3 className="font-medium text-brand-dark mb-3">{title}</h3>
                 <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
@@ -273,7 +273,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50">
+      <section className="bg-zinc-50">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-2 gap-6">
             {featureCards.map((card, index) => (
@@ -304,7 +304,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50 border-t border-stone-200">
+      <section className="bg-zinc-50 border-t border-stone-200">
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <p className="uppercase text-[10px] tracking-[0.32em] text-stone-400 mb-5">
             {fr ? "PARLEZ-NOUS DE VOTRE BESOIN" : "TELL US WHAT YOU NEED"}

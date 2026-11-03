@@ -124,7 +124,7 @@ const App: React.FC = () => {
 
   return (
     <LanguageContext.Provider value={ctx}>
-      <div className="flex flex-col min-h-screen bg-stone-50 text-stone-800 font-sans">
+      <div className="flex flex-col min-h-screen bg-zinc-50 text-stone-800 font-sans">
         <ScrollToTop />
         <SeoManager />
         <Navbar />

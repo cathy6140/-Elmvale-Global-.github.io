@@ -97,7 +97,7 @@ const FragrancePackaging: React.FC = () => {
         </p>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-20 space-y-16">
           {[
             {
@@ -167,7 +167,7 @@ const FragrancePackaging: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-[26px] border border-stone-200 bg-stone-200">
           {sourcingRoutes.map(([title, desc], index) => (
-            <div key={title} className="bg-[#fbfaf8] p-7 min-h-[240px]">
+            <div key={title} className="bg-[#f8fafc] p-7 min-h-[240px]">
               <div className="text-[10px] tracking-[0.28em] text-stone-400 mb-7">0{index + 1}</div>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{title}</h3>
               <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
@@ -240,7 +240,7 @@ const FragrancePackaging: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50 border-t border-stone-200">
+      <section className="bg-zinc-50 border-t border-stone-200">
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-5">
             {fr ? "PROJET PARFUM" : "FRAGRANCE PROJECT"}

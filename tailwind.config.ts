@@ -9,7 +9,7 @@ export default {
           dark: '#022c22',
           primary: '#059669',
           light: '#f0fdf4',
-          cream: '#fdfbf7',
+          cream: '#ffffff',
           stone: '#a8a29e'
         }
       },

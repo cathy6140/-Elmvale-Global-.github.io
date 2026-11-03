@@ -48,7 +48,7 @@ const About: React.FC = () => {
         </p>
       </section>
 
-      <section className="bg-stone-50 border-y border-stone-200">
+      <section className="bg-zinc-50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="max-w-3xl mb-12">
             <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
@@ -134,7 +134,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-stone-50 border-t border-stone-200">
+      <section className="bg-zinc-50 border-t border-stone-200">
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <p className="uppercase text-[10px] tracking-[0.3em] text-stone-400 mb-5">
             {fr ? "VOTRE PROJET" : "YOUR PROJECT"}

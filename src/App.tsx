@@ -29,6 +29,7 @@ import CookieBanner from "./components/CookieBanner";
 import { normalizeSeoPath, seoByRoute, setSeoMeta } from "./seo";
 import { languageFromPath, localizedPath, stripLocalePrefix } from "./locale";
 import { syncStructuredData } from "./structuredData";
+import { trackPageView } from "./analytics";
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: "en",
@@ -56,6 +57,16 @@ const SeoManager: React.FC = () => {
     const entry = seoByRoute[route][language];
     setSeoMeta(entry.title, entry.description, entry.path, language, entry.robots);
   }, [pathname, language]);
+
+  return null;
+};
+
+const AnalyticsPageView: React.FC = () => {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    trackPageView();
+  }, [pathname, search]);
 
   return null;
 };
@@ -127,6 +138,7 @@ const App: React.FC = () => {
       <div className="flex flex-col min-h-screen bg-zinc-50 text-stone-800 font-sans">
         <ScrollToTop />
         <SeoManager />
+        <AnalyticsPageView />
         <Navbar />
 
         <main className="flex-grow">

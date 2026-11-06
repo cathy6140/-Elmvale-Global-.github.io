@@ -93,6 +93,18 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
       path: "/stock-vs-custom-packaging/",
     },
   },
+  "/compare-cosmetic-packaging-suppliers": {
+    en: {
+      title: "How to compare cosmetic packaging suppliers | Elmvale Global",
+      description: "Compare cosmetic packaging suppliers across MOQ, lead time, customization, samples, technical feasibility, documentation and quality.",
+      path: "/compare-cosmetic-packaging-suppliers/",
+    },
+    fr: {
+      title: "Comparer des fournisseurs de packaging cosmétique | Elmvale Global",
+      description: "Comparez les fournisseurs packaging selon MOQ, délais, personnalisation, échantillons, faisabilité technique, documentation et qualité.",
+      path: "/compare-cosmetic-packaging-suppliers/",
+    },
+  },
   "/compliance": {
     en: {
       title: "Packaging documentation & sustainability support | Elmvale Global",

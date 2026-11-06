@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useMemo, useRef } from "react";
 import { LanguageContext } from "../App";
 import { Mail, Clock } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
-import { trackEmailClick } from "../analytics";
+import { trackEmailClick, trackGa4Event } from "../analytics";
 
 const FORMSPREE_FORM_ID = "xjkaopok";
 
@@ -18,14 +18,10 @@ const Contact: React.FC = () => {
     if (!formState.succeeded || leadTracked.current) return;
 
     leadTracked.current = true;
-    const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
-    if (typeof gtag === "function") {
-      gtag("event", "generate_lead", {
-        send_to: "G-BRRFY9DWWK",
-        event_category: "contact",
-        form_name: "packaging_brief",
-      });
-    }
+    trackGa4Event("generate_lead", {
+      event_category: "contact",
+      form_name: "packaging_brief",
+    });
   }, [formState.succeeded]);
 
   const nextSteps = fr

@@ -71,6 +71,7 @@ const Footer: React.FC = () => {
                 <li><Link to={withLang('/packaging-sourcing-brief')} className="hover:text-white transition">{language === 'fr' ? 'Brief sourcing packaging' : 'Packaging sourcing brief'}</Link></li>
                 <li><Link to={withLang('/cosmetic-packaging-moq')} className="hover:text-white transition">{language === 'fr' ? 'MOQ packaging cosmétique' : 'Cosmetic packaging MOQ'}</Link></li>
                 <li><Link to={withLang('/stock-vs-custom-packaging')} className="hover:text-white transition">{language === 'fr' ? 'Packaging stock vs custom' : 'Stock vs custom packaging'}</Link></li>
+                <li><Link to={withLang('/compare-cosmetic-packaging-suppliers')} className="hover:text-white transition">{language === 'fr' ? 'Comparer les fournisseurs' : 'Compare packaging suppliers'}</Link></li>
               </ul>
             </div>
 

@@ -22,6 +22,7 @@ import FragrancePackaging from "./pages/FragrancePackaging";
 import PackagingSourcingBrief from "./pages/PackagingSourcingBrief";
 import CosmeticPackagingMoq from "./pages/CosmeticPackagingMoq";
 import StockVsCustomPackaging from "./pages/StockVsCustomPackaging";
+import SupplierComparisonGuide from "./pages/SupplierComparisonGuide";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
@@ -176,6 +177,11 @@ const App: React.FC = () => {
             <Route path="/stock-vs-custom-packaging/" element={<StockVsCustomPackaging />} />
             <Route path="/fr/stock-vs-custom-packaging" element={<StockVsCustomPackaging />} />
             <Route path="/fr/stock-vs-custom-packaging/" element={<StockVsCustomPackaging />} />
+
+            <Route path="/compare-cosmetic-packaging-suppliers" element={<SupplierComparisonGuide />} />
+            <Route path="/compare-cosmetic-packaging-suppliers/" element={<SupplierComparisonGuide />} />
+            <Route path="/fr/compare-cosmetic-packaging-suppliers" element={<SupplierComparisonGuide />} />
+            <Route path="/fr/compare-cosmetic-packaging-suppliers/" element={<SupplierComparisonGuide />} />
 
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/compliance/" element={<Compliance />} />

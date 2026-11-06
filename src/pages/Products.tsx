@@ -256,6 +256,12 @@ const Products: React.FC = () => {
             >
               {fr ? "Comparer stock et custom" : "Compare stock vs custom packaging"} <span aria-hidden="true">→</span>
             </Link>
+            <Link
+              to={localizedPath("/compare-cosmetic-packaging-suppliers", language)}
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-sm text-white hover:bg-white hover:text-brand-dark transition"
+            >
+              {fr ? "Comparer les fournisseurs" : "Compare packaging suppliers"} <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>

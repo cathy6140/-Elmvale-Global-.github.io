@@ -62,11 +62,11 @@ const Sourcing: React.FC = () => {
             </h2>
             <p className="text-stone-600 leading-relaxed">
               {fr
-                ? "Des guides pratiques pour cadrer un brief, comprendre les MOQ et choisir entre une référence stock et un développement custom."
-                : "Practical guides to help structure a brief, understand MOQ, and decide between stock packaging and custom development."}
+                ? "Des guides pratiques pour cadrer un brief, comprendre les MOQ, choisir entre stock et custom, puis comparer des fournisseurs."
+                : "Practical guides to help structure a brief, understand MOQ, decide between stock and custom packaging, and compare suppliers."}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link to={localizedPath("/packaging-sourcing-brief", language)} className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
               <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 01" : "GUIDE 01"}</p>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Brief sourcing packaging" : "Packaging sourcing brief"}</h3>
@@ -81,6 +81,11 @@ const Sourcing: React.FC = () => {
               <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 03" : "GUIDE 03"}</p>
               <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Stock vs custom" : "Stock vs custom packaging"}</h3>
               <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Comparer MOQ, délai, investissement, différenciation et risque de lancement." : "Compare MOQ, timing, investment, differentiation and launch risk."}</p>
+            </Link>
+            <Link to={localizedPath("/compare-cosmetic-packaging-suppliers", language)} className="bg-white border border-stone-200 rounded-2xl p-6 hover:shadow-md transition">
+              <p className="uppercase text-[10px] tracking-[0.22em] text-stone-400 mb-3">{fr ? "GUIDE 04" : "GUIDE 04"}</p>
+              <h3 className="font-serif text-2xl text-brand-dark mb-3">{fr ? "Comparer les fournisseurs" : "Compare packaging suppliers"}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{fr ? "Comparer MOQ, délais, personnalisation, documentation, faisabilité et suivi." : "Compare MOQ, timing, customization, documentation, feasibility and supplier follow-up."}</p>
             </Link>
           </div>
         </div>

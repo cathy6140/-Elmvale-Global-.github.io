@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Language } from "../types";
 import { localizedPath } from "../locale";
 
-type GuideKey = "brief" | "moq" | "stock";
+type GuideKey = "brief" | "moq" | "stock" | "supplier";
 
 type Props = {
   language: Language;
@@ -47,6 +47,17 @@ const guides: Record<GuideKey, {
       title: "Packaging stock vs custom",
       description: "Comparer MOQ, délais, investissement, différenciation et risque de lancement."
     }
+  },
+  supplier: {
+    path: "/compare-cosmetic-packaging-suppliers",
+    en: {
+      title: "Compare cosmetic packaging suppliers",
+      description: "Compare MOQ, timing, customization, feasibility, documentation and supplier follow-up."
+    },
+    fr: {
+      title: "Comparer des fournisseurs packaging",
+      description: "Comparer MOQ, délais, personnalisation, faisabilité, documentation et suivi fournisseur."
+    }
   }
 };
 
@@ -72,7 +83,7 @@ const RelatedGuides: React.FC<Props> = ({ language, current }) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {related.map(([key, guide]) => {
             const copy = guide[language];
             return (

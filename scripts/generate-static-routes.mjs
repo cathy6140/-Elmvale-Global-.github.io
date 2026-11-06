@@ -111,6 +111,21 @@ const routes = [
     }
   },
   {
+    path: "/compare-cosmetic-packaging-suppliers/",
+    en: {
+      title: "How to compare cosmetic packaging suppliers | Elmvale Global",
+      description: "Compare cosmetic packaging suppliers across MOQ, lead time, customization, samples, technical feasibility, documentation and quality.",
+      h1: "How to compare cosmetic packaging suppliers",
+      intro: "A useful supplier comparison looks beyond price and MOQ to timing, customization, samples, technical feasibility, documentation, quality and project follow-up."
+    },
+    fr: {
+      title: "Comparer des fournisseurs de packaging cosmétique | Elmvale Global",
+      description: "Comparez les fournisseurs packaging selon MOQ, délais, personnalisation, échantillons, faisabilité technique, documentation et qualité.",
+      h1: "Comment comparer des fournisseurs de packaging cosmétique",
+      intro: "Une comparaison utile ne se limite pas au prix et au MOQ : elle tient aussi compte des délais, de la personnalisation, des échantillons, de la faisabilité technique, de la documentation, de la qualité et du suivi."
+    }
+  },
+  {
     path: "/compliance/",
     en: {
       title: "Packaging documentation & sustainability support | Elmvale Global",

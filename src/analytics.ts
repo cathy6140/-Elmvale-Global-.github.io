@@ -1,9 +1,34 @@
+const ANALYTICS_CONSENT_KEY = "elmvale_cookie_consent";
+
+function analyticsAccepted() {
+  if (typeof window === "undefined") return false;
+  return window.localStorage.getItem(ANALYTICS_CONSENT_KEY) === "accepted";
+}
+
+function getGtag() {
+  if (typeof window === "undefined") return undefined;
+  return (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+}
+
+export function trackPageView() {
+  if (!analyticsAccepted()) return;
+  const gtag = getGtag();
+  if (typeof gtag !== "function") return;
+
+  gtag("event", "page_view", {
+    send_to: "G-BRRFY9DWWK",
+    page_title: document.title,
+    page_location: window.location.href,
+    page_path: window.location.pathname + window.location.search,
+  });
+}
+
 export function trackGa4Event(
   eventName: string,
   params: Record<string, string | number | boolean | undefined> = {}
 ) {
-  if (typeof window === "undefined") return;
-  const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+  if (!analyticsAccepted()) return;
+  const gtag = getGtag();
   if (typeof gtag !== "function") return;
 
   gtag("event", eventName, {

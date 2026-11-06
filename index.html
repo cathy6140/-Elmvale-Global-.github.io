@@ -85,19 +85,32 @@
       window.dataLayer = window.dataLayer || [];
       window.gtag = function(){ window.dataLayer.push(arguments); };
       var gtag = window.gtag;
+      var savedAnalyticsConsent = localStorage.getItem('elmvale_cookie_consent');
+      var analyticsGranted = savedAnalyticsConsent === 'accepted';
+
       gtag('consent', 'default', {
         'ad_storage': 'denied',
-        'analytics_storage': 'denied',
+        'analytics_storage': analyticsGranted ? 'granted' : 'denied',
         'functionality_storage': 'granted',
         'security_storage': 'granted'
       });
       gtag('js', new Date());
-      gtag('config', 'G-BRRFY9DWWK', { anonymize_ip: true });
+      gtag('config', 'G-BRRFY9DWWK', {
+        anonymize_ip: true,
+        send_page_view: false
+      });
+
       window.acceptAnalytics = function() {
-        gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'granted'
+        });
       };
       window.declineAnalytics = function() {
-        gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'denied' });
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied'
+        });
       };
     </script>
 

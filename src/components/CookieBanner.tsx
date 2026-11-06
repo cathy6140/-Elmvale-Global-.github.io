@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../App";
 import { localizedPath } from "../locale";
+import { trackPageView } from "../analytics";
 
 const STORAGE_KEY = "elmvale_cookie_consent"; // localStorage 里记住用户选择
 
@@ -39,6 +40,7 @@ const CookieBanner: React.FC<Props> = () => {
     const anyWindow = window as any;
     if (choice === "accepted") {
       anyWindow.acceptAnalytics?.();
+      trackPageView();
     } else {
       anyWindow.declineAnalytics?.();
     }

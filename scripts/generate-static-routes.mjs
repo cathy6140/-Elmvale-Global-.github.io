@@ -247,6 +247,27 @@ function structuredData(path, lang) {
   const websiteId = lang === "fr" ? "https://elmvaleglobal.com/fr/#website" : "https://elmvaleglobal.com/#website";
   const serviceId = lang === "fr" ? "https://elmvaleglobal.com/fr/#sourcing-service" : "https://elmvaleglobal.com/#sourcing-service";
 
+  const baseGuidePath = lang === "fr" ? path.replace(/^\/fr/, "") : path;
+  const guideMeta = {
+    "/packaging-sourcing-brief/": {
+      en: { headline: "What to include in a cosmetic packaging sourcing brief", description: "A practical guide to structuring a packaging sourcing brief before comparing manufacturing options." },
+      fr: { headline: "Que faut-il inclure dans un brief de sourcing packaging cosmétique ?", description: "Un guide pratique pour structurer un brief packaging avant de comparer les options fabricants." }
+    },
+    "/cosmetic-packaging-moq/": {
+      en: { headline: "Cosmetic packaging MOQ: what brands should expect", description: "A practical guide to the factors that change cosmetic packaging minimum order quantities." },
+      fr: { headline: "MOQ packaging cosmétique : à quoi les marques doivent-elles s’attendre ?", description: "Un guide pratique des facteurs qui font varier les quantités minimales en packaging cosmétique." }
+    },
+    "/stock-vs-custom-packaging/": {
+      en: { headline: "Stock vs custom cosmetic packaging: which option should you choose?", description: "Compare stock and custom packaging across MOQ, timing, investment, differentiation and launch risk." },
+      fr: { headline: "Packaging stock ou custom : quelle route choisir ?", description: "Comparer packaging stock et custom selon MOQ, délais, investissement, différenciation et risque de lancement." }
+    },
+    "/compare-cosmetic-packaging-suppliers/": {
+      en: { headline: "How to compare cosmetic packaging suppliers", description: "Compare packaging suppliers across MOQ, lead time, customization, samples, technical feasibility, documentation and quality." },
+      fr: { headline: "Comment comparer des fournisseurs de packaging cosmétique", description: "Comparer les fournisseurs packaging selon MOQ, délais, personnalisation, échantillons, faisabilité technique, documentation et qualité." }
+    }
+  };
+  const guide = guideMeta[baseGuidePath]?.[lang];
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -290,7 +311,17 @@ function structuredData(path, lang) {
         inLanguage: lang,
         isPartOf: { "@id": websiteId },
         about: { "@id": "https://elmvaleglobal.com/#organization" }
-      }
+      },
+      ...(guide ? [{
+        "@type": "Article",
+        "@id": pageUrl + "#article",
+        headline: guide.headline,
+        description: guide.description,
+        inLanguage: lang,
+        mainEntityOfPage: { "@id": pageUrl + "#webpage" },
+        publisher: { "@id": "https://elmvaleglobal.com/#organization" },
+        about: "Cosmetic packaging sourcing"
+      }] : [])
     ]
   };
 }

@@ -1,8 +1,10 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const distDir = "dist";
 const baseHtml = await readFile(join(distDir, "index.html"), "utf8");
+const { render } = await import(pathToFileURL(resolve("dist-ssr/entry-server.js")).href);
 
 const routes = [
   {
@@ -318,13 +320,19 @@ function applyRoute(html, route, lang) {
     /<script id=["']elmvale-structured-data["'] type=["']application\/ld\+json["']>[\s\S]*?<\/script>/i,
     '<script id="elmvale-structured-data" type="application/ld+json">\n' + JSON.stringify(structuredData(path, lang), null, 2) + '\n    </script>'
   );
-  html = html.replace(/<!-- STATIC_SEMANTIC_START -->[\s\S]*?<!-- STATIC_SEMANTIC_END -->/, semanticFallback(route, lang));
+  let body;
+  try {
+    body = "<!-- STATIC_SEMANTIC_START -->" + render(path) + "<!-- STATIC_SEMANTIC_END -->";
+  } catch (error) {
+    console.warn("Prerender failed for " + path + ", using short fallback:", error instanceof Error ? error.message : String(error));
+    body = semanticFallback(route, lang);
+  }
+  html = html.replace(/<!-- STATIC_SEMANTIC_START -->[\s\S]*?<!-- STATIC_SEMANTIC_END -->/, () => body);
   return html;
 }
 
 for (const route of routes) {
   for (const lang of ["en", "fr"]) {
-    if (route.path === "/" && lang === "en") continue;
     const html = applyRoute(baseHtml, route, lang);
     const targetPath = localizedPath(route.path, lang);
     const outputPath = targetPath === "/"
@@ -335,4 +343,4 @@ for (const route of routes) {
   }
 }
 
-console.log("Generated localized static route entry pages with canonical and hreflang metadata.");
+console.log("Generated prerendered EN/FR pages with full content, canonical and hreflang metadata.");

@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
           <Link to={withLang('/')} className="flex items-center gap-3 group shrink-0">
             <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-black/5 shadow-sm transition-transform duration-500 group-hover:rotate-6">
               <img
-                src="/elmvale-logo-512.png"
+                src="/elmvale-logo-256.webp"
                 alt="Elmvale Global"
                 className="w-7 h-7 object-contain"
                 loading="eager"

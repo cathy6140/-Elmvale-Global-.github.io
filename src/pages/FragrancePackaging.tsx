@@ -5,14 +5,14 @@ import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const fragranceImages = [
-  "/1.png",
-  "/2.png",
-  "/3.png",
-  "/4.png",
-  "/5.png",
-  "/6.png",
-  "/7.png",
-  "/8.png",
+  "/fragrance-packaging-01.webp",
+  "/fragrance-packaging-02.webp",
+  "/fragrance-packaging-03.webp",
+  "/fragrance-packaging-04.webp",
+  "/fragrance-packaging-05.webp",
+  "/fragrance-packaging-06.webp",
+  "/fragrance-packaging-07.webp",
+  "/fragrance-packaging-08.webp",
 ];
 
 const FragrancePackaging: React.FC = () => {

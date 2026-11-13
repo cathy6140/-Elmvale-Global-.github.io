@@ -15,7 +15,8 @@ const Sourcing: React.FC = () => {
         ["Échantillons", "Coordination d’échantillons standards ou personnalisés avant production."],
         ["Développement", "Couleurs, sérigraphie, marquage à chaud, coating, composants et moules selon faisabilité."],
         ["Suivi de production", "Communication avec le fabricant et suivi des étapes clés du projet."],
-        ["Qualité & documents", "Coordination de contrôles et collecte de documents disponibles selon le fabricant et le matériau."]
+        ["Qualité & documents", "Coordination de contrôles qualité et collecte de documents disponibles selon le fabricant et le matériau."],
+        ["Coordination expédition", "Support optionnel pour la préparation de l’expédition et la coordination avec votre transitaire ou partenaire logistique lorsque nécessaire."]
       ]
     : [
         ["Supplier search", "Identify options based on category, quantity, target cost, finish and timing."],
@@ -23,7 +24,8 @@ const Sourcing: React.FC = () => {
         ["Sampling", "Coordinate stock or customized samples before production."],
         ["Development", "Color, silk screen, hot stamping, coating, components and tooling when feasible."],
         ["Production follow-up", "Coordinate communication with manufacturers and follow key project milestones."],
-        ["Quality & documents", "Coordinate inspections and collect available documents depending on manufacturer and material."]
+        ["Quality & documents", "Coordinate quality inspections and collect available documents depending on manufacturer and material."],
+        ["Shipment coordination", "Optional support with shipment preparation and coordination with your nominated freight forwarder or logistics partner when required."]
       ];
 
   return (
@@ -31,12 +33,12 @@ const Sourcing: React.FC = () => {
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
         <p className="uppercase text-xs tracking-[0.3em] text-stone-400 mb-4">{fr ? "SOURCING PACKAGING" : "PACKAGING SOURCING"}</p>
         <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[54px] text-brand-dark mb-6">
-          {fr ? "Sourcing de packaging cosmétique" : "Cosmetic packaging sourcing"}
+          {fr ? "Sourcing de packaging cosmétique pour les marques beauté" : "Cosmetic packaging sourcing for beauty brands"}
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
             ? "Nous aidons les marques à naviguer les options fabricants et à coordonner les étapes essentielles d’un projet packaging. Notre réseau de sourcing comprend des ressources fabricants en Chine, sans prétendre remplacer vos équipes réglementaires ou qualité."
-            : "We help brands navigate manufacturing options and coordinate the essential steps of a packaging project. Our sourcing network includes manufacturing resources in China, without replacing your own regulatory or quality teams."}
+            : "Elmvale helps beauty brands source cosmetic, skincare and fragrance packaging from qualified suppliers. We support supplier selection, sampling and development, production follow-up and quality inspection, with shipment coordination available when required."}
         </p>
       </section>
 

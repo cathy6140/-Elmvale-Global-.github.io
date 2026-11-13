@@ -40,10 +40,10 @@ const routes = [
   {
     path: "/sourcing/",
     en: {
-      title: "Packaging sourcing & supplier coordination | Elmvale Global",
-      description: "Elmvale Global helps beauty and fragrance brands compare packaging sourcing options, clarify MOQ and timing, and coordinate sampling and suppliers.",
-      h1: "Cosmetic packaging sourcing",
-      intro: "Elmvale Global helps beauty and fragrance brands compare sourcing options, clarify MOQ, timing, customization and technical feasibility, then coordinate sampling and supplier communication."
+      title: "Cosmetic packaging sourcing for beauty brands | Elmvale Global",
+      description: "Source cosmetic, skincare and fragrance packaging with supplier selection, sampling, production follow-up and quality inspection support from Elmvale Global.",
+      h1: "Cosmetic packaging sourcing for beauty brands",
+      intro: "Elmvale helps beauty brands source cosmetic, skincare and fragrance packaging from qualified suppliers, with support for supplier selection, sampling, production follow-up and quality inspection."
     },
     fr: {
       title: "Sourcing packaging & coordination fournisseurs | Elmvale Global",
@@ -85,7 +85,7 @@ const routes = [
   {
     path: "/cosmetic-packaging-moq/",
     en: {
-      title: "Cosmetic packaging MOQ guide | Elmvale Global",
+      title: "Cosmetic packaging MOQ: stock vs custom | Elmvale Global",
       description: "Understand what drives cosmetic packaging MOQ, how stock and custom options differ, and what brands can do when minimum quantities are too high.",
       h1: "Cosmetic packaging MOQ: what brands should expect",
       intro: "There is no single standard MOQ for cosmetic packaging. Minimum quantities depend on the reference, component, material, decoration, manufacturer and level of customization required."

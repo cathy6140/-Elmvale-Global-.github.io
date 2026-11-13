@@ -174,6 +174,9 @@ const CosmeticPackagingMoq: React.FC = () => {
               <Link to={localizedPath("/stock-vs-custom-packaging", language)} className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
                 {fr ? "Comparer packaging stock et custom" : "Compare stock vs custom packaging"} <span aria-hidden="true">→</span>
               </Link>
+              <Link to={localizedPath("/sourcing", language)} className="inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4">
+                {fr ? "Découvrir notre accompagnement sourcing packaging" : "Explore our cosmetic packaging sourcing support"} <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </div>

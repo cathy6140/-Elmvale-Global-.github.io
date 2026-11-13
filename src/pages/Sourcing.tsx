@@ -37,7 +37,7 @@ const Sourcing: React.FC = () => {
         </h1>
         <p className="text-xl text-stone-600 max-w-3xl leading-relaxed">
           {fr
-            ? "Nous aidons les marques à naviguer les options fabricants et à coordonner les étapes essentielles d’un projet packaging. Notre réseau de sourcing comprend des ressources fabricants en Chine, sans prétendre remplacer vos équipes réglementaires ou qualité."
+            ? "Elmvale aide les marques beauté à sourcer des packagings cosmétiques, skincare et parfum auprès de fournisseurs qualifiés. Nous accompagnons la sélection fournisseurs, les échantillons et le développement, le suivi de production et les contrôles qualité, avec une coordination d’expédition disponible lorsque nécessaire."
             : "Elmvale helps beauty brands source cosmetic, skincare and fragrance packaging from qualified suppliers. We support supplier selection, sampling and development, production follow-up and quality inspection, with shipment coordination available when required."}
         </p>
       </section>

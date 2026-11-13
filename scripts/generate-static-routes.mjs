@@ -46,10 +46,10 @@ const routes = [
       intro: "Elmvale helps beauty brands source cosmetic, skincare and fragrance packaging from qualified suppliers, with support for supplier selection, sampling, production follow-up and quality inspection."
     },
     fr: {
-      title: "Sourcing packaging & coordination fournisseurs | Elmvale Global",
-      description: "Elmvale Global aide les marques beauté et parfum à comparer les options de sourcing, clarifier MOQ et délais, puis coordonner échantillons et fournisseurs.",
-      h1: "Sourcing de packaging cosmétique",
-      intro: "Elmvale Global aide les marques beauté et parfum à comparer les options de sourcing, clarifier MOQ, délais, personnalisation et faisabilité, puis coordonner les échantillons et les fournisseurs."
+      title: "Sourcing packaging cosmétique pour marques beauté | Elmvale Global",
+      description: "Sourcing de packaging cosmétique, skincare et parfum avec sélection fournisseurs, échantillons, suivi de production et coordination des contrôles qualité.",
+      h1: "Sourcing de packaging cosmétique pour les marques beauté",
+      intro: "Elmvale aide les marques beauté à sourcer des packagings cosmétiques, skincare et parfum auprès de fournisseurs qualifiés, avec sélection fournisseurs, échantillons, suivi de production et coordination des contrôles qualité."
     }
   },
   {

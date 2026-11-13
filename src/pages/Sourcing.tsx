@@ -28,6 +28,22 @@ const Sourcing: React.FC = () => {
         ["Shipment coordination", "Optional support with shipment preparation and coordination with your nominated freight forwarder or logistics partner when required."]
       ];
 
+  const directAnswers = fr
+    ? [
+        ["Que comprend le sourcing de packaging cosmétique ?", "Le sourcing peut couvrir la recherche et la comparaison de fournisseurs, les échantillons et le développement, le suivi de production, ainsi que la coordination des contrôles qualité et des documents disponibles. La coordination d’expédition reste optionnelle selon le projet."],
+        ["Travaillez-vous aussi sur le packaging parfum ?", "Oui. Nous pouvons sourcer des flacons, pompes, capots, cols, décorations et packaging secondaire, soit comme pack complet, soit comme composants séparés selon le brief."],
+        ["Pouvez-vous accompagner des projets avec des volumes plus faibles ?", "Nous pouvons comparer des références stock, des niveaux de personnalisation et plusieurs fabricants afin d’identifier une route plus réaliste. Il n’existe pas de MOQ unique : le minimum dépend du composant, de la finition et du fournisseur."],
+        ["Coordonnez-vous les contrôles qualité ?", "Oui. Nous pouvons coordonner des inspections qualité et collecter les documents disponibles auprès du fabricant. Le périmètre exact du contrôle est défini selon le produit, le fournisseur et les besoins du projet."],
+        ["Gérez-vous le transport ?", "La coordination d’expédition est optionnelle. Lorsque nécessaire, nous pouvons préparer les informations d’expédition et coordonner avec le transitaire ou partenaire logistique désigné par le client ; nous n’agissons pas comme transitaire."]
+      ]
+    : [
+        ["What does cosmetic packaging sourcing include?", "Packaging sourcing can include supplier search and comparison, sampling and development, production follow-up, plus coordination of quality inspections and available documentation. Shipment coordination is optional depending on the project."],
+        ["Do you also source fragrance packaging?", "Yes. We can source fragrance bottles, pumps, caps, collars, decoration and secondary packaging, either as a complete set or as individual components depending on the brief."],
+        ["Can you support lower-volume projects?", "We can compare stock references, different levels of customization and multiple manufacturers to identify a more workable route. There is no universal MOQ; minimums depend on the component, finish and supplier."],
+        ["Do you coordinate quality inspections?", "Yes. We can coordinate quality inspections and collect available manufacturer documentation. The exact inspection scope is agreed based on the product, supplier and project requirements."],
+        ["Do you manage shipping?", "Shipment coordination is optional. When required, we can prepare shipment information and coordinate with the client’s nominated freight forwarder or logistics partner; we do not act as the freight forwarder."]
+      ];
+
   return (
     <div className="bg-white">
       <section className="max-w-6xl mx-auto px-6 pt-28 pb-16">
@@ -51,6 +67,37 @@ const Sourcing: React.FC = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="max-w-3xl mb-10">
+          <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
+            {fr ? "RÉPONSES DIRECTES" : "DIRECT ANSWERS"}
+          </p>
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
+            {fr ? "Questions fréquentes sur le sourcing packaging" : "Common questions about packaging sourcing"}
+          </h2>
+          <p className="text-stone-600 leading-relaxed">
+            {fr
+              ? "Des réponses courtes aux questions qui reviennent le plus souvent avant de lancer un projet."
+              : "Short answers to the questions brands most often ask before starting a sourcing project."}
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {directAnswers.map(([question, answer]) => (
+            <article key={question} className="border border-stone-200 rounded-2xl p-6 bg-white">
+              <h3 className="font-serif text-2xl text-brand-dark mb-3">{question}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{answer}</p>
+            </article>
+          ))}
+        </div>
+        <Link
+          to={localizedPath("/fragrance-packaging", language)}
+          className="mt-8 inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4"
+        >
+          {fr ? "Voir notre accompagnement en packaging parfum" : "Explore our fragrance packaging sourcing support"}
+          <span aria-hidden="true">→</span>
+        </Link>
       </section>
 
       <section className="bg-zinc-50 border-y border-stone-200">

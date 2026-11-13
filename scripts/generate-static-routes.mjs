@@ -240,33 +240,86 @@ function semanticFallback(route, lang) {
       <!-- STATIC_SEMANTIC_END -->`;
 }
 
+const structuredGuideMeta = {
+  "/packaging-sourcing-brief/": {
+    en: { headline: "What to include in a cosmetic packaging sourcing brief", description: "A practical guide to structuring a packaging sourcing brief before comparing manufacturing options.", datePublished: "2026-10-22", dateModified: "2026-11-03", image: "https://elmvaleglobal.com/packaging-sourcing-coordination.webp" },
+    fr: { headline: "Que faut-il inclure dans un brief de sourcing packaging cosmétique ?", description: "Un guide pratique pour structurer un brief packaging avant de comparer les options fabricants.", datePublished: "2026-10-22", dateModified: "2026-11-03", image: "https://elmvaleglobal.com/packaging-sourcing-coordination.webp" }
+  },
+  "/cosmetic-packaging-moq/": {
+    en: { headline: "Cosmetic packaging MOQ: what brands should expect", description: "A practical guide to the factors that change cosmetic packaging minimum order quantities.", datePublished: "2026-10-22", dateModified: "2026-11-13", image: "https://elmvaleglobal.com/skincare-primary-packaging.webp" },
+    fr: { headline: "MOQ packaging cosmétique : à quoi les marques doivent-elles s’attendre ?", description: "Un guide pratique des facteurs qui font varier les quantités minimales en packaging cosmétique.", datePublished: "2026-10-22", dateModified: "2026-11-13", image: "https://elmvaleglobal.com/skincare-primary-packaging.webp" }
+  },
+  "/stock-vs-custom-packaging/": {
+    en: { headline: "Stock vs custom cosmetic packaging: which option should you choose?", description: "Compare stock and custom packaging across MOQ, timing, investment, differentiation and launch risk.", datePublished: "2026-10-22", dateModified: "2026-11-03", image: "https://elmvaleglobal.com/beauty-skincare-packaging.webp" },
+    fr: { headline: "Packaging stock ou custom : quelle route choisir ?", description: "Comparer packaging stock et custom selon MOQ, délais, investissement, différenciation et risque de lancement.", datePublished: "2026-10-22", dateModified: "2026-11-03", image: "https://elmvaleglobal.com/beauty-skincare-packaging.webp" }
+  },
+  "/compare-cosmetic-packaging-suppliers/": {
+    en: { headline: "How to compare cosmetic packaging suppliers", description: "Compare packaging suppliers across MOQ, lead time, customization, samples, technical feasibility, documentation and quality.", datePublished: "2026-11-06", dateModified: "2026-11-06", image: "https://elmvaleglobal.com/packaging-sourcing-coordination.webp" },
+    fr: { headline: "Comment comparer des fournisseurs de packaging cosmétique", description: "Comparer les fournisseurs packaging selon MOQ, délais, personnalisation, échantillons, faisabilité technique, documentation et qualité.", datePublished: "2026-11-06", dateModified: "2026-11-06", image: "https://elmvaleglobal.com/packaging-sourcing-coordination.webp" }
+  }
+};
+
+const structuredPageNames = {
+  "/products/": { en: "Packaging categories", fr: "Catégories de packaging" },
+  "/sourcing/": { en: "Packaging sourcing", fr: "Sourcing packaging" },
+  "/fragrance-packaging/": { en: "Fragrance packaging", fr: "Packaging parfum" },
+  "/packaging-sourcing-brief/": { en: "Packaging sourcing brief", fr: "Brief sourcing packaging" },
+  "/cosmetic-packaging-moq/": { en: "Cosmetic packaging MOQ", fr: "MOQ packaging cosmétique" },
+  "/stock-vs-custom-packaging/": { en: "Stock vs custom packaging", fr: "Packaging stock vs custom" },
+  "/compare-cosmetic-packaging-suppliers/": { en: "Compare packaging suppliers", fr: "Comparer les fournisseurs" },
+  "/compliance/": { en: "Compliance & sustainability", fr: "Conformité & durabilité" },
+  "/about/": { en: "About Elmvale Global", fr: "À propos d’Elmvale Global" },
+  "/contact/": { en: "Contact", fr: "Contact" },
+  "/privacy/": { en: "Privacy policy", fr: "Politique de confidentialité" },
+  "/terms/": { en: "Website terms", fr: "Conditions d’utilisation" },
+  "/cookies/": { en: "Cookie policy", fr: "Politique cookies" }
+};
+
+function structuredBreadcrumbItems(baseGuidePath, path, lang) {
+  const items = [{
+    "@type": "ListItem",
+    position: 1,
+    name: lang === "fr" ? "Accueil" : "Home",
+    item: lang === "fr" ? "https://elmvaleglobal.com/fr/" : "https://elmvaleglobal.com/"
+  }];
+
+  if (baseGuidePath === "/fragrance-packaging/") {
+    items.push({
+      "@type": "ListItem",
+      position: 2,
+      name: lang === "fr" ? "Catégories de packaging" : "Packaging categories",
+      item: "https://elmvaleglobal.com" + localizedPath("/products/", lang)
+    });
+  } else if (structuredGuideMeta[baseGuidePath]) {
+    items.push({
+      "@type": "ListItem",
+      position: 2,
+      name: lang === "fr" ? "Sourcing packaging" : "Packaging sourcing",
+      item: "https://elmvaleglobal.com" + localizedPath("/sourcing/", lang)
+    });
+  }
+
+  const name = structuredPageNames[baseGuidePath]?.[lang];
+  if (name) {
+    items.push({
+      "@type": "ListItem",
+      position: items.length + 1,
+      name,
+      item: "https://elmvaleglobal.com" + path
+    });
+  }
+  return items;
+}
+
 function structuredData(path, lang) {
   const pageUrl = "https://elmvaleglobal.com" + path;
   const siteUrl = lang === "fr" ? "https://elmvaleglobal.com/fr/" : "https://elmvaleglobal.com/";
   const sourcingUrl = lang === "fr" ? "https://elmvaleglobal.com/fr/sourcing/" : "https://elmvaleglobal.com/sourcing/";
   const websiteId = lang === "fr" ? "https://elmvaleglobal.com/fr/#website" : "https://elmvaleglobal.com/#website";
   const serviceId = lang === "fr" ? "https://elmvaleglobal.com/fr/#sourcing-service" : "https://elmvaleglobal.com/#sourcing-service";
-
   const baseGuidePath = lang === "fr" ? path.replace(/^\/fr/, "") : path;
-  const guideMeta = {
-    "/packaging-sourcing-brief/": {
-      en: { headline: "What to include in a cosmetic packaging sourcing brief", description: "A practical guide to structuring a packaging sourcing brief before comparing manufacturing options." },
-      fr: { headline: "Que faut-il inclure dans un brief de sourcing packaging cosmétique ?", description: "Un guide pratique pour structurer un brief packaging avant de comparer les options fabricants." }
-    },
-    "/cosmetic-packaging-moq/": {
-      en: { headline: "Cosmetic packaging MOQ: what brands should expect", description: "A practical guide to the factors that change cosmetic packaging minimum order quantities." },
-      fr: { headline: "MOQ packaging cosmétique : à quoi les marques doivent-elles s’attendre ?", description: "Un guide pratique des facteurs qui font varier les quantités minimales en packaging cosmétique." }
-    },
-    "/stock-vs-custom-packaging/": {
-      en: { headline: "Stock vs custom cosmetic packaging: which option should you choose?", description: "Compare stock and custom packaging across MOQ, timing, investment, differentiation and launch risk." },
-      fr: { headline: "Packaging stock ou custom : quelle route choisir ?", description: "Comparer packaging stock et custom selon MOQ, délais, investissement, différenciation et risque de lancement." }
-    },
-    "/compare-cosmetic-packaging-suppliers/": {
-      en: { headline: "How to compare cosmetic packaging suppliers", description: "Compare packaging suppliers across MOQ, lead time, customization, samples, technical feasibility, documentation and quality." },
-      fr: { headline: "Comment comparer des fournisseurs de packaging cosmétique", description: "Comparer les fournisseurs packaging selon MOQ, délais, personnalisation, échantillons, faisabilité technique, documentation et qualité." }
-    }
-  };
-  const guide = guideMeta[baseGuidePath]?.[lang];
+  const guide = structuredGuideMeta[baseGuidePath]?.[lang];
+  const breadcrumbId = pageUrl + "#breadcrumb";
 
   return {
     "@context": "https://schema.org",
@@ -277,6 +330,13 @@ function structuredData(path, lang) {
         name: "Elmvale Global",
         url: "https://elmvaleglobal.com/",
         email: "contact@elmvaleglobal.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://elmvaleglobal.com/elmvale-logo-512.webp",
+          width: 512,
+          height: 512
+        },
+        sameAs: ["https://www.linkedin.com/company/elmvale-global/"],
         description: lang === "fr"
           ? "Sourcing packaging et coordination de projet pour les marques de beauté et de parfum."
           : "Packaging sourcing and project coordination support for beauty and fragrance brands."
@@ -305,11 +365,17 @@ function structuredData(path, lang) {
         url: sourcingUrl
       },
       {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: structuredBreadcrumbItems(baseGuidePath, path, lang)
+      },
+      {
         "@type": "WebPage",
         "@id": pageUrl + "#webpage",
         url: pageUrl,
         inLanguage: lang,
         isPartOf: { "@id": websiteId },
+        breadcrumb: { "@id": breadcrumbId },
         about: { "@id": "https://elmvaleglobal.com/#organization" }
       },
       ...(guide ? [{
@@ -317,9 +383,13 @@ function structuredData(path, lang) {
         "@id": pageUrl + "#article",
         headline: guide.headline,
         description: guide.description,
+        image: guide.image,
+        datePublished: guide.datePublished,
+        dateModified: guide.dateModified,
+        author: { "@id": "https://elmvaleglobal.com/#organization" },
+        publisher: { "@id": "https://elmvaleglobal.com/#organization" },
         inLanguage: lang,
         mainEntityOfPage: { "@id": pageUrl + "#webpage" },
-        publisher: { "@id": "https://elmvaleglobal.com/#organization" },
         about: "Cosmetic packaging sourcing"
       }] : [])
     ]

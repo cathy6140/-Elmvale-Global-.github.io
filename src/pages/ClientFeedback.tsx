@@ -8,7 +8,7 @@ const ClientFeedback: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const fr = language === "fr";
   const [formState, handleSubmit] = useForm(FORMSPREE_FORM_ID);
-  const isOfficialHost = useMemo(() => window.location.hostname === "elmvaleglobal.com", []);
+  const isOfficialHost = useMemo(() => typeof window === "undefined" || window.location.hostname === "elmvaleglobal.com", []);
 
   if (formState.succeeded) {
     return (
@@ -51,7 +51,7 @@ const ClientFeedback: React.FC = () => {
           <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
           <input type="hidden" name="form_type" value="client_feedback" />
           <input type="hidden" name="language" value={language} />
-          <input type="hidden" name="source" value={window.location.href} />
+          <input type="hidden" name="source" value={typeof window === "undefined" ? "" : window.location.href} />
 
           <div className="grid md:grid-cols-2 gap-6">
             <Field label={fr ? "Nom" : "Name"} name="name" required disabled={!isOfficialHost} />

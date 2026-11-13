@@ -40,8 +40,8 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
       path: "/sourcing/",
     },
     fr: {
-      title: "Sourcing packaging & coordination fournisseurs | Elmvale Global",
-      description: "Elmvale Global aide les marques beauté et parfum à comparer les options de sourcing, clarifier MOQ et délais, puis coordonner échantillons et fournisseurs.",
+      title: "Sourcing packaging cosmétique pour marques beauté | Elmvale Global",
+      description: "Sourcing de packaging cosmétique, skincare et parfum avec sélection fournisseurs, échantillons, suivi de production et coordination des contrôles qualité.",
       path: "/sourcing/",
     },
   },

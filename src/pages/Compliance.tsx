@@ -44,7 +44,7 @@ const Compliance: React.FC = () => {
       <section className="relative w-full min-h-[520px] md:min-h-[580px] overflow-hidden">
         {/* 背景图：放在 public/compliance-hero.jpg */}
         <img
-          src="/compliance-hero.png"
+          src="/compliance-packaging.webp"
           alt={
             language === "fr"
               ? "Documents de conformité et packagings cosmétiques durables"

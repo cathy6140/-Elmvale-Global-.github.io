@@ -164,7 +164,7 @@ const Products: React.FC = () => {
             );
 
             return category.to ? (
-              <Link key={category.title} to={category.to} className="block">
+              <Link key={category.title} to={localizedPath(category.to, language)} className="block">
                 {card}
               </Link>
             ) : (

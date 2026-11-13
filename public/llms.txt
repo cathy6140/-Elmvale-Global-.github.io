@@ -1,0 +1,26 @@
+# Elmvale Global
+
+> Elmvale Global supports beauty and fragrance brands with packaging sourcing, supplier comparison, sampling and project coordination.
+
+Elmvale Global is a packaging sourcing and project coordination service. It is not a packaging manufacturer and is not limited to a fixed catalogue.
+
+## Core pages
+
+- [Packaging sourcing](https://elmvaleglobal.com/sourcing/)
+- [Packaging categories](https://elmvaleglobal.com/products/)
+- [Fragrance packaging](https://elmvaleglobal.com/fragrance-packaging/)
+- [Packaging documentation and sustainability](https://elmvaleglobal.com/compliance/)
+- [About Elmvale Global](https://elmvaleglobal.com/about/)
+- [Contact](https://elmvaleglobal.com/contact/)
+
+## Packaging guides
+
+- [Packaging sourcing brief](https://elmvaleglobal.com/packaging-sourcing-brief/)
+- [Cosmetic packaging MOQ](https://elmvaleglobal.com/cosmetic-packaging-moq/)
+- [Stock vs custom cosmetic packaging](https://elmvaleglobal.com/stock-vs-custom-packaging/)
+- [How to compare cosmetic packaging suppliers](https://elmvaleglobal.com/compare-cosmetic-packaging-suppliers/)
+
+## Languages
+
+- [English](https://elmvaleglobal.com/)
+- [Français](https://elmvaleglobal.com/fr/)

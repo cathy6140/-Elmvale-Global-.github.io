@@ -1,8 +1,10 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const distDir = "dist";
 const baseHtml = await readFile(join(distDir, "index.html"), "utf8");
+const { render } = await import(pathToFileURL(resolve("dist-ssr/entry-server.js")).href);
 
 const routes = [
   {
@@ -245,6 +247,27 @@ function structuredData(path, lang) {
   const websiteId = lang === "fr" ? "https://elmvaleglobal.com/fr/#website" : "https://elmvaleglobal.com/#website";
   const serviceId = lang === "fr" ? "https://elmvaleglobal.com/fr/#sourcing-service" : "https://elmvaleglobal.com/#sourcing-service";
 
+  const baseGuidePath = lang === "fr" ? path.replace(/^\/fr/, "") : path;
+  const guideMeta = {
+    "/packaging-sourcing-brief/": {
+      en: { headline: "What to include in a cosmetic packaging sourcing brief", description: "A practical guide to structuring a packaging sourcing brief before comparing manufacturing options." },
+      fr: { headline: "Que faut-il inclure dans un brief de sourcing packaging cosmétique ?", description: "Un guide pratique pour structurer un brief packaging avant de comparer les options fabricants." }
+    },
+    "/cosmetic-packaging-moq/": {
+      en: { headline: "Cosmetic packaging MOQ: what brands should expect", description: "A practical guide to the factors that change cosmetic packaging minimum order quantities." },
+      fr: { headline: "MOQ packaging cosmétique : à quoi les marques doivent-elles s’attendre ?", description: "Un guide pratique des facteurs qui font varier les quantités minimales en packaging cosmétique." }
+    },
+    "/stock-vs-custom-packaging/": {
+      en: { headline: "Stock vs custom cosmetic packaging: which option should you choose?", description: "Compare stock and custom packaging across MOQ, timing, investment, differentiation and launch risk." },
+      fr: { headline: "Packaging stock ou custom : quelle route choisir ?", description: "Comparer packaging stock et custom selon MOQ, délais, investissement, différenciation et risque de lancement." }
+    },
+    "/compare-cosmetic-packaging-suppliers/": {
+      en: { headline: "How to compare cosmetic packaging suppliers", description: "Compare packaging suppliers across MOQ, lead time, customization, samples, technical feasibility, documentation and quality." },
+      fr: { headline: "Comment comparer des fournisseurs de packaging cosmétique", description: "Comparer les fournisseurs packaging selon MOQ, délais, personnalisation, échantillons, faisabilité technique, documentation et qualité." }
+    }
+  };
+  const guide = guideMeta[baseGuidePath]?.[lang];
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -288,7 +311,17 @@ function structuredData(path, lang) {
         inLanguage: lang,
         isPartOf: { "@id": websiteId },
         about: { "@id": "https://elmvaleglobal.com/#organization" }
-      }
+      },
+      ...(guide ? [{
+        "@type": "Article",
+        "@id": pageUrl + "#article",
+        headline: guide.headline,
+        description: guide.description,
+        inLanguage: lang,
+        mainEntityOfPage: { "@id": pageUrl + "#webpage" },
+        publisher: { "@id": "https://elmvaleglobal.com/#organization" },
+        about: "Cosmetic packaging sourcing"
+      }] : [])
     ]
   };
 }
@@ -318,13 +351,19 @@ function applyRoute(html, route, lang) {
     /<script id=["']elmvale-structured-data["'] type=["']application\/ld\+json["']>[\s\S]*?<\/script>/i,
     '<script id="elmvale-structured-data" type="application/ld+json">\n' + JSON.stringify(structuredData(path, lang), null, 2) + '\n    </script>'
   );
-  html = html.replace(/<!-- STATIC_SEMANTIC_START -->[\s\S]*?<!-- STATIC_SEMANTIC_END -->/, semanticFallback(route, lang));
+  let body;
+  try {
+    body = "<!-- STATIC_SEMANTIC_START -->" + render(path) + "<!-- STATIC_SEMANTIC_END -->";
+  } catch (error) {
+    console.warn("Prerender failed for " + path + ", using short fallback:", error instanceof Error ? error.message : String(error));
+    body = semanticFallback(route, lang);
+  }
+  html = html.replace(/<!-- STATIC_SEMANTIC_START -->[\s\S]*?<!-- STATIC_SEMANTIC_END -->/, () => body);
   return html;
 }
 
 for (const route of routes) {
   for (const lang of ["en", "fr"]) {
-    if (route.path === "/" && lang === "en") continue;
     const html = applyRoute(baseHtml, route, lang);
     const targetPath = localizedPath(route.path, lang);
     const outputPath = targetPath === "/"
@@ -335,4 +374,19 @@ for (const route of routes) {
   }
 }
 
-console.log("Generated localized static route entry pages with canonical and hreflang metadata.");
+const prerenderChecks = [
+  ["packaging-sourcing-brief/index.html", "What makes a sourcing brief actionable"],
+  ["cosmetic-packaging-moq/index.html", "Why similar projects can have very different MOQs"],
+  ["stock-vs-custom-packaging/index.html", "The main tradeoffs"],
+  ["compare-cosmetic-packaging-suppliers/index.html", "What to compare before selecting a packaging supplier"],
+  ["fr/compare-cosmetic-packaging-suppliers/index.html", "Les points à comparer avant de sélectionner un fournisseur"]
+];
+
+for (const [relativePath, expectedText] of prerenderChecks) {
+  const html = await readFile(join(distDir, relativePath), "utf8");
+  if (!html.includes(expectedText) || !html.includes('"@type": "Article"')) {
+    throw new Error(`Prerender verification failed for ${relativePath}`);
+  }
+}
+
+console.log("Generated and verified prerendered EN/FR pages with full content, Article schema, canonical and hreflang metadata.");

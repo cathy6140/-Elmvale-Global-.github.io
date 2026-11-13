@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
   const [formState, handleSubmit] = useForm(FORMSPREE_FORM_ID);
   const leadTracked = useRef(false);
 
-  const isOfficialHost = useMemo(() => window.location.hostname === "elmvaleglobal.com", []);
+  const isOfficialHost = useMemo(() => typeof window === "undefined" || window.location.hostname === "elmvaleglobal.com", []);
 
   useEffect(() => {
     if (!formState.succeeded || leadTracked.current) return;
@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
         <form acceptCharset="UTF-8" className="space-y-6" onSubmit={handleSubmit}>
           <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
           <input type="hidden" name="language" value={language} />
-          <input type="hidden" name="source" value={window.location.href} />
+          <input type="hidden" name="source" value={typeof window === "undefined" ? "" : window.location.href} />
 
           <div className="grid md:grid-cols-2 gap-6">
             <Field label={fr ? "Nom" : "Name"} name="name" required disabled={!isOfficialHost} />

@@ -6,8 +6,13 @@ export function stripLocalePrefix(pathname: string) {
   return pathname || "/";
 }
 
+function withTrailingSlash(pathname: string) {
+  if (pathname.endsWith("/") || /\.[a-z0-9]+$/i.test(pathname)) return pathname;
+  return `${pathname}/`;
+}
+
 export function localizedPath(pathname: string, language: Language) {
-  const base = stripLocalePrefix(pathname);
+  const base = withTrailingSlash(stripLocalePrefix(pathname));
   if (language === "fr") {
     return base === "/" ? "/fr/" : `/fr${base.startsWith("/") ? base : `/${base}`}`;
   }

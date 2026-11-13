@@ -5,14 +5,14 @@ import { localizedPath } from "../locale";
 import { trackContactCta } from "../analytics";
 
 const fragranceImages = [
-  "/1.png",
-  "/2.png",
-  "/3.png",
-  "/4.png",
-  "/5.png",
-  "/6.png",
-  "/7.png",
-  "/8.png",
+  "/fragrance-packaging-01.webp",
+  "/fragrance-packaging-02.webp",
+  "/fragrance-packaging-03.webp",
+  "/fragrance-packaging-04.webp",
+  "/fragrance-packaging-05.webp",
+  "/fragrance-packaging-06.webp",
+  "/fragrance-packaging-07.webp",
+  "/fragrance-packaging-08.webp",
 ];
 
 const FragrancePackaging: React.FC = () => {
@@ -79,6 +79,22 @@ const FragrancePackaging: React.FC = () => {
         "Estimated quantity",
         "Target market",
         "Target launch timing",
+      ];
+
+  const directAnswers = fr
+    ? [
+        ["Que comprend le sourcing de packaging parfum ?", "Nous pouvons rechercher un pack complet ou des composants séparés : flacon, pompe, capot, col, décoration et packaging secondaire. Le périmètre dépend de ce que la marque a déjà défini."],
+        ["Pompe à sertir ou pompe à vis : que choisir ?", "Le choix dépend du col du flacon, du système de pompe, de la ligne de remplissage, du rendu recherché et des contraintes de production. Une pompe à sertir est fréquente en parfumerie, mais ce n’est pas la seule route possible."],
+        ["Peut-on personnaliser un flacon de parfum ?", "Oui, selon le fabricant et le volume : coloration du verre, coating, sérigraphie, marquage à chaud, capots, cols, décoration et packaging secondaire peuvent être personnalisés. Certaines options créent leur propre MOQ."],
+        ["Qu’est-ce qui détermine le MOQ d’un pack parfum ?", "Le minimum réel est souvent fixé par le composant ou le procédé le moins flexible : flacon, pompe, capot, décoration, moule ou packaging secondaire. C’est pourquoi deux packs visuellement proches peuvent avoir des MOQ très différents."],
+        ["Elmvale peut-il suivre la production et la qualité ?", "Oui. Nous pouvons coordonner les échanges fournisseurs, les échantillons, le suivi de production et les contrôles qualité. La coordination d’expédition peut aussi être ajoutée lorsque nécessaire."]
+      ]
+    : [
+        ["What does fragrance packaging sourcing include?", "We can source a complete fragrance pack or individual components: bottle, pump, cap, collar, decoration and secondary packaging. The scope depends on what the brand has already defined."],
+        ["Crimp pump or screw pump: which should you choose?", "The choice depends on the bottle neck, pump system, filling line, desired appearance and production constraints. Crimp pumps are common in fragrance, but they are not the only workable route."],
+        ["Can fragrance bottles be customized?", "Yes, depending on the manufacturer and volume. Glass coloration, coating, silk screen, hot stamping, caps, collars, decoration and secondary packaging can be customized, and some options introduce their own MOQ."],
+        ["What determines fragrance packaging MOQ?", "The real project minimum is often set by the least flexible component or process: bottle, pump, cap, decoration, tooling or secondary packaging. That is why visually similar packs can have very different MOQs."],
+        ["Can Elmvale follow production and quality?", "Yes. We can coordinate supplier communication, sampling, production follow-up and quality inspections. Optional shipment coordination can also be added when required."]
       ];
 
   return (
@@ -238,6 +254,32 @@ const FragrancePackaging: React.FC = () => {
             {briefItems.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 py-20 border-t border-stone-200">
+        <div className="max-w-3xl mb-10">
+          <p className="uppercase text-[11px] tracking-[0.32em] text-stone-400 mb-4">
+            {fr ? "RÉPONSES DIRECTES" : "DIRECT ANSWERS"}
+          </p>
+          <h2 className="font-serif font-normal text-3xl md:text-4xl text-brand-dark mb-5">
+            {fr ? "Questions fréquentes sur le packaging parfum" : "Common questions about fragrance packaging"}
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {directAnswers.map(([question, answer]) => (
+            <article key={question} className="border border-stone-200 rounded-2xl p-6 bg-white">
+              <h3 className="font-serif text-2xl text-brand-dark mb-3">{question}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{answer}</p>
+            </article>
+          ))}
+        </div>
+        <Link
+          to={localizedPath("/sourcing", language)}
+          className="mt-8 inline-flex items-center gap-2 text-sm text-brand-dark underline underline-offset-4"
+        >
+          {fr ? "Voir notre méthode complète de sourcing packaging" : "See our full packaging sourcing process"}
+          <span aria-hidden="true">→</span>
+        </Link>
       </section>
 
       <section className="bg-zinc-50 border-t border-stone-200">

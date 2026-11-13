@@ -59,5 +59,8 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
+      - name: Checkout for post-deploy tasks
+        uses: actions/checkout@v7
+
       - name: Notify IndexNow
         run: node scripts/submit-indexnow.mjs

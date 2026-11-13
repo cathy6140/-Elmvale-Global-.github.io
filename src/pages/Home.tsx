@@ -29,14 +29,14 @@ const Home: React.FC = () => {
         {
           title: "Beauty & skincare",
           desc: "Flacons, pots, airless, droppers, tubes, pompes et packaging secondaire.",
-          image: "/Image ChatGPT 22 oct. 2026 à 16_24_33-1.png",
+          image: "/beauty-skincare-packaging.webp",
           alt: "Packaging skincare avec flacons, pots et composants de distribution",
           to: "/products",
         },
         {
           title: "Coordination de projet",
           desc: "Sourcing, comparaison d’options, échantillons, personnalisation, suivi de production et documentation disponible.",
-          image: "/Image ChatGPT 22 oct. 2026 à 16_24_35-2.png",
+          image: "/packaging-sourcing-coordination.webp",
           alt: "Sourcing packaging et coordination de projet",
           to: "/sourcing",
         },
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
     <div className="w-full bg-white">
       <section
         className="relative min-h-[560px] bg-cover bg-center overflow-hidden"
-        style={{ backgroundImage: "url('/hero-home.png')" }}
+        style={{ backgroundImage: "url('/hero-home.webp')" }}
       >
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#17120f]/85 via-[#241b16]/48 to-transparent" />

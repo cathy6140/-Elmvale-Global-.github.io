@@ -35,8 +35,8 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
   },
   "/sourcing": {
     en: {
-      title: "Packaging sourcing & supplier coordination | Elmvale Global",
-      description: "Elmvale Global helps beauty and fragrance brands compare packaging sourcing options, clarify MOQ and timing, and coordinate sampling and suppliers.",
+      title: "Cosmetic packaging sourcing for beauty brands | Elmvale Global",
+      description: "Source cosmetic, skincare and fragrance packaging with supplier selection, sampling, production follow-up and quality inspection support from Elmvale Global.",
       path: "/sourcing/",
     },
     fr: {
@@ -71,7 +71,7 @@ export const seoByRoute: Record<string, { en: SeoEntry; fr: SeoEntry }> = {
   },
   "/cosmetic-packaging-moq": {
     en: {
-      title: "Cosmetic packaging MOQ guide | Elmvale Global",
+      title: "Cosmetic packaging MOQ: stock vs custom | Elmvale Global",
       description: "Understand what drives cosmetic packaging MOQ, how stock and custom options differ, and what brands can do when minimum quantities are too high.",
       path: "/cosmetic-packaging-moq/",
     },

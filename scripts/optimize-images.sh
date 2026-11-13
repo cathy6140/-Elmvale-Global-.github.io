@@ -10,7 +10,11 @@ convert_image() {
     exit 1
   fi
   cwebp -quiet -mt -m 6 -q "$quality" "$input" -o "$output"
-  echo "Generated $output"
+  local before after saved
+  before=$(stat -c%s "$input")
+  after=$(stat -c%s "$output")
+  saved=$((100 - (after * 100 / before)))
+  echo "Generated $output: $before -> $after bytes ($saved% smaller)"
 }
 
 convert_image "public/hero-home.png" "public/hero-home.webp" 84

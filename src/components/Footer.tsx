@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-6 max-w-md">
             <div className="flex items-center gap-3 text-white">
               <img
-                src="/elmvale-logo-512.png"
+                src="/elmvale-logo-256.webp"
                 alt="Elmvale Global"
                 className="w-9 h-9"
                 loading="eager"

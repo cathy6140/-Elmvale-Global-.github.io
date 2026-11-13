@@ -374,4 +374,19 @@ for (const route of routes) {
   }
 }
 
-console.log("Generated prerendered EN/FR pages with full content, canonical and hreflang metadata.");
+const prerenderChecks = [
+  ["packaging-sourcing-brief/index.html", "What makes a sourcing brief actionable"],
+  ["cosmetic-packaging-moq/index.html", "Why similar projects can have very different MOQs"],
+  ["stock-vs-custom-packaging/index.html", "The main tradeoffs"],
+  ["compare-cosmetic-packaging-suppliers/index.html", "What to compare before selecting a packaging supplier"],
+  ["fr/compare-cosmetic-packaging-suppliers/index.html", "Les points à comparer avant de sélectionner un fournisseur"]
+];
+
+for (const [relativePath, expectedText] of prerenderChecks) {
+  const html = await readFile(join(distDir, relativePath), "utf8");
+  if (!html.includes(expectedText) || !html.includes('"@type": "Article"')) {
+    throw new Error(`Prerender verification failed for ${relativePath}`);
+  }
+}
+
+console.log("Generated and verified prerendered EN/FR pages with full content, Article schema, canonical and hreflang metadata.");

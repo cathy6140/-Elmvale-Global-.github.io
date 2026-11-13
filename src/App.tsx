@@ -105,9 +105,25 @@ const App: React.FC = () => {
       return;
     }
 
+    const needsTrailingSlash =
+      location.pathname !== "/" &&
+      !location.pathname.endsWith("/") &&
+      !/\.[a-z0-9]+$/i.test(location.pathname);
+
+    if (needsTrailingSlash) {
+      navigate(
+        {
+          pathname: `${location.pathname}/`,
+          search: location.search,
+        },
+        { replace: true }
+      );
+      return;
+    }
+
     setLanguageState(pathLanguage);
     localStorage.setItem(LANG_KEY, pathLanguage);
-  }, [location.pathname, navigate, searchParams, urlLang]);
+  }, [location.pathname, location.search, navigate, searchParams, urlLang]);
 
   const setLanguage = (nextLanguage: Language) => {
     const basePath = stripLocalePrefix(location.pathname);
@@ -218,8 +234,8 @@ const App: React.FC = () => {
             <Route path="/fr/cookies" element={<Cookies />} />
             <Route path="/fr/cookies/" element={<Cookies />} />
 
-            <Route path="/solutions" element={<Navigate to="/products" replace />} />
-            <Route path="/skincare-mask-packaging" element={<Navigate to="/products" replace />} />
+            <Route path="/solutions" element={<Navigate to="/products/" replace />} />
+            <Route path="/skincare-mask-packaging" element={<Navigate to="/products/" replace />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
